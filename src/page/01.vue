@@ -1,0 +1,23 @@
+<template>
+
+</template>
+
+<script>
+import { ops } from "./data.js";
+import JetForms from "./JetForms.vue";
+
+export default {
+    components: {
+        "jet-forms ": JetForms,
+    },
+    data() {
+        return {
+            ops: ops,
+        };
+    },
+    methods: {
+        func() {
+        },
+    },
+};
+</script>

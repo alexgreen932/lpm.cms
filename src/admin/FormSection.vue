@@ -1,7 +1,7 @@
 <template>
     <div class="jet-forms">
         <div v-for="(form, i) in sections">
-            <j-form
+            <!-- <j-form
                 :obj="form"
                 :title="'Edit Style'"
                 :fields="[
@@ -9,8 +9,8 @@
                     { el: 'jc', title: __('Justify Content'), type: 'jc' },
                     { el: 'ai', title: __('Atem Align'), type: 'ai' },
                 ]"
-            >
-            </j-form>
+         
+            </j-form>-->
         </div>
     </div>
 </template>

@@ -12,5 +12,12 @@ During alpha testing versions numbers are in CalVer(yy.mm.dd), yy is 25, but dis
 
 ### Current
 
-72? - Structure on VITE
+72? -
+72? -
+72? -
+72? -
+72? -
+
+
+723 - Basic Structure on VITE done
 723 First commit

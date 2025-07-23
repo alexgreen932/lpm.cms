@@ -1,6 +1,7 @@
 <template>
     <div v-if="ops.current !== 99" class="admin-sec">
-        <form-section :sections="sections"></form-section>
+        Lorem
+        <!-- <form-section :sections="sections"></form-section> -->
     </div>
 </template>
 

@@ -1,3 +1,4 @@
+/* line 22, ../../www/lpm.cms/scss-jet/console/_logs.scss */
 #debug-panel-rm {
   position: fixed;
   top: 100%;
@@ -13,11 +14,13 @@
   z-index: 9999999;
 }
 
+/* line 37, ../../www/lpm.cms/scss-jet/console/_logs.scss */
 #debug-panel-rm.console-active {
   top: auto;
   bottom: 0;
 }
 
+/* line 44, ../../www/lpm.cms/scss-jet/console/_logs.scss */
 #debug-panel-rm .db-icons {
   height: 35px;
   padding: 5px;
@@ -30,6 +33,7 @@
   top: -45px;
 }
 
+/* line 55, ../../www/lpm.cms/scss-jet/console/_logs.scss */
 #debug-panel-rm .db-icons span {
   display: flex;
   justify-content: center;
@@ -44,10 +48,12 @@
   transition: all ease 0.5s;
 }
 
+/* line 67, ../../www/lpm.cms/scss-jet/console/_logs.scss */
 #debug-panel-rm .db-icons span:hover {
   background: #787a80;
 }
 
+/* line 72, ../../www/lpm.cms/scss-jet/console/_logs.scss */
 #debug-panel-rm .db-inner-icons {
   padding: 5px 0;
   display: flex;
@@ -58,6 +64,7 @@
   top: -45px;
 }
 
+/* line 82, ../../www/lpm.cms/scss-jet/console/_logs.scss */
 #debug-panel-rm .db-inner-icons span {
   background: #4e5664;
   font-size: .8rem;
@@ -69,10 +76,12 @@
   transition: all ease 0.5s;
 }
 
+/* line 96, ../../www/lpm.cms/scss-jet/console/_logs.scss */
 #debug-panel-rm .db-inner-icons span:last-child {
   background: #58658f;
 }
 
+/* line 99, ../../www/lpm.cms/scss-jet/console/_logs.scss */
 #debug-panel-rm .db-inner-icons span:hover {
   background: #787a80;
 }
@@ -103,6 +112,7 @@
   }
 }
 
+/* line 2, ../../www/lpm.cms/scss-jet/console/_console.scss */
 #debug-panel {
   position: fixed;
   bottom: 0;
@@ -116,6 +126,7 @@
   z-index: 99999999;
 }
 
+/* line 21, ../../www/lpm.cms/scss-jet/console/_console.scss */
 #debug-panel .db-inner-icons {
   padding: 5px 0;
   display: flex;
@@ -126,6 +137,7 @@
   top: -45px;
 }
 
+/* line 31, ../../www/lpm.cms/scss-jet/console/_console.scss */
 #debug-panel .db-inner-icons span {
   background: #4e5664;
   font-size: .8rem;
@@ -137,14 +149,17 @@
   transition: all ease 0.5s;
 }
 
+/* line 46, ../../www/lpm.cms/scss-jet/console/_console.scss */
 #debug-panel .db-inner-icons span:last-child {
   background: #58658f;
 }
 
+/* line 50, ../../www/lpm.cms/scss-jet/console/_console.scss */
 #debug-panel .db-inner-icons span:hover {
   background: #787a80;
 }
 
+/* line 62, ../../www/lpm.cms/scss-jet/console/_console.scss */
 .db-icons {
   height: 35px;
   padding: 5px;
@@ -160,6 +175,7 @@
   color: #fff;
 }
 
+/* line 77, ../../www/lpm.cms/scss-jet/console/_console.scss */
 .db-icons span {
   display: flex;
   justify-content: center;
@@ -174,6 +190,7 @@
   transition: all ease 0.5s;
 }
 
+/* line 89, ../../www/lpm.cms/scss-jet/console/_console.scss */
 .db-icons span.de-error-badge {
   font-weight: bold;
   background: #d31f1f;
@@ -182,6 +199,7 @@
   border-radius: 50%;
 }
 
+/* line 96, ../../www/lpm.cms/scss-jet/console/_console.scss */
 .db-icons span.de-warn-badge {
   font-weight: bold;
   background: #f1e206;
@@ -191,6 +209,7 @@
   border-radius: 50%;
 }
 
+/* line 105, ../../www/lpm.cms/scss-jet/console/_console.scss */
 .db-icons span:hover {
   background: #787a80;
 }
@@ -221,111 +240,136 @@
   }
 }
 
+/* line 9, ../../www/lpm.cms/scss-jet/console/_content.scss */
 .dl-components .dl-com-name {
   color: #1af506;
 }
 
+/* line 12, ../../www/lpm.cms/scss-jet/console/_content.scss */
 .dl-components .dl-com-name label {
   font-style: italic;
   color: #9ca5cf;
 }
 
+/* line 20, ../../www/lpm.cms/scss-jet/console/_content.scss */
 .dl-components .dl-com-data {
   color: #93caf7;
 }
 
+/* line 23, ../../www/lpm.cms/scss-jet/console/_content.scss */
 .dl-components .dl-com-data label {
   font-style: italic;
   color: #9ca5cf;
 }
 
+/* line 28, ../../www/lpm.cms/scss-jet/console/_content.scss */
 .dl-components .dl-com-data span:before {
   content: '{';
 }
 
+/* line 32, ../../www/lpm.cms/scss-jet/console/_content.scss */
 .dl-components .dl-com-data span:after {
   content: '}';
 }
 
+/* line 38, ../../www/lpm.cms/scss-jet/console/_content.scss */
 .dl-components .dl-com-methods {
   color: #aada3b;
 }
 
+/* line 41, ../../www/lpm.cms/scss-jet/console/_content.scss */
 .dl-components .dl-com-methods label {
   font-style: italic;
   color: #9ca5cf;
 }
 
+/* line 46, ../../www/lpm.cms/scss-jet/console/_content.scss */
 .dl-components .dl-com-methods span:before {
   content: '{';
 }
 
+/* line 50, ../../www/lpm.cms/scss-jet/console/_content.scss */
 .dl-components .dl-com-methods span:after {
   content: '}';
 }
 
+/* line 58, ../../www/lpm.cms/scss-jet/console/_content.scss */
 .db-inner-data .j_log_name {
   color: #f48fb1;
 }
 
+/* line 63, ../../www/lpm.cms/scss-jet/console/_content.scss */
 .db-inner-data .j_log_tag {
   font-weight: bold;
   color: #1af506;
 }
 
+/* line 67, ../../www/lpm.cms/scss-jet/console/_content.scss */
 .db-inner-data .j_log_tag:before {
   content: '[';
 }
 
+/* line 71, ../../www/lpm.cms/scss-jet/console/_content.scss */
 .db-inner-data .j_log_tag:after {
   content: ']';
 }
 
+/* line 76, ../../www/lpm.cms/scss-jet/console/_content.scss */
 .db-inner-data .j_log_msg {
   color: #93caf7;
 }
 
+/* line 80, ../../www/lpm.cms/scss-jet/console/_content.scss */
 .db-inner-data .j_log_data {
   color: #f85103;
 }
 
+/* line 86, ../../www/lpm.cms/scss-jet/console/_content.scss */
 .db-inner-data .j_errors .j_log_msg {
   color: #fa9c9c;
 }
 
+/* line 93, ../../www/lpm.cms/scss-jet/console/_content.scss */
 .db-inner-data .dl-watchers label {
   font-size: .9rem;
   text-transform: uppercase;
 }
 
+/* line 103, ../../www/lpm.cms/scss-jet/console/_content.scss */
 .db-inner-data {
   max-height: 220px;
   overflow-y: auto;
 }
 
+/* line 108, ../../www/lpm.cms/scss-jet/console/_content.scss */
 .db-inner-data * {
   scrollbar-width: auto !important;
   scrollbar-color: #435260 #231f1f !important;
 }
 
+/* line 113, ../../www/lpm.cms/scss-jet/console/_content.scss */
 .db-inner-data *::-webkit-scrollbar {
   width: 12px !important;
 }
 
+/* line 117, ../../www/lpm.cms/scss-jet/console/_content.scss */
 .db-inner-data *::-webkit-scrollbar-track {
   background: #231f1f !important;
 }
 
+/* line 121, ../../www/lpm.cms/scss-jet/console/_content.scss */
 .db-inner-data *::-webkit-scrollbar-thumb {
   background-color: #435260 !important;
   border-radius: 10px !important;
   border: 3px solid #ffffff !important;
 }
 
+/* line 127, ../../www/lpm.cms/scss-jet/console/_content.scss */
 .db-inner-data h3 {
   margin-top: 5px;
 }
 
+/* line 131, ../../www/lpm.cms/scss-jet/console/_content.scss */
 .db-inner-data ul {
   padding-left: 20px;
   display: flex;
@@ -333,14 +377,19 @@
   gap: 11px;
 }
 
+/* line 137, ../../www/lpm.cms/scss-jet/console/_content.scss */
 .db-inner-data ul li {
   list-style: square;
 }
 
+/* line 141, ../../www/lpm.cms/scss-jet/console/_content.scss */
 .db-inner-data ul.dl-watchers {
   padding-left: 0;
 }
 
+/* line 144, ../../www/lpm.cms/scss-jet/console/_content.scss */
 .db-inner-data ul.dl-watchers li {
   list-style: none;
 }
+
+/*# sourceMappingURL=develop-console.css.map */

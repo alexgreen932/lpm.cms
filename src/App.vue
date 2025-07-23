@@ -5,20 +5,23 @@
     <h2>Dynamic Components 1</h2>
     <admin-bar></admin-bar>
     <admin-sidebar></admin-sidebar>
+    <page-preview></page-preview>
   </div>
 </template>
 
 <script>
-const modules = import.meta.glob('./components/*.vue', { eager: true });
+// const modules = import.meta.glob('./components/*.vue', { eager: true });
 import {ops} from './admin/data.js';
 import AdminBar from './admin/AdminBar.vue';
 import AdminSidebar from './admin/AdminSidebar.vue';
 import methods from './admin/methods.js';
+import PagePreview from './page/PagePreview.vue';
 
 export default {
   components:{
     'admin-bar': AdminBar,
     'admin-sidebar': AdminSidebar,
+    'page-preview': PagePreview,
   },
   data() {
     return {
