@@ -1,0 +1,346 @@
+#debug-panel-rm {
+  position: fixed;
+  top: 100%;
+  right: 0;
+  background: #323844;
+  color: #f1f2f4;
+  width: 400px;
+  height: 250px;
+  padding: 5px 20px 20px;
+  -webkit-border-radius: 5px 0px 0px 0px;
+  -moz-border-radius: 5px 0px 0px 0px;
+  border-radius: 5px 0px 0px 0px;
+  z-index: 9999999;
+}
+
+#debug-panel-rm.console-active {
+  top: auto;
+  bottom: 0;
+}
+
+#debug-panel-rm .db-icons {
+  height: 35px;
+  padding: 5px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  position: absolute;
+  gap: 5px;
+  right: 0;
+  top: -45px;
+}
+
+#debug-panel-rm .db-icons span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  background: #404550;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all ease 0.5s;
+}
+
+#debug-panel-rm .db-icons span:hover {
+  background: #787a80;
+}
+
+#debug-panel-rm .db-inner-icons {
+  padding: 5px 0;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 5px;
+  right: 0;
+  top: -45px;
+}
+
+#debug-panel-rm .db-inner-icons span {
+  background: #4e5664;
+  font-size: .8rem;
+  padding: 2px 9px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all ease 0.5s;
+}
+
+#debug-panel-rm .db-inner-icons span:last-child {
+  background: #58658f;
+}
+
+#debug-panel-rm .db-inner-icons span:hover {
+  background: #787a80;
+}
+
+@-webkit-keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(250px);
+    transform: translateY(250px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(-250px);
+    transform: translateY(-250px);
+    opacity: 1;
+  }
+}
+
+#debug-panel {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background: #323844;
+  color: #f1f2f4;
+  width: 400px;
+  height: 250px;
+  padding: 5px 20px 20px;
+  border-radius: 5px 0px 0px 0px;
+  z-index: 99999999;
+}
+
+#debug-panel .db-inner-icons {
+  padding: 5px 0;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 5px;
+  right: 0;
+  top: -45px;
+}
+
+#debug-panel .db-inner-icons span {
+  background: #4e5664;
+  font-size: .8rem;
+  padding: 2px 9px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all ease 0.5s;
+}
+
+#debug-panel .db-inner-icons span:last-child {
+  background: #58658f;
+}
+
+#debug-panel .db-inner-icons span:hover {
+  background: #787a80;
+}
+
+.db-icons {
+  height: 35px;
+  padding: 5px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+  gap: 5px;
+  right: 0;
+  z-index: 9998;
+  color: #fff;
+}
+
+.db-icons span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  background: #404550;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all ease 0.5s;
+}
+
+.db-icons span.de-error-badge {
+  font-weight: bold;
+  background: #d31f1f;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.db-icons span.de-warn-badge {
+  font-weight: bold;
+  background: #f1e206;
+  color: #333;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.db-icons span:hover {
+  background: #787a80;
+}
+
+@-webkit-keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(250px);
+    transform: translateY(250px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(-250px);
+    transform: translateY(-250px);
+    opacity: 1;
+  }
+}
+
+.dl-components .dl-com-name {
+  color: #1af506;
+}
+
+.dl-components .dl-com-name label {
+  font-style: italic;
+  color: #9ca5cf;
+}
+
+.dl-components .dl-com-data {
+  color: #93caf7;
+}
+
+.dl-components .dl-com-data label {
+  font-style: italic;
+  color: #9ca5cf;
+}
+
+.dl-components .dl-com-data span:before {
+  content: '{';
+}
+
+.dl-components .dl-com-data span:after {
+  content: '}';
+}
+
+.dl-components .dl-com-methods {
+  color: #aada3b;
+}
+
+.dl-components .dl-com-methods label {
+  font-style: italic;
+  color: #9ca5cf;
+}
+
+.dl-components .dl-com-methods span:before {
+  content: '{';
+}
+
+.dl-components .dl-com-methods span:after {
+  content: '}';
+}
+
+.db-inner-data .j_log_name {
+  color: #f48fb1;
+}
+
+.db-inner-data .j_log_tag {
+  font-weight: bold;
+  color: #1af506;
+}
+
+.db-inner-data .j_log_tag:before {
+  content: '[';
+}
+
+.db-inner-data .j_log_tag:after {
+  content: ']';
+}
+
+.db-inner-data .j_log_msg {
+  color: #93caf7;
+}
+
+.db-inner-data .j_log_data {
+  color: #f85103;
+}
+
+.db-inner-data .j_errors .j_log_msg {
+  color: #fa9c9c;
+}
+
+.db-inner-data .dl-watchers label {
+  font-size: .9rem;
+  text-transform: uppercase;
+}
+
+.db-inner-data {
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.db-inner-data * {
+  scrollbar-width: auto !important;
+  scrollbar-color: #435260 #231f1f !important;
+}
+
+.db-inner-data *::-webkit-scrollbar {
+  width: 12px !important;
+}
+
+.db-inner-data *::-webkit-scrollbar-track {
+  background: #231f1f !important;
+}
+
+.db-inner-data *::-webkit-scrollbar-thumb {
+  background-color: #435260 !important;
+  border-radius: 10px !important;
+  border: 3px solid #ffffff !important;
+}
+
+.db-inner-data h3 {
+  margin-top: 5px;
+}
+
+.db-inner-data ul {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.db-inner-data ul li {
+  list-style: square;
+}
+
+.db-inner-data ul.dl-watchers {
+  padding-left: 0;
+}
+
+.db-inner-data ul.dl-watchers li {
+  list-style: none;
+}

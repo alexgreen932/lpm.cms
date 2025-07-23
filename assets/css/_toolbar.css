@@ -1,0 +1,46 @@
+.jet-section {
+  position: relative;
+  border: 1px solid transparent;
+  transition: all ease 0.6s;
+}
+
+.jet-section .form-toolbar {
+  position: absolute;
+  display: none;
+  gap: 6px;
+  border-radius: 5px;
+  padding: 4px;
+}
+
+.jet-section .form-toolbar i {
+  background: #fff;
+  border-radius: 3px;
+  padding: 3px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all ease 0.6s;
+}
+
+.jet-section .form-toolbar i:hover {
+  background: #ccd7da;
+}
+
+.jet-section .form-toolbar.section {
+  top: 3px;
+  right: 6px;
+  background: rgba(8, 151, 247, 0.486);
+}
+
+.jet-section .form-toolbar.element {
+  bottom: 3px;
+  left: 6px;
+  background: rgba(84, 240, 12, 0.3);
+}
+
+.jet-section:hover .form-toolbar {
+  display: inline-flex;
+}
+
+.jet-section:hover {
+  border-color: rgba(8, 151, 247, 0.486);
+}

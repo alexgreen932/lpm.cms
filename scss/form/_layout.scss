@@ -1,0 +1,61 @@
+.jet-form {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+
+    h3 {
+        margin-top: 0;
+        font-size: 1.5rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    }
+
+    .control-field {
+        display: flex;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 5px 0;
+
+        &:last-child {
+            border-bottom-width: 0;
+        }
+
+        label {
+            font-size: 0.9rem;
+            font-weight: bolder;
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+        //temp
+        j-field-select,
+        j-field-input,
+        j-field-picker{
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            line-height: 26px;
+            box-sizing: border-box;
+        }
+
+        input,
+        select,
+        .picker-select {
+            flex-grow: 1;
+            line-height: 26px;
+            box-sizing: border-box;
+        }
+
+
+        input {
+        border-radius: 3px;
+        border-width: 0;
+        padding: 0 5px;
+        }
+
+
+    }
+    .form-push{
+        border: 1px solid $border;
+        border-radius: 4px;
+        padding: 10px;
+    }
+}

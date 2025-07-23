@@ -1,0 +1,17 @@
+$bg-grey: #d1dcf3;
+$shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+$label-bottom: 180px;
+$border: rgba(0,0,0,.4);
+
+@import 'form/layout';
+@import 'form/position';//position modificators
+@import 'form/styles';//style modificators
+@import 'form/picker';
+@import 'form/toolbar';
+
+body.sidebarOpen{
+    margin-left: 350px;
+}
+
+
+

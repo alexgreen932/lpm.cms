@@ -1,0 +1,17 @@
+ 
+.j-form{
+        h3{
+            font-size: 1.5rem;
+            border-bottom: 1px solid #394a5f;
+            margin: 0 0 7px;
+        }
+    .control-group{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        label{
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+    }
+}

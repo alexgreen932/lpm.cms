@@ -1,0 +1,51 @@
+
+// #lpm-admin{
+//     position: fixed;
+//     top: 0;
+//     bottom: 0;
+//     right: 0;
+//     left: 0;
+//     background: #fff;
+//     z-index: 99999;
+// }
+#admin-enter{
+    position: fixed;
+    left: 0;
+    top: 50%;
+    width: $width-bar;
+    height: $width-bar;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $sec;
+    color: #fff;
+    z-index: 10000;
+    border-radius: 0 5px 5px 0;
+    transition: all ease 0.3s;
+    i{
+        cursor: pointer;
+        	-webkit-animation: rotate-center 3s infinite linear;
+	        animation: rotate-center 3s infinite linear;
+    }
+    &:hover{
+background: #4e6672;
+    }
+}
+
+@-webkit-keyframes rotate-center {
+  to {
+      transform: rotate(1turn);
+   }
+}
+@keyframes rotate-center {
+  to {
+      transform: rotate(1turn);
+   }
+}
+
+#jet-site.isSidebar{
+    margin-left:  $width-sec!important;
+} 
+#jet-site.isBar{
+    margin-left:  $width-bar;
+}

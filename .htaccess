@@ -1,0 +1,13 @@
+DirectoryIndex index.php
+
+RewriteEngine On
+RewriteBase /
+
+# Skip if real file or directory exists
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Route all other requests to index.php (DO NOT REDIRECT)
+RewriteRule . index.php [L]
+
+

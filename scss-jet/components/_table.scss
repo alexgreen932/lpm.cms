@@ -1,0 +1,56 @@
+$th: #a4abc4;
+$hover: #b8c4f0;
+$prim: #eceff1;
+$sec: #9ca2af;
+
+
+table {
+    width: 100%;
+
+    th,
+    td {
+        text-align: left;
+        padding: 0.7rem;
+    }
+
+    thead tr {
+        background: $th;
+    }
+
+    tbody tr {
+        background: $prim;
+
+        &:hover {
+            background: $hover;
+        }
+    }
+
+    //modificaters
+    &.de-boxed {
+        tbody td {
+            border: solid 1px $hover;
+            background: transparent;
+
+            &:hover {
+                background: $hover;
+            }
+        }
+    }
+
+    &.de-striped {
+        tbody tr {
+            background: $prim;
+
+            &:hover {
+                background: $hover;
+            }
+        }
+
+        // tbody tr:even{
+        //     background: $prim;
+        // }
+        // tbody tr:{
+        //     background: #959697;
+        // }
+    }
+}

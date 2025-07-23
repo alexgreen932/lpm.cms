@@ -1,0 +1,80 @@
+.jet-section {
+    position: relative;
+    border: 1px solid transparent;
+    // border: 1px solid #000;
+    transition: all ease 0.5s;
+    z-index: 1;
+
+    &:hover {
+        // display: none;
+        border-color: rgba(0, 0, 0, .3);
+
+        .form-toolbar {
+            display: inline-flex;
+        }
+    }
+
+    .form-toolbar {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-radius: 0 0 0 5px;
+        display: none;
+        padding: 3px;
+        gap: 5px;
+        background-color: rgba(0, 0, 0, .1);
+        transition: all ease 0.5s;
+
+        i {
+            cursor: pointer;
+            padding: 4px;
+            font-size: 14px;
+            background: #fff;
+            border-radius: 3px;
+            z-index: 2;
+
+        }
+
+
+
+    }
+
+}
+
+.toolbar-wrap {
+    position: relative;
+
+    .form-toolbar {
+        position: absolute;
+        top: 0;
+        right: 0;
+        float: right;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid #7d86a5;
+        border-radius: 4px;
+        // width: 100px;
+        // height: 24px;
+        padding: 4px;
+        background: #fff;
+        color: #444;
+
+        i {
+            background: rgba(0, 0, 0, .1);
+            border-radius: 3px;
+            padding: 3px;
+            cursor: pointer;
+
+            &:hover {
+                color: #bd361e;
+            }
+        }
+
+        &.d-top-right {
+            // top: 5px;
+            // right: 5px;
+        }
+    }
+}
