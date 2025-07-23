@@ -60,10 +60,15 @@ if (!$page) {
 <head>
     <meta charset="UTF-8">
     <title><?= htmlspecialchars($page['title'] ?? 'Landing Page') ?></title>
-    <link rel="stylesheet" href="/assets/css/jet.min.css">
+    <script type="module" crossorigin src="dist/assets/lpm.js"></script>
+    <link rel="stylesheet" crossorigin href="dist/assets/lpm.css">
 </head>
 
 <body>
+    <div class="w-container p-1 mv-2 bs-2">
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. A voluptates deserunt culpa soluta veritatis dolor minima aut. Error excepturi, debitis facere dolorem nulla aperiam inventore delectus ut sunt quam ipsa!
+    </div>
+   
 
     <!-- Admin Area -->
     <?php if (isAdmin()): ?>
@@ -73,7 +78,7 @@ if (!$page) {
             require_once __DIR__ . '/inc/save.php';
         }
         ?>
-        <div id="jet-site">
+        <div id="app">
             <h1>Rendered data</h1>
             <h3>{{test.title}}</h3>
             <p>{{test.content}}</p>
@@ -81,22 +86,20 @@ if (!$page) {
 
             <h3>Edit JSON</h3>
             <form id="edit-form" method="post" action="">
-              <!--   <textarea id="page-json" style="width:100%; height:200px;">{{strinedData()}}</textarea>
+                <!--   <textarea id="page-json" style="width:100%; height:200px;">{{strinedData()}}</textarea>
                 <button type="submit">Save</button>
             </form> -->
 
-            <form method="post" action="" style="margin-top: 2rem;">
+                <form method="post" action="" style="margin-top: 2rem;">
                     <textarea name="page_json" style="width:100%; height:200px;">{{pageJson()}}</textarea>
 
                     <!-- <?= htmlspecialchars(json_encode($page, JSON_PRETTY_PRINT)) ?></textarea> -->
-                <input type="hidden" name="slug" value="<?= $slug ?>">
-                <button type="submit">Save</button>
-            </form>
-        </div>
-        <script src="/dev-app/vue.js"></script>
-        <script src="/dev-app/dev.js" type="module"></script>
+                    <input type="hidden" name="slug" value="<?= $slug ?>">
+                    <button type="submit">Save</button>
+                </form>
 
-    <?php endif; ?>
+
+            <?php endif; ?>
 
 
 </body>

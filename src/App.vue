@@ -1,34 +1,42 @@
+
+
 <template>
   <div>
     <h2>Dynamic Components 1</h2>
-    <component
-      v-for="(block, i) in items"
-      :key="i"
-      :is="getComponent(block.type)"
-      v-bind="block.props"
-    />
+    <admin-bar></admin-bar>
+    <admin-sidebar></admin-sidebar>
   </div>
 </template>
 
 <script>
-const modules = import.meta.glob('./components/*.vue', { eager: true })
+const modules = import.meta.glob('./components/*.vue', { eager: true });
+import {ops} from './admin/data.js';
+import AdminBar from './admin/AdminBar.vue';
+import AdminSidebar from './admin/AdminSidebar.vue';
+import methods from './admin/methods.js';
 
 export default {
+  components:{
+    'admin-bar': AdminBar,
+    'admin-sidebar': AdminSidebar,
+  },
   data() {
     return {
+      ops:ops,
       items: [
         { type: 'title', props: { text: 'Hello from Title' } },
         { type: 'paragraph', props: { text: 'Hello from Paragraph' } }
       ]
     }
   },
-  methods: {
-    getComponent(type) {
-      const name = `./components/com-${type}.vue`
-      return modules[name].default
-    }
+  methods: methods,
+  mounted() {
+    this.$getLocal(this.ops, 'state_ops');
+    this.isSidebar();//should check as it will be localstorage
+    this.isBar();//should check as it will be localstorage
   }
 }
+
 </script>
 
 
