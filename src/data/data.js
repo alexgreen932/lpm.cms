@@ -1,6 +1,5 @@
 export const ops = {
   current: null,//main current icon menu
-  current: 'pages'//todo dev
   current_page: 'homepage',//current display/edit page
   page: 'pages',
   show_bar: false,
@@ -133,43 +132,6 @@ export const style = {
   },
 };
 
-//temp for dev
-export const test = {
-  title: 'Homepage',
-  slug: 'homepage',
-  description: '',
-  edit: false,
-  sections: [
-    {
-      edit: false,
-      w: 'w-container',
-      bg: 'bg-white',
-      p: 'p-1',
-      img: null,
-      ib: null, //image-blur
-      i0: null, //image-opacity
-      col: 'tx-gray-d3',
-      jc: 'jc-c',
-      ai: 'ai-c',
-      g: 'g-1',
-      fd: 'fd-c',
-      content: {
-        title: 'Section 1',
-        type: 'text',
-        text: 'Edit section, you can change its properties and content type',
-        fs: 'fs-10',
-        row: [],
-        link: {
-          url: null,
-          text: 'Read More',
-          style: 'but-blue',
-          r: 'br-5',
-        },
-      },
-    },
-  ]
-};
-;
 
 export const sample = {
   current: null,
@@ -249,7 +211,3 @@ export const sample = {
     ]
   },
 };
-
-const test2 = [
-  {title: 'Homepage', slug: 'homepage'},
-]

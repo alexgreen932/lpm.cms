@@ -2,7 +2,6 @@
 
 <template>
   <div>
-    <h2>Dynamic Components 1</h2>
     <admin-bar></admin-bar>
     <admin-sidebar></admin-sidebar>
     <page-preview></page-preview>
@@ -11,11 +10,15 @@
 
 <script>
 // const modules = import.meta.glob('./components/*.vue', { eager: true });
-import {ops} from './admin/data.js';
+import {ops} from './data/data.js';
 import AdminBar from './admin/AdminBar.vue';
 import AdminSidebar from './admin/AdminSidebar.vue';
 import methods from './admin/methods.js';
 import PagePreview from './page/PagePreview.vue';
+import __ from './languages/index.js';
+
+//lang function as short global
+window.__ = __;
 
 export default {
   components:{

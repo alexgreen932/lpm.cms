@@ -26,7 +26,7 @@
 
 
 <script>
-import { ops } from "./data.js";
+import { ops } from "../data/data.js";
 export default {
     data() {
         return {

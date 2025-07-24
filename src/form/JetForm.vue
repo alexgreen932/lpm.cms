@@ -1,23 +1,45 @@
 <template>
-blank form
+    <div class="jet-form" :class="formtyle">
+        <h3 v-if="title">{{ title }}</h3>
+        <div v-for="(f, i) in normalizedFields" :key="i" class="control-group">
+            <label>{{ f.title }}</label>
+            <!-- dynamically resolve component -->
+            <component :is="getComponent(f.type)" v-model="obj[f.key]" :f="f" />
+        </div>
+    </div>
 </template>
 
 <script>
-// import { ops } from "./data.js";
-// import JetForms from "./JetForms.vue";
+/**
+ * Load all field components from /fields folder eagerly.
+ * File names must match pattern: field-*.vue (e.g., field-input.vue, field-select.vue)
+ */
+const modules = import.meta.glob('./fields/*.vue', { eager: true });
 
 export default {
-    // components: {
-    //     "jet-forms ": JetForms,
-    // },
-    data() {
-        return {
-            // ops: ops,
-        };
+    props: ['title', 'formtyle', 'obj', 'fields'],
+
+    computed: {
+        /**
+         * Ensure each field has a type (default is 'input').
+         */
+        normalizedFields() {
+            return this.fields.map(f => ({
+                type: 'input',  // default type if not provided
+                ...f
+            }));
+        }
     },
+
     methods: {
-        func() {
-        },
-    },
+        /**
+         * Get correct component for a given field type.
+         * Example: type="input" → ./fields/field-input.vue
+         */
+        getComponent(type) {
+            const file = `./fields/field-${type}.vue`;
+            return modules[file]?.default || null;
+        }
+    }
 };
 </script>

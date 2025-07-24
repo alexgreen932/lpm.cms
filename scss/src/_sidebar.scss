@@ -80,6 +80,8 @@ body {
     flex-direction: column;
     padding: 15px;
     padding-left: $width-bar + 15;
+    border-right: 1px solid #9fa8c4;
+    box-shadow: $shadow;
     // justify-content: center;
     // align-items: center;
     background: $prim;

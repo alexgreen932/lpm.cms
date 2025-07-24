@@ -1,17 +1,21 @@
 <template>
     <div v-if="ops.current !== 99" class="admin-sec">
-        Lorem
+        <!-- Lorem -->
         <!-- <form-section :sections="sections"></form-section> -->
+         current---{{ops.current}}
+         <jet-pages v-if="ops.current=='pages'" />
     </div>
 </template>
 
 <script>
-import { ops } from "./data.js";
-import FormSection from "./FormSection.vue";
+import { ops } from "../data/data.js";
+import JetPages from "./JetPages.vue";
+// import FormSection from "./FormSection.vue";//todo rm if not used
 
 export default {
     components: {
-        "form-section ": FormSection,
+        // "form-section ": FormSection,//?? rm
+        "jet-pages": JetPages,
     },
     data() {
         return {

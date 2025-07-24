@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { ops } from "./data.js";
+import { ops } from "../data/data.js";
 import JetForms from "./JetForms.vue";
 
 export default {

@@ -6,9 +6,14 @@ import { saveLocal, getLocal } from './admin/localstorage.js'
 
 const app = createApp(App) // createApp must be stored in a variable
 
+
+
 // Add global functions (like your old app.config.globalProperties)
 app.config.globalProperties.$saveLocal = saveLocal
 app.config.globalProperties.$getLocal = getLocal
+app.config.globalProperties.$isActive = (current, index) =>
+  current === index ? 'isActive' : '';
+
 
 // (Optional) Global components
 // import AdminBar from './admin/AdminBar.vue'
