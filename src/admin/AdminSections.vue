@@ -1,8 +1,6 @@
 <template>
     <div v-if="ops.current !== 99" class="admin-sec">
-        <!-- Lorem -->
-        <!-- <form-section :sections="sections"></form-section> -->
-         current---{{ops.current}}
+         <!-- current---{{ops.current}} -->
          <div v-if="ops.current=='pages'" class="control-section">
             <h3>{{t_pages}}</h3>
             <section-pages />

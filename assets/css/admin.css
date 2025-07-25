@@ -256,24 +256,107 @@ body.isBar {
   font-size: 10px;
 }
 
-/* line 3, ../../www/lpm.cms/scss/src/_form.scss */
-.j-form h3 {
+/* line 2, ../../www/lpm.cms/scss/src/_sections.scss */
+.control-section {
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 5, ../../www/lpm.cms/scss/src/_sections.scss */
+.control-section h3 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  border-bottom: 1px solid #969caf;
+  margin: 0 0 1rem;
+}
+
+/* line 11, ../../www/lpm.cms/scss/src/_sections.scss */
+.control-section .d-block {
+  background: #d6e0f5;
+  border-radius: 5px;
+}
+
+/* line 14, ../../www/lpm.cms/scss/src/_sections.scss */
+.control-section .d-block h4 {
+  font-size: 1.3rem;
+  font-weight: normal;
+  margin: 0 0 1rem;
+}
+
+/* line 20, ../../www/lpm.cms/scss/src/_sections.scss */
+.control-section .d-block .block-inner {
+  border-top: 1px solid #5c6172;
+  padding-top: 1rem;
+}
+
+/* line 1, ../../www/lpm.cms/scss/src/_form.scss */
+.jet-form {
+  color: #45495f;
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 5, ../../www/lpm.cms/scss/src/_form.scss */
+.jet-form input, .jet-form textarea {
+  padding: 2px 5px;
+}
+
+/* line 10, ../../www/lpm.cms/scss/src/_form.scss */
+.jet-form h3 {
   font-size: 1.5rem;
   border-bottom: 1px solid #394a5f;
   margin: 0 0 7px;
 }
 
-/* line 8, ../../www/lpm.cms/scss/src/_form.scss */
-.j-form .control-group {
+/* line 16, ../../www/lpm.cms/scss/src/_form.scss */
+.jet-form .control-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
 }
 
-/* line 12, ../../www/lpm.cms/scss/src/_form.scss */
-.j-form .control-group label {
+/* line 21, ../../www/lpm.cms/scss/src/_form.scss */
+.jet-form .control-group label {
   font-size: 14px;
+  color: #000;
   margin-bottom: 0;
+}
+
+/* line 29, ../../www/lpm.cms/scss/src/_form.scss */
+.jet-form.small-transparent {
+  gap: 7px;
+}
+
+/* line 32, ../../www/lpm.cms/scss/src/_form.scss */
+.jet-form.small-transparent .control-group {
+  flex-direction: column;
+}
+
+/* line 2, ../../www/lpm.cms/scss/src/_vue-anim.scss */
+.slideVer-enter-active,
+.slideVer-leave-active {
+  transform-origin: top;
+  transition: all 0.3s ease-in-out;
+}
+
+/* line 9, ../../www/lpm.cms/scss/src/_vue-anim.scss */
+.slideVer-enter-from,
+.slideVer-leave-to {
+  opacity: 0;
+  transform: scaleY(0);
+}
+
+/* line 15, ../../www/lpm.cms/scss/src/_vue-anim.scss */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+  transition: all 0.3s ease-in-out;
+}
+
+/* line 22, ../../www/lpm.cms/scss/src/_vue-anim.scss */
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 
 /*# sourceMappingURL=admin.css.map */

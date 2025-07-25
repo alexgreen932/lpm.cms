@@ -1,27 +1,26 @@
 <template>
-    <div class="fd-c g-1">
-        <div v-for="(e, i) in pages" :key="i" class="b-blue-grey bg-blue-grey-l2 tx-black p-1 br-5">
-            <h5 class="m-0 jc-b ai-c">
-                <span>{{ e.title }} --- {{ e.slug }} -- {{ current }}</span>
+    <div class="fd-c g-05">
+        <div v-for="(e, i) in pages" :key="i" class="d-block tx-black p-05 br-5">
+            <h4 class="m-0 jc-b ai-c">
+                <span>{{ e.title }}</span>
                 <span class="fs-10 g-1">
                     <i v-if="current !== i" class="fa-solid fa-pen-to-square j-click" @click="edit(i)"></i>
                     <i v-else class="fa-solid fa-xmark j-click" @click="edit(i)"></i>
                     <!-- homepage never delete -->
                     <i v-if="i !== 0" class="fa-solid fa-trash j-click" @click="del(i)"></i>
                 </span>
-            </h5>
+            </h4>
 
             <!-- Show form only when correct page is active and pageData loaded -->
-             <!-- ----{{i}}---{{pageData}} -->
-            <div v-if="current === i && pageData" class="form-inner">
-                <jet-form formstyle="side" :obj="pageData" :fields="fields_page" />
-                <save-form :obj="pageData" :slug="e.slug" />
-            </div>
+            <!-- ----{{i}}---{{pageData}} -->
+            <transition name="fade">
+                <div v-if="current === i && pageData" class="block-inner">
+                    <jet-form formstyle="small-transparent" :obj="pageData" :fields="fields_page" />
+                    <save-form :obj="pageData" :slug="e.slug" />
+                </div>
+            </transition>
         </div>
----new page
         <new-page :pages="pages" />
-
-       
     </div>
 </template>
 
@@ -34,17 +33,17 @@ import NewPage from './NewPage.vue';
 export default {
     components: {
         "jet-form": JetForm,
-        "save-form": SaveForm ,
-        "new-page": NewPage ,
+        "save-form": SaveForm,
+        "new-page": NewPage,
     },
 
     data() {
         return {
             fields_page: [
                 { title: this.$__('Page Title'), key: 'title' },
-                { title: this.$__('Url'), key: 'slug' },
+                // { title: this.$__('Url'), key: 'slug' },
                 { title: this.$__('Meta Title'), key: 'meta_title' },
-                { title: this.$__('Meta Description'), key: 'meta_description' },
+                { title: this.$__('Meta Description'), key: 'meta_description', type:'textarea'},
             ],
             current: null,     // which index is being edited
             // current: 0,     // dev

@@ -10,6 +10,8 @@
 .but-teal,
 .but-green,
 .but-round {
+  border-width: 0;
+  border-image-width: 0;
   box-sizing: border-box;
   display: inline-flex;
   justify-content: center;

@@ -1,0 +1,11 @@
+.control-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.control-section h3 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  border-bottom: 1px solid #969caf;
+  margin: 0 0 1rem;
+}

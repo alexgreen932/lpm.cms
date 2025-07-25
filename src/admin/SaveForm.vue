@@ -1,9 +1,9 @@
 <template>
-    <form method="post" action="">
+    <form method="post" action="" class="pt-05 fd-c">
         <input type="hidden" name="action" value="savepage">
         <input type="hidden" name="string" :value="jsonString()">
         <input type="hidden" name="slug" :value="slug">
-        <button type="submit">
+        <button type="submit" class="br-4" :class="but_style">
             <span v-if="button">{{ button }}</span>
             <span v-else>{{ $__('Save') }}</span>
         </button>
@@ -32,6 +32,10 @@ export default {
         button: {
             type: String,
             default: ''
+        },
+        but_style: {
+            type: String,
+            default: 'but-blue'
         }
     },
     methods: {

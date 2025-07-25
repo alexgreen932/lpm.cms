@@ -1,0 +1,26 @@
+ 
+.control-section{
+    display: flex;
+    flex-direction: column;
+    h3{
+        font-size: 1.5rem;
+        font-weight: normal;
+        border-bottom: 1px solid #969caf;
+        margin: 0 0 1rem;
+    }
+    .d-block{
+        background: $block;
+        border-radius: 5px;
+        h4{
+        font-size: 1.3rem;
+        font-weight: normal;
+        margin: 0 0 1rem;
+
+        }
+        .block-inner{
+        border-top: 1px solid #5c6172;
+        padding-top: 1rem;
+
+        }
+    }
+}
