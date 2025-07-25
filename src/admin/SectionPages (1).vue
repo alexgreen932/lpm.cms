@@ -42,10 +42,10 @@ export default {
 
     data() {
         return {
-            title: __('Page Management'),
+            title: this.$__('Page Management'),
             current: 9999,
             current: 0, //dev
-            tabs: [__("Meta"), __("Style")],
+            tabs: [__("Meta"), this.$__("Style")],
             tab_current: 0,
             pages: [],
             addNew: false,

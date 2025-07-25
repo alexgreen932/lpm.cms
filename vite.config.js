@@ -1,4 +1,3 @@
- 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
@@ -6,27 +5,28 @@ export default defineConfig({
   base: './home.html',
   plugins: [vue()],
   build: {
+    outDir: 'assets-classic',
+    cssCodeSplit: false, // <-- ensures one CSS file, not per component
     rollupOptions: {
       input: {
-        home: './home.html', // your main entry
+        home: './home.html'
       },
       output: {
-        // Single JS bundle name
-        entryFileNames: `assets/lpm.js`,
-        // Single CSS file name (if extracted)
-        chunkFileNames: `assets/lpm.js`,
+        format: 'iife',
+        inlineDynamicImports: true,
+        name: 'MyApp',
+        entryFileNames: 'js/lpm.js',
+        chunkFileNames: 'js/[name].js',
         assetFileNames: (assetInfo) => {
           if (assetInfo.name && assetInfo.name.endsWith('.css')) {
-            return 'assets/lpm.css'
+            return 'css/lpm.css'
           }
-          return 'assets/[name].[ext]'
+          return 'assets/[name][extname]'
         }
       }
     }
   },
   optimizeDeps: {
-    exclude: ['dev'] // don't pre-bundle dev folder
-  },
+    exclude: ['dev']
+  }
 })
-
-

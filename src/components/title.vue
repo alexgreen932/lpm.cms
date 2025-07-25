@@ -9,7 +9,7 @@
 export default {
   data() {
         return {
-            placeholder: __('Click and enter a title'),
+            placeholder: this.$__('Click and enter a title'),
         };
     },
     props: ["e"],

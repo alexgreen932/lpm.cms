@@ -15,10 +15,6 @@ import AdminBar from './admin/AdminBar.vue';
 import AdminSections from './admin/AdminSections.vue';
 import methods from './admin/methods.js';
 import PagePreview from './page/PagePreview.vue';
-import __ from './languages/index.js';
-
-//lang function as short global
-window.__ = __;
 
 export default {
   components:{

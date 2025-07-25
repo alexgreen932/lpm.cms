@@ -7,9 +7,9 @@
                 :obj="form"
                 :title="'Edit Style'"
                 :fields="[
-                    { el: 'w', title: __('Container Width'), type: 'w' },
-                    { el: 'jc', title: __('Justify Content'), type: 'jc' },
-                    { el: 'ai', title: __('Atem Align'), type: 'ai' },
+                    { el: 'w', title: this.$__('Container Width'), type: 'w' },
+                    { el: 'jc', title: this.$__('Justify Content'), type: 'jc' },
+                    { el: 'ai', title: this.$__('Atem Align'), type: 'ai' },
                 ]"
          
             </j-form> 

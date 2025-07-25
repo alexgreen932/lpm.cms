@@ -1,14 +1,4 @@
-<!-- <script>
-    //todo rm development only
-    setInterval(() => {
-        fetch('/reload.txt')
-            .then(r => r.text())
-            .then(time => {
-                if (!window.lastReloadTime) window.lastReloadTime = time;
-                if (window.lastReloadTime != time) location.reload();
-            });
-    }, 1000);
-</script> -->
+
 <?php
 define('_JET', 1);
 define('INC', __DIR__ . '/inc/');
@@ -60,7 +50,7 @@ if (!$page) {
 <head>
     <meta charset="UTF-8">
     <title><?= htmlspecialchars($page['title'] ?? 'Landing Page') ?></title>
-    <script type="module" crossorigin src="dist/assets/lpm.js"></script>
+    <script type="text/javascript" src="/js/lpm.js"></script>
     <link rel="stylesheet" crossorigin href="dist/assets/lpm.css">
 </head>
 

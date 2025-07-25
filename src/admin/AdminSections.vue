@@ -23,7 +23,7 @@ export default {
     data() {
         return {
             ops: ops,
-            t_pages: __('Page Management'),
+            t_pages: this.$__('Page Management'),
         };
     },
     // methods: {
