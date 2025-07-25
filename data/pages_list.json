@@ -1,6 +1,18 @@
 [
-  {
-    "title": "Homepage",
-    "slug": "homepage"
-  }
+    {
+        "title": "Homepage",
+        "slug": "homepage"
+    },
+    {
+        "title": "About",
+        "slug": "about"
+    },
+    {
+        "title": "test",
+        "slug": "test"
+    },
+    {
+        "title": "new page 2",
+        "slug": "new-page-2"
+    }
 ]

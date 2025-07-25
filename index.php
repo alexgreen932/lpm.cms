@@ -1,4 +1,3 @@
-
 <?php
 define('_JET', 1);
 define('INC', __DIR__ . '/inc/');
@@ -61,25 +60,25 @@ if (!$page) {
     <div class="w-container-c p-1 mv-2 bs-2">
         <h1>Test Page</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A voluptates deserunt culpa soluta veritatis dolor minima aut. Error excepturi, debitis facere dolorem nulla aperiam inventore delectus ut sunt quam ipsa!</p>
-    </div>
-       TEST STRING
-        <div id="app"></div>
-        <script src="assets-classic/js/lpm.js"></script>
 
-    <!-- Admin Area -->
-    <!-- TODO FIX LOGIN -->
-    <!-- <?php if (isAdmin()): ?> -->
         <?php
         // Handle page save POST
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            require_once __DIR__ . '/inc/save.php';
+            $action = $_POST['action'] ?? '';
+            if ($action === 'newpage') {
+                require_once __DIR__ . '/inc/newpage.php';
+            } elseif ($action === 'savepage') {
+                require_once __DIR__ . '/inc/save.php';
+            }
         }
+
         ?>
- 
+        <div id="app"></div>
+        <script src="assets-classic/js/lpm.js"></script>
+    </div>
 
 
 
-    <!-- <?php endif; ?> -->
 
 
 </body>

@@ -1,28 +1,52 @@
 <template>
     <form method="post" action="">
-        <!-- textarea for check only - will be comented on prode -->
-        <!-- <textarea name="page_json" style="width:100%; height:100px;">{{ jsonSrting() }}</textarea> -->
-        <input name="string" :value="jsonSrting()">
-        <input type="hidden" name="string" :value="jsonSrting()">
-        <input type="text" name="slug" :value="target">
+        <input type="hidden" name="action" value="savepage">
+        <input type="hidden" name="string" :value="jsonString()">
+        <input type="hidden" name="slug" :value="slug">
         <button type="submit">
             <span v-if="button">{{ button }}</span>
-            <span v-if="!button">{{ $__('Save') }}</span>
+            <span v-else>{{ $__('Save') }}</span>
         </button>
     </form>
 </template>
 
 <script>
-
 export default {
-    props: ['button', 'obj', 'target'],
-    data() {
-        return {
-            // ops: ops,
-        };
+    /**
+     * Universal save form component
+     * 
+     * Props:
+     * - obj: Object or Array - data to save
+     * - slug: String - file name (slug)
+     * - button: String (optional) - custom button text
+     */
+    props: {
+        obj: {
+            type: [Object, Array],  // supports both object and array
+            required: true
+        },
+        slug: {
+            type: String,
+            required: true
+        },
+        button: {
+            type: String,
+            default: ''
+        }
     },
     methods: {
-        jsonSrting() { return JSON.stringify(this.obj) },
-    },
+        /**
+         * Converts object/array to a JSON string.
+         * Returns '{}' on error.
+         */
+        jsonString() {
+            try {
+                return JSON.stringify(this.obj ?? {}, null, 2);
+            } catch (e) {
+                console.error('Failed to stringify object', e);
+                return '{}';
+            }
+        }
+    }
 };
 </script>

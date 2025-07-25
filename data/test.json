@@ -1,0 +1,23 @@
+{
+    "title": "test",
+    "slug": "test",
+    "description": "",
+    "edit": false,
+    "sections": [
+        {
+            "edit": false,
+            "w": "w-container",
+            "bg": "bg-white",
+            "p": "p-1",
+            "img": null,
+            "ib": null,
+            "i0": null,
+            "col": "tx-gray-d3",
+            "jc": "jc-c",
+            "ai": "ai-c",
+            "g": "g-1",
+            "fd": "fd-c",
+            "content": []
+        }
+    ]
+}

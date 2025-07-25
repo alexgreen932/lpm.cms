@@ -15,14 +15,13 @@
              <!-- ----{{i}}---{{pageData}} -->
             <div v-if="current === i && pageData" class="form-inner">
                 <jet-form formstyle="side" :obj="pageData" :fields="fields_page" />
-                <save-form :obj="pageData" :target="e.slug" />
+                <save-form :obj="pageData" :slug="e.slug" />
             </div>
         </div>
+---new page
+        <new-page :pages="pages" />
 
-        ---new
-        <div class="jc-c fs-15 j-click">
-            <i class="fa-solid fa-circle-plus" @click="addNew = true"></i>
-        </div>
+       
     </div>
 </template>
 
@@ -30,11 +29,13 @@
 import { fetchFile } from "../utils/helpers.js";
 import JetForm from "../form/JetForm.vue";
 import SaveForm from './SaveForm.vue';
+import NewPage from './NewPage.vue';
 
 export default {
     components: {
         "jet-form": JetForm,
         "save-form": SaveForm ,
+        "new-page": NewPage ,
     },
 
     data() {
