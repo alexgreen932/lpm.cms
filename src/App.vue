@@ -3,7 +3,7 @@
 <template>
   <div>
     <admin-bar></admin-bar>
-    <admin-sidebar></admin-sidebar>
+    <admin-sections></admin-sections>
     <page-preview></page-preview>
   </div>
 </template>
@@ -12,7 +12,7 @@
 // const modules = import.meta.glob('./components/*.vue', { eager: true });
 import {ops} from './data/data.js';
 import AdminBar from './admin/AdminBar.vue';
-import AdminSidebar from './admin/AdminSidebar.vue';
+import AdminSections from './admin/AdminSections.vue';
 import methods from './admin/methods.js';
 import PagePreview from './page/PagePreview.vue';
 import __ from './languages/index.js';
@@ -23,7 +23,7 @@ window.__ = __;
 export default {
   components:{
     'admin-bar': AdminBar,
-    'admin-sidebar': AdminSidebar,
+    'admin-sections': AdminSections,
     'page-preview': PagePreview,
   },
   data() {

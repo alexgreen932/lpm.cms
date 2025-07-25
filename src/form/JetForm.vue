@@ -1,5 +1,5 @@
 <template>
-    <div class="jet-form" :class="formtyle">
+    <div class="jet-form" :class="formstyle">
         <h3 v-if="title">{{ title }}</h3>
         <div v-for="(f, i) in normalizedFields" :key="i" class="control-group">
             <label>{{ f.title }}</label>
@@ -17,7 +17,7 @@
 const modules = import.meta.glob('./fields/*.vue', { eager: true });
 
 export default {
-    props: ['title', 'formtyle', 'obj', 'fields'],
+    props: ['title', 'formstyle', 'obj', 'fields'],
 
     computed: {
         /**

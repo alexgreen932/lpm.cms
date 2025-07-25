@@ -31,6 +31,7 @@
 </template>
 
 <script>
+//todo rm after use Form Pade
 import { fetchFile } from "../utils/helpers.js";
 import JetForm from "../form/JetForm.vue";
 
@@ -41,6 +42,7 @@ export default {
 
     data() {
         return {
+            title: __('Page Management'),
             current: 9999,
             current: 0, //dev
             tabs: [__("Meta"), __("Style")],

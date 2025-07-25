@@ -3,23 +3,27 @@
         <!-- Lorem -->
         <!-- <form-section :sections="sections"></form-section> -->
          current---{{ops.current}}
-         <jet-pages v-if="ops.current=='pages'" />
+         <div v-if="ops.current=='pages'" class="control-section">
+            <h3>{{t_pages}}</h3>
+            <section-pages />
+         </div>
+         <!-- <jet-pages v-if="ops.current=='pages'" /> -->
     </div>
 </template>
 
 <script>
 import { ops } from "../data/data.js";
-import JetPages from "./JetPages.vue";
+import SectionPages from "./SectionPages.vue";
 // import FormSection from "./FormSection.vue";//todo rm if not used
 
 export default {
     components: {
-        // "form-section ": FormSection,//?? rm
-        "jet-pages": JetPages,
+        "section-pages": SectionPages,
     },
     data() {
         return {
             ops: ops,
+            t_pages: __('Page Management'),
         };
     },
     // methods: {
