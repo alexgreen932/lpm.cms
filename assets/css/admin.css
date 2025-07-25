@@ -359,4 +359,35 @@ body.isBar {
   opacity: 0;
 }
 
+/* line 2, ../../www/lpm.cms/scss/src/_media-manager.scss */
+.media-manager {
+  background: #e0e3eb;
+  color: #444;
+  display: flex;
+  padding: 5px;
+}
+
+/* line 7, ../../www/lpm.cms/scss/src/_media-manager.scss */
+.media-manager .d-main {
+  flex-grow: 1;
+}
+
+/* line 9, ../../www/lpm.cms/scss/src/_media-manager.scss */
+.media-manager .d-main .d-header {
+  background: #5b698b;
+  padding: 7px 1rem;
+}
+
+/* line 13, ../../www/lpm.cms/scss/src/_media-manager.scss */
+.media-manager .d-main .d-files {
+  background: #fff;
+  padding: 1rem;
+}
+
+/* line 18, ../../www/lpm.cms/scss/src/_media-manager.scss */
+.media-manager .d-sidebar {
+  width: 20%;
+  padding: 5px 1rem;
+}
+
 /*# sourceMappingURL=admin.css.map */

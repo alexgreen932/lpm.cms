@@ -44,6 +44,7 @@ export default {
                 // { title: this.$__('Url'), key: 'slug' },
                 { title: this.$__('Meta Title'), key: 'meta_title' },
                 { title: this.$__('Meta Description'), key: 'meta_description', type:'textarea'},
+                { title: this.$__('Image'), key: 'img', type:'media'},
             ],
             current: null,     // which index is being edited
             // current: 0,     // dev

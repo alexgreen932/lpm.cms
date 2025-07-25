@@ -1,0 +1,22 @@
+ 
+.media-manager{
+    background: #e0e3eb;
+    color:#444;
+    display: flex;
+    padding: 5px;
+    .d-main{
+        flex-grow: 1;
+        .d-header{
+            background: #5b698b;
+            padding: 7px 1rem;
+        }
+        .d-files{
+            background: #fff;
+            padding: 1rem;
+        }
+    }
+    .d-sidebar{
+        width: 20%;
+        padding: 5px 1rem;
+    }
+}

@@ -5,6 +5,7 @@
             <h3>{{t_pages}}</h3>
             <section-pages />
          </div>
+         <media-manager cls="j-modal" width="w-3-5" />
          <!-- <jet-pages v-if="ops.current=='pages'" /> -->
     </div>
 </template>
@@ -12,10 +13,12 @@
 <script>
 import { ops } from "../data/data.js";
 import SectionPages from "./SectionPages.vue";
+import MediaManager from "../form/MediaManager.vue";
 // import FormSection from "./FormSection.vue";//todo rm if not used
 
 export default {
     components: {
+        "media-manager": MediaManager,
         "section-pages": SectionPages,
     },
     data() {
