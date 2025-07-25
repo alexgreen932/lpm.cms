@@ -2,7 +2,7 @@
 defined('_JET') or die('Restricted Access');
 
 $slug = preg_replace('/[^a-z0-9_-]/i', '', $_POST['slug'] ?? '');
-$json = $_POST['page_json'] ?? '';
+$json = $_POST['string'] ?? '';
 
 if (!$slug || !$json) {
     echo '<div style="color:red">❌ Missing slug or content</div>';
@@ -10,6 +10,9 @@ if (!$slug || !$json) {
 }
 
 $file = DATA . "{$slug}.json";
+// if (!file_exists($file)) {
+// 		echo filesize('test.txt');
+// 	}
 
 // Optional: validate JSON before saving
 if (json_decode($json) === null) {

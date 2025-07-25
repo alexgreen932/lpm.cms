@@ -82,6 +82,7 @@ body {
     padding-left: $width-bar + 15;
     border-right: 1px solid #9fa8c4;
     box-shadow: $shadow;
+    overflow-y: auto;
     // justify-content: center;
     // align-items: center;
     background: $prim;

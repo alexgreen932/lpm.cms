@@ -12,8 +12,10 @@
             </h5>
 
             <!-- Show form only when correct page is active and pageData loaded -->
+             <!-- ----{{i}}---{{pageData}} -->
             <div v-if="current === i && pageData" class="form-inner">
                 <jet-form formstyle="side" :obj="pageData" :fields="fields_page" />
+                <save-form :obj="pageData" :target="e.slug" />
             </div>
         </div>
 
@@ -27,10 +29,12 @@
 <script>
 import { fetchFile } from "../utils/helpers.js";
 import JetForm from "../form/JetForm.vue";
+import SaveForm from './SaveForm.vue';
 
 export default {
     components: {
         "jet-form": JetForm,
+        "save-form": SaveForm ,
     },
 
     data() {
@@ -42,6 +46,7 @@ export default {
                 { title: this.$__('Meta Description'), key: 'meta_description' },
             ],
             current: null,     // which index is being edited
+            // current: 0,     // dev
             pages: [],         // list of pages
             pageData: null,    // JSON for current page
             addNew: false,

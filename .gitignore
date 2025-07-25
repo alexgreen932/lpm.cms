@@ -1,15 +1,42 @@
-BACKUPS/
-DEV-BACKUPS/
-Backups/
-backup-jet/
-dev/
-node_modules/
-SOURCES/
-TEMP/
+# Ignore everything in the root
+/*
 
 
-.directory
-.megaignore
+# except those
+!assets/
+!assets/*
+
+
+!data/
+!data/*
+
+
+!dist/
+!dist/*
+
+
+!inc/
+!inc/*
+
+
+!src/
+!src/*
+
+!scss/
+!scss/*
+
+
+!index.php
+!home.html
+!.htacces
+!.gitignore
+!vite.config.js
+!package.json
+!
+
+
+
+
 
 
 
