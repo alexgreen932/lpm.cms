@@ -50,8 +50,11 @@ if (!$page) {
 <head>
     <meta charset="UTF-8">
     <title><?= htmlspecialchars($page['title'] ?? 'Landing Page') ?></title>
-    <script type="text/javascript" src="/js/lpm.js"></script>
-    <link rel="stylesheet" crossorigin href="dist/assets/lpm.css">
+
+    <link rel="stylesheet" crossorigin href="assets/css/jet.min.css">
+    <!-- todo move in admin or join with jet -->
+    <link rel="stylesheet" crossorigin href="assets/css/admin.css">
+    <link rel="stylesheet" crossorigin href="assets/css/all.min.css">
 </head>
 
 <body>
@@ -59,7 +62,9 @@ if (!$page) {
         <h1>Test Page</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A voluptates deserunt culpa soluta veritatis dolor minima aut. Error excepturi, debitis facere dolorem nulla aperiam inventore delectus ut sunt quam ipsa!</p>
     </div>
-
+       TEST STRING
+        <div id="app"></div>
+        <script src="assets-classic/js/lpm.js"></script>
 
     <!-- Admin Area -->
     <!-- TODO FIX LOGIN -->
@@ -70,8 +75,7 @@ if (!$page) {
             require_once __DIR__ . '/inc/save.php';
         }
         ?>
-        TEST STRING
-        <div id="app"></div>
+ 
 
 
 
