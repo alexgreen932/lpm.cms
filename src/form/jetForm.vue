@@ -24,6 +24,12 @@ export default {
          * Ensure each field has a type (default is 'input').
          */
         normalizedFields() {
+            //protection if form fields are empty
+            if (!this.fields) {
+                console.error('Form fields props is empty!')
+                return;
+
+            }
             return this.fields.map(f => ({
                 type: 'input',  // default type if not provided
                 ...f

@@ -4825,6 +4825,7 @@ ul li {
 /* line 87, ../../www/lpm.cms/scss-jet/core/_grid.scss */
 .wc-1-2 > *:first-child {
   width: 50%;
+  min-width: 50%;
 }
 
 /* line 88, ../../www/lpm.cms/scss-jet/core/_grid.scss */
@@ -4836,16 +4837,19 @@ ul li {
 /* line 89, ../../www/lpm.cms/scss-jet/core/_grid.scss */
 .wc-1-4 > *:first-child {
   width: 25%;
+  min-width: 25%;
 }
 
 /* line 90, ../../www/lpm.cms/scss-jet/core/_grid.scss */
 .wc-1-5 > *:first-child {
   width: 20%;
+  min-width: 20%;
 }
 
 /* line 91, ../../www/lpm.cms/scss-jet/core/_grid.scss */
 .wc-1-6 > *:first-child {
   width: 16.6667%;
+  min-width: 16.6667%;
 }
 
 /* With Gap - calc(width - gap/2) */

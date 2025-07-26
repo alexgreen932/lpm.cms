@@ -4,6 +4,15 @@
          <div v-if="ops.current=='pages'" class="control-section">
             <h3>{{t_pages}}</h3>
             <section-pages />
+            <!-- <transition name="slide">
+                <section-pages v-if="ops.current_section == null && ops.current_el == null" />
+            </transition>
+            <transition name="slide">
+                <page-forms v-if="ops.current_section !== null || ops.current_el !== null" />
+            </transition> -->
+            <page-forms />
+            
+
          </div> 
          <!-- ---{{test}}
          <media-manager v-model="test" src="media" cls="main-frame" layout="grid" /> -->
@@ -13,14 +22,17 @@
 
 <script>
 import { ops } from "../data/data.js";
-import SectionPages from "./SectionPages.vue";
+import sectionPages from "./sectionPages.vue";
 import MediaManager from "../form/MediaManager.vue";
+import pageForms from './pageForms.vue';
 // import FormSection from "./FormSection.vue";//todo rm if not used
 
 export default {
     components: {
         "media-manager": MediaManager,
-        "section-pages": SectionPages,
+        sectionPages,
+        pageForms,
+
     },
     data() {
         return {

@@ -1,6 +1,10 @@
 export const ops = {
-  current: null,//main current icon menu
-  current_page: 'homepage',//current display/edit page
+   current: null,//main current icon men
+  current: 'pages',//todo dev
+  current_page: 'homepage',//??
+  page_id: null,//based on index
+  current_section: null,
+  current_el: null,
   page: 'pages',
   show_bar: false,
   show_sec: false,

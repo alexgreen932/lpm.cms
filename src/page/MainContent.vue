@@ -50,7 +50,8 @@
             </div>
         </div>
 
-        <div class="w-container b-blue g-1 p-1 nv-1 wc-1-2">
+        <div class="w-container b-blue g-1 p-1 nv-1 wc-1-4">
+            <textarea rows="40" cols="50">{{ ops }}</textarea>
             <textarea rows="40" cols="50">{{ page.sections }}</textarea>
             <textarea rows="40" cols="50">{{ pageJson() }}</textarea>
         </div>

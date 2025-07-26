@@ -27,7 +27,7 @@
 
 <script>
 import { fetchFile } from "../utils/helpers.js";
-import JetForm from "../form/JetForm.vue";
+import JetForm from "../form/jetForm.vue";
 
 export default {
     components: {

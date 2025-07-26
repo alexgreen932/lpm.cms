@@ -1,16 +1,8 @@
 <template>
     <div class="form-toolbar" :class="cls">
         <i class="fa-solid fa-pen-to-square" @click="editItem(index)"></i>
-        <i
-            v-if="notFirst(index)"
-            class="fa-solid fa-angle-up"
-            @click="moveItem(index, index - 1)"
-        ></i>
-        <i
-            v-if="notLast(index)"
-            class="fa-solid fa-angle-down"
-            @click="moveItem(index, index + 1)"
-        ></i>
+        <i v-if="notFirst(index)" class="fa-solid fa-angle-up" @click="moveItem(index, index - 1)"></i>
+        <i v-if="notLast(index)" class="fa-solid fa-angle-down" @click="moveItem(index, index + 1)"></i>
         <i class="fa-solid fa-trash" @click="del(index)"></i>
         <i class="fa-solid fa-plus" @click="addItem(index)"></i>
     </div>
@@ -25,6 +17,7 @@ Array.prototype.move = function (from, to) {
     return this;
 };
 
+//RM
 const newItem = {
     edit: false,
     w: "w-container",
@@ -42,20 +35,41 @@ const newItem = {
     content: [],
 };
 
+import { ops } from '../data/data.js';
+
 export default {
     // components: {
     //     "jet-forms ": JetForms,
     // },
+    //   cls="section"
+    //         :elements="page.sections"
+    //         :section="i"
+    //         :element=null 
+    //section optionally
     props: ["elements", "index", "cls", "sec"],
     data() {
         return {
+            ops: ops,
             isAdmin: true,
             add: false,
         };
     },
     methods: {
         editItem(i) {
-            this.$root.ops.current = "pages";
+            // this.$root.ops.current = "pages";
+            // this.$root.ops[]= "pages";
+            this.ops.current = "pages";
+            switch (this.cls) {
+                case 'section':
+                    this.ops.current_section = this.index;
+                    this.ops.current_el = null;
+                    break;
+
+                default:
+                    break;
+            }
+
+
         },
         notFirst(i) {
             //
