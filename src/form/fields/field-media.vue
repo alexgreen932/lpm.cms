@@ -10,7 +10,10 @@
     </div>
 
     dev---{{file}}
-         <media-manager v-if="show" v-model="file" src="media" cls="main-frame" layout="grid"  @close="show=false" />
+    <transition name="pop">
+        <media-manager v-if="show" v-model="file" src="media" cls="main-frame" layout="grid"  @close="show=false" />
+    </transition>
+         
 </template>
 
 <script>

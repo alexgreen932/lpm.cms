@@ -30,6 +30,8 @@ $box: 120px;
             margin: 5px 0 0;
             display: flex;
             gap: 1rem;
+            overflow-y: auto;
+            // height: 100%;
 
             li {
                 cursor: pointer;
@@ -53,14 +55,16 @@ $box: 120px;
                     overflow: hidden;
                     position: relative;
                     box-shadow: $shadow;
-                    label{
+
+                    label {
                         position: absolute;
                         top: 0;
                         bottom: 0;
                         right: 0;
                         left: 0;
                         z-index: 2;
-                        input{
+
+                        input {
                             position: absolute;
                             top: 3px;
                             right: 3px;
@@ -127,6 +131,7 @@ $box: 120px;
 
         .d-preview {
             overflow: hidden;
+
             img {
                 max-width: 100%;
                 height: auto;
@@ -145,4 +150,31 @@ $box: 120px;
         z-index: 900;
 
     }
+
+    input[type="radio"] {
+    // Hide native radio
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    // border: 2px solid #5b698b; // border color
+    border-radius: 3px; // keep square but with slightly rounded corners
+    // background: #fff;
+    cursor: pointer;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    z-index: 3;
+
+    &:checked {
+        background: #5b698b url("data:image/svg+xml;utf8,
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'>
+                <path fill='white' d='M6 10.2L3.5 7.7l-1.4 1.4L6 13 14 5l-1.4-1.4z'/>
+            </svg>") no-repeat center center;
+        background-size: 12px 12px;
+    }
+}
+
+
 }

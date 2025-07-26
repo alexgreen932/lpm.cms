@@ -1,5 +1,8 @@
+//todo save orinitive to, just without stringify, parce 
+
 export function saveLocal(data, key) {
-    console.log('Localstorage works!');
+    
+    console.log('Localstorage saving ', data);
     try {
         localStorage.setItem(key, JSON.stringify(data));
     } catch (e) {

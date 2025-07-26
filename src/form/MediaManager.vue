@@ -11,21 +11,26 @@
                     <button @click="loadFiles">Reload</button>
                     <input type="file" @change="uploadFile($event)" />
                 </div>
-                <ul class="d-files" :class="files_display">
-                    <li v-for="file in filteredFiles" :key="file.name" @click="selected = file.name"
-                        :class="{ active: selected === file.name }">
-                        <label :for="file.name" v-if="files_display == 'grid'">
-                            <input type="radio" :id="file.name" :value="file.name" v-model="selected">
-                        </label>
-                        <img v-if="isImage(file.type)" :src="file.url" />
-                        <span>{{ file.name }}</span>
-                        <div v-if="files_display == 'list'">
+                <ul class="d-files" :class="ops.files_display">
+                    <li v-for="file in filteredFiles" :key="file.name" @click="selected = file.name">
+                        <template v-if="ops.files_display == 'grid'">
+                            <label :for="file.name">
+                                <input type="radio" :id="getFileId(file.name)" name="media-choice" :value="file.name"
+                                    v-model="selected">
+                            </label>
+                            <img :src="thumb(file.url, file.type)" />
+                            <span>{{ file.name }}</span>
 
-                            <label :for="file.name"><input type="radio" :id="file.name" :value="file.name"
-                                    v-model="selected">{{
-                                        file.name }}</label>
+                        </template>
+                        <template v-if="ops.files_display == 'list'">
 
-                        </div>
+                            <label :for="file.name">
+                                <input type="radio" :id="getFileId(file.name)" name="media-choice" :value="file.name"
+                                    v-model="selected">
+                                {{ file.name }}
+                            </label>
+
+                        </template>
                     </li>
                 </ul>
             </div>
@@ -35,13 +40,11 @@
             <div class="d-sidebar">
                 <div class="d-set">
                     <button class="but-default br-3" @click="$emit('close')">{{ $__('Close') }}</button>
-                    <select v-model="files_display">
+                    <select v-model="ops.files_display" @change="$saveLocal(ops, 'mm_layout_state')">
                         <option value="grid">{{ $__('Display as Grid') }}</option>
                         <option value="list">{{ $__('Display as List') }}</option>
                     </select>
-                    ---{{ selected }}
-
-                </div>
+                         </div>
                 <div class="d-set">
                     <div v-if="selected">
                         <div>{{ $__('Selected') }}</div>
@@ -66,12 +69,13 @@ export default {
     props: ['modelValue', 'src', 'cls', 'width', 'layout'],
     data() {
         return {
-            files_display: 'grid',
+
             files: [],
             selected: '',
             filter_type: '',
             filter_input: '',
             options: ['jpg', 'png', 'gif', 'mp4', 'zip'],
+            ops: { files_display: 'grid', }
         };
     },
     computed: {
@@ -88,39 +92,68 @@ export default {
         selectedPath() {
             return `${this.src}/${this.selected}`;
         },
-        // currentImg(){
-        //     let out = null;
-        //     if(nod)
-        // },
+        getFileId(name) {
+            return name.replace(/\./g, '-').replace(/\s+/g, '-');
+        },
+
         loadFiles() {
             console.log('${this.src}/index.json: ', `${this.src}/index.json`);
+            let f = 'index.php';
+            f = 'index.json';//dev in html
             //todo !!  to .php on prod
-            fetch(`${this.src}/index.json`)
+            fetch(`${this.src}/${f}`)
                 .then(res => res.json())
                 .then(data => this.files = data);
             console.log('this.files: ', this.files);
         },
         uploadFile(e) {
-            let file = e.target.files[0];
-            if (!file) return;
-            let formData = new FormData();
+            const file = e.target.files[0];
+            if (!file) {
+                console.warn('No file selected');
+                return;
+            }
+            const formData = new FormData();
             formData.append('file', file);
+
+            console.log('Uploading:', file.name, file.type, file.size);
+
             fetch(`${this.src}/upload.php`, {
                 method: 'POST',
                 body: formData
             })
-                .then(res => res.json())
-                .then(() => this.loadFiles());
+                .then(res => res.text()) // first get raw text
+                .then(text => {
+                    console.log('Upload response raw:', text);
+                    try {
+                        const json = JSON.parse(text);
+                        console.log('Upload response JSON:', json);
+                        this.loadFiles();
+                    } catch (e) {
+                        console.error('Invalid JSON from PHP', e);
+                    }
+                })
+                .catch(err => console.error('Upload fetch error:', err));
         },
+
         selectFile() {
             this.$emit('update:modelValue', this.selected);
         },
-        isImage(ext) {
-            return ['jpg', 'jpeg', 'png', 'gif'].includes(ext.toLowerCase());
+        thumb(file, type) {
+            const ext = type.toLowerCase();
+            if (['jpg', 'jpeg', 'png', 'gif', 'webp'].includes(ext)) {
+                return file; // direct image preview
+            }
+            if (['mp4', 'mov', 'avi', 'webm'].includes(ext)) {
+                return 'media/icons/video.png'; // generic video icon
+            }
+            if (['zip', 'rar', '7z', 'tar', 'gz'].includes(ext)) {
+                return 'media/icons/zip.png'; // generic archive icon
+            }
+            return 'media/icons/file.png'; // fallback generic file icon
         }
     },
     mounted() {
-        this.$getLocal(this.filter_type, 'mm_layout_state')
+        this.$getLocal(this.ops, 'mm_layout_state');
         this.files_display = this.layout ? this.layout : 'grid';
         this.loadFiles();
     }
