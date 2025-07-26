@@ -9,15 +9,19 @@
 
     </div>
 
-    <media-manager v-if="show" src="media" cls="j-modal" width="w-3-5" />
+    dev---{{file}}
+         <media-manager v-if="show" v-model="file" src="media" cls="main-frame" layout="grid"  @close="show=false" />
 </template>
 
 <script>
+import mediaManager from '../MediaManager.vue';
 export default {
+    components:{mediaManager},
     name: 'field-input',
     props: ['modelValue', 'f'],
     data() {
         return {
+            file:'',
             show: false,
             // placeholder: 'Enter value...'
         };
@@ -27,6 +31,9 @@ export default {
             // fallback to text if not provided
             // return this.f.ops || 'text';
         }
+    },
+    mounted(){
+        this.file = this.modelValue ? this.modelValue : '';
     }
 };
 </script>

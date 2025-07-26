@@ -4,8 +4,9 @@
          <div v-if="ops.current=='pages'" class="control-section">
             <h3>{{t_pages}}</h3>
             <section-pages />
-         </div>
-         <media-manager cls="j-modal" width="w-3-5" />
+         </div> 
+         <!-- ---{{test}}
+         <media-manager v-model="test" src="media" cls="main-frame" layout="grid" /> -->
          <!-- <jet-pages v-if="ops.current=='pages'" /> -->
     </div>
 </template>
@@ -23,6 +24,7 @@ export default {
     },
     data() {
         return {
+            test: 42,//dev
             ops: ops,
             t_pages: this.$__('Page Management'),
         };
