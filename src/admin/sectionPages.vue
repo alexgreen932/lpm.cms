@@ -3,23 +3,29 @@
 <template>
     <div class="fd-c g-05">
         <template v-for="(e, i) in pages" :key="i">
-            ind {{ i }}--{{ showPage(i) }} sec --- {{ ops.current_section }} el --{{ ops.current_el }}
+            page index --- {{ ops.page_index }}
+            <br>ind {{ i }}--{{ showPage(i) }} sec --- {{ ops.current_section }} el --{{
+                ops.current_el }}
             <div v-if="showPage(i)" class="d-block tx-black p-05 br-5">
                 <h4 class="m-0 jc-b ai-c">
                     <span>{{ e.title }}</span>
                     <span class="fs-10 g-1">
-                        <i v-if="ops.page_id !== i" class="fa-solid fa-pen-to-square j-click" @click="edit(i)"></i>
+                        <i v-if="ops.page_index !== i" class="fa-solid fa-pen-to-square j-click" @click="edit(i)"></i>
                         <i v-else class="fa-solid fa-xmark j-click" @click="edit(i)"></i>
                         <!-- homepage never delete -->
                         <i v-if="i !== 0" class="fa-solid fa-trash j-click" @click="del(i)"></i>
                     </span>
                 </h4>
-                 <!-- <page-forms /> -->
+                <div v-if="ops.page_index == i">
+                    edit
+                    <page-forms />
+                </div>
+                <!-- <page-forms /> -->
 
                 <!-- Show form only when correct page is active and pageData loaded -->
                 <!-- ----{{i}}---{{pageData}} -->
-                 <!-- // OPTIMIZE IT FOR EASY OPEN META -->
-                
+                <!-- // OPTIMIZE IT FOR EASY OPEN META -->
+
             </div>
         </template>
         <new-page :pages="pages" />
@@ -53,7 +59,7 @@ export default {
                 { title: this.$__('Image'), key: 'img', type: 'media' },
             ],
             ops: ops,     // which index is being edited
-            // ops.page_id: 0,     // dev
+            // ops.page_index: 0,     // dev
             pages: [],         // list of pages
             pageData: null,    // JSON for current page
             addNew: false,
@@ -63,34 +69,36 @@ export default {
 
     methods: {
         showPage(i) {
-            return true;
-          
+            // return true;
+
             let out = true;
             console.log('i: ', i);
-            console.log('this.ops.page_id: ', this.ops.page_id);
-            if (this.ops.page_id) {
-                if (this.ops.page_id == i) {
-                    return true;
-                } else {
-                    return false;
-                }
+            console.log('this.ops.page_index: ', this.ops.page_index);
+            if (this.ops.page_index !==999) {
+                console.log('used index');
+            if (this.ops.page_index == i) {
+                out = true;
             } else {
-                return true;
+                out = false;
             }
+               
+            } 
+            return out;
         },
         //todo!! rm as all now in pageForms
         async edit(i) {
             // If clicked on the same page -> close it
-            if (this.ops.page_id === i) {
-                this.ops.page_id = null;
-                this.pageData = null;
+            if (this.ops.page_index == i) {
+                this.ops.page_index = 999;
+                this.pageData = null;//??
                 return;
             }
 
-            // Set ops.page_id and fetch JSON
-            this.ops.page_id = i;
+            // Set ops.page_index and fetch JSON
+            this.ops.page_index = i;
             this.pageData = null; // reset to avoid old data flashing
 
+            //?? rm
             const slug = this.pages[i].slug;
             try {
                 const page = await fetchFile(`${this.$domain}/data/${slug}.json`);

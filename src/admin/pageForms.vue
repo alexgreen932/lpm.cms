@@ -1,10 +1,18 @@
 <template>
-    <div class="">
-        forms
-        <!-- page ---{{pageData}} -->
-        sections ---{{pageData.sections}}
+    <div class="fd-c g-05">
+        <div class="fs-8">{{ $__('Hover any elemets and click:') }}</div>
+        <ul class="fs-8 mt-0 ml-1">
+            <li><i class="fa-solid fa-pen-to-square"></i> {{ $__('to edit element')}}</li>
+            <li><i class="fa-solid fa-chevron-up"></i><i class="fa-solid fa-chevron-down"></i> {{ $__('to move') }}</li>
+            <li><i class="fa-solid fa-plus"></i> {{ $__('to add') }}</li>
+            <li><i class="fa-solid fa-trash"></i> {{ $__('to delete') }}</li>
+        </ul>
+        <div class="but-default br-4" @click="edit_meta!=edit_meta">{{ $__('Edit Meta') }}</div>
+        <jet-form :obj="pageData" :fields="fiels_meta"/>
+        <!-- page -->-{{ pageData }} -->
+        sections ---{{ pageData.sections }}
         <template v-if="pageData" j-for="(section, i) in pageData.sections">
-            current sec ---{{ section }} 
+            current sec ---{{ section }}
             <!-- fields--- {{ fields }}  -->
             <!-- index --- {{ i }} -->
             <!-- <jet-form v-if="ops.current_section == i" :title="$__('Edit Section')" :obj="section"     :fields="section_fiels" /> -->
@@ -24,12 +32,19 @@ export default {
     },
     data() {
         return {
+            // meta: false,
             ops: ops,
             // pageData: null,
             pageData: { sections: [] },
             current: 9999,
             current: 0, //dev
-            section_fiels: [
+            fiels_meta: [
+                { title: this.$__('Page Title'), key: 'title',  },
+                { title: this.$__('Meta Title'), key: 'meta_title',  },
+                { title: this.$__('Meta Description'), key: 'meta_description', type: 'textarea' },
+                // { title: this.$__('Atem Align'), key: 'ai', type: 'input' },
+            ],
+            fiels_section: [
                 { title: this.$__('Container Width'), key: 'w', type: 'input' },
                 { title: this.$__('Justify Content'), key: 'jc', type: 'input' },
                 { title: this.$__('Atem Align'), key: 'ai', type: 'input' },
@@ -48,7 +63,7 @@ export default {
             console.error(`Failed to load ${slug}.json`, e);
             this.pageData = {}; // fallback on error
         }
-        console.log('this.pageData: ----',typeof this.pageData);//object
+        console.log('this.pageData: ----', typeof this.pageData);//object
     },
 };
 </script>

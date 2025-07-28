@@ -2,9 +2,10 @@ export const ops = {
    current: null,//main current icon men
   current: 'pages',//todo dev
   current_page: 'homepage',//??
-  page_id: null,//based on index
+  page_index: 999,
   current_section: null,
   current_el: null,
+  edit_meta: false,
   page: 'pages',
   show_bar: false,
   show_sec: false,
