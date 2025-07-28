@@ -20,10 +20,15 @@
 
         <template v-if="pageData" v-for="(section, i) in pageData.sections">
             current_section---{{ ops.current_section }} === index ---{{ i }}
-            <template v-if="ops.current_section == i">
-                <jet-form v-if="ops.current_section == i && ops.current_edit == 'section'" :title="title_section" :obj="section"
-                    :fields="fields_section" />
-            </template>
+            <!-- <template v-if="ops.current_section == i"> -->
+                <jet-form v-if="ops.current_section == i && ops.current_edit == 'section'" :title="titleSec(i)"
+                    :obj="section" :fields="fields_section" />
+                <template v-for="(element, i2) in section.content">
+                    ----{{element.type}}----
+                    <jet-form v-if="ops.current_el == i2 && ops.current_edit == 'element'" :title="titleEl(element.type)"
+                        :obj="section" :fields="fields_el" />
+                </template>
+            <!-- </template> -->
 
             <!-- current sec ---{{ section }} -->
             <!-- fields--- {{ fields }}  -->
@@ -63,7 +68,21 @@ export default {
                 { title: this.$__('Justify Content'), key: 'jc', type: 'input' },
                 { title: this.$__('Atem Align'), key: 'ai', type: 'input' },
             ],
+            fields_el: [
+                // { title: this.$__('Container Width'), key: 'w', type: 'input' },
+                // { title: this.$__('Justify Content'), key: 'jc', type: 'input' },
+                { title: this.$__('Text'), key: 'text', type: 'texyarea' },
+            ],
         };
+    },
+    methods:{
+        titleSec(i){
+            let sec = i + 1;
+            return this.$__('Edit Section-') + sec;
+        },
+        titleEl(v){
+            return this.$__('Edit')  + ' ' + v;
+        },
     },
 
     //todo!!! load it only in necessay page, not in every

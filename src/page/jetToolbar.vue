@@ -75,6 +75,7 @@ export default {
         },
 
         async editItem(i) {
+            console.log('edit item func',this.cls);
             switch (this.cls) {
                 case 'section':
                     this.$root.reset();

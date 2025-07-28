@@ -7,17 +7,17 @@
         }}
         ---{{e.type}}
         <component v-if="e.type == 'title'" :is="e.tag" class="element" :class="classes(e)">
-            <jet-toolbar cls="elements" :sec="sec" :dir="dir" :elements="elements"  :index="i2" />
+            <jet-toolbar cls="element" :sec="sec" :dir="dir" :elements="elements"  :index="i2" />
             <template v-if="e.text">
                 {{ e.text }}
             </template>
 
             <span v-if="!e.text" class="tx-grey">{{ $__('Enter a title') }}</span>
         </component>
-        <p v-if="e.type == 'paragraph'" :is="e.tag" class="element" :class="classes(e)" v-html="e.text">
-
-        </p>
-        <p v-if="e.type == 'paragraph' && !e.text" class="tx-grey">{{ $__('Enter a text') }}</p><jet-elements :e="e" />
+        <dev v-if="e.type !== 'title'" :is="e.tag" class="element" :class="classes(e)">
+            <jet-toolbar cls="element" :sec="sec" :dir="dir" :elements="elements"  :index="i2" />
+            <component is:="e.type" :e="e"/>
+        </dev>
     </template>
 </template>
 
