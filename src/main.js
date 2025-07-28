@@ -4,7 +4,7 @@ import App from './App.vue'
 // Globals
 import { saveLocal, getLocal } from './admin/localstorage.js';
 import __ from './languages/index.js';
-import {resetSectionsEl} from './utils/globals.js';
+// import {resetSectionsEl} from './utils/globals.js';//rm from globals
 
 
 const app = createApp(App) // createApp must be stored in a variable
@@ -18,7 +18,7 @@ app.config.globalProperties.$isActive = (current, index) =>
   current === index ? 'isActive' : '';
 app.config.globalProperties.$domain = window.location.origin;
 app.config.globalProperties.$__ = __;
-app.config.globalProperties.$resetSectionsEl = resetSectionsEl;
+// app.config.globalProperties.$resetSectionsEl = resetSectionsEl;
 
 
 // (Optional) Global components

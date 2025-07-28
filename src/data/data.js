@@ -1,16 +1,22 @@
 export const ops = {
-   current: null,//main current icon men
-  current: 'pages',//todo dev
-  current_page: 'homepage',//??
+  // current: null,//main current icon men
+  // current: 'pages',//todo dev
+  current_menu: 99,//todo change current to current_menu for clearness
+  current_menu: 'pages',//todo change current to current_menu for clearness
+  current_page: 'homepage',
   page_index: 999,
-  current_section: null,
-  current_el: null,
+  current_section: 99,
+  current_el: 99,
   edit_meta: false,
   page: 'pages',
-  show_bar: false,
-  show_sec: false,
+  show_bar: 99,
+  show_sec: 99,
   edit_page: true,
-  menu: [
+
+};
+
+//temp
+export const menu = [
     {
       title: 'Close',
       slug: 99,
@@ -29,65 +35,11 @@ export const ops = {
       icon: 'fa-regular fa-image',
       cls: 'tx-red-l2',
     },
-  ],
-  homepage: {//temp
-    title: 'Welcome to Our Site',
-    description: 'The best system to create Landing Page and not only. Light, Powerful, Modern.',
-    page_style: {
-      color: null,
-      background: null,
-      background_image: null,
-      image_blur: null,
-      image_opacity: null,
-    },
-    sections: [
-      {
-        edit: false,
-        add: false,
-        w: 'w-container',
-        bg: 'bg-white',
-        p: 'p-1',
-        img: null,
-        ib: null, //image-blur
-        i0: null, //image-opacity
-        col: 'tx-gray-d3',
-        jc: 'jc-c',
-        ai: 'ai-c',
-        g: 'g-1',
-        fd: 'fd-c',
-        content: [
-          {
-            type: 'heading',
-            text: 'Wilcome to LPM',
-            fs: 'fs-20',
-            tag: 'h1',
-            col: null,
-            ai: null,
-            effect: null,
-            anim: null,
-          },
-          {
-            type: 'para',
-            text: 'Edit section, you can change its properties and content type',
-            fs: 'fs-20',
-            tag: 'h1',
-            col: null,
-            ai: null,
-            fw: null,
-            anim: null,
-          },
-        ],
-        // content: ,
-      },
-    ]
-  },
-};
-
-//temp
+  ];
 export const style = {
   page: {
-    edit: false,
-    add: false,
+    edit: 99,
+    add: 99,
     bg_type: 'solid',
     bg: '',
     bg2: 'bg-blue-grey',
@@ -98,8 +50,8 @@ export const style = {
     i0: null,
   },
   header: {
-    edit: false,
-    add: false,
+    edit: 99,
+    add: 99,
     w: 'w-container',
     bg_type: 'solid',
     bg: 'bg-blue-grey-d3',
@@ -117,8 +69,8 @@ export const style = {
     ],
   },
   footer: {
-    edit: false,
-    add: false,
+    edit: 99,
+    add: 99,
     w: 'w-container',
     bg_type: 'solid',
     bg: 'bg-blue-grey-d3',
@@ -141,8 +93,8 @@ export const style = {
 export const sample = {
   current: null,
   page: 'pages',
-  show_bar: false,
-  show_sec: false,
+  show_bar: 99,
+  show_sec: 99,
   edit_page: true,
   menu: [
     {
@@ -176,8 +128,8 @@ export const sample = {
     },
     sections: [
       {
-        edit: false,
-        add: false,
+        edit: 99,
+        add: 99,
         w: 'w-container',
         bg: 'bg-white',
         p: 'p-1',

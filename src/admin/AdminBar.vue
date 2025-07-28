@@ -1,15 +1,15 @@
 <template>
     <div class="admin-bar">
         <ul>
-            <li v-for="(e, i) in ops.menu" :class="e.cls">
+            <li v-for="(e, i) in menu" :class="e.cls">
                 <template v-if="i == 0">
                     <i
-                        v-if="ops.current !== 99"
+                        v-if="ops.current_menu !== 99"
                         class="fa-solid fa-ellipsis-vertical"
                         @click="showSidebar(e.slug), $root.saveLocal()"
                     ></i>
                     <i
-                        v-if="ops.current == 99"
+                        v-if="ops.current_menu == 99"
                         class="fa-solid fa-xmark"
                         @click="$root.closeAdmin(), $root.saveLocal()"
                     ></i>
@@ -26,28 +26,29 @@
 
 
 <script>
-import { ops } from "../data/data.js";
+import { ops, menu } from "../data/data.js";
 export default {
     data() {
         return {
             ops:ops,
+            menu,
         };
     },
     methods: {
         showSidebar(e) {
             // console.log('%c clicked show sidebar', 'color: #e50000',);
-            if (this.ops.current == e) {
-                this.ops.current = null;
+            if (this.ops.current_menu == e) {
+                this.ops.current_menu = null;
             } else {
-                this.ops.current = e;
+                this.ops.current_menu = e;
             }
             this.isBar();
             this.isSidebar();
         },
         isSidebar() {
-            console.log("this.ops.current: ", this.ops.current);
+            console.log("this.ops.current_menu: ", this.ops.current_menu);
             let page = document.getElementById("app");
-            if (this.ops.current && this.ops.current !== 99) {
+            if (this.ops.current_menu && this.ops.current_menu !== 99) {
                 page.classList.remove("isBar");
                 page.classList.add("isSidebar");
             } else {
@@ -55,9 +56,9 @@ export default {
             }
         },
         isBar() {
-            console.log("this.ops.current: ", this.ops.current);
+            console.log("this.ops.current_menu: ", this.ops.current_menu);
             let page = document.getElementById("app");
-            if (this.ops.current == 99) {
+            if (this.ops.current_menu == 99) {
                 page.classList.remove("isSidebar");
                 page.classList.add("isBar");
             } else {

@@ -36,6 +36,7 @@ const newItem = {
 };
 
 import { ops } from '../data/data.js';
+import { fetchFile } from "../utils/helpers.js";
 
 export default {
     // components: {
@@ -46,7 +47,7 @@ export default {
     //         :section="i"
     //         :element=null 
     //section optionally
-    props: ["elements", "index", "cls", "sec"],
+    props: ["elements", "index", "page_index", "cls", "sec"],
     data() {
         return {
             ops: ops,
@@ -54,49 +55,68 @@ export default {
             add: false,
         };
     },
-    methods: {
-        editItem(i) {
-            // this.$root.ops.current = "pages";
-            // this.$root.ops[]= "pages";
-            this.ops.current = "pages";
-            switch (this.cls) {
-                case 'section':
-                    this.ops.current_section = this.index;
-                    this.ops.current_el = null;
-                    break;
-
-                default:
-                    break;
-            }
-
-
-        },
-        notFirst(i) {
-            //
-            if (i !== 0) {
-                return true;
-            }
-        },
-        notLast(i) {
-            let num = this.elements.length - 1;
-
-            if (i !== num) {
-                return true;
-            }
-        },
-        moveItem(from, to) {
-            this.elements.move(from, to);
-        },
-        del(i) {
-            this.elements.splice(i, 1);
-        },
-        addItem(i) {
-            if (this.cls === "section") {
-                this.elements.push(newItem);
+methods: {
+    async setPageIndex() {
+        try {
+            const pages = await fetchFile('/data/pages_list.json');
+            if (pages && Array.isArray(pages)) {
+                const index = pages.findIndex(
+                    (page) => page.slug === this.ops.current_page
+                );
+                this.ops.page_index = index !== -1 ? index : null;
+                console.log("Page index set to:", this.ops.page_index);
             } else {
-                this.sec.add = true;
+                console.warn("pages_list.json returned empty or invalid data");
             }
-        },
+        } catch (error) {
+            console.error("Error setting page index:", error);
+        }
     },
+
+    async editItem(i) {
+        switch (this.cls) {
+            case 'section':
+                this.$root.reset();
+                this.ops.current_section = this.index;
+                this.ops.current_el = null;
+
+                await this.setPageIndex();
+                break;
+
+            case 'element':
+                // maybe also need page index?
+                await this.setPageIndex();
+                break;
+
+            default:
+                break;
+        }
+    },
+
+    notFirst(i) {
+        return i !== 0;
+    },
+
+    notLast(i) {
+        return i !== this.elements.length - 1;
+    },
+
+    moveItem(from, to) {
+        this.elements.move(from, to);
+    },
+
+    del(i) {
+        this.elements.splice(i, 1);
+    },
+
+    addItem(i) {
+        if (this.cls === "section") {
+            this.elements.push(newItem);
+        } else {
+            this.sec.add = true;
+        }
+    },
+}
+
 };
 </script>

@@ -1,22 +1,11 @@
 <template>
-    <div v-if="ops.current !== 99" class="admin-sec">
+    <div v-if="ops.current_menu !== 99" class="admin-sec">
          <!-- current---{{ops.current}} -->
-         <div v-if="ops.current=='pages'" class="control-section">
-            <h3>{{t_pages}}</h3>
-            <section-pages />
-            <!-- <transition name="slide">
-                <section-pages v-if="ops.current_section == null && ops.current_el == null" />
-            </transition>
-            <transition name="slide">
-                <page-forms v-if="ops.current_section !== null || ops.current_el !== null" />
-            </transition> -->
-            <page-forms />
-            
+         <div class="control-section">
+            <h3 v-if="ops.current_menu=='pages'">{{t_pages}}</h3>
+            <section-pages />           
 
          </div> 
-         <!-- ---{{test}}
-         <media-manager v-model="test" src="media" cls="main-frame" layout="grid" /> -->
-         <!-- <jet-pages v-if="ops.current=='pages'" /> -->
     </div>
 </template>
 

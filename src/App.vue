@@ -33,7 +33,7 @@ export default {
   },
   methods: methods,
   mounted() {
-    this.$getLocal(this.ops, 'state_ops');
+    // this.$getLocal(this.ops, 'state_ops');//todo temp off
     this.isSidebar();//should check as it will be localstorage
     this.isBar();//should check as it will be localstorage
   }
