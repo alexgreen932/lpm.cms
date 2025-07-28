@@ -7,6 +7,7 @@ export const ops = {
   page_index: 999,
   current_section: 99,
   current_el: 99,
+  current_edit: null,//what edit - section/element
   edit_meta: false,
   page: 'pages',
   show_bar: 99,

@@ -2,9 +2,13 @@
   color: #45495f;
   display: flex;
   flex-direction: column;
+  background: #fff;
+  border-radius: 5px;
+  padding: 5px;
 }
 
-.jet-form input, .jet-form textarea {
+.jet-form input,
+.jet-form textarea {
   padding: 2px 5px;
 }
 

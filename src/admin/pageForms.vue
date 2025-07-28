@@ -19,11 +19,12 @@
         <jet-form v-if="ops.edit_meta" :obj="pageData" cls="bg-white" :fields="fields_meta" />
 
         <template v-if="pageData" v-for="(section, i) in pageData.sections">
-            current_section---{{ops.current_section}} === index ---{{ i }}
-            <template v-if="ops.current_section==i">
-<jet-form v-if="ops.current_section==i" :title="title_section" :obj="section" :fields="fields_section" />
+            current_section---{{ ops.current_section }} === index ---{{ i }}
+            <template v-if="ops.current_section == i">
+                <jet-form v-if="ops.current_section == i && ops.current_edit == 'section'" :title="title_section" :obj="section"
+                    :fields="fields_section" />
             </template>
-            
+
             <!-- current sec ---{{ section }} -->
             <!-- fields--- {{ fields }}  -->
             <!-- index --- {{ i }} -->

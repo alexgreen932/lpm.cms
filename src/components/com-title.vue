@@ -1,10 +1,9 @@
 <template>
-  <h1>{{ text }}</h1>
+    {{ e.text }}
 </template>
 
 <script>
 export default {
-  props: ['text']
+  props: ['e']
 }
 </script>
-

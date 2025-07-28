@@ -1,15 +1,10 @@
 <template>
-    <p v-if="e.text" :class="[e.fs, e.col, e.fw]" v-html="e.text"></p>
-    <span v-if="!e.text" class="tx-grey">{{placeholder}}</span>
+    <div v-if="e.text" v-html="e.text"></div>
+    <span v-if="!e.text" class="tx-grey">{{$__('Enter a text')}}</span>
 </template>
 
 <script>
 export default {
-  data() {
-        return {
-            placeholder: this.$__('Click and enter a title'),
-        };
-    },
     props: ["e"],
 };
 </script>

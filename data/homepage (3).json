@@ -19,17 +19,21 @@
       "jc": "jc-c",
       "ai": "ai-c",
       "g": "g-1",
-      "fd": "",
+      "fd": "fd-c",
       "content": [
         {
           "type": "title",
-          "text": "This is Sample Title",
-          "tag": "h1",
-          "fs": "fs-20"
+          "props": {
+            "text": "This is Sample Title",
+            "tag": "h1",
+            "fs": "fs-20"
+          }
         },
         {
           "type": "paragraph",
-          "text": "Demo data"
+          "props": {
+            "text": "Demo data"
+          }
         }
       ]
     }

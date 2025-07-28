@@ -1,11 +1,19 @@
+ $bg: #eceff1;
+ $bg: #fff;
+
  .jet-form {
      color: #45495f;
      display: flex;
      flex-direction: column;
-     input, textarea{
-        padding: 2px 5px;
+     background: $bg;
+     border-radius: 5px;
+     padding: 5px;
+
+     input,
+     textarea {
+         padding: 2px 5px;
      }
-     
+
 
      h3 {
          font-size: 1.5rem;
@@ -20,14 +28,14 @@
 
          label {
              font-size: 14px;
-             color:#000;
-            //  font-weight: 500;
+             color: #000;
+             //  font-weight: 500;
              margin-bottom: 0;
          }
      }
 
      &.small-transparent {
-        gap: 7px;
+         gap: 7px;
 
          .control-group {
              flex-direction: column;

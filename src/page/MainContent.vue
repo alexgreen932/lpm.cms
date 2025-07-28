@@ -2,52 +2,26 @@
     <div v-if="warn" class="b-red g-1">Data not found...</div>
 
     <div v-else-if="page && page.sections && page.sections.length">
-        <div
-            v-for="(sec, i) in page.sections"
-            :key="i"
-            :id="sectionId(i)"
-            class="jet-section"
-            :class="[sec.bg, sec.col]"
-        >
-            <jet-toolbar
-                v-if="isAdmin"
-                cls="section"
-                :elements="page.sections"
-                :index="i"
-            />
+        <div v-for="(sec, i) in page.sections" :key="i" :id="sectionId(i)" class="jet-section"
+            :class="[sec.bg, sec.col]">
+            <jet-toolbar v-if="isAdmin" cls="section" :elements="page.sections" :index="i" />
+            section
 
-            <div :class="[sec.jc, sec.ai, sec.p]">
-                <template
-                    v-if="sec.content && sec.content.length"
-                    v-for="(el, i2) in sec.content"
-                    :key="i2"
-                >
-                    <jet-toolbar
-                        v-if="isAdmin"
-                        cls="element"
-                        :elements="sec.content"
-                        :sec="sec"
-                        :index="i2"
-                    />
-                </template>
-                <jet-elements
-                    v-if="sec.content && sec.content.length"
-                    :elems="sec.content"
-                />
+            <div :class="[sec.w, sec.jc, sec.ai, sec.p, sec.fd]">
+                dir --- {{sec.fd}}
+                <jet-elements :sec="i" :dir="sec.fd" :elements="sec.content" />
+                <!-- //todo add note box that content is empty -->
             </div>
 
             <jet-add v-if="sec.add" :sec="sec" :content="sec.content" />
 
-            <div
-                v-if="!sec.content || !sec.content.length"
-                class="w-container g-1 mv-1 b-blue jc-c fd-c"
-                @click="sec.add = true"
-            >
+            <!-- <div v-if="!sec.content || !sec.content.length" class="w-container g-1 mv-1 b-blue jc-c fd-c"
+                @click="sec.add = true">
                 <div v-if="!sec.add" class="fd-c g-05 p-1 ai-c">
                     <i class="fa-solid fa-circle-plus fs-25"></i>
                     <p>Click Here to add elements</p>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <div class="w-container b-blue g-1 p-1 nv-1 wc-1-4">
@@ -61,7 +35,7 @@
 <script>
 import { ops } from "../data/data.js";
 import AddNew from "./AddNew.vue";
-import JetToolbar from "./JetToolbar.vue";
+import JetToolbar from "./jetToolbar.vue";
 import JetElements from "./JetElements.vue";
 
 export default {
@@ -79,6 +53,7 @@ export default {
         };
     },
     methods: {
+
         pageJson() {
             return JSON.stringify(this.page);
         },

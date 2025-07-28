@@ -49,7 +49,7 @@
 <script>
 import { ops } from "../data/data.js";
 import AddNew from "./AddNew.vue";
-import JetToolbar from "./JetToolbar.vue";
+import JetToolbar from "./jetToolbar.vue";
 import JetElements from "./JetElements.vue";
 
 export default {
