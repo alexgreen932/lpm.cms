@@ -16,24 +16,19 @@
             </template>
 
         </div>
-        <jet-form v-if="ops.edit_meta" :obj="pageData" cls="bg-white" :fields="fields_meta" />
+        <jet-form v-if="ops.edit_meta" :obj="ops.current_page_data" cls="bg-white" :fields="fields_meta" />
 
-        <template v-if="pageData" v-for="(section, i) in pageData.sections">
-            current_section---{{ ops.current_section }} === index ---{{ i }}
+        <template v-if="ops.current_page_data" v-for="(section, i) in ops.current_page_data.sections">
+            ---{{section}}
+            <!-- current_section---{{ ops.current_section }} === index ---{{ i }} -->
             <!-- <template v-if="ops.current_section == i"> -->
                 <jet-form v-if="ops.current_section == i && ops.current_edit == 'section'" :title="titleSec(i)"
                     :obj="section" :fields="fields_section" />
                 <template v-for="(element, i2) in section.content">
-                    ----{{element.type}}----
+                    <!-- ----{{element.type}}---- -->
                     <jet-form v-if="ops.current_el == i2 && ops.current_edit == 'element'" :title="titleEl(element.type)"
                         :obj="section" :fields="fields_el" />
                 </template>
-            <!-- </template> -->
-
-            <!-- current sec ---{{ section }} -->
-            <!-- fields--- {{ fields }}  -->
-            <!-- index --- {{ i }} -->
-            <!-- <jet-form v-if="ops.current_section == i" :title="$__('Edit Section')" :obj="section"     :fields="section_fiels" /> -->
         </template>
     </div>
 
@@ -54,7 +49,7 @@ export default {
             title_section: this.$__('Edit Section'),
             ops: ops,
             // pageData: null,
-            pageData: { sections: [] },
+            pageData: { sections: [] }, //rm all if tate from data
             current: 9999,
             current: 0, //dev
             fields_meta: [
@@ -64,9 +59,9 @@ export default {
                 // { title: this.$__('Atem Align'), key: 'ai', type: 'input' },
             ],
             fields_section: [
-                { title: this.$__('Container Width'), key: 'w', type: 'input' },
-                { title: this.$__('Justify Content'), key: 'jc', type: 'input' },
-                { title: this.$__('Atem Align'), key: 'ai', type: 'input' },
+                { title: this.$__('Container Width'), key: 'w', type: 'select', ops:'w' },
+                { title: this.$__('Justify Content'), key: 'jc', type: 'select', ops:'jc' },
+                { title: this.$__('Atem Align'), key: 'ai', type: 'select', ops:'ai' },
             ],
             fields_el: [
                 // { title: this.$__('Container Width'), key: 'w', type: 'input' },

@@ -137,7 +137,7 @@ body.isBar {
   z-index: 10001;
 }
 
-/* line 5, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 6, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .jet-section {
   position: relative;
   border: 1px solid transparent;
@@ -145,18 +145,24 @@ body.isBar {
 }
 
 /* line 10, ../../www/lpm.cms/scss/src/_toolbar.scss */
+.jet-section .section-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* line 15, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .jet-section .form-toolbar {
   position: absolute;
-  display: none;
   gap: 6px;
   border-radius: 5px;
   padding: 4px;
   top: 3px;
   right: 6px;
   background: rgba(8, 151, 247, 0.6);
+  z-index: 5;
 }
 
-/* line 20, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 26, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .jet-section .form-toolbar i {
   background: #fff;
   border-radius: 3px;
@@ -166,29 +172,34 @@ body.isBar {
   transition: all ease 0.6s;
 }
 
-/* line 28, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 34, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .jet-section .form-toolbar i:hover {
   background: #ccd7da;
 }
 
-/* line 36, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 42, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .jet-section:hover .form-toolbar {
   display: inline-flex;
 }
 
-/* line 44, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 50, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .jet-section:hover {
   border-color: rgba(8, 151, 247, 0.6);
 }
 
-/* line 48, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 54, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .element {
   position: relative;
   border: 1px solid transparent;
   transition: all ease 0.6s;
 }
 
-/* line 53, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 58, ../../www/lpm.cms/scss/src/_toolbar.scss */
+.element div, .element img, .element p, .element ul, .element li, .element span, .element a {
+  z-index: 1;
+}
+
+/* line 62, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .element .form-toolbar {
   position: absolute;
   display: none;
@@ -200,9 +211,10 @@ body.isBar {
   left: 50%;
   transform: translateX(-50%);
   background: rgba(52, 155, 4, 0.6);
+  z-index: 5;
 }
 
-/* line 67, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 77, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .element .form-toolbar i {
   background: #fff;
   border-radius: 3px;
@@ -212,17 +224,17 @@ body.isBar {
   transition: all ease 0.6s;
 }
 
-/* line 75, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 85, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .element .form-toolbar i:hover {
   background: #ccd7da;
 }
 
-/* line 83, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 93, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .element:hover .form-toolbar {
   display: inline-flex;
 }
 
-/* line 91, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 101, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .element:hover {
   border-color: rgba(52, 155, 4, 0.6);
 }
