@@ -4,8 +4,12 @@
 @import "src/_base.scss";
 @import "src/sidebar";
 @import "src/toolbar";
-@import "src/sidebar-elems";
 @import "src/sections";
-@import "src/form";
 @import "src/vue-anim";
 @import "src/media-manager";
+@import "src/sidebar-elems";//maybe rm
+@import "src/elems-box";
+
+//form
+@import "src/form";
+@import "src/picker";

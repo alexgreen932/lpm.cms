@@ -1,6 +1,6 @@
 <template>
     <div v-if="e.content.text" class="element" :class="$root.classes(e.classes)">
-        <jet-toolbar cls="element" :sec="sec" :dir="dir" :elements="elements" :index="index" />
+        <jet-toolbar cls="element" :sec="sec" :dir="dir" :elements="elements" :index="i2" />
         <p v-html="e.content.text"></p>
     </div>
     <div v-if="!e.content.text" class="tx-grey">{{ $__('Enter a text') }}</div>

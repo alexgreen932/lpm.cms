@@ -2,7 +2,8 @@ export const ops = {
   // current: null,//main current icon men
   // current: 'pages',//todo dev
   current_menu: 99,//todo change current to current_menu for clearness
-  current_menu: 'pages',//todo change current to current_menu for clearness
+  current_menu: 'pages',//dev pages
+  // current_menu: 'add',//dev add elem
   current_page: 'homepage',
   page_index: 999,
   current_section: 99,

@@ -20,6 +20,16 @@ export const options = {
         { v: 'e-blue-shadow', t: 'blue-shadow' },
         { v: 'e-slight-shadow', t: 'slight-shadow' },
     ],
+    ba: [
+        { v: 'ba-s', t: 'Scroll' },
+        { v: 'ba-f', t: 'Fixed' },
+    ],
+    bp: [
+        { v: 'bp-cc', t: 'Center Center' },
+        { v: 'bp-ct', t: 'Center Top' },
+        { v: 'bp-cb', t: 'Center Bottom' },
+        
+    ],
     yes_no: [
         { v: true, t: 'Yes' },
         { v: false, t: 'No' },

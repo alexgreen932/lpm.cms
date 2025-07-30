@@ -1,61 +1,64 @@
- 
+
 // import toolbar from './toolbar.js';
 
 export default {
-  reset(){
+  classes(e) {
+    return Object.values(e).filter(Boolean);
+  },
+  reset() {
     this.ops.current_section = 99;
     this.ops.current_el = 99;
     this.ops.edit_meta = false;
   },
-  reset_full(){
+  reset_full() {
     this.ops.page_index = 999;
     this.ops.current_section = 99;
     this.ops.current_el = 99;
     this.ops.edit_meta = false;
   },
-  saveLocal(){this.$saveLocal(this.ops, 'state_ops')},
-  openAdmin(){
-    this.ops.current_menu= 99;
+  saveLocal() { this.$saveLocal(this.ops, 'state_ops') },
+  openAdmin() {
+    this.ops.current_menu = 99;
     let front = document.getElementById('pade');
     front.style.display = 'none';
   },
-  closeAdmin(){
-    this.ops.current_menu= 99;
+  closeAdmin() {
+    this.ops.current_menu = 99;
     let front = document.getElementById('pade');
     front.style.display = 'flex';
   },
-    showSidebar(e) {//todo rm
+  showSidebar(e) {//todo rm
 
-      console.log('%c clicked show sidebar', 'color: #e50000',);
-      if (this.ops.current_menu== e) {
-        this.ops.current_menu= 99;
-      } else {
-        this.ops.current_menu= e;
-      }
-      this.isBar();
-      this.isSidebar();
-      
-    },
-    isSidebar(){
-          console.log('this.ops.current: ', this.ops.current);
-        let page = document.getElementById('app');
-        if ( this.ops.current_menu&& this.ops.current_menu!== 99) {
-          page.classList.remove('isBar');
-          page.classList.add('isSidebar');
-        } else {
-          page.classList.remove('isSidebar');
+    console.log('%c clicked show sidebar', 'color: #e50000',);
+    if (this.ops.current_menu == e) {
+      this.ops.current_menu = 99;
+    } else {
+      this.ops.current_menu = e;
+    }
+    this.isBar();
+    this.isSidebar();
 
-        }
-      },
-    isBar(){
-          console.log('this.ops.current: ', this.ops.current);
-        let page = document.getElementById('app');
-        if ( this.ops.current_menu== 99) {
-          page.classList.remove('isSidebar');
-          page.classList.add('isBar');
-        } else {
-          page.classList.add('isBar');
+  },
+  isSidebar() {
+    console.log('this.ops.current: ', this.ops.current);
+    let page = document.getElementById('app');
+    if (this.ops.current_menu && this.ops.current_menu !== 99) {
+      page.classList.remove('isBar');
+      page.classList.add('isSidebar');
+    } else {
+      page.classList.remove('isSidebar');
 
-        }
-      }
+    }
+  },
+  isBar() {
+    console.log('this.ops.current: ', this.ops.current);
+    let page = document.getElementById('app');
+    if (this.ops.current_menu == 99) {
+      page.classList.remove('isSidebar');
+      page.classList.add('isBar');
+    } else {
+      page.classList.add('isBar');
+
+    }
+  }
 };

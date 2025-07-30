@@ -4,11 +4,12 @@
         <i v-if="notFirst(index)" class="fa-solid" :class="prev" @click="moveItem(index, index - 1)"></i>
         <i v-if="notLast(index)" class="fa-solid" :class="next" @click="moveItem(index, index + 1)"></i>
         <i class="fa-solid fa-trash" @click="del(index)"></i>
-        <i class="fa-solid fa-plus" @click="addItem(index)"></i>
+        <i class="fa-solid fa-plus" @click="addItem(index)"></i>({{index}})
     </div>
 </template>
 
 <script>
+//todo simplify index is this.index
 // import { ops } from "../data/data.js";
 // import JetForms from "./JetForms.vue";
 
@@ -117,10 +118,15 @@ export default {
         },
 
         addItem(i) {
+            //add section //todo add pattern too
             if (this.cls === "section") {
                 this.elements.push(newItem);
             } else {
-                this.sec.add = true;
+                //add elem
+                this.ops.current_menu = 'add';
+                this.ops.current_section= this.sec;
+                this.ops.current_el = this.index;
+                console.log('this.index: ', this.index);
             }
         },
     },

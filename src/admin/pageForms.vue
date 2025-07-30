@@ -16,10 +16,11 @@
             </template>
 
         </div>
+
         <jet-form v-if="ops.edit_meta" :obj="ops.current_page_data" cls="bg-white" :fields="fields_meta" />
 
         <template v-if="ops.current_page_data" v-for="(section, i) in ops.current_page_data.sections">
-            ---{{section}}
+            opacity---{{section.opacity}}
             <!-- current_section---{{ ops.current_section }} === index ---{{ i }} -->
             <!-- <template v-if="ops.current_section == i"> -->
                 <jet-form v-if="ops.current_section == i && ops.current_edit == 'section'" :title="titleSec(i)"
@@ -59,9 +60,16 @@ export default {
                 // { title: this.$__('Atem Align'), key: 'ai', type: 'input' },
             ],
             fields_section: [
+                { title: this.$__('Background'), key: 'bg', type: 'picker', ops:'bg' },
                 { title: this.$__('Container Width'), key: 'w', type: 'select', ops:'w' },
                 { title: this.$__('Justify Content'), key: 'jc', type: 'select', ops:'jc' },
-                { title: this.$__('Atem Align'), key: 'ai', type: 'select', ops:'ai' },
+                { title: this.$__('Align Items'), key: 'ai', type: 'select', ops:'ai' },
+
+                { title: this.$__('Background Image'), key: 'img', type: 'media' },
+                { title: this.$__('Image Position'), key: 'bp', type: 'select', ops:'bp' },
+                { title: this.$__('Image Attachment'), key: 'ba', type: 'select', ops:'ba' },
+                { title: this.$__('Image Blur'), key: 'blur', type: 'range', ops:'blur' },
+                { title: this.$__('Image Opacity'),  tip: this.$__('Useful for creating contrast backgroumd - for example set background image Black and opacity 5(0.5)'), key: 'opacity', type: 'range', ops:'opacity' },
             ],
             fields_el: [
                 // { title: this.$__('Container Width'), key: 'w', type: 'input' },

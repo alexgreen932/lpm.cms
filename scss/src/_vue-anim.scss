@@ -1,23 +1,38 @@
  //slaide //todo redo
-.slideVer-enter-active,
-.slideVer-leave-active {
-//   transition: opacity 0.5s ease;
-  transform-origin: top;
-transition: all 0.3s ease-in-out;
+/* Transition active states */
+.slideV-enter-active,
+.slideV-leave-active {
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  transform-origin: top; /* pivot at top */
 }
 
-.slideVer-enter-from,
-.slideVer-leave-to {
+/* Enter (showing) */
+.slideV-enter-from {
+  transform: scaleY(0);
   opacity: 0;
-transform: scaleY(0);
-} 
+}
+.slideV-enter-to {
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+/* Leave (hiding) */
+.slideV-leave-from {
+  transform: scaleY(1);
+  opacity: 1;
+}
+.slideV-leave-to {
+  transform: scaleY(0);
+  opacity: 0;
+}
+
 
 //fade
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s ease;
 //   transform-origin: top;
-transition: all 0.3s ease-in-out;
+transition: all 0.6s ease-in-out;
 }
 
 .fade-enter-from,

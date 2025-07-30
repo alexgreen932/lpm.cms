@@ -3,9 +3,11 @@
          <!-- current---{{ops.current}} -->
          <div class="control-section">
             <h3 v-if="ops.current_menu=='pages'">{{t_pages}}</h3>
-            <section-pages />           
+            <section-pages />   
+            <form-wrapper />        
 
          </div> 
+         <add-new v-if="ops.current_menu=='add'" />
     </div>
 </template>
 
@@ -15,12 +17,17 @@ import sectionPages from "./sectionPages.vue";
 import MediaManager from "../form/MediaManager.vue";
 import pageForms from './pageForms.vue';
 // import FormSection from "./FormSection.vue";//todo rm if not used
+//dev //todo rm then 
+import formWrapper from "./formWrapper.vue";
+import addNew from './addNew.vue';
 
 export default {
     components: {
         "media-manager": MediaManager,
         sectionPages,
         pageForms,
+        formWrapper,
+        addNew,
 
     },
     data() {

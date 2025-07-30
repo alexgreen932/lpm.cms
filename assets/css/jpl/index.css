@@ -1,0 +1,21 @@
+/* line 2, ../../www/lpm.cms/scss-jet/jpl/_utilites.scss */
+.jet-section {
+  position: relative;
+}
+
+/* line 4, ../../www/lpm.cms/scss-jet/jpl/_utilites.scss */
+.jet-section div {
+  z-index: 2;
+}
+
+/* line 7, ../../www/lpm.cms/scss-jet/jpl/_utilites.scss */
+.jet-section .img-bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+/*# sourceMappingURL=index.css.map */

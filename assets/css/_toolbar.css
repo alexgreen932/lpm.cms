@@ -4,9 +4,9 @@
   transition: all ease 0.6s;
 }
 
-.jet-section .section-container {
+.jet-section .cntr {
   position: relative;
-  z-index: 1;
+  z-index: 4;
 }
 
 .jet-section .form-toolbar {
@@ -48,7 +48,7 @@
 }
 
 .element div, .element img, .element p, .element ul, .element li, .element span, .element a {
-  z-index: 1;
+  z-index: 4;
 }
 
 .element .form-toolbar {

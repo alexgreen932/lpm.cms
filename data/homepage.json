@@ -12,9 +12,11 @@
       "w": "w-container",
       "bg": "bg-white",
       "p": "p-1",
-      "img": null,
-      "ib": null,
-      "i0": null,
+      "img": "media/bullet.jpg",
+      "blur": null,
+      "opacity": null,
+      "ba": "ba-s",
+      "bp": "bp-cc",
       "col": "tx-gray-d3",
       "jc": "jc-c",
       "ai": "ai-c",
@@ -23,13 +25,23 @@
       "content": [
         {
           "type": "title",
-          "text": "This is Sample Title",
           "tag": "h1",
-          "fs": "fs-20"
+          "classes": {
+            "fs": "fs-20",
+            "fw": "",
+            "col": ""
+          },
+          "content":{ "text": "This is Sample Title"}
+          
         },
         {
           "type": "paragraph",
-          "text": "Demo data"
+          "classes": {
+            "fs": "",
+            "col": ""
+          },
+          "content":{ "text": "This is Sample Text"}
+          
         }
       ]
     }

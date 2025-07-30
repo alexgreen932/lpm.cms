@@ -1,0 +1,58 @@
+<template>
+  <div class="jet-add">
+    <div class="d-wrap">
+      <i class="fa-solid fa-xmark" @click="sec.add = false"></i>
+      <div v-for="(e, i) in elems" :key="i" class="d-icon" @click="addItem(e.props)">
+        <i :class="e.icon"></i>
+        <span>{{ e.title }}</span>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+const modules = import.meta.glob('../components/*.vue', { eager: true });
+console.log('modules: ', modules);
+
+export const elems = Object.values(modules).map(m => m.meta);
+console.log('elems: ', elems);
+
+import { ops } from '../data/data.js';
+
+
+export default {
+  props: ["content", "sec"],
+  data() {
+    return {
+      ops,
+      elems,
+      // elems: [meta],
+      show: false
+    };
+  },
+  methods: {
+    addItem(e) {
+      // const item = JSON.parse(JSON.stringify(e));
+      // console.log('this.ops.current_page_data: ', this.ops.current_page_data);
+      // let target = this.ops.current_page_data.sections[this.ops.current_section];
+      // //curent index where was click add == this.ops.current_el
+      // target.content.push(item);
+
+      const item = JSON.parse(JSON.stringify(e));
+      let target = this.ops.current_page_data.sections[this.ops.current_section];
+
+      // Insert new element right after the clicked one
+      const insertIndex = this.ops.current_el + 1;
+      target.content.splice(insertIndex, 0, item);
+
+      console.log('Inserted at index', insertIndex, item);
+
+
+
+    }
+  },
+  mounted() {
+    console.log('this.elems------', this.elems);
+  }
+};
+</script>

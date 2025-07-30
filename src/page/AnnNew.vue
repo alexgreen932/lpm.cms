@@ -16,6 +16,7 @@
 </template>
 
 <script>
+//todo!! rm if used from admin
 import {elems} from '../data/elements.js';
 
 export default {

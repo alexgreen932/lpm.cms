@@ -1,19 +1,37 @@
-.slideVer-enter-active,
-.slideVer-leave-active {
+/* Transition active states */
+.slideV-enter-active,
+.slideV-leave-active {
+  transition: transform 0.6s ease, opacity 0.6s ease;
   transform-origin: top;
-  transition: all 0.3s ease-in-out;
+  /* pivot at top */
 }
 
-.slideVer-enter-from,
-.slideVer-leave-to {
-  opacity: 0;
+/* Enter (showing) */
+.slideV-enter-from {
   transform: scaleY(0);
+  opacity: 0;
+}
+
+.slideV-enter-to {
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+/* Leave (hiding) */
+.slideV-leave-from {
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+.slideV-leave-to {
+  transform: scaleY(0);
+  opacity: 0;
 }
 
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s ease;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.6s ease-in-out;
 }
 
 .fade-enter-from,

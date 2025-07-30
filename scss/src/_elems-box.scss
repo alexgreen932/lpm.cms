@@ -1,0 +1,53 @@
+ .jet-add {
+     background: $prim;
+     position: fixed;
+     left: $width-bar;
+     min-width: $width-sec - $width-bar;
+     width: $width-sec - $width-bar;
+     top: 0;
+     bottom: 0;
+     padding: 2rem 1rem 1rem;
+     box-sizing: border-box;
+     z-index: 100010;
+     .fa-xmark{
+        position: absolute;
+        right: 1rem;
+        top: 8px;
+        // margin-top: -20px;
+        color:#efefc1;
+        cursor: pointer;
+     }
+
+     .d-wrap {
+         display: flex;
+         justify-content: center;
+         gap: 1rem;
+         flex-wrap: wrap;
+         background: #a2abc3;
+         border-radius: 5px;
+         padding: 1rem;
+
+         .d-icon {
+             background: #e0e3eb;
+             color: rgb(57, 57, 97);
+             height: 50px;
+             width: 60px;
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             gap: 9px;
+             align-items: center;
+             cursor: pointer;
+             border-radius: 5px;
+            transition: all ease 0.6s;
+             &:hover{
+             background: #fff;
+             }
+
+             span {
+                 font-size: 10px;
+             }
+         }
+
+     }
+ }
