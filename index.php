@@ -31,7 +31,8 @@ if ($slug === $config['login_url']) {
 
 // === LOAD PAGE DATA ===
 $page = loadPage($slug);
-
+$page = (object) $page;//to object
+// dd($page);
 // Fallback to homepage if page not found
 if (!$page) {
     $page = loadPage('homepage');
@@ -41,14 +42,17 @@ if (!$page) {
         exit;
     }
 }
+// dd($page->sections, 'log 1');
 
 ?>
+!
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title><?= htmlspecialchars($page['title'] ?? 'Landing Page') ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev</title>
 
     <link rel="stylesheet" crossorigin href="assets/css/jet.min.css">
     <!-- todo move in admin or join with jet -->
@@ -56,12 +60,31 @@ if (!$page) {
     <link rel="stylesheet" crossorigin href="assets/css/all.min.css">
 </head>
 
-<body>
-    <div class="w-container-c p-1 mv-2 bs-2">
-        <h1>Test Page</h1>
+<body class="full-height">
+    <header id="header" class="bg-blue-grey-d3 tx-white">
+        <div class="w-container ai-c p-1 g-1">Header(dev version)</div>
+    </header>
+    <main id="main" class="fg-1">
+        <?php
+        // dd($page->sections);
+        foreach($page->sections as $section) {
+        dd($section, 'value ');
+        // dd($key);
+            echo '';
+            echo '';
+        }
+        ?>
+        <h1>Rendered Page</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A voluptates deserunt culpa soluta veritatis dolor minima aut. Error excepturi, debitis facere dolorem nulla aperiam inventore delectus ut sunt quam ipsa!</p>
 
-        <?php
+
+    </main>
+
+    <footer id="footer" class="bg-blue-grey-d3 tx-white">
+        <div class="w-container ai-c p-1 g-1">Footer(dev version)</div>
+    </footer>
+    <?php
+    if (isAdmin()) {
         // Handle page save POST
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $action = $_POST['action'] ?? '';
@@ -71,13 +94,12 @@ if (!$page) {
                 require_once __DIR__ . '/inc/save.php';
             }
         }
-
-        ?>
+    ?>
         <div id="app"></div>
         <script src="assets-classic/js/lpm.js"></script>
-    </div>
-
-
+    <?php
+    }
+    ?>
 
 
 
