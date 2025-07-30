@@ -4,7 +4,7 @@
         <i v-if="notFirst(index)" class="fa-solid" :class="prev" @click="moveItem(index, index - 1)"></i>
         <i v-if="notLast(index)" class="fa-solid" :class="next" @click="moveItem(index, index + 1)"></i>
         <i class="fa-solid fa-trash" @click="del(index)"></i>
-        <i class="fa-solid fa-plus" @click="addItem(index)"></i>({{index}})
+        <i class="fa-solid fa-plus" @click="addItem(index)"></i>
     </div>
 </template>
 
@@ -80,6 +80,7 @@ export default {
             switch (this.cls) {
                 case 'section':
                     this.$root.reset();
+                    this.ops.current_menu = 'pages';
                     this.ops.current_section = this.index;
                     this.ops.current_el = null;
                     this.ops.current_edit = 'section';
@@ -89,6 +90,7 @@ export default {
 
                 case 'element':
                     this.$root.reset();
+                    this.ops.current_menu = 'pages';
                     this.ops.current_section = this.sec;
                     this.ops.current_el = this.index;
                     this.ops.current_edit = 'element';

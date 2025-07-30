@@ -12,11 +12,11 @@
 .jet-section .form-toolbar {
   position: absolute;
   gap: 6px;
-  border-radius: 5px;
-  padding: 4px;
-  top: 3px;
-  right: 6px;
-  background: rgba(8, 151, 247, 0.6);
+  border-radius: 0 0 0 5px;
+  padding: 4px 8px;
+  top: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
   z-index: 5;
 }
 
@@ -38,7 +38,7 @@
 }
 
 .jet-section:hover {
-  border-color: rgba(8, 151, 247, 0.6);
+  border-color: rgba(0, 0, 0, 0.6);
 }
 
 .element {
@@ -61,7 +61,7 @@
   top: 3px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(52, 155, 4, 0.6);
+  background: rgba(84, 86, 236, 0.6);
   z-index: 5;
 }
 
@@ -83,5 +83,5 @@
 }
 
 .element:hover {
-  border-color: rgba(52, 155, 4, 0.6);
+  border-color: rgba(84, 86, 236, 0.6);
 }

@@ -9,7 +9,10 @@
 .but-default,
 .but-teal,
 .but-green,
-.but-round {
+.but-small,
+.but-large,
+.but-extra-large,
+.but-normal {
   border-width: 0;
   border-image-width: 0;
   box-sizing: border-box;
@@ -34,13 +37,31 @@
 .but-default:hover,
 .but-teal:hover,
 .but-green:hover,
-.but-round:hover {
+.but-small:hover,
+.but-large:hover,
+.but-extra-large:hover,
+.but-normal:hover {
   color: #cfd8dc;
   text-decoration: none;
   -webkit-transform: translateY(-3px);
   transform: translateY(-3px);
   -webkit-box-shadow: -6px 14px 12px 2px rgba(90, 90, 90, 0.12);
   box-shadow: -6px 14px 12px 2px rgba(90, 90, 90, 0.12);
+}
+
+.but-small {
+  min-height: 24px;
+  padding: 5px;
+}
+
+.but-large {
+  min-height: 36px;
+  padding: 24px 1.2rem;
+}
+
+.but-extra-large {
+  min-height: 42px;
+  padding: 36px 1.5rem;
 }
 
 .but-full {

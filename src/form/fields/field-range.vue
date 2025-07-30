@@ -41,7 +41,7 @@ export default {
                 height_rem: 'hr',
                 line_height: 'lh',
                 width: 'w',
-                border_radius: 'r',
+                br: 'br-',
                 num: '',
                 pre: null,
                 post: null,
@@ -67,6 +67,10 @@ export default {
     mounted() {
         this.val = this.parseInitialValue();
         switch (this.f.ops) {
+            case 'br':
+                this.min = 0;
+                this.max = 50;
+                break;
             case 'opacity':
                 // this.pre = '0.';//todo
                 break;

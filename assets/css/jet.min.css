@@ -8367,7 +8367,10 @@ p, h1, h2, h3, h4, h5, h6 {
 .but-default,
 .but-teal,
 .but-green,
-.but-round {
+.but-small,
+.but-large,
+.but-extra-large,
+.but-normal {
   border-width: 0;
   border-image-width: 0;
   box-sizing: border-box;
@@ -8381,7 +8384,7 @@ p, h1, h2, h3, h4, h5, h6 {
   transition: all 0.25s;
 }
 
-/* line 29, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
+/* line 32, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
 .but-blue:hover,
 .but-red:hover,
 .but-grey:hover,
@@ -8393,7 +8396,10 @@ p, h1, h2, h3, h4, h5, h6 {
 .but-default:hover,
 .but-teal:hover,
 .but-green:hover,
-.but-round:hover {
+.but-small:hover,
+.but-large:hover,
+.but-extra-large:hover,
+.but-normal:hover {
   color: #cfd8dc;
   text-decoration: none;
   -webkit-transform: translateY(-3px);
@@ -8402,89 +8408,107 @@ p, h1, h2, h3, h4, h5, h6 {
   box-shadow: -6px 14px 12px 2px rgba(90, 90, 90, 0.12);
 }
 
-/* line 39, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
+/* line 42, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
+.but-small {
+  min-height: 24px;
+  padding: 5px;
+}
+
+/* line 46, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
+.but-large {
+  min-height: 36px;
+  padding: 24px 1.2rem;
+}
+
+/* line 50, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
+.but-extra-large {
+  min-height: 42px;
+  padding: 36px 1.5rem;
+}
+
+/* line 55, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
 .but-full {
   width: 100%;
   flex-grow: 1;
 }
 
-/* line 44, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
+/* line 60, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
 .but-centered {
   margin-left: auto !important;
   margin-right: auto !important;
 }
 
-/* line 50, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
+/* line 66, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
 .but-blue {
   background: #1E87F0;
 }
 
-/* line 54, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
+/* line 70, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
 .but-red {
   background: #f44336;
 }
 
-/* line 58, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
+/* line 74, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
 .but-green {
   background: #4caf50;
 }
 
-/* line 62, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
+/* line 78, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
 .but-grey {
   background: #455a64;
 }
 
-/* line 66, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
+/* line 82, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
 .but-indigo {
   background: #3f51b5;
 }
 
-/* line 70, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
+/* line 86, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
 .but-orange {
   background: #e65100;
 }
 
-/* line 74, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
+/* line 90, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
 .but-teal {
   background: #009688;
 }
 
-/* line 79, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
+/* line 95, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
 .but-cyan {
   background: #00bcd4;
 }
 
-/* line 83, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
+/* line 99, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
 .but-purple {
   background: #9c27b0;
 }
 
-/* line 87, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
+/* line 103, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
 .but-yellow {
   background: #ffeb3b;
   color: #000 !important;
 }
 
-/* line 92, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
+/* line 108, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
 .but-default {
   border: 1px solid #eceff1;
   background: #eceff1;
   color: #000 !important;
 }
 
-/* line 98, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
+/* line 114, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
 .but-border {
   border-width: 2px !important;
   background: transparent !important;
   color: inherit !important;
 }
 
-/* line 104, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
+/* line 120, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
 .j-link-dark-blue {
   color: rgba(12, 46, 80, 0.8) !important;
 }
 
-/* line 108, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
+/* line 124, ../../www/lpm.cms/scss-jet/components/_buttons.scss */
 .j-link-light-blue {
   color: rgba(142, 206, 243, 0.8) !important;
 }

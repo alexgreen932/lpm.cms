@@ -20,6 +20,40 @@ export const options = {
         { v: 'e-blue-shadow', t: 'blue-shadow' },
         { v: 'e-slight-shadow', t: 'slight-shadow' },
     ],
+    but_style: [
+        { v: '', t: 'Simple Link' },
+        { v: 'but-normal', t: 'Normal' },
+        { v: 'but-small', t: 'Small' },
+        { v: 'but-large', t: 'Large' },
+        { v: 'but-extra-large', t: 'Extra Large' }
+    ],
+    p: [
+        { v: '', t: 'None' },
+        { v: 'p-05', t: '0.5rem' },
+        { v: 'p-1', t: '1rem' },
+        { v: 'p-2', t: '2rem' },
+        { v: 'p-3', t: '3rem' },
+        { v: 'p-4', t: '4rem' },
+        { v: 'p-5', t: '5rem' },
+    ],
+    g: [
+        { v: '', t: 'None' },
+        { v: 'g-05', t: '0.5rem' },
+        { v: 'g-1', t: '1rem' },
+        { v: 'g-2', t: '2rem' },
+        { v: 'g-3', t: '3rem' },
+        { v: 'g-4', t: '4rem' },
+        { v: 'g-5', t: '5rem' },
+    ],
+    m: [
+        { v: '', t: 'None' },
+        { v: 'mv-05', t: '0.5rem' },
+        { v: 'mv-1', t: '1rem' },
+        { v: 'mv-2', t: '2rem' },
+        { v: 'mv-3', t: '3rem' },
+        { v: 'mv-4', t: '4rem' },
+        { v: 'mv-5', t: '5rem' },
+    ],
     ba: [
         { v: 'ba-s', t: 'Scroll' },
         { v: 'ba-f', t: 'Fixed' },
@@ -54,13 +88,13 @@ export const options = {
         { v: 'ai-st', t: 'Stretch' },
         { v: 'ai-c', t: 'Center' },
     ],
-    gap: [
+    g: [
         { v: 'g-05', t: '0.5 rem' },
         { v: 'g-1', t: '1 rem' },
         { v: 'g-2', t: '2 rem' },
         { v: 'g-3', t: '3 rem' },
     ],
-    'dir': [
+    'fd': [
         { v: 'fd-r', t: 'Row' },
         { v: 'fd-rr', t: 'Row Reverse' },
         { v: 'fd-c', t: 'Column' },
@@ -97,7 +131,7 @@ export const options = {
         { v: 'fs-34', t: '3.4 rem' },
         { v: 'fs-35', t: '3.5 rem' },
     ],
-    shadow: [
+    bs: [
         { v: '', t: 'none' },
         { v: 'bs-1', t: 'Depth 1' },
         { v: 'bs-2', t: 'Depth 2' },

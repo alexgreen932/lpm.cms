@@ -6,7 +6,19 @@
             :class="[sec.bg, sec.col]">
             <jet-toolbar v-if="isAdmin" cls="section" :elements="ops.current_page_data.sections" :index="i" />
 
-            <div class="cntr" :class="[sec.w, sec.jc, sec.ai, sec.p, sec.fd]">
+            <div class="cntr" :class="[
+                sec.w,
+                sec.jc,
+                sec.ai,
+                sec.p,
+                sec.fd,
+                sec.cbg,
+                sec.cbr,
+                sec.m,
+                sec.g
+            ]">
+
+
                 <!-- //todo add note box that content is empty -->
                 <template v-if="sec.content && sec.content.length" v-for="(e, i2) in sec.content" :key="i2">
                     <!-- dev---{{ e.type }} -->

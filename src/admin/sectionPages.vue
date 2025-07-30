@@ -9,7 +9,7 @@
                 ops.current_el }} -->
             <div v-if="showPage(i,e)" class="d-block tx-black p-05 br-5">
                 <h4 class="m-0 jc-b ai-c">
-                    <span>{{ e.title }} ---{{ e.slug }}</span>
+                    <span>{{ e.title }}</span>
                     <span class="fs-10 g-1">
                         <i v-if="ops.page_index !== i" class="fa-solid fa-pen-to-square j-click"
                             @click="switch_page(i, e)"></i>
