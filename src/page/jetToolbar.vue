@@ -4,7 +4,16 @@
         <i v-if="notFirst(index)" class="fa-solid" :class="prev" @click="moveItem(index, index - 1)"></i>
         <i v-if="notLast(index)" class="fa-solid" :class="next" @click="moveItem(index, index + 1)"></i>
         <i class="fa-solid fa-trash" @click="del(index)"></i>
-        <i class="fa-solid fa-plus" @click="addItem(index)"></i>
+        <i v-if="cls !== 'section'" class="fa-solid fa-plus" @click="addItem(index)"></i>
+        <i v-if="cls == 'section'" class="add-section" :class="showClose()" @click="show = !show">
+            <transition name="slideV">
+                <div v-if="show" class="d-drop drop p-1 g-1">
+                    <div class="but-blue fs-8" @click="addPattern()">{{ $__('Add Pattern') }}</div>
+                    <div class="but-grey fs-8" @click="addItem(index)">{{ $__('Add Empty Section') }}</div>
+                </div>
+            </transition>
+
+        </i>
     </div>
 </template>
 
@@ -55,9 +64,17 @@ export default {
             add: false,
             prev: 'fa-angle-up',
             next: 'fa-angle-down',
+            show: false,
         };
     },
     methods: {
+        showClose() {
+            if (this.show) {
+                return 'fa-solid fa-xmark';
+            } else {
+                return 'fa-solid fa-plus';
+            }
+        },
         async setPageIndex() {
             try {
                 const pages = await fetchFile('/data/pages_list.json');
@@ -76,7 +93,7 @@ export default {
         },
 
         async editItem(i) {
-            console.log('edit item func',this.cls);
+            console.log('edit item func', this.cls);
             switch (this.cls) {
                 case 'section':
                     this.$root.reset();
@@ -126,17 +143,21 @@ export default {
             } else {
                 //add elem
                 this.ops.current_menu = 'add';
-                this.ops.current_section= this.sec;
+                this.ops.current_section = this.sec;
                 this.ops.current_el = this.index;
                 console.log('this.index: ', this.index);
             }
         },
+
+        addPattern() {
+
+        },
     },
     mounted() {
-            // console.log('this.dir ------- ', this.dir);
+        // console.log('this.dir ------- ', this.dir);
         if (this.dir && this.dir == 'fd-c') {
-            
-        }else{
+
+        } else {
             this.prev = 'fa-angle-left';
             this.next = 'fa-angle-right';
         }

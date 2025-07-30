@@ -55,8 +55,9 @@ body {
                 transition: all ease 0.5s;
             }
 
+            &.isActive {background: $prim;}
             &:hover {
-
+                background: #9fa8c4;
                 span,
                 i {
                     transform: scale(1.05);

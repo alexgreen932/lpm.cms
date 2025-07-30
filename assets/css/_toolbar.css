@@ -87,3 +87,13 @@
 .element:hover {
   border-color: rgba(84, 86, 236, 0.6);
 }
+
+.add-section {
+  position: relative;
+}
+
+.add-section .d-drop {
+  position: absolute;
+  top: 100%;
+  right: 0;
+}

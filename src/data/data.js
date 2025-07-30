@@ -40,6 +40,27 @@ export const menu = [
       cls: 'tx-red-l2',
     },
   ];
+
+export const menu2 = [
+    {
+      title: 'Hide Bar',
+      slug: 'style',
+      icon: 'fa-solid fa-arrows-to-eye',
+      cls: 'tx-red-l2',
+    },
+    {
+      title: 'Setting',
+      slug: 'setting',
+      icon: 'fa-solid fa-gear',
+      cls: 'tx-white',
+    },
+    {
+      title: 'Logout',
+      slug: 'logout',
+      icon: 'fa-solid fa-right-from-bracket',
+      cls: 'tx-blue-l2',
+    },
+  ];
 export const style = {
   page: {
     edit: 99,

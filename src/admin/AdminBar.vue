@@ -1,24 +1,13 @@
 <template>
-    <div class="admin-bar">
-        <ul>
-            <li v-for="(e, i) in menu" :class="e.cls">
-                <template v-if="i == 0">
-                    <i
-                        v-if="ops.current_menu !== 99"
-                        class="fa-solid fa-ellipsis-vertical"
-                        @click="showSidebar(e.slug), $root.saveLocal()"
-                    ></i>
-                    <i
-                        v-if="ops.current_menu == 99"
-                        class="fa-solid fa-xmark"
-                        @click="$root.closeAdmin(), $root.saveLocal()"
-                    ></i>
-                </template>
-                <i
-                    v-if="i !== 0"
-                    :class="e.icon"
-                    @click="showSidebar(e.slug), $root.saveLocal()"
-                ></i>
+    <div class="admin-bar fd-c jc-b">
+        <ul class="m-0">
+            <li v-for="(e, i) in menu" :class="[e.cls, $isActive(ops.current_menu, e.slug)]">
+                <i :class="e.icon" @click="showSidebar(e.slug), $root.saveLocal()"></i>
+            </li>
+        </ul>
+        <ul class="m-0">
+            <li v-for="(e, i) in menu2" :class="[e.cls, $isActive(ops.current_menu, e.slug)]">
+                <i :class="e.icon" @click="showSidebar(e.slug), $root.saveLocal()"></i>
             </li>
         </ul>
     </div>
@@ -26,19 +15,26 @@
 
 
 <script>
-import { ops, menu } from "../data/data.js";
+import { ops, menu, menu2 } from "../data/data.js";
 export default {
     data() {
         return {
-            ops:ops,
+            ops,
             menu,
+            menu2,
+            current: 99,
         };
     },
     methods: {
+        // isActive(s){
+        //     if (this.ops.current_menu) {
+                
+        //     }
+        // },
         showSidebar(e) {
             // console.log('%c clicked show sidebar', 'color: #e50000',);
             if (this.ops.current_menu == e) {
-                this.ops.current_menu = null;
+                this.ops.current_menu = 99;
             } else {
                 this.ops.current_menu = e;
             }

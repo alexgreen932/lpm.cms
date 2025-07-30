@@ -112,13 +112,23 @@ body.isBar {
   transition: all ease 0.5s;
 }
 
-/* line 60, ../../www/lpm.cms/scss/src/_sidebar.scss */
+/* line 58, ../../www/lpm.cms/scss/src/_sidebar.scss */
+.admin-bar ul li.isActive {
+  background: #3c455d;
+}
+
+/* line 59, ../../www/lpm.cms/scss/src/_sidebar.scss */
+.admin-bar ul li:hover {
+  background: #9fa8c4;
+}
+
+/* line 61, ../../www/lpm.cms/scss/src/_sidebar.scss */
 .admin-bar ul li:hover span,
 .admin-bar ul li:hover i {
   transform: scale(1.05);
 }
 
-/* line 73, ../../www/lpm.cms/scss/src/_sidebar.scss */
+/* line 74, ../../www/lpm.cms/scss/src/_sidebar.scss */
 .admin-sec {
   position: fixed;
   top: 0;
@@ -239,6 +249,26 @@ body.isBar {
 /* line 103, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .element:hover {
   border-color: rgba(84, 86, 236, 0.6);
+}
+
+/* line 107, ../../www/lpm.cms/scss/src/_toolbar.scss */
+.add-section {
+  position: relative;
+}
+
+/* line 109, ../../www/lpm.cms/scss/src/_toolbar.scss */
+.add-section .d-drop {
+  background: #fff;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  position: absolute;
+  top: 100%;
+  right: 0;
+}
+
+/* line 116, ../../www/lpm.cms/scss/src/_toolbar.scss */
+.add-section .d-drop div {
+  white-space: nowrap;
 }
 
 /* line 2, ../../www/lpm.cms/scss/src/_sections.scss */
