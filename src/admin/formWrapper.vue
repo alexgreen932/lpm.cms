@@ -1,26 +1,34 @@
 <template>
     <ul class="j-tabs top style-bg">
-        <li v-for="tab in tabs" @click="current == tab.v">{{ tab.t }}</li>
+        <li v-for="(tab, i) in tabs" :class="$isActive(current, i)" @click="current = i">{{ tab.t }}</li>
     </ul>
     <ul class="j-tabs-content">
-        <li v-if="current == 'content'"></li>
-        <li v-if="current == 'style'">
-            <jet-form :obj="dev" :fields="renderFields(dev.classes)" />
+        <li v-if="current == 0">
+            <jet-form :obj="element.el" :fields="renderFields(element.el)" />
+        </li>
+            
+        <li v-if="current == 1">
+            <jet-form :obj="element.classes" :fields="renderFields(element.classes)" />
         </li>
     </ul>
+    content---{{renderFields(element.el)}}<br>
+    classes---{{element.classes}}<br>
 </template>
 <script>
 // import { ops } from "../data/data.js";
 import jetForm from '../form/jetForm.vue';
+import {fields_presets} from '../data/fields_presets.js';
 
 export default {
     components: {
         jetForm,
     },
+    props: ['element'],
     data() {
         return {
             // ops: ops,
-            current: 'style',
+            current: 0,
+            // fields,
             tabs: [
                 { v: 'content', t: this.$__('Content') },
                 { v: 'style', t: this.$__('Style') }
@@ -41,20 +49,10 @@ export default {
     methods: {
         renderFields(obj){
             let fields = [];
-            
-            //woll be imported when big, for starting dev it's here
-            let fields_presets = {
-                bg:{ title: this.$__('Background'), key: 'bg', type: 'picker', ops:'bg' },
-                w:{ title: this.$__('Container Width'), key: 'w', type: 'select', ops:'w' },
-                jc:{ title: this.$__('Justify Content'), key: 'jc', type: 'select', ops:'jc' },
-                ai:{ title: this.$__('Align Items'), key: 'ai', type: 'select', ops:'ai' },
-                fs:{ title: this.$__('Font Size'), key: 'fs', type: 'range', ops:'fs' },
-                fw:{ title: this.$__('Font Weight'), key: 'fw', type: 'select', ops:'fw' },
-                col:{ title: this.$__('Color'), key: 'col', type: 'picker', ops:'col' },
-            }
-            // obj.forEach((e) => {})
+        
             //get existing kuys
             let keys = Object.keys(obj);
+            console.log('keys: ', keys);
             
             keys.forEach((e) => {
                 //key exist in fields_preset

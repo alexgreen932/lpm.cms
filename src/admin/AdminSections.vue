@@ -4,7 +4,7 @@
          <div class="control-section">
             <h3 v-if="ops.current_menu=='pages'">{{t_pages}}</h3>
             <section-pages />   
-            <form-wrapper />        
+            <!-- <form-wrapper />         -->
 
          </div> 
          <add-new v-if="ops.current_menu=='add'" />

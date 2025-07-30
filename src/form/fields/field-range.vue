@@ -36,7 +36,7 @@ export default {
             prefixMap: {
                 blur: 'fb-',
                 opacity: 'o-',
-                font_size: 'fs',
+                fs: 'fs-',
                 height: 'h',
                 height_rem: 'hr',
                 line_height: 'lh',
@@ -69,6 +69,10 @@ export default {
         switch (this.f.ops) {
             case 'br':
                 this.min = 0;
+                this.max = 50;
+                break;
+            case 'fs':
+                this.min = 4;
                 this.max = 50;
                 break;
             case 'opacity':

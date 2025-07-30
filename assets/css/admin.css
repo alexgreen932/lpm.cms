@@ -165,6 +165,7 @@ body.isBar {
 /* line 26, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .jet-section .form-toolbar i {
   background: #fff;
+  color: #000 !important;
   border-radius: 3px;
   padding: 3px;
   cursor: pointer;
@@ -172,34 +173,34 @@ body.isBar {
   transition: all ease 0.6s;
 }
 
-/* line 34, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 35, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .jet-section .form-toolbar i:hover {
   background: #ccd7da;
 }
 
-/* line 42, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 43, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .jet-section:hover .form-toolbar {
   display: inline-flex;
 }
 
-/* line 50, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 51, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .jet-section:hover {
   border-color: rgba(0, 0, 0, 0.6);
 }
 
-/* line 54, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 55, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .element {
   position: relative;
   border: 1px solid transparent;
   transition: all ease 0.6s;
 }
 
-/* line 58, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 59, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .element div, .element img, .element p, .element ul, .element li, .element span, .element a {
   z-index: 4;
 }
 
-/* line 62, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 63, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .element .form-toolbar {
   position: absolute;
   display: none;
@@ -214,9 +215,10 @@ body.isBar {
   z-index: 5;
 }
 
-/* line 77, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 78, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .element .form-toolbar i {
   background: #fff;
+  color: #000 !important;
   border-radius: 3px;
   padding: 3px;
   cursor: pointer;
@@ -224,17 +226,17 @@ body.isBar {
   transition: all ease 0.6s;
 }
 
-/* line 85, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 87, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .element .form-toolbar i:hover {
   background: #ccd7da;
 }
 
-/* line 93, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 95, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .element:hover .form-toolbar {
   display: inline-flex;
 }
 
-/* line 101, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 103, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .element:hover {
   border-color: rgba(84, 86, 236, 0.6);
 }

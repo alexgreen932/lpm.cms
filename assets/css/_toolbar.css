@@ -22,6 +22,7 @@
 
 .jet-section .form-toolbar i {
   background: #fff;
+  color: #000 !important;
   border-radius: 3px;
   padding: 3px;
   cursor: pointer;
@@ -67,6 +68,7 @@
 
 .element .form-toolbar i {
   background: #fff;
+  color: #000 !important;
   border-radius: 3px;
   padding: 3px;
   cursor: pointer;

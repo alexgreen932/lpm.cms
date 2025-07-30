@@ -1,16 +1,33 @@
-.jet-section {
-  position: relative;
+.float-l {
+  float: left;
 }
 
-.jet-section div {
-  z-index: 2;
+.float-r {
+  float: right;
 }
 
-.jet-section .img-bg {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
+.ta-c {
+  text-align: center;
+}
+
+.ta-l {
+  text-align: left;
+}
+
+.ta-r {
+  text-align: right;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-600 {
+  font-weight: 600;
+  /* Equivalent to 700 */
+}
+
+.fw-800 {
+  font-weight: 800;
+  /* Will be heavier than its parent */
 }

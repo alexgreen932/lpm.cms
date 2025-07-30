@@ -1,9 +1,9 @@
 <template>
-    <component :is="e.tag" v-if="e.content.text" class="element" :class="$root.classes(e.classes)">
+    <component :is="e.el.tag" v-if="e.el.text" class="element" :class="$root.classes(e.classes)">
         <jet-toolbar cls="element" :sec="sec" :dir="dir" :elements="elements" :index="index" />
-        {{ e.content.text }}
+        {{ e.el.text }}
     </component>
-    <div v-if="!e.content.text" class="tx-grey">{{ $__('Enter a title') }}</div>
+    <div v-if="!e.el.text" class="tx-grey">{{ $__('Enter a title') }}</div>
 </template>
 
 <script>
@@ -19,7 +19,7 @@ export const meta = {
             "fw": "",
             "col": ""
         },
-        "content": { "text": "This is Sample Title" }
+        "el": { "text": "This is Sample Title" }
     },
 };
 

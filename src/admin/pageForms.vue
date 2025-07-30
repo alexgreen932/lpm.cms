@@ -24,8 +24,8 @@
                     :obj="section" :fields="fields_section" />
                 <template v-for="(element, i2) in section.content">
                     <!-- ----{{element.type}}---- -->
-                    <jet-form v-if="ops.current_el == i2 && ops.current_edit == 'element'" :title="titleEl(element.type)"
-                        :obj="section" :fields="fields_el" />
+                     <form-wrapper v-if="ops.current_el == i2 && ops.current_edit == 'element'" :element="element" />
+                    <!-- <jet-form v-if="ops.current_el == i2 && ops.current_edit == 'element'" :title="titleEl(element.type)" :obj="section" :fields="fields_el" /> -->
                 </template>
         </template>
     </div>
@@ -36,10 +36,12 @@
 import { fetchFile } from "../utils/helpers.js";
 import jetForm from "../form/jetForm.vue";
 import { ops } from '../data/data.js';
+import formWrapper from "./formWrapper.vue";
 
 export default {
     components: {
         jetForm,
+        formWrapper,
     },
     data() {
         return {

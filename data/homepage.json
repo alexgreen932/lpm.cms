@@ -1,1 +1,71 @@
-{"title":"Homepage ggg","slug":"homepage","meta_title":"Welcome to LPM - Best Landing Page Maker","meta_description":"lorem 999","edit":false,"img":"media/logo.png","sections":[{"edit":false,"add":false,"w":"w-container","cbg":"bg-white-alpha-4","cbr":"br-14","bg":"bg-white","m":"mv-1","p":"p-1","img":"media/bullet.jpg","blur":null,"opacity":null,"ba":"ba-s","bp":"bp-cc","col":"tx-gray-d3","jc":"jc-c","ai":"ai-s","g":"g-1","fd":"fd-c","bs":"","a":"","content":[{"type":"paragraph","classes":{"fs":"","col":""},"content":{"text":"This is Sample Text"}},{"type":"title","tag":"h1","classes":{"fs":"fs-20","fw":"","col":""},"content":{"text":"This is Sample Title"}},{"type":"button","classes":{"but_style":"but-normal","bg":"bg-blue","fs":"","col":"tx-white","br":"br-5"},"content":{"url":"","target":"_self","text":"Read More"}}]}]}
+{
+  "title": "Homepage ggg",
+  "slug": "homepage",
+  "meta_title": "Welcome to LPM - Best Landing Page Maker",
+  "meta_description": "lorem 999",
+  "edit": false,
+  "img": "media/logo.png",
+  "sections": [
+    {
+      "edit": false,
+      "add": false,
+      "w": "w-container",
+      "cbg": "bg-white-alpha-4",
+      "cbr": "br-14",
+      "bg": "bg-white",
+      "m": "mv-1",
+      "p": "p-1",
+      "img": "media/bullet.jpg",
+      "blur": null,
+      "opacity": null,
+      "ba": "ba-s",
+      "bp": "bp-cc",
+      "col": "tx-gray-d3",
+      "jc": "jc-c",
+      "ai": "ai-s",
+      "g": "g-1",
+      "fd": "fd-c",
+      "bs": "",
+      "a": "",
+      "content": [
+        {
+          "type": "paragraph",
+          "classes": {
+            "fs": "",
+            "col": ""
+          },
+          "el": {
+            "text": "This is Sample Text"
+          }
+        },
+        {
+          "type": "title",
+          "classes": {
+            "fs": "fs-20",
+            "fw": "",
+            "col": ""
+          },
+          "el": {
+            "tag": "h1",
+            "text": "This is Sample Title"
+          }
+        },
+        {
+          "type": "button",
+          "classes": {
+            "but_style": "but-normal",
+            "bg": "bg-blue",
+            "fs": "",
+            "col": "tx-white",
+            "br": "br-5"
+          },
+          "el": {
+            "url": "",
+            "target": "_self",
+            "text": "Read More"
+          }
+        }
+      ]
+    }
+  ]
+}

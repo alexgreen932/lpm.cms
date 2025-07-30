@@ -20,6 +20,18 @@ export const options = {
         { v: 'e-blue-shadow', t: 'blue-shadow' },
         { v: 'e-slight-shadow', t: 'slight-shadow' },
     ],
+    fw: [
+        { v: '', t: 'Normal' },
+        { v: 'fw-600', t: 'Bold' },
+    ],
+    tag: [
+        { v: 'h1', t: 'Heading 1' },
+        { v: 'h2', t: 'Heading 2' },
+        { v: 'h3', t: 'Heading 3' },
+        { v: 'h4', t: 'Heading 4' },
+        { v: 'h5', t: 'Heading 5' },
+        { v: 'h6', t: 'Heading 6' },
+    ],
     but_style: [
         { v: '', t: 'Simple Link' },
         { v: 'but-normal', t: 'Normal' },
