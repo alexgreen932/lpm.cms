@@ -1,14 +1,12 @@
 <template>
-{{show}}
   <div class="f-media">
     <div class="d-select" :class="cls(show)">
       <div v-if="!show" @click="show = !show">{{ $__('Select') }}</div>
       <template v-if="show" class="jc-b">
         <div class="fg-1" @click="show = !show">{{ $__('Close') }}</div>
         <label class="ai-c small" for="keep_open">
-          <!-- use checkbox instead of radio --> {{ $__('Keep Open') }}
+          {{ $__('Keep Open') }}
           <input id="keep_open" type="checkbox" v-model="keep_open" />
-         
         </label>
       </template>
     </div>

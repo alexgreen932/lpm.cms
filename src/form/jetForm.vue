@@ -3,7 +3,7 @@
         <h3 v-if="title">{{ title }}</h3>
         <div v-for="(f, i) in normalizedFields" :key="i" class="control-group">
             <template v-if="meetCondition(f)">
-                <label>{{ f.title }}</label>
+                <label v-if="f.type!=='checkbox'">{{ f.title }}</label>
                 <!-- dynamically resolve component -->
                 <component :is="getComponent(f.type)" v-model="obj[f.key]" :f="f" />
             </template>

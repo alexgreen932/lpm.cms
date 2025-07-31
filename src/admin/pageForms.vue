@@ -20,19 +20,29 @@
         <jet-form v-if="ops.edit_meta" :obj="ops.current_page_data" cls="bg-white" :fields="fields_meta" />
 
         <template v-if="ops.current_page_data" v-for="(section, i) in ops.current_page_data.sections">
-            <!-- section forms -->
-            <template v-if="ops.current_section == i && ops.current_edit == 'section'">
-                <jet-form :title="$__('Section Colors')" :obj="section.sec" :fields="f_section" />
-                <jet-form :title="$__('Container')" :obj="section.cont" :fields="f_container" />
-                <jet-form :title="$__('Image(optionaly)')" :obj="section.img" :fields="f_img" />
-            </template>
+            
+
+            <!-- render only current section  -->
+            <template v-if="ops.current_section == i">
+                <!-- remdered section  ---{{ i }}<br>
+ sec---{{ops.current_section}} index ---{{ i }} -->
+                <template v-if="ops.current_section == i && ops.current_edit == 'section'">
+                    <!-- section forms -->
+                    <jet-form :title="$__('Section Colors')" :obj="section.sec" :fields="f_section" />
+                    <jet-form :title="$__('Container')" :obj="section.cont" :fields="f_container" />
+                    <jet-form :title="$__('Image(optionaly)')" :obj="section.img" :fields="f_img" />
+                </template>
 
 
-            <template v-for="(element, i2) in section.content">
-                <!-- ----{{element.type}}---- -->
-                <form-wrapper v-if="ops.current_el == i2 && ops.current_edit == 'element'" :element="element" />
-                <!-- <jet-form v-if="ops.current_el == i2 && ops.current_edit == 'element'" :title="titleEl(element.type)" :obj="section" :fields="fields_el" /> -->
+                <template v-for="(element, i2) in section.content">
+                    <!-- ----{{element.type}}---- -->
+                    <form-wrapper v-if="ops.current_el == i2 && ops.current_edit == 'element'" :element="element" />
+                    <!-- <jet-form v-if="ops.current_el == i2 && ops.current_edit == 'element'" :title="titleEl(element.type)" :obj="section" :fields="fields_el" /> -->
+                </template>
+
+
             </template>
+
         </template>
     </div>
 
@@ -70,7 +80,7 @@ export default {
                 { title: this.$__('Color'), key: 'col', type: 'picker', ops: 'col' },
             ],
             f_container: [
-                               
+
                 { title: this.$__('Width'), key: 'w', type: 'select', ops: 'w' },
                 { title: this.$__('Justify Content'), key: 'jc', type: 'select', ops: 'jc' },
                 { title: this.$__('Align Items'), key: 'ai', type: 'select', ops: 'ai' },
@@ -85,7 +95,7 @@ export default {
                 { title: this.$__('Gap'), key: 'g', type: 'select', ops: 'g' },
 
 
-                
+
                 { title: this.$__('Group Animation'), tip: this.$__('Animation is applying for all elements of section, you can also add it for every separately, in elements'), key: 'a', type: 'picker', ops: 'a' },
             ],
             f_img: [

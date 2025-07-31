@@ -75,6 +75,10 @@ export default {
                 this.min = 4;
                 this.max = 50;
                 break;
+            case 'abs_pos':
+                this.min = -200;
+                this.max = 200;
+                break;
             case 'opacity':
                 // this.pre = '0.';//todo
                 break;

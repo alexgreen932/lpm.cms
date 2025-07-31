@@ -24,4 +24,27 @@ main {
   z-index: 1;
 }
 
+/* line 2, ../../www/lpm.cms/scss-jet/jpl/_small-elements.scss */
+figure.element {
+  position: relative;
+}
+
+/* line 4, ../../www/lpm.cms/scss-jet/jpl/_small-elements.scss */
+figure.element img {
+  z-index: 1;
+  width: 100%;
+}
+
+/* line 8, ../../www/lpm.cms/scss-jet/jpl/_small-elements.scss */
+figure.element figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.4);
+  z-index: 2;
+}
+
 /*# sourceMappingURL=index.css.map */
