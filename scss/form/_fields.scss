@@ -1,0 +1,41 @@
+.f-media {
+    display: flex;
+    background-color: rgb(200, 207, 218);
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+
+    .d-select {
+        flex-grow: 1;
+        display: flex;
+        background: #1e87f0;
+        color: #fff;
+        align-items: center;
+        padding: 0.5rem;
+        transition: all ease 0.5s;
+        &.doClose{
+            background: #a8c0d3;
+            color:#000;
+        }
+        &:hover {
+            box-shadow: $shadow-in;
+        }
+        .small{
+            font-size: 0.6rem;
+            color:#343558;
+        }
+    }
+
+    .d-del {
+        background: #3a6591;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        padding: 0 1rem;
+        transition: all ease 0.5s;
+
+        &:hover {
+            box-shadow: $shadow-in;
+        }
+    }
+}

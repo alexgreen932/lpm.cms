@@ -1,0 +1,50 @@
+ $bg: #eceff1;
+ $bg: #fff;
+
+ .jet-form {
+     color: #45495f;
+     display: flex;
+     flex-direction: column;
+     gap: 6px;
+     background: $bg;
+     border-radius: 5px;
+     padding: 5px;
+
+     input,
+     textarea {
+         padding: 2px 5px;
+     }
+
+
+     h3 {
+         font-size: 1.2rem;
+         background: #d0d8ee;
+         color:rgb(32, 32, 80);
+         border-radius: 4px;
+         padding: 4px;
+         border-bottom-width: 0;
+        //  border-bottom: 1px solid #394a5f;
+         margin: 0;
+     }
+
+     .control-group {
+         display: flex;
+         flex-direction: column;
+         gap: 4px;
+
+         label {
+             font-size: 14px;
+             color: #000;
+             //  font-weight: 500;
+             margin-bottom: 0;
+         }
+     }
+
+     &.small-transparent {
+         gap: 7px;
+
+         .control-group {
+             flex-direction: column;
+         }
+     }
+ }

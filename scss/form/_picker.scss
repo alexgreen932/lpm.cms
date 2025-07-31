@@ -1,0 +1,72 @@
+
+.picker-select {
+
+    padding: 5px;
+    cursor: pointer;
+    transition: all ease 0.4s;
+    color:#fff;
+        background: rgb(59, 80, 82);
+    &.doOpen{
+        background: #0066ff;
+    }
+    &.doClose{
+        background: #5e211c;
+    }
+
+    &:hover {
+        background: rgb(60, 66, 85);
+    }
+}
+
+.picker-box {
+    // width: 100%;
+    height: 300px;
+    overflow-y: auto;
+    background: #fff;
+    // .radio{
+    //     padding: 6px;
+    // }
+
+    ul {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+
+        li {
+            height: 30px;
+            cursor: pointer;
+            transition: all ease 0.4s;
+
+            &:hover {
+                transform: scale(0.95);
+            }
+
+        }
+    }
+}
+
+ul.bg li {
+    width: 9%;
+    min-width: 9%;
+}
+ul.col li {
+    width: 20%;
+    // min-width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // &.tx-white-alpha-2,
+    // &.tx-white-alpha-4,
+    // &.tx-white-alpha-6,
+    // &.tx-white-alpha-8,
+    // &.tx-white{
+    //     background: #000;
+    // }
+    span{
+        text-align: center;
+    }
+}
+ul.col li[class*="tx-white"] {
+    background: #444;
+}

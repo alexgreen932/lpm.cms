@@ -1,10 +1,10 @@
 <template>
-  <div class="ai-c br-4 bg-white j-click">
-    <div class="fg-1 ph-1" @click="show = !show">
+  <div class="f-media">
+    <div class="d-select" @click="show = !show">
       <span v-if="!modelValue">Select</span>
       <span v-else>Change</span>
     </div>
-    <div class="bg-blue tx-white p-05" @click="$emit('update:modelValue', '')">
+    <div class="d-del" @click="$emit('update:modelValue', '')">
       <i class="fa-solid fa-xmark"></i>
     </div>
   </div>

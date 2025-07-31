@@ -605,7 +605,7 @@ body.isBar {
   font-size: 10px;
 }
 
-/* line 4, ../../www/lpm.cms/scss/src/_form.scss */
+/* line 4, ../../www/lpm.cms/scss/form/_form.scss */
 .jet-form {
   color: #45495f;
   display: flex;
@@ -616,13 +616,13 @@ body.isBar {
   padding: 5px;
 }
 
-/* line 13, ../../www/lpm.cms/scss/src/_form.scss */
+/* line 13, ../../www/lpm.cms/scss/form/_form.scss */
 .jet-form input,
 .jet-form textarea {
   padding: 2px 5px;
 }
 
-/* line 19, ../../www/lpm.cms/scss/src/_form.scss */
+/* line 19, ../../www/lpm.cms/scss/form/_form.scss */
 .jet-form h3 {
   font-size: 1.2rem;
   background: #d0d8ee;
@@ -633,31 +633,83 @@ body.isBar {
   margin: 0;
 }
 
-/* line 30, ../../www/lpm.cms/scss/src/_form.scss */
+/* line 30, ../../www/lpm.cms/scss/form/_form.scss */
 .jet-form .control-group {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
-/* line 35, ../../www/lpm.cms/scss/src/_form.scss */
+/* line 35, ../../www/lpm.cms/scss/form/_form.scss */
 .jet-form .control-group label {
   font-size: 14px;
   color: #000;
   margin-bottom: 0;
 }
 
-/* line 43, ../../www/lpm.cms/scss/src/_form.scss */
+/* line 43, ../../www/lpm.cms/scss/form/_form.scss */
 .jet-form.small-transparent {
   gap: 7px;
 }
 
-/* line 46, ../../www/lpm.cms/scss/src/_form.scss */
+/* line 46, ../../www/lpm.cms/scss/form/_form.scss */
 .jet-form.small-transparent .control-group {
   flex-direction: column;
 }
 
-/* line 2, ../../www/lpm.cms/scss/src/_picker.scss */
+/* line 1, ../../www/lpm.cms/scss/form/_fields.scss */
+.f-media {
+  display: flex;
+  background-color: #c8cfda;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* line 8, ../../www/lpm.cms/scss/form/_fields.scss */
+.f-media .d-select {
+  flex-grow: 1;
+  display: flex;
+  background: #1e87f0;
+  color: #fff;
+  align-items: center;
+  padding: 0.5rem;
+  transition: all ease 0.5s;
+}
+
+/* line 16, ../../www/lpm.cms/scss/form/_fields.scss */
+.f-media .d-select.doClose {
+  background: #a8c0d3;
+  color: #000;
+}
+
+/* line 20, ../../www/lpm.cms/scss/form/_fields.scss */
+.f-media .d-select:hover {
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.397) inset;
+}
+
+/* line 23, ../../www/lpm.cms/scss/form/_fields.scss */
+.f-media .d-select .small {
+  font-size: 0.6rem;
+  color: #343558;
+}
+
+/* line 29, ../../www/lpm.cms/scss/form/_fields.scss */
+.f-media .d-del {
+  background: #3a6591;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  transition: all ease 0.5s;
+}
+
+/* line 37, ../../www/lpm.cms/scss/form/_fields.scss */
+.f-media .d-del:hover {
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.397) inset;
+}
+
+/* line 2, ../../www/lpm.cms/scss/form/_picker.scss */
 .picker-select {
   padding: 5px;
   cursor: pointer;
@@ -666,29 +718,29 @@ body.isBar {
   background: #3b5052;
 }
 
-/* line 9, ../../www/lpm.cms/scss/src/_picker.scss */
+/* line 9, ../../www/lpm.cms/scss/form/_picker.scss */
 .picker-select.doOpen {
   background: #0066ff;
 }
 
-/* line 12, ../../www/lpm.cms/scss/src/_picker.scss */
+/* line 12, ../../www/lpm.cms/scss/form/_picker.scss */
 .picker-select.doClose {
   background: #5e211c;
 }
 
-/* line 16, ../../www/lpm.cms/scss/src/_picker.scss */
+/* line 16, ../../www/lpm.cms/scss/form/_picker.scss */
 .picker-select:hover {
   background: #3c4255;
 }
 
-/* line 21, ../../www/lpm.cms/scss/src/_picker.scss */
+/* line 21, ../../www/lpm.cms/scss/form/_picker.scss */
 .picker-box {
   height: 300px;
   overflow-y: auto;
   background: #fff;
 }
 
-/* line 30, ../../www/lpm.cms/scss/src/_picker.scss */
+/* line 30, ../../www/lpm.cms/scss/form/_picker.scss */
 .picker-box ul {
   width: 100%;
   display: flex;
@@ -696,25 +748,25 @@ body.isBar {
   margin: 0;
 }
 
-/* line 36, ../../www/lpm.cms/scss/src/_picker.scss */
+/* line 36, ../../www/lpm.cms/scss/form/_picker.scss */
 .picker-box ul li {
   height: 30px;
   cursor: pointer;
   transition: all ease 0.4s;
 }
 
-/* line 41, ../../www/lpm.cms/scss/src/_picker.scss */
+/* line 41, ../../www/lpm.cms/scss/form/_picker.scss */
 .picker-box ul li:hover {
   transform: scale(0.95);
 }
 
-/* line 49, ../../www/lpm.cms/scss/src/_picker.scss */
+/* line 49, ../../www/lpm.cms/scss/form/_picker.scss */
 ul.bg li {
   width: 9%;
   min-width: 9%;
 }
 
-/* line 53, ../../www/lpm.cms/scss/src/_picker.scss */
+/* line 53, ../../www/lpm.cms/scss/form/_picker.scss */
 ul.col li {
   width: 20%;
   display: flex;
@@ -722,12 +774,12 @@ ul.col li {
   align-items: center;
 }
 
-/* line 66, ../../www/lpm.cms/scss/src/_picker.scss */
+/* line 66, ../../www/lpm.cms/scss/form/_picker.scss */
 ul.col li span {
   text-align: center;
 }
 
-/* line 70, ../../www/lpm.cms/scss/src/_picker.scss */
+/* line 70, ../../www/lpm.cms/scss/form/_picker.scss */
 ul.col li[class*="tx-white"] {
   background: #444;
 }
