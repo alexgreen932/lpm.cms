@@ -636,31 +636,35 @@ body.isBar {
 
 /* line 19, ../../www/lpm.cms/scss/src/_form.scss */
 .jet-form h3 {
-  font-size: 1.5rem;
-  border-bottom: 1px solid #394a5f;
-  margin: 0 0 7px;
+  font-size: 1.2rem;
+  background: #d0d8ee;
+  color: #202050;
+  border-radius: 4px;
+  padding: 4px;
+  border-bottom-width: 0;
+  margin: 0;
 }
 
-/* line 25, ../../www/lpm.cms/scss/src/_form.scss */
+/* line 30, ../../www/lpm.cms/scss/src/_form.scss */
 .jet-form .control-group {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
-/* line 30, ../../www/lpm.cms/scss/src/_form.scss */
+/* line 35, ../../www/lpm.cms/scss/src/_form.scss */
 .jet-form .control-group label {
   font-size: 14px;
   color: #000;
   margin-bottom: 0;
 }
 
-/* line 38, ../../www/lpm.cms/scss/src/_form.scss */
+/* line 43, ../../www/lpm.cms/scss/src/_form.scss */
 .jet-form.small-transparent {
   gap: 7px;
 }
 
-/* line 41, ../../www/lpm.cms/scss/src/_form.scss */
+/* line 46, ../../www/lpm.cms/scss/src/_form.scss */
 .jet-form.small-transparent .control-group {
   flex-direction: column;
 }

@@ -68,10 +68,18 @@ if (!$page) {
         <?php
         // dd($page->sections);
         foreach($page->sections as $section) {
+            $i=0;
         dd($section, 'value ');
         // dd($key);
-            echo '';
-            echo '';
+        $i++;
+            echo '<div id="section-' . $i . '" class="jet-section ' . classes($section['sec']) . '">';
+            echo '<div class="' . classes($section['cont']) . '">';
+            echo '</div>';
+            $img = $section['img'];
+            if ($img['src']) {
+                echo '<div class="img-bg ' . classes($img, 'src') . '" style="background-image: url(\'' . $img['src'] . '\')"></div>';
+            }
+            echo '</div>';
         }
         ?>
         <h1>Rendered Page</h1>
@@ -79,6 +87,7 @@ if (!$page) {
 
 
     </main>
+    
 
     <footer id="footer" class="bg-blue-grey-d3 tx-white">
         <div class="w-container ai-c p-1 g-1">Footer(dev version)</div>

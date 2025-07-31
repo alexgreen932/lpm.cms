@@ -2,8 +2,27 @@
 // import toolbar from './toolbar.js';
 
 export default {
-  classes(e) {
-    return Object.values(e).filter(Boolean);
+  // classes(e) {
+  //   return Object.values(e).filter(Boolean);
+  // },
+  classes(e, exclude = null) {
+    // Return empty array if not an object
+    if (!e || typeof e !== 'object') return [];
+
+    // Convert exclude to array (supports comma separated strings)
+    let excludedKeys = [];
+    if (typeof exclude === 'string') {
+      excludedKeys = exclude.split(',').map(k => k.trim());
+    } else if (Array.isArray(exclude)) {
+      excludedKeys = exclude;
+    }
+
+    // Pick source: nested classes key or the object itself
+    const source = (e.classes && typeof e.classes === 'object') ? e.classes : e;
+
+    return Object.entries(source)
+      .filter(([key, value]) => !excludedKeys.includes(key) && Boolean(value))
+      .map(([, value]) => value);
   },
   reset() {
     this.ops.current_section = 99;

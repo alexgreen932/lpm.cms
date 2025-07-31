@@ -9,24 +9,30 @@
     {
       "edit": false,
       "add": false,
-      "w": "w-container",
-      "cbg": "bg-white-alpha-4",
-      "cbr": "br-14",
-      "bg": "bg-white",
-      "m": "mv-1",
-      "p": "p-1",
-      "img": "media/bullet.jpg",
-      "blur": null,
-      "opacity": null,
-      "ba": "ba-s",
-      "bp": "bp-cc",
-      "col": "tx-gray-d3",
-      "jc": "jc-c",
-      "ai": "ai-s",
-      "g": "g-1",
-      "fd": "fd-c",
-      "bs": "",
-      "a": "",
+      "sec": {
+        "bg": "bg-white",
+        "col": "tx-gray-d3"
+      },
+      "cont": {
+        "w": "w-container",
+        "bg": "bg-white-alpha-4",
+        "br": "br-14",
+        "m": "mv-1",
+        "p": "p-1",
+        "jc": "jc-c",
+        "ai": "ai-s",
+        "g": "g-1",
+        "fd": "fd-c",
+        "bs": "",
+        "a": ""
+      },
+      "img": {
+        "src": "media/bullet.jpg",
+        "blur": null,
+        "opacity": null,
+        "ba": "ba-s",
+        "bp": "bp-cc"
+      },
       "content": [
         {
           "type": "paragraph",

@@ -20,13 +20,19 @@
         <jet-form v-if="ops.edit_meta" :obj="ops.current_page_data" cls="bg-white" :fields="fields_meta" />
 
         <template v-if="ops.current_page_data" v-for="(section, i) in ops.current_page_data.sections">
-                <jet-form v-if="ops.current_section == i && ops.current_edit == 'section'" :title="titleSec(i)"
-                    :obj="section" :fields="fields_section" />
-                <template v-for="(element, i2) in section.content">
-                    <!-- ----{{element.type}}---- -->
-                     <form-wrapper v-if="ops.current_el == i2 && ops.current_edit == 'element'" :element="element" />
-                    <!-- <jet-form v-if="ops.current_el == i2 && ops.current_edit == 'element'" :title="titleEl(element.type)" :obj="section" :fields="fields_el" /> -->
-                </template>
+            <!-- section forms -->
+            <template v-if="ops.current_section == i && ops.current_edit == 'section'">
+                <jet-form :title="$__('Section Colors')" :obj="section.sec" :fields="f_section" />
+                <jet-form :title="$__('Container')" :obj="section.cont" :fields="f_container" />
+                <jet-form :title="$__('Image(optionaly)')" :obj="section.img" :fields="f_img" />
+            </template>
+
+
+            <template v-for="(element, i2) in section.content">
+                <!-- ----{{element.type}}---- -->
+                <form-wrapper v-if="ops.current_el == i2 && ops.current_edit == 'element'" :element="element" />
+                <!-- <jet-form v-if="ops.current_el == i2 && ops.current_edit == 'element'" :title="titleEl(element.type)" :obj="section" :fields="fields_el" /> -->
+            </template>
         </template>
     </div>
 
@@ -58,30 +64,60 @@ export default {
                 { title: this.$__('Meta Description'), key: 'meta_description', type: 'textarea' },
                 // { title: this.$__('Atem Align'), key: 'ai', type: 'input' },
             ],
-            
+
+            f_section: [
+                { title: this.$__('Background'), key: 'bg', type: 'picker', ops: 'bg' },
+                { title: this.$__('Color'), key: 'col', type: 'picker', ops: 'col' },
+            ],
+            f_container: [
+                               
+                { title: this.$__('Width'), key: 'w', type: 'select', ops: 'w' },
+                { title: this.$__('Justify Content'), key: 'jc', type: 'select', ops: 'jc' },
+                { title: this.$__('Align Items'), key: 'ai', type: 'select', ops: 'ai' },
+
+
+                { title: this.$__('Background(optional)'), key: 'bg', type: 'picker', ops: 'bg' },
+                { title: this.$__('Border Radius'), key: 'br', type: 'range', ops: 'br' },
+                { title: this.$__('Shadow'), key: 'bs', type: 'select', ops: 'bs' },
+                { title: this.$__('Padding'), key: 'p', type: 'select', ops: 'p' },
+                { title: this.$__('Margin'), key: 'm', type: 'select', ops: 'm' },
+                { title: this.$__('Direction'), key: 'fd', type: 'select', ops: 'fd' },
+                { title: this.$__('Gap'), key: 'g', type: 'select', ops: 'g' },
+
+
+                
+                { title: this.$__('Group Animation'), tip: this.$__('Animation is applying for all elements of section, you can also add it for every separately, in elements'), key: 'a', type: 'picker', ops: 'a' },
+            ],
+            f_img: [
+                { title: this.$__('Background Image'), key: 'src', type: 'media' },
+                { title: this.$__('Image Position'), key: 'bp', type: 'select', ops: 'bp' },
+                { title: this.$__('Image Attachment'), key: 'ba', type: 'select', ops: 'ba' },
+                { title: this.$__('Image Blur'), key: 'blur', type: 'range', ops: 'blur' },
+                { title: this.$__('Image Opacity'), tip: this.$__('Useful for creating contrast backgroumd - for example set background image Black and opacity 5(0.5)'), key: 'opacity', type: 'range', ops: 'opacity' },
+            ],
             fields_section: [
-                { title: this.$__('Background'), key: 'bg', type: 'picker', ops:'bg' },
-                { title: this.$__('Color'), key: 'col', type: 'picker', ops:'col' },
-                { title: this.$__('Container Width'), key: 'w', type: 'select', ops:'w' },
-                { title: this.$__('Justify Content'), key: 'jc', type: 'select', ops:'jc' },
-                { title: this.$__('Align Items'), key: 'ai', type: 'select', ops:'ai' },
+
+                { title: this.$__('Animation'), key: 'a', type: 'select', ops: 'ag' },
+                { title: this.$__('Container Width'), key: 'w', type: 'select', ops: 'w' },
+                { title: this.$__('Justify Content'), key: 'jc', type: 'select', ops: 'jc' },
+                { title: this.$__('Align Items'), key: 'ai', type: 'select', ops: 'ai' },
 
 
-                { title: this.$__('Container Background'), key: 'cbg', type: 'picker', ops:'bg' },
-                { title: this.$__('Container Border Radius'), key: 'cbr', type: 'range', ops:'br' },
-                { title: this.$__('Container Shadow'), key: 'bs', type: 'select', ops:'bs' },
-                { title: this.$__('Padding'), key: 'p', type: 'select', ops:'p' },
-                { title: this.$__('Margin'), key: 'm', type: 'select', ops:'m' },
-                { title: this.$__('Direction'), key: 'fd', type: 'select', ops:'fd' },
-                { title: this.$__('Gap'), key: 'g', type: 'select', ops:'g' },
-    
+                { title: this.$__('Container Background'), key: 'cbg', type: 'picker', ops: 'bg' },
+                { title: this.$__('Container Border Radius'), key: 'cbr', type: 'range', ops: 'br' },
+                { title: this.$__('Container Shadow'), key: 'bs', type: 'select', ops: 'bs' },
+                { title: this.$__('Padding'), key: 'p', type: 'select', ops: 'p' },
+                { title: this.$__('Margin'), key: 'm', type: 'select', ops: 'm' },
+                { title: this.$__('Direction'), key: 'fd', type: 'select', ops: 'fd' },
+                { title: this.$__('Gap'), key: 'g', type: 'select', ops: 'g' },
+
 
                 { title: this.$__('Background Image'), key: 'img', type: 'media' },
-                { title: this.$__('Image Position'), key: 'bp', type: 'select', ops:'bp' },
-                { title: this.$__('Image Attachment'), key: 'ba', type: 'select', ops:'ba' },
-                { title: this.$__('Image Blur'), key: 'blur', type: 'range', ops:'blur' },
-                { title: this.$__('Image Opacity'),  tip: this.$__('Useful for creating contrast backgroumd - for example set background image Black and opacity 5(0.5)'), key: 'opacity', type: 'range', ops:'opacity' },
-                { title: this.$__('Group Animation'), tip: this.$__('Animation is applying for all elements of section, you can also add it for every separately, in elements'), key: 'a', type: 'picker', ops:'a' },
+                { title: this.$__('Image Position'), key: 'bp', type: 'select', ops: 'bp' },
+                { title: this.$__('Image Attachment'), key: 'ba', type: 'select', ops: 'ba' },
+                { title: this.$__('Image Blur'), key: 'blur', type: 'range', ops: 'blur' },
+                { title: this.$__('Image Opacity'), tip: this.$__('Useful for creating contrast backgroumd - for example set background image Black and opacity 5(0.5)'), key: 'opacity', type: 'range', ops: 'opacity' },
+                { title: this.$__('Group Animation'), tip: this.$__('Animation is applying for all elements of section, you can also add it for every separately, in elements'), key: 'a', type: 'picker', ops: 'a' },
             ],
 
             fields_el: [
@@ -91,13 +127,13 @@ export default {
             ],
         };
     },
-    methods:{
-        titleSec(i){
+    methods: {
+        titleSec(i) {
             let sec = i + 1;
             return this.$__('Edit Section-') + sec;
         },
-        titleEl(v){
-            return this.$__('Edit')  + ' ' + v;
+        titleEl(v) {
+            return this.$__('Edit') + ' ' + v;
         },
     },
 

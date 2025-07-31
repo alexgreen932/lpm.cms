@@ -62,3 +62,17 @@ function loadPage(string $slug): ?array {
     return null;
 }
 
+//load functions 
+// Get the directory where this file is located
+$functionsDir = __DIR__ . '/functions/';
+
+// Use glob to get all PHP files in the functions folder
+$functionFiles = glob($functionsDir . '*.php');
+
+// Loop through each file and require it once
+if (!empty($functionFiles)) {
+    foreach ($functionFiles as $file) {
+        require_once $file;
+    }
+}
+

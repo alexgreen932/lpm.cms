@@ -3,20 +3,10 @@
 
     <div v-else-if="ops.current_page_data && ops.current_page_data.sections && ops.current_page_data.sections.length">
         <div v-for="(sec, i) in ops.current_page_data.sections" :key="i" :id="sectionId(i)" class="jet-section"
-            :class="[sec.bg, sec.col]">
+            :class="$root.classes(sec.sec)">
             <jet-toolbar v-if="isAdmin" cls="section" :elements="ops.current_page_data.sections" :index="i" />
 
-            <div class="cntr" :class="[
-                sec.w,
-                sec.jc,
-                sec.ai,
-                sec.p,
-                sec.fd,
-                sec.cbg,
-                sec.cbr,
-                sec.m,
-                sec.g
-            ]">
+            <div class="cntr" :class="$root.classes(sec.cont)">
 
 
                 <!-- //todo add note box that content is empty -->
@@ -27,10 +17,9 @@
 
                 </template>
             </div>
-
             <!-- <jet-add v-if="sec.add" :sec="sec" :content="sec.content" /> -->
-            <div v-if="sec.img" class="img-bg" :class="[sec.bp, sec.ba, sec.blur, sec.opacity]"
-                :style="{ 'background-image': 'url(' + sec.img + ')' }"></div>
+            <div v-if="sec.img" class="img-bg" :class="$root.classes(sec.img, 'img')"
+                :style="{ 'background-image': 'url(' + sec.img.src + ')' }"></div>
         </div>
 
         <div class="w-container b-blue g-1 p-1 nv-1 wc-1-4">
