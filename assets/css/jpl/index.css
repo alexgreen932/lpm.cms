@@ -1,14 +1,20 @@
-/* line 2, ../../www/lpm.cms/scss-jet/jpl/_utilites.scss */
+/* line 2, ../../www/lpm.cms/scss-jet/jpl/_layout.scss */
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 6, ../../www/lpm.cms/scss-jet/jpl/_layout.scss */
 .jet-section {
   position: relative;
 }
 
-/* line 4, ../../www/lpm.cms/scss-jet/jpl/_utilites.scss */
+/* line 8, ../../www/lpm.cms/scss-jet/jpl/_layout.scss */
 .jet-section div {
   z-index: 2;
 }
 
-/* line 7, ../../www/lpm.cms/scss-jet/jpl/_utilites.scss */
+/* line 11, ../../www/lpm.cms/scss-jet/jpl/_layout.scss */
 .jet-section .img-bg {
   position: absolute;
   top: 0;

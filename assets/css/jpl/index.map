@@ -3,12 +3,14 @@
 	"file": "index.css",
 	"sources": [
 		"../../../scss-jet/jpl/index.scss",
-		"../../../scss-jet/jpl/_utilites.scss"
+		"../../../scss-jet/jpl/_utilites.scss",
+		"../../../scss-jet/jpl/_layout.scss"
 	],
 	"sourcesContent": [
-		" \n\n@import \"utilites\";",
-		" \n .jet-section{\n    position: relative;\n    div{\n        z-index: 2;\n    }\n    .img-bg{\n        position: absolute;\n        top: 0;\n        bottom: 0;\n        left: 0;\n        right: 0;\n        z-index: 1;\n    }\n }\n"
+		" \n\n@import \"utilites\";\n@import \"layout\";",
+		"\n",
+		" \n main{\n    display: flex;\n    flex-direction: column;\n }\n .jet-section{\n    position: relative;\n    div{\n        z-index: 2;\n    }\n    .img-bg{\n        position: absolute;\n        top: 0;\n        bottom: 0;\n        left: 0;\n        right: 0;\n        z-index: 1;\n    }\n }\n"
 	],
 	"names": [],
-	"mappings": ";ACCC,AAAA,YAAY,CAAA;EACT,QAAQ,EAAE,QAAQ;CAYpB;;;AAbD,AAEG,YAFS,CAET,GAAG,CAAA;EACC,OAAO,EAAE,CAAC;CACb;;;AAJJ,AAKG,YALS,CAKT,OAAO,CAAA;EACH,QAAQ,EAAE,QAAQ;EAClB,GAAG,EAAE,CAAC;EACN,MAAM,EAAE,CAAC;EACT,IAAI,EAAE,CAAC;EACP,KAAK,EAAE,CAAC;EACR,OAAO,EAAE,CAAC;CACb"
+	"mappings": ";AECC,AAAA,IAAI,CAAA;EACD,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;CACxB;;;AACD,AAAA,YAAY,CAAA;EACT,QAAQ,EAAE,QAAQ;CAYpB;;;AAbD,AAEG,YAFS,CAET,GAAG,CAAA;EACC,OAAO,EAAE,CAAC;CACb;;;AAJJ,AAKG,YALS,CAKT,OAAO,CAAA;EACH,QAAQ,EAAE,QAAQ;EAClB,GAAG,EAAE,CAAC;EACN,MAAM,EAAE,CAAC;EACT,IAAI,EAAE,CAAC;EACP,KAAK,EAAE,CAAC;EACR,OAAO,EAAE,CAAC;CACb"
 }

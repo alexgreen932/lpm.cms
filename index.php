@@ -31,7 +31,7 @@ if ($slug === $config['login_url']) {
 
 // === LOAD PAGE DATA ===
 $page = loadPage($slug);
-$page = (object) $page;//to object
+// $page = (object) $page; //to object
 // dd($page);
 // Fallback to homepage if page not found
 if (!$page) {
@@ -45,7 +45,6 @@ if (!$page) {
 // dd($page->sections, 'log 1');
 
 ?>
-!
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,7 +55,7 @@ if (!$page) {
 
     <link rel="stylesheet" crossorigin href="assets/css/jet.min.css">
     <!-- todo move in admin or join with jet -->
-    <link rel="stylesheet" crossorigin href="assets/css/admin.css">
+    <!-- <link rel="stylesheet" crossorigin href="assets/css/admin.css"> -->
     <link rel="stylesheet" crossorigin href="assets/css/all.min.css">
 </head>
 
@@ -67,13 +66,22 @@ if (!$page) {
     <main id="main" class="fg-1">
         <?php
         // dd($page->sections);
-        foreach($page->sections as $section) {
-            $i=0;
-        dd($section, 'value ');
-        // dd($key);
-        $i++;
+        foreach ($page['sections'] as $section) {
+            $i = 0;
+
+            // dd($key);
+            $i++;
             echo '<div id="section-' . $i . '" class="jet-section ' . classes($section['sec']) . '">';
             echo '<div class="' . classes($section['cont']) . '">';
+            //elements rendering
+            foreach ($section['content'] as $element) {
+                $function = 'com_' . $element['type'];
+                if (function_exists($function)) {
+                    echo $function($element);
+                } else {
+                    echo "<!-- Unknown component: {$element['type']} -->";
+                }
+            }
             echo '</div>';
             $img = $section['img'];
             if ($img['src']) {
@@ -82,12 +90,7 @@ if (!$page) {
             echo '</div>';
         }
         ?>
-        <h1>Rendered Page</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A voluptates deserunt culpa soluta veritatis dolor minima aut. Error excepturi, debitis facere dolorem nulla aperiam inventore delectus ut sunt quam ipsa!</p>
-
-
     </main>
-    
 
     <footer id="footer" class="bg-blue-grey-d3 tx-white">
         <div class="w-container ai-c p-1 g-1">Footer(dev version)</div>

@@ -20,7 +20,6 @@ if (!$title || !$slug) {
 // Paths
 $pagesListFile = DATA . "pages_list.json";
 $newPageFile   = DATA . "{$slug}.json";
-dd($newPageFile, 'new file');
 
 // --- 1. Update pages_list.json ---
 $list = [];
