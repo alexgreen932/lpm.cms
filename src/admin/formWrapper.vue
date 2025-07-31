@@ -9,10 +9,11 @@
             
         <li v-if="current == 1">
             <jet-form :obj="element.classes" :fields="renderFields(element.classes)" />
+            <jet-form v-if="element.style" :obj="element.style" :fields="renderFields(element.style)" />
         </li>
     </ul>
-    content---{{renderFields(element.el)}}<br>
-    classes---{{element.classes}}<br>
+    <!-- content---{{renderFields(element.el)}}<br>
+    classes---{{element.classes}}<br> -->
 </template>
 <script>
 // import { ops } from "../data/data.js";

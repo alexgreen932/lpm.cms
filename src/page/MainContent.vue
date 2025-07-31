@@ -16,6 +16,9 @@
                         :index="i2" />
 
                 </template>
+                <div v-else class="b-blue p-1 jc-c m-1 j-click g-05" @click="addElem(i)">
+                    <i class="fa-solid fa-plus"></i><span>{{$__('Add Elements') }}</span>
+                </div>
             </div>
             <!-- <jet-add v-if="sec.add" :sec="sec" :content="sec.content" /> -->
             <div v-if="sec.img" class="img-bg" :class="$root.classes(sec.img, 'img')"
@@ -52,6 +55,12 @@ export default {
         };
     },
     methods: {
+        addElem(i){
+            this.ops.current_menu = 'add';
+                this.ops.current_section = i;
+                this.ops.current_el = 0;
+                // console.log('this.index: ', this.index);
+        },
         getComponent(type) {
             const name = `../components/${type}.vue`;
             return modules[name].default;

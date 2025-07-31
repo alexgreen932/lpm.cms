@@ -41,9 +41,16 @@ export default {
       const item = JSON.parse(JSON.stringify(e));
       let target = this.ops.current_page_data.sections[this.ops.current_section];
 
-      // Insert new element right after the clicked one
+      //if has elements, add in correct place 
+      if (target.content.length) {
+         // Insert new element right after the clicked one
       const insertIndex = this.ops.current_el + 1;
       target.content.splice(insertIndex, 0, item);
+      }else{
+        //if content arr is empty push
+        target.content.push(item);
+      }
+     
 
       console.log('Inserted at index', insertIndex, item);
 

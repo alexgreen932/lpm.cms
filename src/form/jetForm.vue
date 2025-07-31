@@ -2,9 +2,12 @@
     <div class="jet-form" :class="formstyle">
         <h3 v-if="title">{{ title }}</h3>
         <div v-for="(f, i) in normalizedFields" :key="i" class="control-group">
-            <label>{{ f.title }}</label>
-            <!-- dynamically resolve component -->
-            <component :is="getComponent(f.type)" v-model="obj[f.key]" :f="f" />
+            <template v-if="meetCondition(f)">
+                <label>{{ f.title }}</label>
+                <!-- dynamically resolve component -->
+                <component :is="getComponent(f.type)" v-model="obj[f.key]" :f="f" />
+            </template>
+
         </div>
     </div>
 </template>
@@ -42,10 +45,15 @@ export default {
     },
 
     methods: {
-        /**
-         * Get correct component for a given field type.
-         * Example: type="input" → ./fields/field-input.vue
-         */
+        meetCondition(f) {
+            if (!f.showIf) return true;
+
+            return Object.entries(f.showIf).every(([key, expected]) =>
+                Array.isArray(expected)
+                    ? expected.includes(this.obj[key])
+                    : this.obj[key] === expected
+            );
+        },
         getComponent(type) {
             const file = `./fields/field-${type}.vue`;
             return modules[file]?.default || null;

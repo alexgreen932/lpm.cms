@@ -7289,16 +7289,21 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 /* line 1, ../../www/lpm.cms/scss-jet/core/_positions.scss */
-.pos-r {
+.p-r {
   position: relative;
 }
 
-/* line 5, ../../www/lpm.cms/scss-jet/core/_positions.scss */
+/* line 4, ../../www/lpm.cms/scss-jet/core/_positions.scss */
+.p-a {
+  position: relative;
+}
+
+/* line 8, ../../www/lpm.cms/scss-jet/core/_positions.scss */
 [class*='pos-a'] {
   position: absolute;
 }
 
-/* line 9, ../../www/lpm.cms/scss-jet/core/_positions.scss */
+/* line 12, ../../www/lpm.cms/scss-jet/core/_positions.scss */
 .pos-a-0000 {
   top: 0;
   right: 0;
@@ -7306,100 +7311,100 @@ p, h1, h2, h3, h4, h5, h6 {
   left: 0;
 }
 
-/* line 15, ../../www/lpm.cms/scss-jet/core/_positions.scss */
+/* line 18, ../../www/lpm.cms/scss-jet/core/_positions.scss */
 .pos-a-00x0 {
   top: 0;
   right: 0;
   left: 0;
 }
 
-/* line 20, ../../www/lpm.cms/scss-jet/core/_positions.scss */
+/* line 23, ../../www/lpm.cms/scss-jet/core/_positions.scss */
 .pos-a-x000 {
   left: 0;
   bottom: 0;
   right: 0;
 }
 
-/* line 25, ../../www/lpm.cms/scss-jet/core/_positions.scss */
+/* line 28, ../../www/lpm.cms/scss-jet/core/_positions.scss */
 .pos-a-000x {
   top: 0;
   bottom: 0;
   right: 0;
 }
 
-/* line 30, ../../www/lpm.cms/scss-jet/core/_positions.scss */
+/* line 33, ../../www/lpm.cms/scss-jet/core/_positions.scss */
 .pos-a-0x00 {
   top: 0;
   bottom: 0;
   left: 0;
 }
 
-/* line 38, ../../www/lpm.cms/scss-jet/core/_positions.scss */
+/* line 41, ../../www/lpm.cms/scss-jet/core/_positions.scss */
 .z-1 {
   z-index: 1;
 }
 
-/* line 39, ../../www/lpm.cms/scss-jet/core/_positions.scss */
+/* line 42, ../../www/lpm.cms/scss-jet/core/_positions.scss */
 .z-2 {
   z-index: 2;
 }
 
-/* line 40, ../../www/lpm.cms/scss-jet/core/_positions.scss */
+/* line 43, ../../www/lpm.cms/scss-jet/core/_positions.scss */
 .z-3 {
   z-index: 3;
 }
 
-/* line 41, ../../www/lpm.cms/scss-jet/core/_positions.scss */
+/* line 44, ../../www/lpm.cms/scss-jet/core/_positions.scss */
 .z-4 {
   z-index: 4;
 }
 
-/* line 42, ../../www/lpm.cms/scss-jet/core/_positions.scss */
+/* line 45, ../../www/lpm.cms/scss-jet/core/_positions.scss */
 .z-5 {
   z-index: 5;
 }
 
-/* line 43, ../../www/lpm.cms/scss-jet/core/_positions.scss */
+/* line 46, ../../www/lpm.cms/scss-jet/core/_positions.scss */
 .z-6 {
   z-index: 6;
 }
 
-/* line 44, ../../www/lpm.cms/scss-jet/core/_positions.scss */
+/* line 47, ../../www/lpm.cms/scss-jet/core/_positions.scss */
 .z-7 {
   z-index: 7;
 }
 
-/* line 45, ../../www/lpm.cms/scss-jet/core/_positions.scss */
+/* line 48, ../../www/lpm.cms/scss-jet/core/_positions.scss */
 .z-8 {
   z-index: 8;
 }
 
-/* line 46, ../../www/lpm.cms/scss-jet/core/_positions.scss */
+/* line 49, ../../www/lpm.cms/scss-jet/core/_positions.scss */
 .z-9 {
   z-index: 9;
 }
 
-/* line 47, ../../www/lpm.cms/scss-jet/core/_positions.scss */
+/* line 50, ../../www/lpm.cms/scss-jet/core/_positions.scss */
 .z-99 {
   z-index: 99;
 }
 
-/* line 48, ../../www/lpm.cms/scss-jet/core/_positions.scss */
+/* line 51, ../../www/lpm.cms/scss-jet/core/_positions.scss */
 .z-999 {
   z-index: 999;
 }
 
-/* line 49, ../../www/lpm.cms/scss-jet/core/_positions.scss */
+/* line 52, ../../www/lpm.cms/scss-jet/core/_positions.scss */
 .z-9999 {
   z-index: 9999;
 }
 
-/* line 50, ../../www/lpm.cms/scss-jet/core/_positions.scss */
+/* line 53, ../../www/lpm.cms/scss-jet/core/_positions.scss */
 .z-99999 {
   z-index: 99999;
 }
 
-/* line 51, ../../www/lpm.cms/scss-jet/core/_positions.scss */
+/* line 54, ../../www/lpm.cms/scss-jet/core/_positions.scss */
 .z-999999 {
   z-index: 999999;
 }

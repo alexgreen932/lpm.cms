@@ -29,20 +29,34 @@ Array.prototype.move = function (from, to) {
 
 //RM
 const newItem = {
-    edit: false,
-    w: "w-container",
-    bg: "bg-white",
-    p: "p-1",
-    img: null,
-    ib: null, //image-blur
-    i0: null, //image-opacity
-    col: "tx-gray-d3",
-    jc: "jc-c",
-    ai: "ai-c",
-    g: "g-1",
-    fd: "fd-c",
-    content: [],
-};
+            "edit": false,
+            "add": false,
+            "sec": {
+                "bg": "bg-white",
+                "col": "tx-gray-d3"
+            },
+            "cont": {
+                "w": "w-container",
+                "bg": "bg-white-alpha-4",
+                "br": "br-14",
+                "m": "mv-1",
+                "p": "p-1",
+                "jc": "jc-c",
+                "ai": "ai-s",
+                "g": "g-1",
+                "fd": "fd-c",
+                "bs": "",
+                "a": ""
+            },
+            "img": {
+                "src": "",
+                "blur": null,
+                "opacity": null,
+                "ba": "ba-s",
+                "bp": "bp-cc"
+            },
+            "content": []
+        };
 
 import { ops } from '../data/data.js';
 import { fetchFile } from "../utils/helpers.js";

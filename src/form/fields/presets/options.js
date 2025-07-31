@@ -20,6 +20,18 @@ export const options = {
         { v: 'e-blue-shadow', t: 'blue-shadow' },
         { v: 'e-slight-shadow', t: 'slight-shadow' },
     ],
+    wi: [
+        { v: '', t: 'Auto' },
+        { v: 'w-1-5', t: '20%' },
+        { v: 'w-1-4', t: '25%' },
+        { v: 'w-1-3', t: '33%' },
+        { v: 'w-1-2', t: '50%' },
+        { v: 'w-1-1', t: '100%' },
+    ],
+    pos: [
+        { v: 'p-r', t: 'Relative' },
+        { v: 'p-a', t: 'Absolute' },
+    ],
     ag: [
         { v: '', t: 'None' },
         { v: 'jag ga-fade-in', t: 'Fade In' },
