@@ -78,6 +78,7 @@ export default {
             f_section: [
                 { title: this.$__('Background'), key: 'bg', type: 'picker', ops: 'bg' },
                 { title: this.$__('Color'), key: 'col', type: 'picker', ops: 'col' },
+                { title: this.$__('Color'), key: 'p_sec', type: 'select', ops: 'pv' },
             ],
             f_container: [
 

@@ -77,68 +77,79 @@ ul li {
   min-height: 100vh;
 }
 
-/* line 72, ../../www/lpm.cms/scss-jet/core/_base.scss */
+/* line 71, ../../www/lpm.cms/scss-jet/core/_base.scss */
+figure {
+  margin: 0;
+  overflow: hidden;
+}
+
+/* line 74, ../../www/lpm.cms/scss-jet/core/_base.scss */
+figure img {
+  width: 100%;
+}
+
+/* line 81, ../../www/lpm.cms/scss-jet/core/_base.scss */
 .o-0 {
   opacity: 0;
 }
 
-/* line 76, ../../www/lpm.cms/scss-jet/core/_base.scss */
+/* line 85, ../../www/lpm.cms/scss-jet/core/_base.scss */
 .o-1 {
   opacity: 0.1;
 }
 
-/* line 80, ../../www/lpm.cms/scss-jet/core/_base.scss */
+/* line 89, ../../www/lpm.cms/scss-jet/core/_base.scss */
 .o-2 {
   opacity: 0.2;
 }
 
-/* line 84, ../../www/lpm.cms/scss-jet/core/_base.scss */
+/* line 93, ../../www/lpm.cms/scss-jet/core/_base.scss */
 .o-3 {
   opacity: 0.3;
 }
 
-/* line 88, ../../www/lpm.cms/scss-jet/core/_base.scss */
+/* line 97, ../../www/lpm.cms/scss-jet/core/_base.scss */
 .o-4 {
   opacity: 0.4;
 }
 
-/* line 92, ../../www/lpm.cms/scss-jet/core/_base.scss */
+/* line 101, ../../www/lpm.cms/scss-jet/core/_base.scss */
 .o-5 {
   opacity: 0.5;
 }
 
-/* line 96, ../../www/lpm.cms/scss-jet/core/_base.scss */
+/* line 105, ../../www/lpm.cms/scss-jet/core/_base.scss */
 .o-6 {
   opacity: 0.6;
 }
 
-/* line 100, ../../www/lpm.cms/scss-jet/core/_base.scss */
+/* line 109, ../../www/lpm.cms/scss-jet/core/_base.scss */
 .o-7 {
   opacity: 0.7;
 }
 
-/* line 104, ../../www/lpm.cms/scss-jet/core/_base.scss */
+/* line 113, ../../www/lpm.cms/scss-jet/core/_base.scss */
 .o-8 {
   opacity: 0.8;
 }
 
-/* line 108, ../../www/lpm.cms/scss-jet/core/_base.scss */
+/* line 117, ../../www/lpm.cms/scss-jet/core/_base.scss */
 .o-9 {
   opacity: 0.9;
 }
 
-/* line 112, ../../www/lpm.cms/scss-jet/core/_base.scss */
+/* line 121, ../../www/lpm.cms/scss-jet/core/_base.scss */
 .o-10 {
   opacity: 1;
 }
 
-/* line 116, ../../www/lpm.cms/scss-jet/core/_base.scss */
+/* line 125, ../../www/lpm.cms/scss-jet/core/_base.scss */
 .j-relative,
 .pos-r {
   position: relative;
 }
 
-/* line 122, ../../www/lpm.cms/scss-jet/core/_base.scss */
+/* line 131, ../../www/lpm.cms/scss-jet/core/_base.scss */
 .j-hidden,
 .jq-hidden {
   display: none;
@@ -8985,6 +8996,11 @@ table.de-striped tbody tr:hover {
     transform: translateX(0);
     opacity: 1;
   }
+}
+
+/* line 3, ../../www/lpm.cms/scss-jet/components/_card.scss */
+.card {
+  overflow: hidden;
 }
 
 /* line 2, ../../www/lpm.cms/scss-jet/animation/_ja-fade-in.scss */

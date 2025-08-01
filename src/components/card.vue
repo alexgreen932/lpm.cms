@@ -1,9 +1,26 @@
 <template>
-    <a class="element" :class="$root.classes(e.classes)">
+    <div class="element card" :class="$root.classes(e.classes, 'link_rad, link_style, p, fd')">  
+                  <!-- 'bg': 'bg-white',
+            'p': '',
+            'br': '',
+            'fs': '',
+            'col': 'tx-black',
+            'br': 'br-5',
+            'link_style': 'but-blue',
+            '': 'br-5',       -->
         <jet-toolbar cls="element" :sec="sec" :dir="dir" :elements="elements" :index="index" />
-        {{e.el.text}}
-    </a>
-    <div v-if="!e.el.text" class="tx-grey">{{ $__('Enter a text') }}</div>
+        <figure v-if="e.el.img">
+            <img :src="e.el.img" :alt="title()">
+        </figure>
+        <div :class="[e.classes.p, dir()]">
+            <h3 v-if="e.el.title">{{e.el.title}}</h3>
+            <div :class="e.classes.fs" v-htmk="e.el.text"></div>
+            <div v-if="!e.el.text" class="tx-grey">{{ $__('Enter a text') }}</div>
+            <a v-if="e.el.button" :href="e.el.url" :class="[e.classes.link_classes, e.classes.link_rad]">e.el.link_text</a>
+        </div>
+
+
+    </div>
 </template>
 
 <script>
@@ -14,13 +31,21 @@ export const meta = {
     props: {
         'type': 'card',
         'classes': {
-            'but_style': 'but-normal',
-            'bg': 'bg-blue',
+            'wi': '',
+            'bs': '',
+            'bg': 'bg-white',
+            'col': 'tx-black',
+            'p_card': '',
+            'fd': '',
+            'p': '',
+            'pc': '',
+            'br': '',
             'fs': '',
-            'col': 'tx-white',
-            'br': 'br-5'
+            'br': 'br-5',
+            'link_style': 'but-blue',
+            'link_rad': 'br-5',
         },
-        'el': { 
+        'el': {
             'title': '',
             'text': '',
             'img': '',
@@ -29,12 +54,20 @@ export const meta = {
             'url': '',
             'target': '_self',
             'link_text': '',
-         }
+        }
     },
 };
 
 export default {
     components: { jetToolbar },
     props: ['elements', 'sec', 'dir', 'e', 'index'],
+    methods:{
+        title(){
+            return this.el?.title || 'Image';
+        },
+        dir(){
+            return this.el?.fd || 'fd-c';
+        },
+    }
 };
 </script>

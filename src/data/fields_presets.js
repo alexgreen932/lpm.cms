@@ -4,10 +4,11 @@ export const fields_presets = {
     title: { title: __('Title(optionaly)'), key: 'title', type: 'input' },
     img: { title: __('Image(optionaly)'), key: 'img', type: 'media' },
     icon: { title: __('Icon(optionaly)'), key: 'icon', type: 'picker', ops:'icons' },
-    button: { title: __('Button'), key: 'button', type: 'checkbox', ops:'icons' },
+    button: { title: __('Button'), tip:__('If no button, but link exist whole element will be a link'), key: 'button', type: 'checkbox', ops:'icons' },
     url: { title: __('Link(optionaly)'), key: 'url', type: 'input' },
-    target: { title: __('Open in'), key: 'target', type: 'select', showIf:{url:true}},
+    target: { title: __('Open in'), key: 'target', type: 'select', ops:'target', showIf:{url:true}},
     link_text: { title: __('Link Text'), key: 'link_text', type: 'input', showIf:{url:true,button:true}},
+    fd:{ title: __('Direction'), key: 'fd', type: 'select', ops: 'fd' },
 
     html: { title: __('Enter HTML code'), key: 'html', type: 'textarea', ops:'big' },
     src: { title: __('Image'), key: 'src', type: 'media' },
@@ -17,11 +18,13 @@ export const fields_presets = {
     ai: { title: __('Align Items'), key: 'ai', type: 'select', ops: 'ai' },
     fs: { title: __('Font Size'), key: 'fs', type: 'range', ops: 'fs' },
     fw: { title: __('Font Weight'), key: 'fw', type: 'select', ops: 'fw' },
+    p: { title: __('Padding'), key: 'p', type: 'select', ops: 'p' },
+    p_card: { title: __('Padding Whole Card'), key: 'p_card:', type: 'select', ops: 'p' },
     col: { title: __('Color'), key: 'col', type: 'picker', ops: 'col' },
     //content fields
     text: { title: __('Text'), key: 'text', type: 'textarea' },
     tag: { title: __('Tag'), key: 'tag', type: 'select', ops: 'tag' },
-    wi: { title: __('Width'), key: 'wi', type: 'select', ops: 'wi' },//w- means - Wisth Item
+    wi: { title: __('Width'), tip: __('Width of element, but if you want all element same width you can set "Child Width in section settings"'), key: 'wi', type: 'select', ops: 'wi' },//w- means - Wisth Item
     pos: { title: __('Position'), key: 'pos', type: 'select', ops: 'pos' },
 
     //

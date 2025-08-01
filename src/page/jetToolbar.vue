@@ -33,13 +33,14 @@ const newItem = {
             "add": false,
             "sec": {
                 "bg": "bg-white",
-                "col": "tx-gray-d3"
+                "col": "tx-gray-d3",
+                p_sec:""
             },
             "cont": {
                 "w": "w-container",
                 "bg": "bg-white-alpha-4",
                 "br": "br-14",
-                "m": "mv-1",
+                // "m": "mv-1",
                 "p": "p-1",
                 "jc": "jc-c",
                 "ai": "ai-s",
