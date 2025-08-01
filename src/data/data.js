@@ -16,6 +16,9 @@ export const ops = {
   show_bar: 99,
   show_sec: 99,
   edit_page: true,
+  preview: false,
+  pattern_slug:null,
+  editable:true,
  
   current_page_data: { sections: [] }, //page which loaded and currently edited
 

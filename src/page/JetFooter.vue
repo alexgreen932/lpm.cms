@@ -1,7 +1,7 @@
 <template>
-    <header id="footer" :class="[el.bg, el.col]">
+    <footer id="footer" :class="[el.bg, el.col]">
         <div :class="[el.w, el.ai, el.p, el.g]">Footer</div>
-    </header>
+    </footer>
 </template>
 
 <script>

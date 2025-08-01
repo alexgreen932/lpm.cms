@@ -2,9 +2,28 @@
     <div v-if="warn" class="b-red g-1">Data not found...</div>
 
     <div v-else-if="ops.current_page_data && ops.current_page_data.sections && ops.current_page_data.sections.length">
-        <template v-for="(sec, i) in ops.current_page_data.sections">
-            <render-section :sec="sec" :i="i" />
-        </template>
+        <div v-for="(sec, i) in ops.current_page_data.sections" :key="i" :id="sectionId(i)" class="jet-section"
+            :class="$root.classes(sec.sec)">
+            <jet-toolbar v-if="isAdmin" cls="section" :elements="ops.current_page_data.sections" :index="i" />
+
+            <div class="cntr" :class="$root.classes(sec.cont)">
+
+
+                <!-- //todo add note box that content is empty -->
+                <template v-if="sec.content && sec.content.length" v-for="(e, i2) in sec.content" :key="i2">
+                    <!-- dev---{{ e.type }} -->
+                    <component :is="getComponent(e.type)" :sec="i" :elements="sec.content" :dir="sec.fd" :e="e"
+                        :index="i2" />
+
+                </template>
+                <div v-else class="b-blue p-1 jc-c m-1 j-click g-05" @click="addElem(i)">
+                    <i class="fa-solid fa-plus"></i><span>{{$__('Add Elements') }}</span>
+                </div>
+            </div>
+            <!-- <jet-add v-if="sec.add" :sec="sec" :content="sec.content" /> -->
+            <div v-if="sec.img" class="img-bg" :class="$root.classes(sec.img, 'img')"
+                :style="{ 'background-image': 'url(' + sec.img.src + ')' }"></div>
+        </div>
 
         <div class="w-container b-blue g-1 p-1 nv-1 wc-1-4">
             <textarea rows="40" cols="50">{{ ops }}</textarea>
@@ -21,14 +40,11 @@ import JetToolbar from "./jetToolbar.vue";
 import JetElements from "./JetElements.vue";//rm //todo rm com too if directly
 const modules = import.meta.glob("../components/*.vue", { eager: true });
 
-import renderSection from "./renderSection.vue";
-
 export default {
     components: {
         // "jet-add": AddNew,
         "jet-toolbar": JetToolbar,
         "jet-elements": JetElements,
-        renderSection,
     },
     data() {
         return {

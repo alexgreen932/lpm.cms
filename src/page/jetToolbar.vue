@@ -1,5 +1,5 @@
 <template>
-    <div class="form-toolbar" :class="cls">
+    <div v-if="ops.editable" class="form-toolbar" :class="cls">
         <i class="fa-solid fa-pen-to-square" @click="editItem(index)"></i>
         <i v-if="notFirst(index)" class="fa-solid" :class="prev" @click="moveItem(index, index - 1)"></i>
         <i v-if="notLast(index)" class="fa-solid" :class="next" @click="moveItem(index, index + 1)"></i>

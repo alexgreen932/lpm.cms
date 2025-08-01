@@ -5,6 +5,59 @@
     "slug": "test",
     "category": "content",
     "data":{
-        
-    }
+            "edit": false,
+            "add": false,
+            "sec": {
+                "bg": "bg-white",
+                "col": "tx-gray-d3"
+            },
+            "cont": {
+                "w": "w-container",
+                "bg": "bg-white-alpha-4",
+                "br": "br-14",
+                "m": "mv-1",
+                "p": "p-1",
+                "jc": "jc-c",
+                "ai": "ai-s",
+                "g": "g-1",
+                "fd": "fd-c",
+                "bs": "",
+                "a": ""
+            },
+            "img": {
+                "src": "media/bullet.jpg",
+                "blur": null,
+                "opacity": null,
+                "ba": "ba-s",
+                "bp": "bp-cc"
+            },
+            "content": [
+                {
+                    "type": "card",
+                    "classes": {
+                        "wi": "w-1-5",
+                        "bs": "",
+                        "bg": "bg-light-blue-l4",
+                        "p": "",
+                        "pc": "",
+                        "dir": "",
+                        "br": "br-5",
+                        "fs": "fs-22",
+                        "col": "tx-black",
+                        "link_style": "but-blue",
+                        "link_rad": "br-5"
+                    },
+                    "el": {
+                        "title": "Card Title",
+                        "text": "ttt gggg ggg",
+                        "img": "media/card3.jpg",
+                        "icon": "",
+                        "button": false,
+                        "url": "",
+                        "target": "_self",
+                        "link_text": ""
+                    }
+                }
+            ]
+        }
 }

@@ -1,23 +1,24 @@
 <template>
     <div v-if="ops.current_menu !== 99" class="admin-sec">
-         <!-- current---{{ops.current}} -->
-         <div v-if="ops.current_menu=='pages'" class="control-section">
-            <h3>{{t_pages}}</h3>
-            <section-pages />   
+        <!-- current---{{ops.current}} -->
+        <div v-if="ops.current_menu == 'pages'" class="control-section">
+            <h3>{{ t_pages }}</h3>
+            <section-pages />
             <!-- <form-wrapper />         -->
 
-         </div>
-         <div v-if="ops.current_menu=='patterns'" class="control-section">
-            <h3>{{$__('Patterns')}} <jet-tip :content="pattern" /></h3>
+        </div>
+        <div v-if="ops.current_menu == 'patterns'" class="control-section">
+            <h3>{{ $__('Patterns') }} <jet-tip :content="pattern" /></h3>
             <list-pattern />
-              
+
+
             <!-- <form-wrapper />         -->
 
-         </div> 
-         <add-new v-if="ops.current_menu=='add'" />
+        </div>
+
+        <add-new v-if="ops.current_menu == 'add'" />
     </div>
 </template>
-
 <script>
 import { ops } from "../data/data.js";
 import sectionPages from "./sectionPages.vue";
@@ -29,6 +30,7 @@ import formWrapper from "./formWrapper.vue";
 import addNew from './addNew.vue';
 import jetTip from '../utils/jetTip.vue';
 import listPattern from './listPattern.vue';
+import patternRender from "./patternRender.vue";
 
 export default {
     components: {
@@ -39,6 +41,7 @@ export default {
         addNew,
         jetTip,
         listPattern,
+        patternRender,
 
     },
     data() {

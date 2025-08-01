@@ -638,6 +638,39 @@ body.isBar {
   color: #00b7ff;
 }
 
+/* line 30, ../../www/lpm.cms/scss/src/_patterns.scss */
+.admin-modal-bg {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 350px;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+
+/* line 39, ../../www/lpm.cms/scss/src/_patterns.scss */
+.patterb-preview {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 350px;
+  background: #fff;
+  z-index: 2;
+}
+
+/* line 47, ../../www/lpm.cms/scss/src/_patterns.scss */
+.patterb-preview header {
+  padding: 1rem;
+  border-bottom: 1px solid #384352;
+}
+
+/* line 50, ../../www/lpm.cms/scss/src/_patterns.scss */
+.patterb-preview header h3 {
+  margin: 0;
+}
+
 /* line 4, ../../www/lpm.cms/scss/form/_form.scss */
 .jet-form {
   color: #45495f;
