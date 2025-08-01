@@ -2,6 +2,11 @@
 // import toolbar from './toolbar.js';
 
 export default {
+  hoverTip(v){
+    setTimeout(() => {
+      
+    }, 1000);
+  },
   // classes(e) {
   //   return Object.values(e).filter(Boolean);
   // },

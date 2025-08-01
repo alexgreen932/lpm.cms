@@ -1,9 +1,16 @@
 <template>
     <div v-if="ops.current_menu !== 99" class="admin-sec">
          <!-- current---{{ops.current}} -->
-         <div class="control-section">
-            <h3 v-if="ops.current_menu=='pages'">{{t_pages}}</h3>
+         <div v-if="ops.current_menu=='pages'" class="control-section">
+            <h3>{{t_pages}}</h3>
             <section-pages />   
+            <!-- <form-wrapper />         -->
+
+         </div>
+         <div v-if="ops.current_menu=='patterns'" class="control-section">
+            <h3>{{$__('Patterns')}} <jet-tip :content="pattern" /></h3>
+            <list-pattern />
+              
             <!-- <form-wrapper />         -->
 
          </div> 
@@ -20,6 +27,8 @@ import pageForms from './pageForms.vue';
 //dev //todo rm then 
 import formWrapper from "./formWrapper.vue";
 import addNew from './addNew.vue';
+import jetTip from '../utils/jetTip.vue';
+import listPattern from './listPattern.vue';
 
 export default {
     components: {
@@ -28,6 +37,8 @@ export default {
         pageForms,
         formWrapper,
         addNew,
+        jetTip,
+        listPattern,
 
     },
     data() {
@@ -35,6 +46,7 @@ export default {
             test: 42,//dev
             ops: ops,
             t_pages: this.$__('Page Management'),
+            pattern: this.$__('Pattern is a ready fragment which you can use as base for your own sections. You can use preset ones, create your own or download from our collection'),
         };
     },
     // methods: {

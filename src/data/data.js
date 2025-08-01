@@ -1,8 +1,10 @@
+import __ from '../languages/index.js';
 export const ops = {
   // current: null,//main current icon men
   // current: 'pages',//todo dev
   current_menu: 99,//todo change current to current_menu for clearness
   current_menu: 'pages',//dev pages
+  current_menu: 'patterns',//dev pages
   // current_menu: 'add',//dev add elem
   current_page: 'homepage',
   page_index: 999,
@@ -22,21 +24,27 @@ export const ops = {
 //temp
 export const menu = [
     {
-      title: 'Close',
+      title: __('Close'),
       slug: 99,
       icon: 'fa-solid fa-xmark',
       cls: 'tx-white',
     },
     {
-      title: 'Pages',
+      title: __('Pages'),
       slug: 'pages',
       icon: 'fa-solid fa-file-lines',
       cls: 'tx-blue-l2',
     },
     {
-      title: 'Style',
+      title: __('Style'),
       slug: 'style',
       icon: 'fa-regular fa-image',
+      cls: 'tx-red-l2',
+    },
+    {
+      title: __('Patterns'),
+      slug: 'patterns',
+      icon: 'fa-solid fa-calendar-days',
       cls: 'tx-red-l2',
     },
   ];

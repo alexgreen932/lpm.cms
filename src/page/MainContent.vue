@@ -72,6 +72,7 @@ export default {
         sectionId(i) {
             return "section-" + (i + 1);
         },
+        //TODO IMPORT file fetch
         async fetchFile(path) {
             try {
                 const response = await fetch(path);
