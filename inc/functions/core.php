@@ -25,3 +25,41 @@ function com_button($args) {
 }
 
 
+function com_image($args) {
+    $el = $args['el'] ?? [];
+    $src = $el['src'] ?? '';
+    $text = $el['text'] ?? 'Image';
+    $classes = classes($args['classes'] ?? []);
+
+    // Style building
+    $styleArgs = $args['style'] ?? [];
+    $style = '';
+
+    if (!empty($styleArgs['pos_a'])) {
+        // Base absolute positioning
+        $styles = ['position: absolute;'];
+
+        // Conditional properties (like Vue spread syntax)
+        if (!empty($styleArgs['use_top']))    $styles[] = "top: {$styleArgs['top']}px;";
+        if (!empty($styleArgs['use_bottom'])) $styles[] = "bottom: {$styleArgs['bottom']}px;";
+        if (!empty($styleArgs['use_left']))   $styles[] = "left: {$styleArgs['left']}px;";
+        if (!empty($styleArgs['use_right']))  $styles[] = "right: {$styleArgs['right']}px;";
+
+        // Combine into one string
+        $style = 'style="' . implode(' ', $styles) . '"';
+    }
+
+    // HTML Output
+    $html = [];
+    $html[] = '<figure class="element ' . $classes . '" ' . $style . '>';
+    $html[] = '<img src="' . $src . '" alt="' . $text . '">';
+    if (!empty($el['show_caption'])) {
+        $html[] = '<figcaption>' . $text . '</figcaption>';
+    }
+    $html[] = '</figure>';
+
+    return implode("\n", $html);
+}
+
+
+
