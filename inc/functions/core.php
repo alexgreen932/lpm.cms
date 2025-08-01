@@ -15,6 +15,11 @@ function com_paragraph($args) {
     $classes = classes($args['classes'] ?? []);
     return "<p class='$classes'>$text</p>";
 }
+function com_html($args) {
+    $html = $args['el']['html'] ?? '';
+    $classes = classes($args['classes'] ?? []);
+    return "<div class='$classes'>$html</div>";
+}
 
 function com_button($args) {
     $text = $args['el']['text'] ?? '';

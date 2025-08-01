@@ -9,10 +9,10 @@
 <script>
 import jetToolbar from '../page/jetToolbar.vue';
 export const meta = {
-    title: 'Button',
-    icon: 'fa-solid fa-link',
+    title: 'Card',
+    icon: 'fa-solid fa-address-card',
     props: {
-        'type': 'button',
+        'type': 'card',
         'classes': {
             'but_style': 'but-normal',
             'bg': 'bg-blue',
@@ -21,9 +21,14 @@ export const meta = {
             'br': 'br-5'
         },
         'el': { 
+            'title': '',
+            'text': '',
+            'img': '',
+            'icon': '',
+            'button': false,
             'url': '',
             'target': '_self',
-            'text': 'Read More',
+            'link_text': '',
          }
     },
 };

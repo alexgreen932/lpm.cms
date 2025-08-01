@@ -3,7 +3,7 @@
         <h3 v-if="title">{{ title }}</h3>
         <div v-for="(f, i) in normalizedFields" :key="i" class="control-group">
             <template v-if="meetCondition(f)">
-                <label v-if="f.type!=='checkbox'">{{ f.title }}</label>
+                <label v-if="f.type !== 'checkbox'">{{ f.title }}</label>
                 <!-- dynamically resolve component -->
                 <component :is="getComponent(f.type)" v-model="obj[f.key]" :f="f" />
             </template>
@@ -48,12 +48,24 @@ export default {
         meetCondition(f) {
             if (!f.showIf) return true;
 
-            return Object.entries(f.showIf).every(([key, expected]) =>
-                Array.isArray(expected)
-                    ? expected.includes(this.obj[key])
-                    : this.obj[key] === expected
-            );
+            return Object.entries(f.showIf).every(([key, expected]) => {
+                const actual = this.obj[key];
+
+                if (Array.isArray(expected)) {
+                    // Field value must match one of the expected array values
+                    return expected.includes(actual);
+                }
+
+                if (expected === true) {
+                    // If condition says true → check actual is truthy (not empty, not false, not null)
+                    return !!actual;
+                }
+
+                // Default: strict equality
+                return actual === expected;
+            });
         },
+
         getComponent(type) {
             const file = `./fields/field-${type}.vue`;
             return modules[file]?.default || null;

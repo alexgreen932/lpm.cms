@@ -1,23 +1,22 @@
 <template>
     <div class="element" :class="$root.classes(e.classes)">
         <jet-toolbar cls="element" :sec="sec" :dir="dir" :elements="elements" :index="index" />
-        <p v-html="e.el.text"></p>
+        <div v-html="e.el.html"></div>
     </div>
-    <div v-if="!e.el.text" class="tx-grey">{{ $__('Enter a text') }}</div>
+    <div v-if="!e.el.html" class="tx-grey">{{ $__('Enter a code') }}</div>
 </template>
 
 <script>
 import jetToolbar from '../page/jetToolbar.vue';
 export const meta = {
-    title: "Paragraph",
-    icon: "fa-solid fa-text-width",
+    title: "HTML",
+    icon: "fa-brands fa-html5",
     props: {
-        "type": "paragraph",
+        "type": "html",
         "classes": {
-            "fs": "",
-            "col": ""
+            
         },
-        "el": { "text": "This is Sample Text" }
+        "el": { "html": "" }
     },
 };
 

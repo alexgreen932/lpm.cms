@@ -1,6 +1,15 @@
 import __ from '../languages/index.js';
 
 export const fields_presets = {
+    title: { title: __('Title(optionaly)'), key: 'title', type: 'input' },
+    img: { title: __('Image(optionaly)'), key: 'img', type: 'media' },
+    icon: { title: __('Icon(optionaly)'), key: 'icon', type: 'picker', ops:'icons' },
+    button: { title: __('Button'), key: 'button', type: 'checkbox', ops:'icons' },
+    url: { title: __('Link(optionaly)'), key: 'url', type: 'input' },
+    target: { title: __('Open in'), key: 'target', type: 'select', showIf:{url:true}},
+    link_text: { title: __('Link Text'), key: 'link_text', type: 'input', showIf:{url:true,button:true}},
+
+    html: { title: __('Enter HTML code'), key: 'html', type: 'textarea', ops:'big' },
     src: { title: __('Image'), key: 'src', type: 'media' },
     bg: { title: __('Background'), key: 'bg', type: 'picker', ops: 'bg' },
     w: { title: __('Container Width'), key: 'w', type: 'select', ops: 'w' },
