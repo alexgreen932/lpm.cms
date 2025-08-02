@@ -4,12 +4,15 @@
             <h3>{{ $__('Preview Pattern') }} - <span class="tx-blue-d1">{{ preview_data.title }}</span></h3>
             <div class="ai-c g-1">
                 <div class="but-indigo">{{ $__('Clone and Edit') }}</div>
-                <div class="but-blue">{{ $__('Add') }}</div>
+                <div v-if="ops.current_section !== 99" class="but-blue" @click="addPattern()">{{ $__('Add') }}</div>
                 <div class="but-grey" @click="ops.preview = false">{{ $__('Close') }}</div>
             </div>
         </header>
-        <!-- ////{{ preview_data.data}} -->
+        preview_data.data---{{ preview_data.data}}
         <render-section v-if="preview_data.data" :sec="preview_data.data" :i="0" />
+        <div class="b-blue bg-blue-l5 p-1 jc-c mh-1 br-5">
+            {{ $__('To add this pattern close this window, open a page, mouse over any section click "+" and select')}} {{ $__('Add Pattern') }}
+            </div>
 
     </div>
 </template>
@@ -27,17 +30,24 @@ export default {
     data() {
         return {
             ops,
-            preview_data: {title:null,sec:null},
+            preview_data: { title: null, sec: null },
         };
     },
     methods: {
-        func() { },
+        addPattern() {
+            let item = this.preview_data.data;
+            let target = this.ops.current_page_data;
+            let insertIndex = this.ops.current_section + 1;
+            target.sections.splice(insertIndex, 0, item);
+            this.ops.preview = false;
+        },
     },
-    async mounted(){
+    async mounted() {
         const path = `${this.$domain}/data/patterns/${this.ops.pattern_slug}.json`;//!!! dev ver as testing on html
-        console.log('path: ', path);
+        
         this.preview_data = await fetchFile(path);
-        console.log('this.pattern_data----- ', this.data);
+        //  
+        
     }
 };
 </script>

@@ -53,7 +53,7 @@ export default {
   },
   showSidebar(e) {//todo rm
 
-    console.log('%c clicked show sidebar', 'color: #e50000',);
+    
     if (this.ops.current_menu == e) {
       this.ops.current_menu = 99;
     } else {
@@ -64,7 +64,7 @@ export default {
 
   },
   isSidebar() {
-    console.log('this.ops.current: ', this.ops.current);
+    
     let page = document.getElementById('app');
     if (this.ops.current_menu && this.ops.current_menu !== 99) {
       page.classList.remove('isBar');
@@ -75,7 +75,7 @@ export default {
     }
   },
   isBar() {
-    console.log('this.ops.current: ', this.ops.current);
+    
     let page = document.getElementById('app');
     if (this.ops.current_menu == 99) {
       page.classList.remove('isSidebar');

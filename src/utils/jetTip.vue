@@ -31,7 +31,7 @@ export default {
         if (this.action) {
             this.cls_action = this.action;
         }
-        console.log('this.pos: ', this.pos);
+        
         if (this.pos) {
             this.cls_pos = this.pos;
         }

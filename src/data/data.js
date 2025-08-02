@@ -39,15 +39,15 @@ export const menu = [
       cls: 'tx-blue-l2',
     },
     {
-      title: __('Style'),
-      slug: 'style',
-      icon: 'fa-regular fa-image',
-      cls: 'tx-red-l2',
-    },
-    {
       title: __('Patterns'),
       slug: 'patterns',
       icon: 'fa-solid fa-calendar-days',
+      cls: 'tx-red-l2',
+    },
+    {
+      title: __('Style'),
+      slug: 'style',
+      icon: 'fa-solid fa-paintbrush',
       cls: 'tx-red-l2',
     },
   ];

@@ -5,10 +5,10 @@
         <i v-if="notLast(index)" class="fa-solid" :class="next" @click="moveItem(index, index + 1)"></i>
         <i class="fa-solid fa-trash" @click="del(index)"></i>
         <i v-if="cls !== 'section'" class="fa-solid fa-plus" @click="addItem(index)"></i>
-        <i v-if="cls == 'section'" class="add-section" :class="showClose()" @click="show = !show">
+        <i v-if="cls == 'section'" class="add-section" :class="showClose()" @click="showSub()">
             <transition name="slideV">
                 <div v-if="show" class="d-drop drop p-1 g-1">
-                    <div class="but-blue fs-8" @click="addPattern()">{{ $__('Add Pattern') }}</div>
+                    <div class="but-blue fs-8" @click="ops.current_menu = 'patterns'">{{ $__('Add Pattern') }}</div>
                     <div class="but-grey fs-8" @click="addItem(index)">{{ $__('Add Empty Section') }}</div>
                 </div>
             </transition>
@@ -29,48 +29,40 @@ Array.prototype.move = function (from, to) {
 
 //RM
 const newItem = {
-            "edit": false,
-            "add": false,
-            "sec": {
-                "bg": "bg-white",
-                "col": "tx-gray-d3",
-                p_sec:""
-            },
-            "cont": {
-                "w": "w-container",
-                "bg": "bg-white-alpha-4",
-                "br": "br-14",
-                // "m": "mv-1",
-                "p": "p-1",
-                "jc": "jc-c",
-                "ai": "ai-s",
-                "g": "g-1",
-                "fd": "fd-c",
-                "bs": "",
-                "a": ""
-            },
-            "img": {
-                "src": "",
-                "blur": null,
-                "opacity": null,
-                "ba": "ba-s",
-                "bp": "bp-cc"
-            },
-            "content": []
-        };
+    "edit": false,
+    "add": false,
+    "sec": {
+        "bg": "bg-white",
+        "col": "tx-gray-d3",
+        p_sec: ""
+    },
+    "cont": {
+        "w": "w-container",
+        "bg": "bg-white-alpha-4",
+        "br": "br-14",
+        // "m": "mv-1",
+        "p": "p-1",
+        "jc": "jc-c",
+        "ai": "ai-s",
+        "g": "g-1",
+        "fd": "fd-c",
+        "bs": "",
+        "a": ""
+    },
+    "img": {
+        "src": "",
+        "blur": null,
+        "opacity": null,
+        "ba": "ba-s",
+        "bp": "bp-cc"
+    },
+    "content": []
+};
 
 import { ops } from '../data/data.js';
 import { fetchFile } from "../utils/helpers.js";
 
 export default {
-    // components: {
-    //     "jet-forms ": JetForms,
-    // },
-    //   cls="section"
-    //         :elements="page.sections"
-    //         :section="i"
-    //         :element=null 
-    //section optionally
     props: ["elements", "index", "page_index", "cls", "sec", "dir"],
     data() {
         return {
@@ -83,6 +75,10 @@ export default {
         };
     },
     methods: {
+        showSub() {
+            this.show = !this.show;
+            this.ops.current_section = this.index;
+        },
         showClose() {
             if (this.show) {
                 return 'fa-solid fa-xmark';
@@ -154,7 +150,8 @@ export default {
         addItem(i) {
             //add section //todo add pattern too
             if (this.cls === "section") {
-                this.elements.push(newItem);
+                let insertIndex = this.ops.current_section + 1;
+                this.elements.splice(insertIndex, 0, newItem);
             } else {
                 //add elem
                 this.ops.current_menu = 'add';

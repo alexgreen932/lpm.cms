@@ -56,9 +56,9 @@ export default {
     async mounted() {
         // const path = `${this.$domain}/data/patterns/index.php`;//!!! prod ver
         const path = `${this.$domain}/data/patterns/index.json`;//!!! dev ver as testing on html
-        console.log('path: ', path);
+        
         this.patterns = await fetchFile(path);
-        console.log('this.patterns----- ', this.patterns);
+        
     }
 };
 </script>

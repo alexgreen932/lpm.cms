@@ -17,6 +17,7 @@
         </div>
 
         <add-new v-if="ops.current_menu == 'add'" />
+        <textarea rows="40" cols="50">{{ ops.pr }}</textarea>
     </div>
 </template>
 <script>
