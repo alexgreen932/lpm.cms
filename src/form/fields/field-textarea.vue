@@ -14,7 +14,7 @@ export default {
     props: ['modelValue', 'f'],
     data() {
         return {
-            rows: 5,
+            rows: 3,
             cols: '',
             placeholder: this.$__('Enter text...'),
         };

@@ -2,14 +2,15 @@ import __ from '../languages/index.js';
 export const ops = {
   // current: null,//main current icon men
   // current: 'pages',//todo dev
-  current_menu: 99,//todo change current to current_menu for clearness
+  current_menu: 99,//by default
+  // current_menu: 101,//todo change current to current_menu for clearness
   current_menu: 'pages',//dev pages
-  current_menu: 'patterns',//dev pages
+  // current_menu: 'patterns',//dev pages
   // current_menu: 'add',//dev add elem
-  current_page: 'homepage',
+  current_page: 'homepage',//curremtly loaded
   page_index: 999,
-  current_section: 99,
-  current_el: 99,
+  current_section: 99,//curremtly editewd section
+  current_el: 99,//curremtly editewd element
   current_edit: null,//what edit - section/element
   edit_meta: false,
   page: 'pages',
@@ -19,6 +20,14 @@ export const ops = {
   preview: false,
   pattern_slug:null,
   editable:true,
+  //pattern, save, edit, new
+  save_as_pattern:false,
+  pattern:{
+    title:'',
+    slug:'',
+    description:'',
+    data:{},
+  },
  
   current_page_data: { sections: [] }, //page which loaded and currently edited
 
@@ -35,7 +44,7 @@ export const menu = [
     {
       title: __('Pages'),
       slug: 'pages',
-      icon: 'fa-solid fa-file-lines',
+      icon: 'fa-solid fa-images',
       cls: 'tx-blue-l2',
     },
     {
@@ -55,7 +64,7 @@ export const menu = [
 export const menu2 = [
     {
       title: 'Hide Bar',
-      slug: 'style',
+      slug: 101,
       icon: 'fa-solid fa-arrows-to-eye',
       cls: 'tx-red-l2',
     },

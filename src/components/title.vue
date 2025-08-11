@@ -1,7 +1,15 @@
 <template>
-    <component :is="e.el.tag" v-if="e.el.text" class="element" :class="$root.classes(e.classes)">
+    <component :is="e.el.tag" class="element" :class="$root.classes(e.classes)">
+
         <jet-toolbar cls="element" :sec="sec" :dir="dir" :elements="elements" :index="index" />
-        {{ e.el.text }}
+        <i v-if="e.el.icon" :class="e.el.icon"></i>
+        <template v-if="e.classes.h_style !== 'h-line'">
+            {{ e.el.text }}
+        </template>
+        <span v-else>
+            {{ e.el.text }}
+        </span>
+
     </component>
     <div v-if="!e.el.text" class="tx-grey">{{ $__('Enter a title') }}</div>
 </template>
@@ -13,13 +21,19 @@ export const meta = {
     icon: "fa-solid fa-heading",
     props: {
         "type": "title",
-        "tag": "h1",
         "classes": {
             "fs": "fs-20",
             "fw": "",
-            "col": ""
+            "col": "",
+            "h_style": "",
+            "jc": "",
+            "ja": ""
         },
-        "el": { "text": "This is Sample Title" }
+        "el": {
+            "tag": "h1",
+            "icon": "",
+            "text": "This is Sample Title"
+        }
     },
 };
 

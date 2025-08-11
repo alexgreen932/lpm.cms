@@ -1,23 +1,20 @@
 <template>
     <div v-if="ops.current_menu !== 99" class="admin-sec">
+        <!-- <div v-if="ops.current_menu == 'pages'" class="control-section">
+        </div> -->
         <!-- current---{{ops.current}} -->
-        <div v-if="ops.current_menu == 'pages'" class="control-section">
-            <h3>{{ t_pages }}</h3>
-            <section-pages />
-            <!-- <form-wrapper />         -->
-
-        </div>
-        <div v-if="ops.current_menu == 'patterns'" class="control-section">
-            <h3>{{ $__('Patterns') }} <jet-tip :content="pattern" /></h3>
-            <list-pattern />
-
-
-            <!-- <form-wrapper />         -->
-
-        </div>
+        <section-pages v-if="ops.current_menu == 'pages'" />
+        <section-patterns v-if="ops.current_menu == 'patterns'" />
 
         <add-new v-if="ops.current_menu == 'add'" />
-        <textarea rows="40" cols="50">{{ ops.pr }}</textarea>
+        //dev only
+        <textarea rows="40" cols="50">{{ ops }}</textarea>
+         <!-- FORMS -------  -->
+          <save-pattern v-if="ops.save_as_pattern" />
+          <!-- rm temp for dev -->
+          <!-- {{ $id()}} -->
+        <!-- <div class="delay-tooltip top-left">test</div> -->
+
     </div>
 </template>
 <script>
@@ -30,8 +27,10 @@ import pageForms from './pageForms.vue';
 import formWrapper from "./formWrapper.vue";
 import addNew from './addNew.vue';
 import jetTip from '../utils/jetTip.vue';
-import listPattern from './listPattern.vue';
+// import listPattern from './listPattern.vue';
 import patternRender from "./patternRender.vue";
+import sectionPatterns from "./sectionPatterns.vue";
+import savePattern from "../page/savePattern.vue";
 
 export default {
     components: {
@@ -41,8 +40,10 @@ export default {
         formWrapper,
         addNew,
         jetTip,
-        listPattern,
+        // listPattern,
         patternRender,
+        sectionPatterns,
+        savePattern,
 
     },
     data() {

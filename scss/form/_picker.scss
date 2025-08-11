@@ -1,15 +1,16 @@
-
 .picker-select {
 
     padding: 5px;
     cursor: pointer;
     transition: all ease 0.4s;
-    color:#fff;
-        background: rgb(59, 80, 82);
-    &.doOpen{
+    color: #fff;
+    background: rgb(59, 80, 82);
+
+    &.doOpen {
         background: #0066ff;
     }
-    &.doClose{
+
+    &.doClose {
         background: #5e211c;
     }
 
@@ -23,9 +24,14 @@
     height: 300px;
     overflow-y: auto;
     background: #fff;
+
     // .radio{
     //     padding: 6px;
     // }
+    input {
+        width: 95%;
+        margin-bottom: 4px;
+    }
 
     ul {
         width: 100%;
@@ -46,16 +52,66 @@
     }
 }
 
+.picker-box ul.ja, .picker-box ul.jag {
+    gap: 2px;
+    justify-content: center;
+
+    li {
+        border: 1px solid $border;
+        border-radius: 3px;
+        width: 48%;
+        height: auto;
+        // min-width: 9%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:before {
+            content: '';
+        }
+        span{
+            padding: 4px 2px;
+            display: inline-flex;
+            text-align: center;
+        }
+
+    }
+
+}
+
+ul.icons {
+    gap: 2px;
+    justify-content: center;
+
+    li {
+        border: 1px solid $border;
+        border-radius: 3px;
+        width: 14%;
+        // min-width: 9%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:before {
+            content: '';
+        }
+
+    }
+
+}
+
 ul.bg li {
     width: 9%;
     min-width: 9%;
 }
+
 ul.col li {
     width: 20%;
     // min-width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
+
     // &.tx-white-alpha-2,
     // &.tx-white-alpha-4,
     // &.tx-white-alpha-6,
@@ -63,10 +119,11 @@ ul.col li {
     // &.tx-white{
     //     background: #000;
     // }
-    span{
+    span {
         text-align: center;
     }
 }
+
 ul.col li[class*="tx-white"] {
     background: #444;
 }

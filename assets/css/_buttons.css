@@ -26,6 +26,25 @@
   transition: all 0.25s;
 }
 
+.but-blue.isActive,
+.but-red.isActive,
+.but-grey.isActive,
+.but-indigo.isActive,
+.but-orange.isActive,
+.but-cyan.isActive,
+.but-purple.isActive,
+.but-yellow.isActive,
+.but-default.isActive,
+.but-teal.isActive,
+.but-green.isActive,
+.but-small.isActive,
+.but-large.isActive,
+.but-extra-large.isActive,
+.but-normal.isActive {
+  background: #1E87F0 !important;
+  color: #fff !important;
+}
+
 .but-blue:hover,
 .but-red:hover,
 .but-grey:hover,
@@ -116,7 +135,6 @@
 }
 
 .but-default {
-  border: 1px solid #eceff1;
   background: #eceff1;
   color: #000 !important;
 }

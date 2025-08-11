@@ -5,7 +5,7 @@ export default defineConfig({
   base: './home.html',
   plugins: [vue()],
   build: {
-    outDir: 'assets-classic',
+    outDir: 'assets-dev',
     cssCodeSplit: false, // <-- ensures one CSS file, not per component
     rollupOptions: {
       input: {

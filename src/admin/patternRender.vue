@@ -8,7 +8,7 @@
                 <div class="but-grey" @click="ops.preview = false">{{ $__('Close') }}</div>
             </div>
         </header>
-        preview_data.data---{{ preview_data.data}}
+        <!-- preview_data.data---{{ preview_data.data}} -->
         <render-section v-if="preview_data.data" :sec="preview_data.data" :i="0" />
         <div class="b-blue bg-blue-l5 p-1 jc-c mh-1 br-5">
             {{ $__('To add this pattern close this window, open a page, mouse over any section click "+" and select')}} {{ $__('Add Pattern') }}

@@ -1,4 +1,58 @@
-/* line 11, ../../www/lpm.cms/scss/src/_base.scss */
+/* line 1, ../../www/lpm.cms/scss/src/_base.scss */
+.start-button {
+  position: fixed;
+  background: #3c455d;
+  padding: 10px;
+  border-radius: 0 5px 5px 0;
+  color: #fff;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 1000000;
+  transition: all ease 0.5s;
+  cursor: pointer;
+}
+
+/* line 14, ../../www/lpm.cms/scss/src/_base.scss */
+.start-button:hover {
+  background: #6d7d9e;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* line 20, ../../www/lpm.cms/scss/src/_base.scss */
+.admin-modal-bg {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 350px;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+  cursor: pointer;
+}
+
+/* line 30, ../../www/lpm.cms/scss/src/_base.scss */
+.admin-modal-bg .fa-xmark {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  color: #fff;
+}
+
+/* line 37, ../../www/lpm.cms/scss/src/_base.scss */
+.tips-box {
+  position: fixed;
+  width: 50%;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #000;
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 16px;
+}
+
+/* line 49, ../../www/lpm.cms/scss/src/_base.scss */
 #admin-enter {
   position: fixed;
   left: 0;
@@ -15,14 +69,14 @@
   transition: all ease 0.3s;
 }
 
-/* line 25, ../../www/lpm.cms/scss/src/_base.scss */
+/* line 64, ../../www/lpm.cms/scss/src/_base.scss */
 #admin-enter i {
   cursor: pointer;
   -webkit-animation: rotate-center 3s infinite linear;
   animation: rotate-center 3s infinite linear;
 }
 
-/* line 30, ../../www/lpm.cms/scss/src/_base.scss */
+/* line 70, ../../www/lpm.cms/scss/src/_base.scss */
 #admin-enter:hover {
   background: #4e6672;
 }
@@ -39,12 +93,12 @@
   }
 }
 
-/* line 46, ../../www/lpm.cms/scss/src/_base.scss */
+/* line 87, ../../www/lpm.cms/scss/src/_base.scss */
 #app.isSidebar {
   margin-left: 350px !important;
 }
 
-/* line 49, ../../www/lpm.cms/scss/src/_base.scss */
+/* line 91, ../../www/lpm.cms/scss/src/_base.scss */
 #app.isBar {
   margin-left: 42px;
 }
@@ -153,13 +207,13 @@ body.isBar {
   transition: all ease 0.6s;
 }
 
-/* line 9, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 10, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .jet-section .cntr {
   position: relative;
   z-index: 4;
 }
 
-/* line 14, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 15, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .jet-section .form-toolbar {
   position: absolute;
   gap: 6px;
@@ -171,7 +225,7 @@ body.isBar {
   z-index: 50;
 }
 
-/* line 25, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 26, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .jet-section .form-toolbar i {
   background: #fff;
   color: #000 !important;
@@ -182,45 +236,43 @@ body.isBar {
   transition: all ease 0.6s;
 }
 
-/* line 34, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 35, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .jet-section .form-toolbar i:hover {
   background: #ccd7da;
 }
 
-/* line 42, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 43, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .jet-section:hover .form-toolbar {
   display: inline-flex;
 }
 
-/* line 54, ../../www/lpm.cms/scss/src/_toolbar.scss */
-.element {
+/* line 55, ../../www/lpm.cms/scss/src/_toolbar.scss */
+.group-toolbar {
   position: relative;
   transition: all ease 0.6s;
-}
-
-/* line 58, ../../www/lpm.cms/scss/src/_toolbar.scss */
-.element div, .element img, .element p, .element ul, .element li, .element span, .element a {
-  z-index: 4;
+  display: flex !important;
+  gap: 5px;
+  padding-bottom: 3px;
 }
 
 /* line 62, ../../www/lpm.cms/scss/src/_toolbar.scss */
-.element .form-toolbar {
-  position: absolute;
-  display: none;
+.group-toolbar .fa-pen-to-square,
+.group-toolbar .fa-plus {
+  display: none !important;
+}
+
+/* line 67, ../../www/lpm.cms/scss/src/_toolbar.scss */
+.group-toolbar .form-toolbar {
   justify-content: center;
   gap: 6px;
-  border-radius: 5px;
-  padding: 4px;
-  top: 10px;
-  left: 10px;
   background: rgba(84, 86, 236, 0.6);
   background: transparent !important;
   z-index: 50;
 }
 
-/* line 78, ../../www/lpm.cms/scss/src/_toolbar.scss */
-.element .form-toolbar i {
-  background: #fff;
+/* line 77, ../../www/lpm.cms/scss/src/_toolbar.scss */
+.group-toolbar .form-toolbar i {
+  background: #a8ee88;
   color: #000 !important;
   border-radius: 3px;
   padding: 3px;
@@ -229,22 +281,80 @@ body.isBar {
   transition: all ease 0.6s;
 }
 
-/* line 87, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 88, ../../www/lpm.cms/scss/src/_toolbar.scss */
+.group-toolbar .form-toolbar i:hover {
+  background: #7edd7e;
+}
+
+/* line 94, ../../www/lpm.cms/scss/src/_toolbar.scss */
+.group-toolbar i {
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+/* line 98, ../../www/lpm.cms/scss/src/_toolbar.scss */
+.group-toolbar i:hover {
+  color: #e01033;
+}
+
+/* line 106, ../../www/lpm.cms/scss/src/_toolbar.scss */
+.element {
+  position: relative;
+  transition: all ease 0.6s;
+}
+
+/* line 111, ../../www/lpm.cms/scss/src/_toolbar.scss */
+.element div,
+.element img,
+.element p,
+.element ul,
+.element li,
+.element span,
+.element a {
+  z-index: 4;
+}
+
+/* line 121, ../../www/lpm.cms/scss/src/_toolbar.scss */
+.element .form-toolbar {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  gap: 6px;
+  padding: 2px 0;
+  top: 0;
+  left: 0;
+  background: rgba(84, 86, 236, 0.6);
+  background: transparent !important;
+  z-index: 50;
+}
+
+/* line 137, ../../www/lpm.cms/scss/src/_toolbar.scss */
+.element .form-toolbar i {
+  background: #a8ee88;
+  color: #000 !important;
+  border-radius: 3px;
+  padding: 3px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all ease 0.6s;
+}
+
+/* line 146, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .element .form-toolbar i:hover {
   background: #ccd7da;
 }
 
-/* line 95, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 154, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .element:hover .form-toolbar {
   display: inline-flex;
 }
 
-/* line 107, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 166, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .add-section {
   position: relative;
 }
 
-/* line 109, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 169, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .add-section .d-drop {
   background: #fff;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.1);
@@ -254,7 +364,7 @@ body.isBar {
   right: 0;
 }
 
-/* line 116, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 177, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .add-section .d-drop div {
   white-space: nowrap;
 }
@@ -351,6 +461,19 @@ body.isBar {
 .pop-leave-to {
   opacity: 0;
   transform: scale(0.3) translateY(-50%);
+}
+
+/* line 57, ../../www/lpm.cms/scss/src/_vue-anim.scss */
+.slideHL-enter-active,
+.slideHL-leave-active {
+  transition: transform 0.4s translateX(0), opacity 0.4s linear;
+}
+
+/* line 62, ../../www/lpm.cms/scss/src/_vue-anim.scss */
+.slideHL-enter-from,
+.slideHL-leave-to {
+  opacity: 0;
+  transform: translateX(-50%);
 }
 
 /* line 5, ../../www/lpm.cms/scss/src/_media-manager.scss */
@@ -638,18 +761,7 @@ body.isBar {
   color: #00b7ff;
 }
 
-/* line 30, ../../www/lpm.cms/scss/src/_patterns.scss */
-.admin-modal-bg {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 350px;
-  background: rgba(0, 0, 0, 0.8);
-  z-index: 1;
-}
-
-/* line 39, ../../www/lpm.cms/scss/src/_patterns.scss */
+/* line 31, ../../www/lpm.cms/scss/src/_patterns.scss */
 .patterb-preview {
   position: fixed;
   top: 0;
@@ -660,15 +772,39 @@ body.isBar {
   z-index: 2;
 }
 
-/* line 47, ../../www/lpm.cms/scss/src/_patterns.scss */
+/* line 39, ../../www/lpm.cms/scss/src/_patterns.scss */
 .patterb-preview header {
   padding: 1rem;
   border-bottom: 1px solid #384352;
 }
 
-/* line 50, ../../www/lpm.cms/scss/src/_patterns.scss */
+/* line 42, ../../www/lpm.cms/scss/src/_patterns.scss */
 .patterb-preview header h3 {
   margin: 0;
+}
+
+/* line 2, ../../www/lpm.cms/scss/src/_modals.scss */
+.save-pattern {
+  width: 500px;
+  color: #444;
+  box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* line 6, ../../www/lpm.cms/scss/src/_modals.scss */
+.save-pattern h3 {
+  margin-bottom: 0;
+}
+
+/* line 10, ../../www/lpm.cms/scss/src/_modals.scss */
+.save-pattern .control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* line 14, ../../www/lpm.cms/scss/src/_modals.scss */
+.save-pattern .control-group label {
+  margin-bottom: 0;
 }
 
 /* line 4, ../../www/lpm.cms/scss/form/_form.scss */
@@ -723,6 +859,75 @@ body.isBar {
   flex-direction: column;
 }
 
+/* line 52, ../../www/lpm.cms/scss/form/_form.scss */
+.grouped-forms {
+  position: relative;
+  background: #fff;
+  border-radius: 4px;
+  padding: 5px;
+  margin-top: 12px;
+  transition: all ease 0.4s;
+}
+
+/* line 59, ../../www/lpm.cms/scss/form/_form.scss */
+.grouped-forms.active {
+  padding: 20px;
+  position: fixed;
+  top: 50px;
+  bottom: 50px;
+  right: 50px;
+  left: 400px;
+  z-index: 1000;
+  overflow-y: auto;
+  box-sizing: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* line 71, ../../www/lpm.cms/scss/form/_form.scss */
+.grouped-forms h3 span {
+  font-size: 1rem;
+}
+
+/* line 74, ../../www/lpm.cms/scss/form/_form.scss */
+.grouped-forms h3 .max-min {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  gap: 3px;
+  cursor: pointer;
+}
+
+/* line 83, ../../www/lpm.cms/scss/form/_form.scss */
+.grouped-forms h4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem !important;
+  border-bottom: 1px solid #7c313e;
+  margin: 5px 0 0 !important;
+}
+
+/* line 90, ../../www/lpm.cms/scss/form/_form.scss */
+.grouped-forms h4 span {
+  font-size: 0.8rem !important;
+  font-weight: bold !important;
+  color: #7c313e;
+}
+
+/* line 99, ../../www/lpm.cms/scss/form/_form.scss */
+.add-in-el {
+  display: flex;
+  flex-direction: column;
+  background: #c3cae7;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+/* line 106, ../../www/lpm.cms/scss/form/_form.scss */
+.add-in-el h3 {
+  font-size: 1.2rem !important;
+  border-bottom: 1px solid #a4b0d8;
+}
+
 /* line 1, ../../www/lpm.cms/scss/form/_fields.scss */
 .f-media {
   display: flex;
@@ -762,11 +967,11 @@ body.isBar {
 
 /* line 29, ../../www/lpm.cms/scss/form/_fields.scss */
 .f-media .d-del {
-  background: #3a6591;
+  background: #722525;
   color: #fff;
   display: flex;
   align-items: center;
-  padding: 0 1rem;
+  padding: 0 6px;
   transition: all ease 0.5s;
 }
 
@@ -775,7 +980,7 @@ body.isBar {
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.397) inset;
 }
 
-/* line 2, ../../www/lpm.cms/scss/form/_picker.scss */
+/* line 1, ../../www/lpm.cms/scss/form/_picker.scss */
 .picker-select {
   padding: 5px;
   cursor: pointer;
@@ -789,24 +994,30 @@ body.isBar {
   background: #0066ff;
 }
 
-/* line 12, ../../www/lpm.cms/scss/form/_picker.scss */
+/* line 13, ../../www/lpm.cms/scss/form/_picker.scss */
 .picker-select.doClose {
   background: #5e211c;
 }
 
-/* line 16, ../../www/lpm.cms/scss/form/_picker.scss */
+/* line 17, ../../www/lpm.cms/scss/form/_picker.scss */
 .picker-select:hover {
   background: #3c4255;
 }
 
-/* line 21, ../../www/lpm.cms/scss/form/_picker.scss */
+/* line 22, ../../www/lpm.cms/scss/form/_picker.scss */
 .picker-box {
   height: 300px;
   overflow-y: auto;
   background: #fff;
 }
 
-/* line 30, ../../www/lpm.cms/scss/form/_picker.scss */
+/* line 31, ../../www/lpm.cms/scss/form/_picker.scss */
+.picker-box input {
+  width: 95%;
+  margin-bottom: 4px;
+}
+
+/* line 36, ../../www/lpm.cms/scss/form/_picker.scss */
 .picker-box ul {
   width: 100%;
   display: flex;
@@ -814,25 +1025,75 @@ body.isBar {
   margin: 0;
 }
 
-/* line 36, ../../www/lpm.cms/scss/form/_picker.scss */
+/* line 42, ../../www/lpm.cms/scss/form/_picker.scss */
 .picker-box ul li {
   height: 30px;
   cursor: pointer;
   transition: all ease 0.4s;
 }
 
-/* line 41, ../../www/lpm.cms/scss/form/_picker.scss */
+/* line 47, ../../www/lpm.cms/scss/form/_picker.scss */
 .picker-box ul li:hover {
   transform: scale(0.95);
 }
 
-/* line 49, ../../www/lpm.cms/scss/form/_picker.scss */
+/* line 55, ../../www/lpm.cms/scss/form/_picker.scss */
+.picker-box ul.ja, .picker-box ul.jag {
+  gap: 2px;
+  justify-content: center;
+}
+
+/* line 59, ../../www/lpm.cms/scss/form/_picker.scss */
+.picker-box ul.ja li, .picker-box ul.jag li {
+  border: 1px solid #2f4168;
+  border-radius: 3px;
+  width: 48%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 69, ../../www/lpm.cms/scss/form/_picker.scss */
+.picker-box ul.ja li:before, .picker-box ul.jag li:before {
+  content: '';
+}
+
+/* line 72, ../../www/lpm.cms/scss/form/_picker.scss */
+.picker-box ul.ja li span, .picker-box ul.jag li span {
+  padding: 4px 2px;
+  display: inline-flex;
+  text-align: center;
+}
+
+/* line 82, ../../www/lpm.cms/scss/form/_picker.scss */
+ul.icons {
+  gap: 2px;
+  justify-content: center;
+}
+
+/* line 86, ../../www/lpm.cms/scss/form/_picker.scss */
+ul.icons li {
+  border: 1px solid #2f4168;
+  border-radius: 3px;
+  width: 14%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 95, ../../www/lpm.cms/scss/form/_picker.scss */
+ul.icons li:before {
+  content: '';
+}
+
+/* line 103, ../../www/lpm.cms/scss/form/_picker.scss */
 ul.bg li {
   width: 9%;
   min-width: 9%;
 }
 
-/* line 53, ../../www/lpm.cms/scss/form/_picker.scss */
+/* line 108, ../../www/lpm.cms/scss/form/_picker.scss */
 ul.col li {
   width: 20%;
   display: flex;
@@ -840,12 +1101,12 @@ ul.col li {
   align-items: center;
 }
 
-/* line 66, ../../www/lpm.cms/scss/form/_picker.scss */
+/* line 122, ../../www/lpm.cms/scss/form/_picker.scss */
 ul.col li span {
   text-align: center;
 }
 
-/* line 70, ../../www/lpm.cms/scss/form/_picker.scss */
+/* line 127, ../../www/lpm.cms/scss/form/_picker.scss */
 ul.col li[class*="tx-white"] {
   background: #444;
 }

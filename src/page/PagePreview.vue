@@ -1,5 +1,5 @@
 <template>
-    <div id="page" :class="[style.page.bg, style.page.col]">
+    <div id="page-preview" :class="[style.page.bg, style.page.col]">
         <jet-header :el="style.header" />
         <main-content />
         <jet-footer :el="style.footer" />

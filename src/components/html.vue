@@ -3,7 +3,7 @@
         <jet-toolbar cls="element" :sec="sec" :dir="dir" :elements="elements" :index="index" />
         <div v-html="e.el.html"></div>
     </div>
-    <div v-if="!e.el.html" class="tx-grey">{{ $__('Enter a code') }}</div>
+    <div v-if="!e.el.html" class="b-blue p-1 jc-c">{{$__('Add HTML code here')}}</div>
 </template>
 
 <script>
@@ -14,7 +14,7 @@ export const meta = {
     props: {
         "type": "html",
         "classes": {
-            
+            "ja": ""  
         },
         "el": { "html": "" }
     },

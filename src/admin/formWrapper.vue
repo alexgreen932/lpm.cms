@@ -5,6 +5,9 @@
     <ul class="j-tabs-content">
         <li v-if="current == 0">
             <jet-form :obj="element.el" :fields="renderFields(element.el)" />
+            <!-- for grouped elements  -->
+             <!-- {{element.items}} -->
+             <group-wrapper v-if="element.items" :group="element.items" />
         </li>
             
         <li v-if="current == 1">
@@ -19,10 +22,12 @@
 // import { ops } from "../data/data.js";
 import jetForm from '../form/jetForm.vue';
 import {fields_presets} from '../data/fields_presets.js';
+import groupWrapper from './groupWrapper.vue';
 
 export default {
     components: {
         jetForm,
+        groupWrapper,
     },
     props: ['element'],
     data() {

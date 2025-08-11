@@ -583,26 +583,26 @@
   animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
-/* line 7, ../../www/lpm.cms/scss-jet/animation/_ja-focus.scss */
+/* line 8, ../../www/lpm.cms/scss-jet/animation/_ja-focus.scss */
 .jp.ja-focus-in-expand {
   -webkit-animation: focus-in-expand 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: focus-in-expand 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
-/* line 11, ../../www/lpm.cms/scss-jet/animation/_ja-focus.scss */
+/* line 13, ../../www/lpm.cms/scss-jet/animation/_ja-focus.scss */
 .jp.ja-focus-in-expand-fwd {
   -webkit-animation: focus-in-expand-fwd 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: focus-in-expand-fwd 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
-/* line 15, ../../www/lpm.cms/scss-jet/animation/_ja-focus.scss */
+/* line 18, ../../www/lpm.cms/scss-jet/animation/_ja-focus.scss */
 .jp.ja-focus-in-contract {
   -webkit-animation: focus-in-contract 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: focus-in-contract 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
-/* line 19, ../../www/lpm.cms/scss-jet/animation/_ja-focus.scss */
-.jp.ja-.-in-contract-bck {
+/* line 23, ../../www/lpm.cms/scss-jet/animation/_ja-focus.scss */
+.jp.ja-focus-in-contract-bck {
   -webkit-animation: focus-in-contract-bck 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: focus-in-contract-bck 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }

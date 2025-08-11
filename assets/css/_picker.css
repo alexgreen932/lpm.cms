@@ -41,6 +41,11 @@
   transform: scale(0.95);
 }
 
+ul.icons li {
+  width: 9%;
+  min-width: 9%;
+}
+
 ul.bg li {
   width: 9%;
   min-width: 9%;

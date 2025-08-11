@@ -4,7 +4,9 @@
  * @return bool
  */
 function isAdmin(): bool {
-    return isset($_SESSION['admin']) && $_SESSION['admin'] === true;
+    // return isset($_SESSION['admin']) && $_SESSION['admin'] === true;
+    //dev!!!
+    return true;//todo!!! rm
 }
 
 /**

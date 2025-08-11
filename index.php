@@ -2,6 +2,7 @@
 define('_JET', 1);
 define('INC', __DIR__ . '/inc/');
 define('DATA', __DIR__ . '/data/');
+define('PATTERNS', __DIR__ . '/data/patterns/');
 session_start();
 
 require_once __DIR__ . '/inc/dev.php';
@@ -55,60 +56,83 @@ if (!$page) {
 
     <link rel="stylesheet" crossorigin href="assets/css/jet.min.css">
     <!-- todo move in admin or join with jet -->
-    <!-- <link rel="stylesheet" crossorigin href="assets/css/admin.css"> -->
+    <link rel="stylesheet" crossorigin href="assets/css/admin.css">
     <link rel="stylesheet" crossorigin href="assets/css/all.min.css">
 </head>
 
-<body class="full-height">
-    <header id="header" class="bg-blue-grey-d3 tx-white">
-        <div class="w-container ai-c p-1 g-1">Header(dev version)</div>
-    </header>
-    <main id="main" class="fg-1">
-        <?php
-        // dd($page->sections);
-        foreach ($page['sections'] as $section) {
-            $i = 0;
+<body>
+    <div id="page" class="full-height">
+        <header id="header" class="bg-blue-grey-d3 tx-white">
+            <div class="w-container ai-c p-1 g-1">Header(dev version)</div>
+        </header>
+        <main id="main" class="fg-1">
+            <?php
+            // dd($page->sections);
+            foreach ($page['sections'] as $section) {
+                $i = 0;
 
-            // dd($key);
-            $i++;
-            echo '<div id="section-' . $i . '" class="jet-section ' . classes($section['sec']) . '">';
-            echo '<div class="' . classes($section['cont']) . '">';
-            //elements rendering
-            foreach ($section['content'] as $element) {
-                $function = 'com_' . $element['type'];
-                if (function_exists($function)) {
-                    echo $function($element);
-                } else {
-                    echo "<!-- Unknown component: {$element['type']} -->";
+                // dd($key);
+                $i++;
+                echo '<div id="section-' . $i . '" class="jet-section ' . classes($section['sec']) . '">';
+                echo '<div class="' . classes($section['cont']) . '">';
+                //elements rendering
+                foreach ($section['content'] as $element) {
+                    $function = 'com_' . $element['type'];
+                    if (function_exists($function)) {
+                        echo $function($element);
+                    } else {
+                        echo "<!-- Unknown component: {$element['type']} -->";
+                    }
                 }
+                echo '</div>';
+                $img = $section['img'];
+                if ($img['src']) {
+                    echo '<div class="img-bg ' . classes($img, 'src') . '" style="background-image: url(\'' . $img['src'] . '\')"></div>';
+                }
+                echo '</div>';
             }
-            echo '</div>';
-            $img = $section['img'];
-            if ($img['src']) {
-                echo '<div class="img-bg ' . classes($img, 'src') . '" style="background-image: url(\'' . $img['src'] . '\')"></div>';
-            }
-            echo '</div>';
-        }
-        ?>
-    </main>
+            ?>
+        </main>
 
-    <footer id="footer" class="bg-blue-grey-d3 tx-white">
-        <div class="w-container ai-c p-1 g-1">Footer(dev version)</div>
-    </footer>
+        <footer id="footer" class="bg-blue-grey-d3 tx-white">
+            <div class="w-container ai-c p-1 g-1">Footer(dev version)</div>
+        </footer>
+    </div>
+
     <?php
+
+    dd(isAdmin(), 'isAdmin');
+    // isAdmin() = true;
     if (isAdmin()) {
         // Handle page save POST
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $action = $_POST['action'] ?? '';
-            if ($action === 'newpage') {
-                require_once __DIR__ . '/inc/newpage.php';
-            } elseif ($action === 'savepage') {
-                require_once __DIR__ . '/inc/save.php';
+            //todo!!! do it as class and methods instead
+            switch ($action) {
+                case 'newpage':
+                    require_once __DIR__ . '/inc/newpage.php';
+                    break;
+                case 'savepage':
+                    require_once __DIR__ . '/inc/save.php';
+                    break;
+                case 'savepattern':
+                    require_once __DIR__ . '/inc/savepattern.php';
+                    break;
+                
+                default:
+                    # code...
+                    break;
             }
+            // if ($action === 'newpage') {
+            //     require_once __DIR__ . '/inc/newpage.php';
+            // } elseif ($action === 'savepage') {
+            //     require_once __DIR__ . '/inc/save.php';
+            // }
         }
     ?>
         <div id="app"></div>
-        <script src="assets-classic/js/lpm.js"></script>
+        <!-- <iframe id="" src="data/iframe.html" frameborder="0"></iframe> -->
+        <script src="assets-dev/js/lpm.js"></script>
     <?php
     }
     ?>

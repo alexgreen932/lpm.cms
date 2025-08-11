@@ -2,6 +2,10 @@
 // import toolbar from './toolbar.js';
 
 export default {
+  dataString(v){
+    return JSON.stringify(v);
+    // return JSON.stringify(v ?? {}, null, 2);
+  },
   hoverTip(v){
     setTimeout(() => {
       
@@ -66,22 +70,28 @@ export default {
   isSidebar() {
     
     let page = document.getElementById('app');
+    let front = document.getElementById('page');
+    console.log('front: ', front);
     if (this.ops.current_menu && this.ops.current_menu !== 99) {
       page.classList.remove('isBar');
       page.classList.add('isSidebar');
+      front.classList.add('j-hidden');
     } else {
       page.classList.remove('isSidebar');
-
+      front.classList.add('j-hidden');
     }
   },
   isBar() {
     
     let page = document.getElementById('app');
+    let front = document.getElementById('page');
     if (this.ops.current_menu == 99) {
       page.classList.remove('isSidebar');
       page.classList.add('isBar');
+      front.classList.add('j-hidden');
     } else {
       page.classList.add('isBar');
+      front.classList.add('j-hidden');
 
     }
   }

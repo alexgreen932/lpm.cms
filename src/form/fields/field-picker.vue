@@ -12,37 +12,23 @@
     </div>
 
 
-    <div class="d-del" @click="$emit('update:modelValue', '')">
-      <i class="fa-solid fa-xmark"></i>
+    <div class="d-del fs-8" @click="$emit('update:modelValue', '')">
+      Clean
+      <!-- <i class="fa-solid fa-xmark"></i> -->
     </div>
   </div>
 
-
-  <!-- <div>
-    <div class="f-media">
-      <div v-if="!show" class="d-select" :class="cls(show)" @click="show = !show">{{ $__('Select') }}</div>
-      <span class="" v-else>
-        <div class="fg-1" @click="show = !show">{{ $__('Close') }}</div>
-        <label class="ai-c tx-white" for="keep_open">
-
-          <input id="keep_open" type="checkbox" v-model="keep_open" />
-          {{ $__('Keep Open') }}
-        </label>
-      </span>
-      <div class="d-del" @click="$emit('update:modelValue', '')">
-        <i class="fa-solid fa-xmark"></i>
-      </div>
-    </div>
-
-  </div> -->
-
   <transition name="slideV">
     <div v-if="show" class="picker-box">
+      <input type="text" :placeholder="$__('Type at list 2 letters to filter')" v-model="filter">
       <ul :class="f.ops">
-        <li v-for="op in ops()" :key="op.v" :class="op.v" @click="selectItem(op.v)">
+        <template v-for="op in ops()" :key="op.v"">
+        <li v-if="filtered(op.v)" :class="op.v" @click="selectItem(op.v)">
           <span v-if="f.ops == 'col'">Abc</span>
           <i v-if="f.ops == 'icons'" :class="op.v"></i>
-        </li>
+          <span v-if="f.ops == 'ja' || f.ops == 'jag'">{{op.t}}</span>
+          </li>
+        </template>
       </ul>
     </div>
   </transition>
@@ -59,9 +45,21 @@ export default {
     return {
       show: false,
       keep_open: true,
+      filter: null,
     };
   },
   methods: {
+    filtered(v) {
+      let out = true;
+      if (this.filter && this.filter.length > 1) {
+        if (v.includes(this.filter.toLowerCase())) {
+          out = true;
+        } else {
+          out = false;
+        }
+      }
+      return out;
+    },
     cls(v) {
       return v ? "doClose" : "doOpen";
     },

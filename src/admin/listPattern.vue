@@ -19,7 +19,6 @@
         <transition name="pop">
             <pattern-render />
         </transition>
-        preview
     </template>
     <!-- <div class="delay-tooltip">tttttt</div> -->
 </template>
@@ -58,6 +57,7 @@ export default {
         const path = `${this.$domain}/data/patterns/index.json`;//!!! dev ver as testing on html
         
         this.patterns = await fetchFile(path);
+        console.log('this.patterns: ', this.patterns);
         
     }
 };

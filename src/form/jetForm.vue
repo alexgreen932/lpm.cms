@@ -3,7 +3,10 @@
         <h3 v-if="title">{{ title }}</h3>
         <div v-for="(f, i) in normalizedFields" :key="i" class="control-group">
             <template v-if="meetCondition(f)">
-                <label v-if="f.type !== 'checkbox'">{{ f.title }}</label>
+                <label v-if="showLabel(f.type)">
+                    {{ f.title }}
+                    <i v-if="f.tip" class="fa-solid fa-circle-exclamation"  v-tt:top-left="f.tip"></i>
+                    </label>
                 <!-- dynamically resolve component -->
                 <component :is="getComponent(f.type)" v-model="obj[f.key]" :f="f" />
             </template>
@@ -45,6 +48,15 @@ export default {
     },
 
     methods: {
+        showLabel(type){
+            switch (type) {
+                case 'checkbox':                
+                case 'tip':                
+                    return false;        
+                default:
+                    return true;  
+            }
+        },
         meetCondition(f) {
             if (!f.showIf) return true;
 

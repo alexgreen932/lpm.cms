@@ -42,3 +42,51 @@
 .jet-form.small-transparent .control-group {
   flex-direction: column;
 }
+
+.grouped-forms {
+  position: relative;
+  background: #fff;
+  border-radius: 4px;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.grouped-forms h3 span {
+  font-size: 1rem;
+}
+
+.grouped-forms h3 .max-min {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  gap: 3px;
+  cursor: pointer;
+}
+
+.grouped-forms h4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem !important;
+  border-bottom: 1px solid #7c313e;
+  margin: 5px 0 0 !important;
+}
+
+.grouped-forms h4 span {
+  font-size: 0.8rem !important;
+  font-weight: bold !important;
+  color: #7c313e;
+}
+
+.add-in-el {
+  display: flex;
+  flex-direction: column;
+  background: #c3cae7;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.add-in-el h3 {
+  font-size: 1.2rem !important;
+  border-bottom: 1px solid #a4b0d8;
+}

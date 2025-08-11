@@ -1,18 +1,9 @@
 <template>
-    <figure 
-        v-if="e.el.text" 
-        class="element" 
-        :class="$root.classes(e.classes)" 
-        :style="position"
-    >
-        <jet-toolbar 
-            cls="element" 
-            :sec="sec" 
-            :dir="dir" 
-            :elements="elements" 
-            :index="index" 
-        />
-        <img :src="e.el.src" :alt="e.el.text">
+    <!-- todo in front link ----- -->
+    <figure v-if="e.el.text" class="element" :class="$root.classes(e.classes)" :style="position">
+        <jet-toolbar cls="element" :sec="sec" :dir="dir" :elements="elements" :index="index" />
+        <img v-if="e.el.src" :src="e.el.src" :alt="e.el.text">
+        <img v-if="!e.el.src" :src="$domain + '/media/default.jpg'">
         <figcaption v-if="e.el.show_caption">{{ e.el.text }}</figcaption>
     </figure>
 </template>
@@ -27,11 +18,14 @@ export const meta = {
         type: 'image',
         classes: {
             wi: '',
+            br: '',
+            "ja": ""
         },
         el: {
             src: '',
             text: 'Read More',
             show_caption: false,
+            url: '',
         },
         style: {
             pos_a: false,        // <-- added this so position works

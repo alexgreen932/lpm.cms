@@ -15,7 +15,8 @@ export const meta = {
         "type": "paragraph",
         "classes": {
             "fs": "",
-            "col": ""
+            "col": "",
+            "ja": ""
         },
         "el": { "text": "This is Sample Text" }
     },

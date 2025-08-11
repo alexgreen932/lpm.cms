@@ -14,11 +14,12 @@ export const meta = {
     props: {
         'type': 'button',
         'classes': {
-            'but_style': 'but-normal',
             'bg': 'bg-blue',
-            'fs': '',
             'col': 'tx-white',
-            'br': 'br-5'
+            'but_style': 'but-normal',
+            'fs': '',
+            'br': 'br-5',
+            "ja": ""
         },
         'el': { 
             'url': '',

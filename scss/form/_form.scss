@@ -19,11 +19,11 @@
      h3 {
          font-size: 1.2rem;
          background: #d0d8ee;
-         color:rgb(32, 32, 80);
+         color: rgb(32, 32, 80);
          border-radius: 4px;
          padding: 4px;
          border-bottom-width: 0;
-        //  border-bottom: 1px solid #394a5f;
+         //  border-bottom: 1px solid #394a5f;
          margin: 0;
      }
 
@@ -46,5 +46,65 @@
          .control-group {
              flex-direction: column;
          }
+     }
+ }
+
+ .grouped-forms {
+    position: relative;
+     background: #fff;
+     border-radius: 4px;
+     padding: 5px;
+     margin-top: 12px;
+     transition: all ease 0.4s;
+     &.active{
+        padding: 20px;
+        position: fixed;
+        top: 50px;
+        bottom: 50px;
+        right: 50px;
+        left: $width-sec + 50;
+        z-index: 1000;
+        overflow-y: auto;
+        box-sizing: $shadow-more;
+     }
+     h3{
+        span{
+            font-size: 1rem;
+        }
+     .max-min{
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        gap: 3px;
+        cursor: pointer;
+     }
+     }
+
+     h4 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1rem!important;
+             border-bottom: 1px solid rgb(124, 49, 62);
+             margin: 5px 0 0 !important;
+         span {
+             font-size: 0.8rem !important;
+             font-weight: bold !important;
+             color: rgb(124, 49, 62);
+         }
+
+     }
+ }
+
+ .add-in-el {
+     display: flex;
+     flex-direction: column;
+     background: #c3cae7;
+     border-radius: 4px;
+     padding: 5px;
+
+     h3 {
+         font-size: 1.2rem !important;
+         border-bottom: 1px solid #a4b0d8;
      }
  }

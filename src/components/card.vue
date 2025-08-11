@@ -1,49 +1,49 @@
 <template>
-    <div class="element card" :class="$root.classes(e.classes, 'link_rad, link_style, p, fd')">  
-                  <!-- 'bg': 'bg-white',
-            'p': '',
-            'br': '',
-            'fs': '',
-            'col': 'tx-black',
-            'br': 'br-5',
-            'link_style': 'but-blue',
-            '': 'br-5',       -->
+    <div class="element card" :class="$root.classes(e.classes, 'link_rad, link_style, p, fd, ratio, hover_effect')">  
         <jet-toolbar cls="element" :sec="sec" :dir="dir" :elements="elements" :index="index" />
-        <figure v-if="e.el.img">
+        <figure v-if="e.el.img" :class="[e.classes.ratio, e.classes.hover_effect]">
             <img :src="e.el.img" :alt="title()">
         </figure>
         <div :class="[e.classes.p, dir()]">
             <h3 v-if="e.el.title">{{e.el.title}}</h3>
-            <div :class="e.classes.fs" v-htmk="e.el.text"></div>
-            <div v-if="!e.el.text" class="tx-grey">{{ $__('Enter a text') }}</div>
-            <a v-if="e.el.button" :href="e.el.url" :class="[e.classes.link_classes, e.classes.link_rad]">e.el.link_text</a>
+            <!-- {{e}} -->
+            <div v-if="e.el.text" :class="e.classes.fs" v-html="e.el.text"></div>
+            <div v-if="!e.el.text" class="b-blue p-1 jc-c">{{$__('Add some text to your card')}}</div>
+            <a v-if="e.el.button" :href="e.el.url" :class="[e.classes.link_style, e.classes.link_rad]">{{e.el.link_text}}</a>
         </div>
-
-
     </div>
 </template>
 
 <script>
 import jetToolbar from '../page/jetToolbar.vue';
+import __ from '../languages/index.js';
+import {id} from '../utils/globals.js';
 export const meta = {
     title: 'Card',
     icon: 'fa-solid fa-address-card',
     props: {
         'type': 'card',
+        'id': id(),
         'classes': {
             'wi': '',
             'bs': '',
             'bg': 'bg-white',
-            'col': 'tx-black',
+            'link_style': 'but-blue',
             'p_card': '',
             'fd': '',
-            'p': '',
+            'p': 'p-1',
             'pc': '',
             'br': '',
-            'fs': '',
+            'fs': 'fs-10',
             'br': 'br-5',
+            'separator': __('Button Style'),
             'link_style': 'but-blue',
+            'link_color': 'but-blue-d2',
+            'col': 'tx-black',
             'link_rad': 'br-5',
+            'ratio': 'ratio-auto',
+            'hover_effect': '',
+            'ja': '',
         },
         'el': {
             'title': '',
@@ -53,7 +53,7 @@ export const meta = {
             'button': false,
             'url': '',
             'target': '_self',
-            'link_text': '',
+            'link_text': 'Read More',
         }
     },
 };

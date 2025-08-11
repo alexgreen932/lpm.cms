@@ -1,5 +1,20 @@
 // text_effects  yes_no justify align  gap  size  shadow  radius                                
 export const options = {
+    blank: [
+        { v: '', t: 'none' },
+        { v: '', t: '' },
+    ],
+    symbol_mode: [
+        { v: '', t: 'None' },
+        { v: 'icons', t: 'Icons' },
+        { v: 'num', t: 'Numbers' },
+    ],
+    icon_place: [
+        { v: 'icn-bebore', t: 'Before Title' },
+        { v: 'icn-after', t: 'After Title' },
+        { v: 'icn-above', t: 'Above Title' },
+        { v: 'icn-aside', t: 'Aside Left' },
+    ],
     effects: [
         { v: '', t: 'none' },
         { v: 'e-shadow', t: 'shadow' },

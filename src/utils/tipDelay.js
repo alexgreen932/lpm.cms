@@ -1,12 +1,12 @@
-// tipDelay.js
 export default {
   mounted(el, binding) {
     let timeoutId;
     let tooltipEl;
+    const extraClass = binding.arg || ''; // take value after colon (e.g. bottom-left)
 
     const showTooltip = () => {
       tooltipEl = document.createElement('div');
-      tooltipEl.className = 'delay-tooltip';
+      tooltipEl.className = 'delay-tooltip' + (extraClass ? ' ' + extraClass : '');
       tooltipEl.textContent = binding.value;
       document.body.appendChild(tooltipEl);
     };
@@ -18,13 +18,13 @@ export default {
     };
 
     el.addEventListener('mouseenter', () => {
-      timeoutId = setTimeout(showTooltip, 1000); // delay 1s
+      timeoutId = setTimeout(showTooltip, 1000); // 1s delay
     });
     el.addEventListener('mouseleave', hideTooltip);
 
-    el._tipDelayCleanup = hideTooltip;
+    el._ttCleanup = hideTooltip;
   },
   unmounted(el) {
-    el._tipDelayCleanup?.();
+    el._ttCleanup?.();
   }
 };

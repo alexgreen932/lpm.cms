@@ -1,15 +1,24 @@
 <template>
     <div v-if="ops.editable" class="form-toolbar" :class="cls">
-        <i class="fa-solid fa-pen-to-square" @click="editItem(index)"></i>
-        <i v-if="notFirst(index)" class="fa-solid" :class="prev" @click="moveItem(index, index - 1)"></i>
-        <i v-if="notLast(index)" class="fa-solid" :class="next" @click="moveItem(index, index + 1)"></i>
-        <i class="fa-solid fa-trash" @click="del(index)"></i>
-        <i v-if="cls !== 'section'" class="fa-solid fa-plus" @click="addItem(index)"></i>
-        <i v-if="cls == 'section'" class="add-section" :class="showClose()" @click="showSub()">
+        <i class="fa-solid fa-pen-to-square" v-tt:top-center-small="$__('Edit')" @click="editItem(index)"></i>
+        <i v-if="notFirst(index)" class="fa-solid" :class="prev" v-tt:top-center-small="$__('Move +')"
+            @click="moveItem(index, index - 1)"></i>
+        <i v-if="notLast(index)" class="fa-solid" :class="next" v-tt:top-center-small="$__('Move -')"
+            @click="moveItem(index, index + 1)"></i>
+        <i v-if="cls == 'section'" class="fa-solid fa-floppy-disk" v-tt:top-center-small="$__('Save as Pattern')"
+            @click="saveAsPattern()"></i>
+        <i class="fa-solid fa-trash" v-tt:top-center-small="$__('Delete')" @click="del(index)"></i>
+        <i v-if="cls == 'element'" class="fa-solid fa-clone" v-tt:top-center-small="$__('Clone Element')" @click="clone()"></i>
+        <i v-if="cls !== 'section'" class="fa-solid fa-plus" v-tt:top-center-small="$__('Add')" @click="addItem(index)"></i>
+        <i v-if="cls == 'section'" class="add-section" :class="showClose()" v-tt:top-center-small="$__('Add')"
+            @click="show = !show">
             <transition name="slideV">
                 <div v-if="show" class="d-drop drop p-1 g-1">
-                    <div class="but-blue fs-8" @click="ops.current_menu = 'patterns'">{{ $__('Add Pattern') }}</div>
-                    <div class="but-grey fs-8" @click="addItem(index)">{{ $__('Add Empty Section') }}</div>
+                    <div class="but-blue fs-8" @click="addPattern()">
+                        {{ $__('Add Pattern') }}
+                    </div>
+                    <div class="but-grey fs-8" @click="addItem(index)">
+                        {{ $__('Add Empty Section') }}</div>
                 </div>
             </transition>
 
@@ -72,9 +81,42 @@ export default {
             prev: 'fa-angle-up',
             next: 'fa-angle-down',
             show: false,
+            save_as_pattern: false,
         };
     },
     methods: {
+        clone() {
+            // let cloned = this.elements[this.index];//get elem clicked to clone
+            // let cloned = JSON.parse(JSON.stringify(this.elements[this.index]));//get elem clicked to clone
+            let cloned = this.$freshId(this.elements[this.index]);//create element with fresh id
+            // delete cloned.id;
+            // cloned.id = this.$id();//set random id, if id exists return
+            // 
+          
+            let insertIndex = this.ops.current_el + 1;
+                this.elements.splice(insertIndex, 0, cloned);
+            // if (this.cls === "section") {
+            //     let insertIndex = this.ops.current_section + 1;
+            //     this.elements.splice(insertIndex, 0, newItem);
+            // } else {
+            //     //add elem
+            //     this.ops.current_menu = 'add';
+            //     this.ops.current_section = this.sec;
+            //     this.ops.current_el = this.index;
+            //     
+            // }
+        },
+        saveAsPattern() {
+            if (this.ops.save_as_pattern) {
+                this.ops.save_as_pattern = false;
+                return;
+            }
+            this.ops.save_as_pattern = true;
+            
+            
+
+            this.ops.pattern.data = this.elements[this.index]; //set elements clicked data as pattern.data
+        },
         showSub() {
             this.show = !this.show;
             this.ops.current_section = this.index;
@@ -94,17 +136,17 @@ export default {
                         (page) => page.slug === this.ops.current_page
                     );
                     this.ops.page_index = index !== -1 ? index : null;
-                    console.log("Page index set to:", this.ops.page_index);
+                    
                 } else {
-                    console.warn("pages_list.json returned empty or invalid data");
+                    
                 }
             } catch (error) {
-                console.error("Error setting page index:", error);
+                
             }
         },
 
         async editItem(i) {
-            console.log('edit item func', this.cls);
+            
             switch (this.cls) {
                 case 'section':
                     this.$root.reset();
@@ -144,7 +186,11 @@ export default {
         },
 
         del(i) {
-            this.elements.splice(i, 1);
+            const result = confirm(this.$__('Confirm deleting Item!'));
+            if (result) {
+                this.elements.splice(i, 1);
+            }
+
         },
 
         addItem(i) {
@@ -157,7 +203,6 @@ export default {
                 this.ops.current_menu = 'add';
                 this.ops.current_section = this.sec;
                 this.ops.current_el = this.index;
-                console.log('this.index: ', this.index);
             }
         },
 
@@ -166,7 +211,8 @@ export default {
         },
     },
     mounted() {
-        // console.log('this.dir ------- ', this.dir);
+        // all props "elements", "index", "page_index", "cls", "sec", "dir"           
+            
         if (this.dir && this.dir == 'fd-c') {
 
         } else {

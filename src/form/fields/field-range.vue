@@ -9,7 +9,7 @@
             :max="max"
             :step="step"
         />
-        <span>{{ pre }}{{ val }}</span>
+        <span>{{ pre }}{{ showVal() }}</span>
     </div>
 </template>
 
@@ -42,13 +42,22 @@ export default {
                 line_height: 'lh',
                 width: 'w',
                 br: 'br-',
-                num: '',
+                showVal: '',
                 pre: null,
                 post: null,
             }
         };
     },
     methods: {
+        showVal(){
+            switch (this.f.ops) {
+                case 'fs':
+                    let out = this.val / 10;
+                    return out + 'rem';            
+                default:
+                    return this.val;
+            }
+        },
         onInput(event) {
             this.val = event.target.value;
             this.emitClass();
@@ -72,7 +81,7 @@ export default {
                 this.max = 50;
                 break;
             case 'fs':
-                this.min = 4;
+                this.min = 8;
                 this.max = 50;
                 break;
             case 'abs_pos':
