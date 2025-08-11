@@ -20,7 +20,7 @@ export const fields_presets = {
     wi: { title: __('Width'), tip: __('Width of element, but if you want all element same width you can set "Child Width in section settings"'), key: 'wi', type: 'select', ops: 'wi' },
     wc: { title: __('Child Elements Width'), tip: __('Makes child elements of block width"'), key: 'wc', type: 'select', ops: 'wc' },
 
-    symbole_mode: { title: __('Symbol Mode'), key: 'symbole_mode', type: 'select', ops: 'symbole_mode' },
+    symbol_mode: { title: __('Symbol Mode'), key: 'symbol_mode', type: 'select', ops: 'symbol_mode' },
     icon_place: { title: __('Where to display icon'), key: 'icon_place', type: 'select', ops: 'icon_place' },
 
     html: { title: __('Enter HTML code'), key: 'html', type: 'textarea', ops:'big' },
@@ -30,6 +30,7 @@ export const fields_presets = {
     ai: { title: __('Align Items'), key: 'ai', type: 'select', ops: 'ai' },
     fs: { title: __('Font Size'), key: 'fs', type: 'range', ops: 'fs' },
     i_fs: { title: __('Icon Size'), key: 'i_fs', type: 'range', ops: 'fs' },
+    fs_h: { title: __('Title Size'), key: 'fs_h', type: 'range', ops: 'fs' },
 
     br: { title: __('Border Radius'), key: 'br', type: 'range', ops: 'br' },
     fw: { title: __('Font Weight'), key: 'fw', type: 'select', ops: 'fw' },

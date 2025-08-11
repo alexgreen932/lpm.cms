@@ -1,0 +1,43 @@
+.info-box-container {
+  display: flex;
+  width: 100%;
+}
+
+.info-box {
+  display: flex;
+}
+
+.info-box .d-wrap {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-box .d-heading {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.info-box .d-heading div {
+  flex-grow: 1;
+}
+
+.info-box .d-heading.icn-after {
+  flex-direction: row-reverse;
+}
+
+.info-box .d-heading.icn-above {
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-box .d-content {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  margin-top: 4px;
+  padding-top: 8px;
+}
+
+.info-box .d-content.icn-above {
+  text-align: center;
+}

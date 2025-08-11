@@ -37,16 +37,17 @@
                 {
                     "type": "infoboxes",
                     "classes": {
-                        "wc": "wc-1-3",
+                        "wi": "w-1-3",
                         "bg": "bg-indigo-l5",
                         "bg_h": "bg-indigo-l3",
                         "col": "",
                         "fs": "",
+                        "i_fs": "fs-15",
                         "fs_h": "fs-15",
                         "p": "p-2",
                         "br": "br-30",
                         "symbol_mode": "icons",
-                        "icon_place": "",
+                        "icon_place": "icn-after",
                         "jag": ""
                     },
                     "el": {

@@ -9212,6 +9212,59 @@ table.de-striped tbody tr:hover {
   }
 }
 
+/* line 1, ../../www/lpm.cms/scss-jet/components/_info-box.scss */
+.info-box-container {
+  display: flex;
+  width: 100%;
+}
+
+/* line 5, ../../www/lpm.cms/scss-jet/components/_info-box.scss */
+.info-box {
+  display: flex;
+}
+
+/* line 8, ../../www/lpm.cms/scss-jet/components/_info-box.scss */
+.info-box .d-wrap {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 14, ../../www/lpm.cms/scss-jet/components/_info-box.scss */
+.info-box .d-heading {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* line 19, ../../www/lpm.cms/scss-jet/components/_info-box.scss */
+.info-box .d-heading div {
+  flex-grow: 1;
+}
+
+/* line 23, ../../www/lpm.cms/scss-jet/components/_info-box.scss */
+.info-box .d-heading.icn-after {
+  flex-direction: row-reverse;
+}
+
+/* line 27, ../../www/lpm.cms/scss-jet/components/_info-box.scss */
+.info-box .d-heading.icn-above {
+  flex-direction: column;
+  align-items: center;
+}
+
+/* line 32, ../../www/lpm.cms/scss-jet/components/_info-box.scss */
+.info-box .d-content {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  margin-top: 4px;
+  padding-top: 8px;
+}
+
+/* line 36, ../../www/lpm.cms/scss-jet/components/_info-box.scss */
+.info-box .d-content.icn-above {
+  text-align: center;
+}
+
 /* line 2, ../../www/lpm.cms/scss-jet/animation/_ja-fade-in.scss */
 .jp.ja-fade-in {
   -webkit-animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 0.5) both;
