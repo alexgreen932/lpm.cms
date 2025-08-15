@@ -1,8 +1,8 @@
 <template>
-    <ul class="element info-box-container">
+    <ul class="element info-box-container" :class="[e.classes.g, e.classes.jc, e.classes.wc]">
         <jet-toolbar cls="element" :sec="sec" :dir="dir" :elements="elements" :index="index" />
         <li v-for="(el, i) in e.items" :key="i" class="info-box"
-            :class="$root.classes(e.classes, 'e.classes.bg_h, i_fs, icon_place, fs_h')" :data-hover-bg="e.classes.bg_h">
+            :class="$root.classes(e.classes, 'e.classes.bg_h, i_fs, icon_place, fs_h, g, jc, wc')" :data-hover-bg="e.classes.bg_h">
             <template v-if="e.classes.icon_place == 'icn-aside'">
                 <i v-if="e.classes.symbol_mode == 'icons'" class="mr-1" :class="[el.icon, e.classes.i_col, e.classes.i_fs]"></i>
             </template>
@@ -31,7 +31,9 @@ export const meta = {
     props: {
         "type": "infoboxes",
         "classes": {
-            wi: 'w-1-3',
+            "wc": "wc-auto",
+            jc: 'jc-a',
+            g: '',
             "bg": "bg-indigo-l5",
             "bg_h": "bg-indigo-l3",
             "col": "",

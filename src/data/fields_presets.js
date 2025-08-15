@@ -14,7 +14,12 @@ export const fields_presets = {
     url: { title: __('Link(optionaly)'), key: 'url', type: 'input' },
     target: { title: __('Open in'), key: 'target', type: 'select', ops:'target', showIf:{url:true}},
     link_text: { title: __('Link Text'), key: 'link_text', type: 'input', showIf:{url:true,button:true}},
+
     fd:{ title: __('Direction'), key: 'fd', type: 'select', ops: 'fd' },
+    dir_main:{ title: __('Position Content/Media'), key: 'dir_main', type: 'select', ops: 'fd' },
+    dir_title:{ title: __('Heading Position'), key: 'dir_title', type: 'select', ops: 'fd' },
+    dir_conent:{ title: __('Text/Buttons Position'), key: 'dir_conent', type: 'select', ops: 'fd' },
+
 
     w: { title: __('Container Width'), key: 'w', type: 'select', ops: 'w' },
     wi: { title: __('Width'), tip: __('Width of element, but if you want all element same width you can set "Child Width in section settings"'), key: 'wi', type: 'select', ops: 'wi' },
@@ -25,9 +30,14 @@ export const fields_presets = {
 
     html: { title: __('Enter HTML code'), key: 'html', type: 'textarea', ops:'big' },
     src: { title: __('Image'), key: 'src', type: 'media' },
+    media: { title: __('Add Media'), key: 'media', type: 'media' },
     link_style: { title: __('Button Background'), key: 'link_style', type: 'picker', ops: 'bg' },
+
     jc: { title: __('Justify Content'), key: 'jc', type: 'select', ops: 'jc' },
     ai: { title: __('Align Items'), key: 'ai', type: 'select', ops: 'ai' },
+    g:{ title: __('Gap Between'), key: 'g', type: 'select', ops: 'g' },
+
+
     fs: { title: __('Font Size'), key: 'fs', type: 'range', ops: 'fs' },
     i_fs: { title: __('Icon Size'), key: 'i_fs', type: 'range', ops: 'fs' },
     fs_h: { title: __('Title Size'), key: 'fs_h', type: 'range', ops: 'fs' },
@@ -41,6 +51,44 @@ export const fields_presets = {
     text: { title: __('Text'), key: 'text', type: 'textarea' },
     tag: { title: __('Tag'), key: 'tag', type: 'select', ops: 'tag' },//w- means - Wisth Item
     pos: { title: __('Position'), key: 'pos', type: 'select', ops: 'pos' },
+
+    'classes': {
+            'wi': '',
+            'bs': '',
+            'bg': 'bg-white',
+            'link_style': 'but-blue',
+            'dir_main': '',
+            'dir_title': '',
+            'dir_conent': '',
+            'p': 'p-1',
+            'pc': '',
+            'br': '',
+            'fs': 'fs-10',
+            'br': 'br-5',
+            'separator': __('Button Style'),
+            'style_but1': 'but-blue',
+            'style_but2': 'but-blue',
+            'link_rad': 'br-5',
+            'ratio': 'ratio-auto',
+            'hover_effect': '',
+            'ja': '',
+        },
+        'el': {
+            'title': 'Media Box',
+            'an_h': '',
+            'text': '',
+            'an_t': '',
+            'an_m': '',
+            'icon': '',
+            'an_i': '',
+            'button1': 'Demo',
+            'url': '',
+            'an_b1': '',
+            'button2': 'Download',
+            'url2': '',
+            'an_b2': '',
+            'url': '',
+        },
 
     //
     show_caption: { title: __('Show Caption'), key: 'show_caption', type: 'checkbox' },

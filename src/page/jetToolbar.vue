@@ -1,28 +1,50 @@
 <template>
-    <div v-if="ops.editable" class="form-toolbar" :class="cls">
-        <i class="fa-solid fa-pen-to-square" v-tt:top-center-small="$__('Edit')" @click="editItem(index)"></i>
-        <i v-if="notFirst(index)" class="fa-solid" :class="prev" v-tt:top-center-small="$__('Move +')"
-            @click="moveItem(index, index - 1)"></i>
-        <i v-if="notLast(index)" class="fa-solid" :class="next" v-tt:top-center-small="$__('Move -')"
-            @click="moveItem(index, index + 1)"></i>
-        <i v-if="cls == 'section'" class="fa-solid fa-floppy-disk" v-tt:top-center-small="$__('Save as Pattern')"
-            @click="saveAsPattern()"></i>
-        <i class="fa-solid fa-trash" v-tt:top-center-small="$__('Delete')" @click="del(index)"></i>
-        <i v-if="cls == 'element'" class="fa-solid fa-clone" v-tt:top-center-small="$__('Clone Element')" @click="clone()"></i>
-        <i v-if="cls !== 'section'" class="fa-solid fa-plus" v-tt:top-center-small="$__('Add')" @click="addItem(index)"></i>
-        <i v-if="cls == 'section'" class="add-section" :class="showClose()" v-tt:top-center-small="$__('Add')"
-            @click="show = !show">
-            <transition name="slideV">
-                <div v-if="show" class="d-drop drop p-1 g-1">
-                    <div class="but-blue fs-8" @click="addPattern()">
-                        {{ $__('Add Pattern') }}
-                    </div>
-                    <div class="but-grey fs-8" @click="addItem(index)">
-                        {{ $__('Add Empty Section') }}</div>
-                </div>
-            </transition>
+    <div v-if="ops.editable" class="form-toolbar wc-x" :class="cls">
+        <div class="d-bg">
+            <div v-if="cls !== 'group-toolbar'" class="d-wrap">
+                <i class="fa-solid fa-pen-to-square" v-tt:top-center-small="$__('Edit')" @click="editItem(index)"></i>
+            </div>
+            <div v-if="notFirst(index)" class="d-wrap">
+                <i class="fa-solid" :class="prev" v-tt:top-center-small="$__('Move +')"
+                    @click="moveItem(index, index - 1)"></i>
+            </div>
+            <div v-if="notLast(index)" class="d-wrap">
+                <i class="fa-solid" :class="next" v-tt:top-center-small="$__('Move -')"
+                    @click="moveItem(index, index + 1)"></i>
+            </div>
+            <div v-if="cls == 'section'" class="d-wrap">
+                <i class="fa-solid fa-floppy-disk" v-tt:top-center-small="$__('Save as Pattern')"
+                    @click="saveAsPattern()"></i>
+            </div>
+            <div class="d-wrap">
+                <i class="fa-solid fa-trash" v-tt:top-center-small="$__('Delete')" @click="del(index)"></i>
+            </div>
+            <div v-if="cls == 'element'" class="d-wrap">
+                <i class="fa-solid fa-clone" v-tt:top-center-small="$__('Clone Element')" @click="clone()"></i>
+            </div>
+            <div v-if="cls == 'element'" class="d-wrap">
+                <i class="fa-solid fa-plus" v-tt:top-center-small="$__('Add')" @click="addItem(index)"></i>
+            </div>
+        
+                <div v-if="cls == 'section'">
+                    <i class="add-section" :class="showClose()" v-tt:top-center-small="$__('Add')"
+                        @click="show = !show">
+                        <transition name="slideV">
+                            <div v-if="show" class="d-drop drop p-1 g-1">
+                                <div class="but-blue fs-8" @click="addPattern()">
+                                    {{ $__('Add Pattern') }}
+                                </div>
+                                <div class="but-grey fs-8" @click="addItem(index)">
+                                    {{ $__('Add Empty Section') }}</div>
+                            </div>
+                        </transition>
 
-        </i>
+                    </i>
+                </div>
+            
+
+        </div>
+
     </div>
 </template>
 
@@ -92,9 +114,9 @@ export default {
             // delete cloned.id;
             // cloned.id = this.$id();//set random id, if id exists return
             // 
-          
+
             let insertIndex = this.ops.current_el + 1;
-                this.elements.splice(insertIndex, 0, cloned);
+            this.elements.splice(insertIndex, 0, cloned);
             // if (this.cls === "section") {
             //     let insertIndex = this.ops.current_section + 1;
             //     this.elements.splice(insertIndex, 0, newItem);
@@ -112,8 +134,8 @@ export default {
                 return;
             }
             this.ops.save_as_pattern = true;
-            
-            
+
+
 
             this.ops.pattern.data = this.elements[this.index]; //set elements clicked data as pattern.data
         },
@@ -136,17 +158,17 @@ export default {
                         (page) => page.slug === this.ops.current_page
                     );
                     this.ops.page_index = index !== -1 ? index : null;
-                    
+
                 } else {
-                    
+
                 }
             } catch (error) {
-                
+
             }
         },
 
         async editItem(i) {
-            
+
             switch (this.cls) {
                 case 'section':
                     this.$root.reset();
@@ -212,7 +234,7 @@ export default {
     },
     mounted() {
         // all props "elements", "index", "page_index", "cls", "sec", "dir"           
-            
+
         if (this.dir && this.dir == 'fd-c') {
 
         } else {

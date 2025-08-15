@@ -35,6 +35,14 @@ export const options = {
         { v: 'e-blue-shadow', t: 'blue-shadow' },
         { v: 'e-slight-shadow', t: 'slight-shadow' },
     ],
+    wc: [
+        { v: '', t: 'Auto' },
+        { v: 'wc-1-5', t: '20%' },
+        { v: 'wc-1-4', t: '25%' },
+        { v: 'wc-1-3', t: '33%' },
+        { v: 'wc-1-2', t: '50%' },
+        { v: 'wc-1-1', t: '100%' },
+    ],
     wi: [
         { v: '', t: 'Auto' },
         { v: 'w-1-5', t: '20%' },

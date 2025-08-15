@@ -34,17 +34,23 @@
         color:#fff;
     }
 }
-.tips-box{
-    position: fixed;
-    width: 50%;
-    top: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #000;
-    color: #fff;
-    padding: 1.5rem;
-    border-radius: 16px;
+$width-sec: 350px; // your sidebar width
+
+.tips-box {
+  position: fixed;
+  width: 50%; // or any width you want for modal
+  top: 100px;
+
+  // Center relative to white area (viewport - sidebar)
+  left: calc(#{$width-sec} + (100% - #{$width-sec}) / 2);
+  transform: translateX(-50%);
+
+  background: #000;
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 16px;
 }
+
 
 #admin-enter {
     position: fixed;

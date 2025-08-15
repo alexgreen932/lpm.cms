@@ -71,7 +71,7 @@ export default {
     
     let page = document.getElementById('app');
     let front = document.getElementById('page');
-    console.log('front: ', front);
+    
     if (this.ops.current_menu && this.ops.current_menu !== 99) {
       page.classList.remove('isBar');
       page.classList.add('isSidebar');

@@ -1,10 +1,54 @@
 $sec: rgba(0, 0, 0, 0.6);
 $el: rgba(84, 86, 236, 0.6);
 
+div.form-toolbar {
+    position: absolute;
+    display: inline-flex;
+    // gap: 6px;
+    // border-radius: 5px;
+    // padding: 4px 8px;
+    z-index: 50 !important;
+    transition: opacity 0.3s ease-in-out;
+
+    .d-bg {
+        display: flex;
+        gap: 6px;
+        border-radius: 14px;
+        padding: 4px 10px;
+    }
+
+    .d-wrap {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+        transition: all ease 0.6s;
+
+        &:hover {
+            background: #bbd3ee;
+        }
+
+        i {
+            font-size: 16px;
+            color: #000 !important;
+
+            padding: 3px;
+            cursor: pointer;
+            font-size: 14px;
+
+
+        }
+    }
+
+}
+
 
 .jet-section {
     position: relative;
-    // border: 1px solid transparent;
     transition: all ease 0.6s;
 
     .cntr {
@@ -13,46 +57,51 @@ $el: rgba(84, 86, 236, 0.6);
     }
 
     .form-toolbar {
-        position: absolute;
-        // display: none;
-        gap: 6px;
-        border-radius: 0 0 0 5px;
-        padding: 4px 8px;
-        top: 0;
-        right: 0;
-        background: $sec;
-        z-index: 50;
-
-        i {
-            background: #fff;
-            color: #000 !important;
-            border-radius: 3px;
-            padding: 3px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: all ease 0.6s;
-
-            &:hover {
-                background: #ccd7da;
-            }
-        }
+    opacity: 0;
+        top: 2px;
+        right: 2px;
     }
 
-    &:hover {
-
-        .form-toolbar {
-            display: inline-flex;
-
-        }
-
+    .d-bg {
+        background: rgb(3, 148, 245);
     }
+
+    &:hover .form-toolbar {
+        opacity: 1;
+    }
+}
+
+.element {
+    position: relative;
+    transition: all ease 0.6s;
+
+    div,
+    img,
+    p,
+    ul,
+    li,
+    span,
+    a {
+        z-index: 4;
+    }
+
+    .d-bg {
+        background: #05f005;
+    }
+
+    .form-toolbar {
+    opacity: 0;
+        top: 2px;
+        left: 2px;
+    }
+
 }
 
 // .jet-section:hover {
 //     border-color: $sec;
 // }
 
-.group-toolbar {
+div.group-toolbar {
     position: relative;
     transition: all ease 0.6s;
     display: flex !important;
@@ -64,31 +113,18 @@ $el: rgba(84, 86, 236, 0.6);
         display: none !important;
     }
 
-    .form-toolbar {
+    h4 .form-toolbar {
+        position: relative !important;
         justify-content: center;
         gap: 6px;
-        // padding: 2px 0 ;
-
+        opacity: 1!important;
 
         background: $el;
-        background: transparent !important;
         z-index: 50;
+    }
 
-        i {
-            background: #a8ee88;
-            color: #000 !important;
-            border-radius: 3px;
-            padding: 3px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: all ease 0.6s;
-
-
-
-            &:hover {
-                background: #7edd7e;
-            }
-        }
+    .d-bg {
+        padding: 2px !important;
     }
 
     i {
@@ -103,61 +139,7 @@ $el: rgba(84, 86, 236, 0.6);
 
 }
 
-.element {
-    position: relative;
-    // border: 1px solid transparent;
-    transition: all ease 0.6s;
 
-    div,
-    img,
-    p,
-    ul,
-    li,
-    span,
-    a {
-        z-index: 4;
-    }
-
-    .form-toolbar {
-        position: absolute;
-        display: none;
-        // display: inline-flex !important; //dev
-        justify-content: center;
-        gap: 6px;
-        // border-radius: 5px;
-        padding: 2px 0;
-        top: 0;
-        left: 0;
-        // transform: translateX(-50%);
-
-        background: $el;
-        background: transparent !important;
-        z-index: 50;
-
-        i {
-            background: #a8ee88;
-            color: #000 !important;
-            border-radius: 3px;
-            padding: 3px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: all ease 0.6s;
-
-            &:hover {
-                background: #ccd7da;
-            }
-        }
-    }
-
-    &:hover {
-
-        .form-toolbar {
-            display: inline-flex;
-
-        }
-
-    }
-}
 
 // .element:hover {
 //     border-color: $el;

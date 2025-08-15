@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* line 3, ../../www/lpm.cms/scss-jet/core/_base.scss */
 html,
 body {
@@ -4673,7 +4674,7 @@ figure img {
   color: rgba(255, 255, 255, 0.8) !important;
 }
 
-/* Base Containers */
+/* ========== Base Containers ========== */
 /* line 3, ../../www/lpm.cms/scss-jet/core/_grid.scss */
 .w-container,
 .w-container-c,
@@ -4684,34 +4685,34 @@ figure img {
   z-index: 3;
 }
 
-/* Flex Modifiers */
+/* Flex modifiers for containers */
 /* line 13, ../../www/lpm.cms/scss-jet/core/_grid.scss */
 .w-container-w {
   flex-wrap: wrap;
 }
 
-/* line 16, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+/* line 14, ../../www/lpm.cms/scss-jet/core/_grid.scss */
 .w-container-c,
 .w-container-small-c {
   flex-direction: column;
 }
 
-/* Width Variants */
-/* line 22, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+/* Fluid width */
+/* line 18, ../../www/lpm.cms/scss-jet/core/_grid.scss */
 .w-full,
 .w-fluid {
   display: flex;
   width: 100vw;
 }
 
-/* line 27, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+/* line 20, ../../www/lpm.cms/scss-jet/core/_grid.scss */
 .w-fluid {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-/* Fixed Width Containers */
-/* line 33, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+/* Fixed width containers */
+/* line 23, ../../www/lpm.cms/scss-jet/core/_grid.scss */
 .w-container,
 .w-container-c,
 .w-container-nf {
@@ -4720,12 +4721,12 @@ figure img {
   padding: 0 35px;
 }
 
-/* line 42, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+/* line 30, ../../www/lpm.cms/scss-jet/core/_grid.scss */
 .w-center {
   margin: 0 auto;
 }
 
-/* line 46, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+/* line 32, ../../www/lpm.cms/scss-jet/core/_grid.scss */
 .w-container-small,
 .w-container-small-c,
 .w-container-small-nf {
@@ -4734,204 +4735,236 @@ figure img {
   margin: 0 auto;
 }
 
-/* line 54, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+/* line 39, ../../www/lpm.cms/scss-jet/core/_grid.scss */
 .w-container-small {
   display: flex;
 }
 
-/* Gap Utilities */
-/* line 59, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+/* Container gap helpers */
+/* line 42, ../../www/lpm.cms/scss-jet/core/_grid.scss */
 .jgp-large {
   gap: 40px;
 }
 
-/* line 62, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+/* line 43, ../../www/lpm.cms/scss-jet/core/_grid.scss */
 .jgp-collapse {
   gap: 0;
 }
 
-/* Grid Widths */
-/* line 67, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+/* ========== Width Utilities (single element) ========== */
+/* line 46, ../../www/lpm.cms/scss-jet/core/_grid.scss */
 .w-1-1 {
   width: 100%;
 }
 
-/* line 68, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+/* line 47, ../../www/lpm.cms/scss-jet/core/_grid.scss */
 .w-1-2, .w-2-4 {
   width: 50%;
 }
 
-/* line 69, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+/* line 48, ../../www/lpm.cms/scss-jet/core/_grid.scss */
 .w-1-3 {
   width: 33.3333%;
 }
 
-/* line 70, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+/* line 49, ../../www/lpm.cms/scss-jet/core/_grid.scss */
 .w-2-3 {
   width: 66.6667%;
 }
 
-/* line 71, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+/* line 50, ../../www/lpm.cms/scss-jet/core/_grid.scss */
 .w-1-4 {
   width: 25%;
 }
 
-/* line 72, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+/* line 51, ../../www/lpm.cms/scss-jet/core/_grid.scss */
 .w-3-4 {
   width: 75%;
 }
 
-/* line 73, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+/* line 52, ../../www/lpm.cms/scss-jet/core/_grid.scss */
 .w-1-5 {
   width: 20%;
 }
 
-/* line 74, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+/* line 53, ../../www/lpm.cms/scss-jet/core/_grid.scss */
 .w-2-5 {
   width: 40%;
 }
 
-/* line 75, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+/* line 54, ../../www/lpm.cms/scss-jet/core/_grid.scss */
 .w-3-5 {
   width: 60%;
 }
 
-/* line 76, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+/* line 55, ../../www/lpm.cms/scss-jet/core/_grid.scss */
 .w-4-5 {
   width: 80%;
 }
 
-/* line 77, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+/* line 56, ../../www/lpm.cms/scss-jet/core/_grid.scss */
 .w-1-6 {
   width: 16.6667%;
 }
 
-/* line 78, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+/* line 57, ../../www/lpm.cms/scss-jet/core/_grid.scss */
 .w-2-6 {
   width: 33.3333%;
 }
 
-/* line 79, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+/* line 58, ../../www/lpm.cms/scss-jet/core/_grid.scss */
 .w-3-6 {
   width: 50%;
 }
 
-/* line 80, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+/* line 59, ../../www/lpm.cms/scss-jet/core/_grid.scss */
 .w-4-6 {
   width: 66.6667%;
 }
 
-/* line 81, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+/* line 60, ../../www/lpm.cms/scss-jet/core/_grid.scss */
 .w-5-6 {
   width: 83.3333%;
 }
 
-/* Children Width Component (wc-1-*) */
-/* line 84, ../../www/lpm.cms/scss-jet/core/_grid.scss */
-[class*="wc-1-"].w-container > * {
-  width: 100%;
+/* ========== Children Width Component (wc-1-*) ========== */
+/* Any wc-* container is a wrapping flex row; default --gap = 0 */
+/* line 64, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+[class^="wc-"], [class*=" wc-"] {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  --gap: 0;
 }
 
-/* line 88, ../../www/lpm.cms/scss-jet/core/_grid.scss */
-.wc-1-2 > *:first-child {
-  width: 50%;
-  min-width: 50%;
+/* Exclude a child from wc-* sizing */
+/* line 72, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+.wc-x {
+  flex: 0 0 auto;
+  width: auto;
 }
 
-/* line 89, ../../www/lpm.cms/scss-jet/core/_grid.scss */
-.wc-1-3 > *:first-child {
-  width: 33.3333%;
-  min-width: 33.3333%;
+/* --- Gap‑aware column math (N columns = wc-1-N) --- */
+/* 2 cols */
+/* line 76, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+.wc-1-2 > :not(.wc-x) {
+  flex: 0 0 calc((100% - 1 * var(--gap)) / 2);
+  max-width: calc((100% - 1 * var(--gap)) / 2);
 }
 
-/* line 90, ../../www/lpm.cms/scss-jet/core/_grid.scss */
-.wc-1-4 > *:first-child {
-  width: 25%;
-  min-width: 25%;
+/* 3 cols */
+/* line 81, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+.wc-1-3 > :not(.wc-x) {
+  flex: 0 0 calc((100% - 2 * var(--gap)) / 3);
+  max-width: calc((100% - 2 * var(--gap)) / 3);
 }
 
+/* 4 cols */
+/* line 86, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+.wc-1-4 > :not(.wc-x) {
+  flex: 0 0 calc((100% - 3 * var(--gap)) / 4);
+  max-width: calc((100% - 3 * var(--gap)) / 4);
+}
+
+/* 5 cols */
 /* line 91, ../../www/lpm.cms/scss-jet/core/_grid.scss */
-.wc-1-5 > *:first-child {
-  width: 20%;
-  min-width: 20%;
+.wc-1-5 > :not(.wc-x) {
+  flex: 0 0 calc((100% - 4 * var(--gap)) / 5);
+  max-width: calc((100% - 4 * var(--gap)) / 5);
 }
 
-/* line 92, ../../www/lpm.cms/scss-jet/core/_grid.scss */
-.wc-1-6 > *:first-child {
-  width: 16.6667%;
-  min-width: 16.6667%;
-}
-
-/* With Gap - calc(width - gap/2) */
-/* line 95, ../../www/lpm.cms/scss-jet/core/_grid.scss */
-.wc-1-2-g1 > *:first-child {
-  width: calc(50% - 0.5rem);
-}
-
+/* 6 cols */
 /* line 96, ../../www/lpm.cms/scss-jet/core/_grid.scss */
-.wc-1-3-g1 > *:first-child {
-  width: calc(33.3333% - 1rem);
+.wc-1-6 > :not(.wc-x) {
+  flex: 0 0 calc((100% - 5 * var(--gap)) / 6);
+  max-width: calc((100% - 5 * var(--gap)) / 6);
 }
 
-/* line 97, ../../www/lpm.cms/scss-jet/core/_grid.scss */
-.wc-1-4-g1 > *:first-child {
-  width: calc(25% - 1.5rem);
+/* --- Backward‑compat “-g1” shortcuts (assume gap = 1rem) --- */
+/* line 102, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+.wc-1-2-g1 > :not(.wc-x) {
+  flex: 0 0 calc((100% - 1rem) / 2);
+  max-width: calc((100% - 1rem) / 2);
 }
 
-/* line 98, ../../www/lpm.cms/scss-jet/core/_grid.scss */
-.wc-1-5-g1 > *:first-child {
-  width: calc(20% - 2rem);
+/* line 106, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+.wc-1-3-g1 > :not(.wc-x) {
+  flex: 0 0 calc((100% - 2rem) / 3);
+  max-width: calc((100% - 2rem) / 3);
 }
 
-/* line 99, ../../www/lpm.cms/scss-jet/core/_grid.scss */
-.wc-1-6-g1 > *:first-child {
-  width: calc(16.6667% - 2.5rem);
+/* line 110, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+.wc-1-4-g1 > :not(.wc-x) {
+  flex: 0 0 calc((100% - 3rem) / 4);
+  max-width: calc((100% - 3rem) / 4);
 }
 
-/* Responsive Modifiers */
+/* line 114, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+.wc-1-5-g1 > :not(.wc-x) {
+  flex: 0 0 calc((100% - 4rem) / 5);
+  max-width: calc((100% - 4rem) / 5);
+}
+
+/* line 118, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+.wc-1-6-g1 > :not(.wc-x) {
+  flex: 0 0 calc((100% - 5rem) / 6);
+  max-width: calc((100% - 5rem) / 6);
+}
+
+/* ========== Responsive Modifiers (escape @ in class names) ========== */
 @media (min-width: 768px) {
-  /* line 103, ../../www/lpm.cms/scss-jet/core/_grid.scss */
-  .wc-1-2\@m > *:first-child {
-    width: 50%;
+  /* line 125, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+  .wc-1-2\@m > :not(.wc-x) {
+    flex-basis: calc((100% - 1 * var(--gap)) / 2);
+    max-width: calc((100% - 1 * var(--gap)) / 2);
   }
-  /* line 104, ../../www/lpm.cms/scss-jet/core/_grid.scss */
-  .wc-1-3\@m > *:first-child {
-    width: 33.3333%;
+  /* line 129, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+  .wc-1-3\@m > :not(.wc-x) {
+    flex-basis: calc((100% - 2 * var(--gap)) / 3);
+    max-width: calc((100% - 2 * var(--gap)) / 3);
   }
-  /* line 105, ../../www/lpm.cms/scss-jet/core/_grid.scss */
-  .wc-1-4\@m > *:first-child {
-    width: 25%;
+  /* line 133, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+  .wc-1-4\@m > :not(.wc-x) {
+    flex-basis: calc((100% - 3 * var(--gap)) / 4);
+    max-width: calc((100% - 3 * var(--gap)) / 4);
   }
-  /* line 106, ../../www/lpm.cms/scss-jet/core/_grid.scss */
-  .wc-1-5\@m > *:first-child {
-    width: 20%;
+  /* line 137, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+  .wc-1-5\@m > :not(.wc-x) {
+    flex-basis: calc((100% - 4 * var(--gap)) / 5);
+    max-width: calc((100% - 4 * var(--gap)) / 5);
   }
-  /* line 107, ../../www/lpm.cms/scss-jet/core/_grid.scss */
-  .wc-1-6\@m > *:first-child {
-    width: 16.6667%;
+  /* line 141, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+  .wc-1-6\@m > :not(.wc-x) {
+    flex-basis: calc((100% - 5 * var(--gap)) / 6);
+    max-width: calc((100% - 5 * var(--gap)) / 6);
   }
 }
 
 @media (min-width: 960px) {
-  /* line 110, ../../www/lpm.cms/scss-jet/core/_grid.scss */
-  .wc-1-2\@l > *:first-child {
-    width: 50%;
+  /* line 148, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+  .wc-1-2\@l > :not(.wc-x) {
+    flex-basis: calc((100% - 1 * var(--gap)) / 2);
+    max-width: calc((100% - 1 * var(--gap)) / 2);
   }
-  /* line 111, ../../www/lpm.cms/scss-jet/core/_grid.scss */
-  .wc-1-3\@l > *:first-child {
-    width: 33.3333%;
+  /* line 152, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+  .wc-1-3\@l > :not(.wc-x) {
+    flex-basis: calc((100% - 2 * var(--gap)) / 3);
+    max-width: calc((100% - 2 * var(--gap)) / 3);
   }
-  /* line 112, ../../www/lpm.cms/scss-jet/core/_grid.scss */
-  .wc-1-4\@l > *:first-child {
-    width: 25%;
+  /* line 156, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+  .wc-1-4\@l > :not(.wc-x) {
+    flex-basis: calc((100% - 3 * var(--gap)) / 4);
+    max-width: calc((100% - 3 * var(--gap)) / 4);
   }
-  /* line 113, ../../www/lpm.cms/scss-jet/core/_grid.scss */
-  .wc-1-5\@l > *:first-child {
-    width: 20%;
+  /* line 160, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+  .wc-1-5\@l > :not(.wc-x) {
+    flex-basis: calc((100% - 4 * var(--gap)) / 5);
+    max-width: calc((100% - 4 * var(--gap)) / 5);
   }
-  /* line 114, ../../www/lpm.cms/scss-jet/core/_grid.scss */
-  .wc-1-6\@l > *:first-child {
-    width: 16.6667%;
+  /* line 164, ../../www/lpm.cms/scss-jet/core/_grid.scss */
+  .wc-1-6\@l > :not(.wc-x) {
+    flex-basis: calc((100% - 5 * var(--gap)) / 6);
+    max-width: calc((100% - 5 * var(--gap)) / 6);
   }
 }
 
@@ -5153,8 +5186,9 @@ j-el {
   }
 }
 
-/* Flex Display Utilities */
-/* line 2, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* ========== Flex Utilities ========== */
+/* Classes that imply display:flex */
+/* line 4, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .as-s,
 .as-c,
 .as-st,
@@ -5187,17 +5221,17 @@ j-el {
   display: flex;
 }
 
-/* line 34, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 36, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .d-if {
   display: inline-flex !important;
 }
 
-/* line 38, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 37, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .f-important {
   display: flex !important;
 }
 
-/* line 42, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 39, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .flex-full {
   display: flex;
   flex-direction: column;
@@ -5205,189 +5239,196 @@ j-el {
 }
 
 /* Align Self */
-/* line 49, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 46, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .as-c {
   align-self: center;
 }
 
-/* line 50, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 47, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .as-st {
   align-self: stretch;
 }
 
-/* line 51, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 48, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .as-s {
   align-self: flex-start;
 }
 
-/* line 52, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 49, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .as-e {
   align-self: flex-end;
 }
 
-/* line 53, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 50, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .as-b {
   align-self: baseline;
 }
 
-/* line 54, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 51, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .as-a {
   align-self: auto;
 }
 
 /* Flex Shrink / Grow */
-/* line 57, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 54, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .fs-0 {
   flex-shrink: 0;
 }
 
-/* line 58, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 55, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .fs-1 {
   flex-shrink: 1;
 }
 
-/* line 59, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 56, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .fg-0 {
   flex-grow: 0;
 }
 
-/* line 60, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 57, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .fg-1 {
   flex-grow: 1;
 }
 
-/* Flex Center All */
-/* line 63, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* Center both axes */
+/* line 60, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .f-all-c {
   justify-content: center;
   align-items: center;
 }
 
-/* Flex Direction */
-/* line 69, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* Direction */
+/* line 63, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .fd-r {
   flex-direction: row;
 }
 
-/* line 70, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 64, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .fd-rr {
   flex-direction: row-reverse;
 }
 
-/* line 71, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 65, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .fd-c {
   flex-direction: column;
 }
 
-/* line 72, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 66, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .fd-cr {
   flex-direction: column-reverse;
 }
 
 /* Justify Content */
-/* line 75, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 69, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .jc-c {
   justify-content: center;
 }
 
-/* line 76, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 70, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .jc-b {
   justify-content: space-between;
 }
 
-/* line 77, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 71, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .jc-s {
   justify-content: flex-start;
 }
 
-/* line 78, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 72, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .jc-e {
   justify-content: flex-end;
 }
 
-/* line 79, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 73, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .jc-a {
   justify-content: space-around;
 }
 
-/* line 80, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 74, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .jc-ev {
   justify-content: space-evenly;
 }
 
 /* Align Items */
-/* line 83, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 77, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .ai-c {
   align-items: center;
 }
 
-/* line 84, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 78, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .ai-s {
   align-items: flex-start;
 }
 
-/* line 85, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 79, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .ai-e {
   align-items: flex-end;
 }
 
-/* line 86, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 80, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .ai-b {
   align-items: baseline;
 }
 
-/* line 87, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 81, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .ai-st {
   align-items: stretch;
 }
 
-/* Flex Wrap */
-/* line 90, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* Wrap */
+/* line 84, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .f-w {
   flex-wrap: wrap;
 }
 
-/* Full Width Flex Item */
-/* line 93, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* Full width flex item */
+/* line 87, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .fv-full {
   flex: 0 0 auto;
   width: 100%;
 }
 
-/* Gap Utilities */
-/* line 99, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* Gap utilities – also set a CSS var for grid math */
+/* line 90, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .g-0 {
   gap: 0 !important;
+  --gap: 0;
 }
 
-/* line 100, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 91, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .g-05 {
   gap: 0.5rem;
+  --gap: 0.5rem;
 }
 
-/* line 101, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 92, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .g-1 {
   gap: 1rem;
+  --gap: 1rem;
 }
 
-/* line 102, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 93, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .g-2 {
   gap: 2rem;
+  --gap: 2rem;
 }
 
-/* line 103, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 94, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .g-3 {
   gap: 3rem;
+  --gap: 3rem;
 }
 
-/* line 104, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 95, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .g-4 {
   gap: 4rem;
+  --gap: 4rem;
 }
 
-/* line 105, ../../www/lpm.cms/scss-jet/core/_flex.scss */
+/* line 96, ../../www/lpm.cms/scss-jet/core/_flex.scss */
 .g-5 {
   gap: 5rem;
+  --gap: 5rem;
 }
 
 /* line 3, ../../www/lpm.cms/scss-jet/core/_padding-margin.scss */
@@ -9263,6 +9304,152 @@ table.de-striped tbody tr:hover {
 /* line 36, ../../www/lpm.cms/scss-jet/components/_info-box.scss */
 .info-box .d-content.icn-above {
   text-align: center;
+}
+
+/* line 2, ../../www/lpm.cms/scss-jet/components/_accordion.scss */
+.j-accordion li {
+  /* start closed */
+  /* opening */
+  /* closing */
+}
+
+/* line 3, ../../www/lpm.cms/scss-jet/components/_accordion.scss */
+.j-accordion li h3 {
+  cursor: pointer;
+}
+
+/* line 8, ../../www/lpm.cms/scss-jet/components/_accordion.scss */
+.j-accordion li .d-content {
+  display: none;
+  transition: max-height .35s ease;
+}
+
+/* line 15, ../../www/lpm.cms/scss-jet/components/_accordion.scss */
+.j-accordion li .d-content.in {
+  display: block;
+  opacity: 1;
+  -webkit-animation: scale-in-ver-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: scale-in-ver-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* line 23, ../../www/lpm.cms/scss-jet/components/_accordion.scss */
+.j-accordion li .d-content.out {
+  display: none;
+  -webkit-animation: swing-out-top-bck 0.45s cubic-bezier(0.6, -0.28, 0.735, 0.045) both;
+  animation: swing-out-top-bck 0.45s cubic-bezier(0.6, -0.28, 0.735, 0.045) both;
+}
+
+@-webkit-keyframes scale-in-ver-top {
+  0% {
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in-ver-top {
+  0% {
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes scale-out-ver-top {
+  0% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+    opacity: 1;
+  }
+}
+
+@keyframes scale-out-ver-top {
+  0% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+    opacity: 1;
+  }
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2025-8-15 15:52:9
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+/**
+ * ----------------------------------------
+ * animation swing-out-top-bck
+ * ----------------------------------------
+ */
+@-webkit-keyframes swing-out-top-bck {
+  0% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotateX(-100deg);
+    transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 0;
+  }
+}
+
+@keyframes swing-out-top-bck {
+  0% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotateX(-100deg);
+    transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 0;
+  }
 }
 
 /* line 2, ../../www/lpm.cms/scss-jet/animation/_ja-fade-in.scss */

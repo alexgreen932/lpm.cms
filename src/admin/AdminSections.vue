@@ -7,13 +7,16 @@
         <section-patterns v-if="ops.current_menu == 'patterns'" />
 
         <add-new v-if="ops.current_menu == 'add'" />
-        //dev only
-        <textarea rows="40" cols="50">{{ ops }}</textarea>
+
+        <!-- <textarea rows="40" cols="50">{{ ops }}</textarea> -->
          <!-- FORMS -------  -->
           <save-pattern v-if="ops.save_as_pattern" />
           <!-- rm temp for dev -->
           <!-- {{ $id()}} -->
         <!-- <div class="delay-tooltip top-left">test</div> -->
+         <!-- <textarea rows="40" cols="50">{{ pageJson() }}</textarea> -->
+          <!-- dev only ---  -->
+           <dev-fields />
 
     </div>
 </template>
@@ -31,6 +34,9 @@ import jetTip from '../utils/jetTip.vue';
 import patternRender from "./patternRender.vue";
 import sectionPatterns from "./sectionPatterns.vue";
 import savePattern from "../page/savePattern.vue";
+//dev only 
+import devFields from "./devFields.vue";
+import { fetchFile } from "../utils/helpers.js";
 
 export default {
     components: {
@@ -44,6 +50,7 @@ export default {
         patternRender,
         sectionPatterns,
         savePattern,
+        devFields,
 
     },
     data() {
@@ -54,37 +61,10 @@ export default {
             pattern: this.$__('Pattern is a ready fragment which you can use as base for your own sections. You can use preset ones, create your own or download from our collection'),
         };
     },
-    // methods: {
-    //     showSidebar(e) {
-    //         // console.log('%c clicked show sidebar', 'color: #e50000',);
-    //         if (this.ops.current == e) {
-    //             this.ops.current = null;
-    //         } else {
-    //             this.ops.current = e;
-    //         }
-    //         this.isBar();
-    //         this.isSidebar();
-    //     },
-    //     isSidebar() {
-    //         console.log("this.ops.current: ", this.ops.current);
-    //         let page = document.getElementById("app");
-    //         if (this.ops.current && this.ops.current !== 99) {
-    //             page.classList.remove("isBar");
-    //             page.classList.add("isSidebar");
-    //         } else {
-    //             page.classList.remove("isSidebar");
-    //         }
-    //     },
-    //     isBar() {
-    //         console.log("this.ops.current: ", this.ops.current);
-    //         let page = document.getElementById("app");
-    //         if (this.ops.current == 99) {
-    //             page.classList.remove("isSidebar");
-    //             page.classList.add("isBar");
-    //         } else {
-    //             page.classList.add("isBar");
-    //         }
-    //     },
-    // },
+    methods: {
+        // pageJson() {//todo!! replace with $root.dataString
+        //     return JSON.stringify(this.ops.current_page_data);
+        // },
+    },
 };
 </script>

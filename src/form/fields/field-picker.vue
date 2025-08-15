@@ -12,10 +12,7 @@
     </div>
 
 
-    <div class="d-del fs-8" @click="$emit('update:modelValue', '')">
-      Clean
-      <!-- <i class="fa-solid fa-xmark"></i> -->
-    </div>
+    <div class="d-del fs-8" @click="$emit('update:modelValue', '')">{{ $__('Empty') }}</div>
   </div>
 
   <transition name="slideV">
