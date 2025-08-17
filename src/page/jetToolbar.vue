@@ -150,6 +150,7 @@ export default {
                 return 'fa-solid fa-plus';
             }
         },
+        //todo replace pages_list with data/index
         async setPageIndex() {
             try {
                 const pages = await fetchFile('/data/pages_list.json');
