@@ -1,17 +1,23 @@
 <template>
-    <!-- <ul class="">
-        <li v-for="(e, i) in menu" @click="showCurrent(e.v)">{{ t }}</li>
-    </ul> -->
-    <div class="but-blue mt-1" @click="show = !show">Show Current</div>
-    <div v-if="show" class="fd-c" style="height: 400px!important;">
-        <div class="but-green mv-1" @click="copyIt()">Copy</div>
-        <textarea rows="40" style="height: 400px!important;">{{ pageJson() }}</textarea>
+    ---{{ops.current_page}}
+    <ul class="g-05">
+        <li v-for="(e, i) in menu" class="but-default" @click="showCurrent(e.v)">{{ e.t }}</li>
+    </ul>
+    <!-- <div class="but-default mt-1" @click="show = !show">Show Current</div> -->
+    <div class="fd-c" style="height: 400px!important;">
+        <textarea v-if="show == 'ops'" rows="40" style="height: 400px!important;">{{ this.ops }}</textarea>
+        <textarea v-if="show == 'lang'" rows="40" style="height: 400px!important;">{{ dev_language }}</textarea>
+        <template v-if="show == 'current_page_data'" class="fd-c" style="height: 400px!important;">
+            <div class="but-green mv-1" @click="copyIt()">Copy</div>
+            <textarea rows="40" style="height: 400px!important;">{{ pageJson() }}</textarea>
+        </template>
     </div>
 
 </template>
 
 <script>
 import { ops } from "../data/data.js";
+import { dev_language } from "../languages/index.js";
 // import JetForms from "./JetForms.vue";
 // import get
 
@@ -23,14 +29,24 @@ export default {
         return {
             ops,
             // current: 99,
-            show: false,
+            show: null,
             current_data: null,
+            dev_language,
             menu: [
-                { t: 'Homepahe', v: 'homepage' }
+                { t: 'Ops', v: 'ops' },
+                { t: 'Current', v: 'current_page_data' },
+                { t: 'lang', v: 'lang' },
             ],
         };
     },
     methods: {
+        showCurrent(v) {
+            if (this.show == v) {
+                this.show = null;
+            } else {
+                this.show = v;
+            }
+        },
         pageJson() {//todo!! replace with $root.dataString
             return JSON.stringify(this.ops.current_page_data);
         },

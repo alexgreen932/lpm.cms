@@ -13,6 +13,7 @@
 <script>
 
 export default {
+    //todo rm after replacing with field-tip
     props: ['action', 'pos', 'content'],
     data() {
         return {

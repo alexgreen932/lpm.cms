@@ -1,12 +1,5 @@
 <template>
     <div class="fd-c g-05">
-        <div class="fs-8">{{ $__('Hover any elemets and click:') }}</div>
-        <ul class="fs-8 mt-0 ml-1">
-            <li><i class="fa-solid fa-pen-to-square"></i> {{ $__('to edit element') }}</li>
-            <li><i class="fa-solid fa-chevron-up"></i><i class="fa-solid fa-chevron-down"></i> {{ $__('to move') }}</li>
-            <li><i class="fa-solid fa-plus"></i> {{ $__('to add') }}</li>
-            <li><i class="fa-solid fa-trash"></i> {{ $__('to delete') }}</li>
-        </ul>
         <div class="b-blue fs-8 jc-c br-4 j-click" @click="$root.reset(), ops.edit_meta = !ops.edit_meta">
             <template v-if="!ops.edit_meta">
                 {{ $__('Edit Meta') }}

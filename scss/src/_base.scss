@@ -23,7 +23,7 @@
     bottom: 0;
     right: 0;
     left: $width-sec;
-    background: rgba(0, 0, 0, .8);
+    background: rgba(0, 0, 0, .6);
     z-index: 1;
     cursor: pointer;
 
@@ -45,10 +45,11 @@ $width-sec: 350px; // your sidebar width
   left: calc(#{$width-sec} + (100% - #{$width-sec}) / 2);
   transform: translateX(-50%);
 
-  background: #000;
-  color: #fff;
+  background: #fff;
+  color: #000;
   padding: 1.5rem;
-  border-radius: 16px;
+  border-radius: 6px;
+  z-index: 2;
 }
 
 

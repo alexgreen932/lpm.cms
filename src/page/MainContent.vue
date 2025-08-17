@@ -75,6 +75,10 @@ export default {
     async mounted() {
         const site = window.location.origin;
         let slug = this.ops.current_page;
+        //by default always homepage
+        if (slug==99) {
+            slug = 'homepage';
+        }
 
         const path = `${site}/data/${slug}.json`;
 

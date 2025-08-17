@@ -14,7 +14,7 @@
                     <span>{{ e.title }}</span>
                     <span class="fs-10 g-1">
                         <span @click="switch_page(e.slug)">
-                            <i v-if="ops.current_page !== e.slug" class="fa-solid fa-pen-to-square j-click"></i>
+                            <i v-if="ops.current_page !== e.slug" class="fa-solid fa-pen-to-square j-click""></i>
                             <i v-if="ops.current_page == e.slug" class="fa-solid fa-xmark j-click"></i>
                         </span>
                         <i v-if="i !== 0" class="fa-solid fa-trash j-click" @click="del(i)"></i>
@@ -101,7 +101,74 @@ export default {
             //     // this.ops.current = 'pages';//?? rm
             //     this.ops.current_menu = 'pages';
             // }
+
+            //todo rm all in page forms
+            // If clicked on the same page -> close it
+            // if (this.ops.page_index !== i) {
+            //     this.$root.reset();
+            //     this.ops.current_page = e.slug;
+            //     this.ops.current = 'pages';
+            //     this.ops.current_menu = 'pages';
+            //     this.ops.page_index = i;
+            // } else {
+            //     //reset to home
+            //     this.$root.reset();
+            //     this.ops.current_page = 'homepage';
+            //     this.ops.page_index = 999;
+
+            // }
+            // this.switch_page();
         },
+        // switch_page(e.slug) {
+        //     console.log('switch page func, current slug', e.slug);
+        //     //set necessary data
+
+        //     //todo rm all in page forms
+        //     // If clicked on the same page -> close it
+        //     if (this.ops.page_index !== i) {
+        //         this.$root.reset();
+        //         this.ops.current_page = e.slug;
+        //         this.ops.current = 'pages';
+        //         this.ops.current_menu = 'pages';
+        //         this.ops.page_index = i;
+        //     } else {
+        //         //reset to home
+        //         this.$root.reset();
+        //         this.ops.current_page = 'homepage';
+        //         this.ops.page_index = 999;
+
+        //     }
+        //     // this.switch_page();
+        // },
+        //todo!! rm as all now in pageForms
+        // async switch_page(slug) {
+        //     //set necessary data
+        //     // this.$root.reset();
+        //     // this.ops.current_page = e.slug;
+        //     // this.ops.current = 'pages';
+        //     // this.ops.current_menu = 'pages';
+        //     //todo rm all in page forms
+        //     // If clicked on the same page -> close it
+        //     // if (this.ops.page_index == i) {
+        //     //     this.ops.page_index = 999;
+        //     //     this.pageData = null;//??
+        //     //     return;
+        // },
+
+        //     // Set ops.page_index and fetch JSON
+        //     this.ops.page_index = i;
+        //     this.pageData = null; // reset to avoid old data flashing
+
+        //     //?? rm
+        //     const slug = this.pages[i].slug;
+        //     try {
+        //         const page = await fetchFile(`${this.$domain}/data/${slug}.json`);
+        //         this.pageData = page || {}; // fallback empty object if null
+        //     } catch (e) {
+        //         console.error(`Failed to load ${slug}.json`, e);
+        //         this.pageData = {}; // fallback on error
+        //     }
+        // },
 
         //todo add confirm
         del(i) {
@@ -111,19 +178,13 @@ export default {
     },
 
     //todo rm pages_list replacing it with fetching json datas
-    //todo!!! rm pages_list.json from save page as it's not used anymore
     async mounted() {
-    //dev only for html, for php use index.php
-    // let file = 'index.php';
-    let file = 'index.json';
         try {
-            const pages = await fetchFile(`${this.$domain}/data/${file}`);
+            const pages = await fetchFile(`${this.$domain}/data/pages_list.json`);
             if (pages) this.pages = pages;
         } catch (e) {
             console.error("Failed to load pages list", e);
         }
-            console.log('this.pages: ', this.pages);
     },
-
 };
 </script>

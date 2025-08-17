@@ -26,7 +26,7 @@
   bottom: 0;
   right: 0;
   left: 350px;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 1;
   cursor: pointer;
 }
@@ -46,13 +46,14 @@
   top: 100px;
   left: calc(350px + (100% - 350px) / 2);
   transform: translateX(-50%);
-  background: #000;
-  color: #fff;
+  background: #fff;
+  color: #000;
   padding: 1.5rem;
-  border-radius: 16px;
+  border-radius: 6px;
+  z-index: 2;
 }
 
-/* line 55, ../../www/lpm.cms/scss/src/_base.scss */
+/* line 56, ../../www/lpm.cms/scss/src/_base.scss */
 #admin-enter {
   position: fixed;
   left: 0;
@@ -69,14 +70,14 @@
   transition: all ease 0.3s;
 }
 
-/* line 70, ../../www/lpm.cms/scss/src/_base.scss */
+/* line 71, ../../www/lpm.cms/scss/src/_base.scss */
 #admin-enter i {
   cursor: pointer;
   -webkit-animation: rotate-center 3s infinite linear;
   animation: rotate-center 3s infinite linear;
 }
 
-/* line 76, ../../www/lpm.cms/scss/src/_base.scss */
+/* line 77, ../../www/lpm.cms/scss/src/_base.scss */
 #admin-enter:hover {
   background: #4e6672;
 }
@@ -93,12 +94,12 @@
   }
 }
 
-/* line 93, ../../www/lpm.cms/scss/src/_base.scss */
+/* line 94, ../../www/lpm.cms/scss/src/_base.scss */
 #app.isSidebar {
   margin-left: 350px !important;
 }
 
-/* line 97, ../../www/lpm.cms/scss/src/_base.scss */
+/* line 98, ../../www/lpm.cms/scss/src/_base.scss */
 #app.isBar {
   margin-left: 42px;
 }

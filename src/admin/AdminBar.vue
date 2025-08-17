@@ -59,7 +59,7 @@ export default {
     },
     mounted(){
 
-        console.log('%c Bar mounted', 'color: #0088cc', )
+        
         this.$getLocal(this.ops, 'menu_state');
     }
 };

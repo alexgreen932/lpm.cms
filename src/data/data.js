@@ -8,6 +8,7 @@ export const ops = {
   // current_menu: 'patterns',//dev pages
   // current_menu: 'add',//dev add elem
   current_page: 'homepage',//curremtly loaded
+  current_page: 99,//curremtly loaded
   page_index: 999,
   current_section: 99,//curremtly editewd section
   current_el: 99,//curremtly editewd element

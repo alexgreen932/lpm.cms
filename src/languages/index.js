@@ -1,7 +1,12 @@
-import { ru } from './ru.js';
+import { ru } from './ru.js';//todo temp for dev
 
 // define available languages
 const languages = { ru };
+
+//an object, just for collecting not existion language strings(key of object)
+const dev_language = ru;
+
+export {dev_language};//for displayng if textarea to copy
 
 export default function _(v) {
     // get 'en' from 'en-US'
@@ -14,10 +19,8 @@ export default function _(v) {
     if (currentLang[v]) {
         return currentLang[v];
     } else {
-        console.warn(
-            `%c localization Value "${v}" not Exist`,
-            'background:#b2ebf2;color:#000; padding:3px 7px;'
-        );
+        dev_language[v] = '';
         return v;
     }
 }
+
