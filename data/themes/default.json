@@ -1,1 +1,68 @@
- 
+{
+    "title": "Default",
+    "slug": "default",
+    "page": {
+        "bg_type": "",
+        "grad_dir": "to bottom",
+        "bg0": "",
+        "bg1": "#2f1818",
+        "bg2": "#7b6565",
+        "col": "",
+        "p": "",
+        "img": "media/communication.jpg",
+        "o": null,
+        "fb": null,
+        "ba": null,
+        "bp": null
+    },
+    "header": {
+        "sec": {
+            "p_sec": "",
+            "bg_type": "img",
+            "grad_dir": "to bottom",
+            "bg0": "",
+            "bg1": "#000",
+            "bg2": "#777",
+            "col": "tx-red-l2",
+            "img": "media/communication.jpg",
+            "o": null,
+            "fb": null,
+            "ba": null,
+            "bp": null
+        },
+        "sections": [
+            {
+                "title": "Header Main",
+                "sec": {
+                    "bg": "",
+                    "col": "tx-gray-d3",
+                    "p_sec": ""
+                },
+                "cont": {
+                    "w": "w-container",
+                    "bg": "",
+                    "br": "br-14",
+                    "p": "p-1",
+                    "jc": "jc-c",
+                    "ai": "ai-s",
+                    "g": "g-1",
+                    "fd": "fd-c",
+                    "bs": "",
+                    "a": ""
+                },
+                "content": [
+                    {
+                        "type": "paragraph",
+                        "classes": {
+                            "fs": "",
+                            "col": ""
+                        },
+                        "el": {
+                            "text": "Header"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

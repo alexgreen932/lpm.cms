@@ -1,12 +1,8 @@
 <template>
-  <div v-if="sec" :id="sectionId(i)" class="jet-section" :class="$root && $root.classes ? $root.classes(sec.sec) : ''">
+  <div v-if="sec" :id="sectionId(i)" class="jet-section" :class="$root && $root.classes ? $root.classes(sec.sec) : ''" :style="">
 
 
     <toolbar-parts v-if="type=='header'" type="header" cls="section" dir="fd-c" :elements="theme.header?.sections || []" :index="i" />
-    <jet-toolbar v-if="!type" cls="section" dir="fd-c" :elements="ops.current_page_data?.sections || []" :index="i" />
-    <!-- <jet-toolbar v-if="type=='header'" cls="section" :type="type" dir="fd-c" :elements="theme.header?.sections || []" :index="i" />
-    <jet-toolbar v-if="type=='footer'" cls="section" :type="type" dir="fd-c" :elements="theme.footer?.sections || []" :index="i" />
-    <jet-toolbar v-if="type!=='header' || type!=='footer'" cls="section" dir="fd-c" :elements="ops.current_page_data?.sections || []" :index="i" /> -->
 
     <div class="cntr" :class="$root && $root.classes ? $root.classes(sec.cont) : ''">
       <template v-if="sec.content && sec.content.length">

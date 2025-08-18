@@ -6,15 +6,6 @@
         <template v-for="(sec, i) in ops.current_page_data.sections">
             <render-section :sec="sec" :i="i" />
         </template>
-
-        <!-- dev & debugs --------  -->
-         <!-- <div class="ja ja-fade-in b-blue p-1">Animation Test</div> -->
-        
-        <!-- <div class="w-container b-blue g-1 p-1 nv-1 wc-1-4">
-            <textarea rows="40" cols="50">{{ ops }}</textarea>
-            <textarea rows="40" cols="50">{{ ops.current_page_data.sections }}</textarea>
-            <textarea rows="40" cols="50">{{ pageJson() }}</textarea>
-        </div> -->
     </div>
     <dot-menu v-if="ops.current_page_data.dot_menu" />
 </template>

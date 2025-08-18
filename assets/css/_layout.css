@@ -3,15 +3,15 @@ main {
   flex-direction: column;
 }
 
-.jet-section {
+.jet-section, #header, #footer {
   position: relative;
 }
 
-.jet-section div {
+.jet-section div, #header div, #footer div {
   z-index: 2;
 }
 
-.jet-section .img-bg {
+.jet-section .img-bg, #header .img-bg, #footer .img-bg {
   position: absolute;
   top: 0;
   bottom: 0;

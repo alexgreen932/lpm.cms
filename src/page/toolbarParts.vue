@@ -12,36 +12,9 @@
                 <i class="fa-solid" :class="next" v-tt:top-center-small="$__('Move -')"
                     @click="moveItem(index, index + 1)"></i>
             </div>
-            <div v-if="cls == 'section' && notPart()" class="d-wrap">
-                <i class="fa-solid fa-floppy-disk" v-tt:top-center-small="$__('Save as Pattern')"
-                    @click="saveAsPattern()"></i>
-            </div>
             <div v-if="elements.length > 1" class="d-wrap">
                 <i class="fa-solid fa-trash" v-tt:top-center-small="$__('Delete')" @click="del(index)"></i>
             </div>
-            <div v-if="cls == 'element'" class="d-wrap">
-                <i class="fa-solid fa-clone" v-tt:top-center-small="$__('Clone Element')" @click="clone()"></i>
-            </div>
-            <div v-if="cls == 'element'" class="d-wrap">
-                <i class="fa-solid fa-plus" v-tt:top-center-small="$__('Add')" @click="addItem(index)"></i>
-            </div>
-
-            <div v-if="cls == 'section' && notPart()">
-                <i class="add-section" :class="showClose()" v-tt:top-center-small="$__('Add')" @click="show = !show">
-                    <transition name="slideV">
-                        <div v-if="show" class="d-drop drop p-1 g-1">
-                            <div class="but-blue fs-8" @click="addPattern()">
-                                {{ $__('Add Pattern') }}
-                            </div>
-                            <div class="but-grey fs-8" @click="addItem(index)">
-                                {{ $__('Add Empty Section') }}</div>
-                        </div>
-                    </transition>
-
-                </i>
-            </div>
-
-
         </div>
 
     </div>

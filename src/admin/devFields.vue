@@ -7,10 +7,10 @@
     <div class="fd-c" style="height: 400px!important;">
         <textarea v-if="show == 'ops'" rows="40" style="height: 400px!important;">{{ this.ops }}</textarea>
         <textarea v-if="show == 'lang'" rows="40" style="height: 400px!important;">{{ dev_language }}</textarea>
-        <textarea v-if="show == 'style'" rows="40" style="height: 400px!important;">{{ theme }}</textarea>
+        <textarea v-if="show == 'style'" rows="40" style="height: 400px!important;">{{ pageJson(theme) }}</textarea>
         <template v-if="show == 'current_page_data'" class="fd-c" style="height: 400px!important;">
             <div class="but-green mv-1" @click="copyIt()">Copy</div>
-            <textarea rows="40" style="height: 400px!important;">{{ pageJson() }}</textarea>
+            <textarea rows="40" style="height: 400px!important;">{{ pageJson(ops.current_page_data) }}</textarea>
         </template>
     </div>
 
@@ -50,8 +50,8 @@ export default {
                 this.show = v;
             }
         },
-        pageJson() {//todo!! replace with $root.dataString
-            return JSON.stringify(this.ops.current_page_data);
+        pageJson(v) {//todo!! replace with $root.dataString
+            return JSON.stringify(v);
         },
         async copyIt(text) {
             try {
