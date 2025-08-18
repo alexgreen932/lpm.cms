@@ -1,5 +1,6 @@
 <template>
     <div v-if="warn" class="b-red g-1">Data not found...</div>
+    <div v-if="ops.current_page==99" class="w-container b-blue g-1 p-1 mv-2 jc-c">{{$__('Select Any Page(Menu "Pages") to Edit')}}</div>
 
     <div v-else-if="ops.current_page_data && ops.current_page_data.sections && ops.current_page_data.sections.length">
         <template v-for="(sec, i) in ops.current_page_data.sections">
@@ -7,14 +8,15 @@
         </template>
 
         <!-- dev & debugs --------  -->
-         <div class="ja ja-fade-in b-blue p-1">Animation Test</div>
+         <!-- <div class="ja ja-fade-in b-blue p-1">Animation Test</div> -->
         
-        <div class="w-container b-blue g-1 p-1 nv-1 wc-1-4">
+        <!-- <div class="w-container b-blue g-1 p-1 nv-1 wc-1-4">
             <textarea rows="40" cols="50">{{ ops }}</textarea>
             <textarea rows="40" cols="50">{{ ops.current_page_data.sections }}</textarea>
             <textarea rows="40" cols="50">{{ pageJson() }}</textarea>
-        </div>
+        </div> -->
     </div>
+    <dot-menu v-if="ops.current_page_data.dot_menu" />
 </template>
 
 <script>
@@ -23,6 +25,7 @@ import { ops } from "../data/data.js";
 import JetToolbar from "./jetToolbar.vue";
 import JetElements from "./JetElements.vue";//rm //todo rm com too if directly
 const modules = import.meta.glob("../components/*.vue", { eager: true });
+import dotMenu from "./dotMenu.vue";
 
 import renderSection from "./renderSection.vue";
 
@@ -32,6 +35,7 @@ export default {
         "jet-toolbar": JetToolbar,
         "jet-elements": JetElements,
         renderSection,
+        dotMenu,
     },
     data() {
         return {

@@ -21,13 +21,16 @@ import { ops } from './data/data.js';
 import AdminBar from './admin/AdminBar.vue';
 import AdminSections from './admin/AdminSections.vue';
 import methods from './admin/methods.js';
-import PagePreview from './page/PagePreview.vue';
+import PagePreview from './page/pagePreview.vue';
+import pagePreview from './page/pagePreview.vue';
+import {fields_presets} from './data/fields_presets.js';
+// console.log('fields_presets: ', fields_presets);
 
 export default {
   components: {
     'admin-bar': AdminBar,
     'admin-sections': AdminSections,
-    'page-preview': PagePreview,
+    pagePreview,
   },
   data() {
     return {

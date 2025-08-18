@@ -1,16 +1,16 @@
 <template>
     <div class="fd-c g-05">
-        <div class="b-blue fs-8 jc-c br-4 j-click" @click="$root.reset(), ops.edit_meta = !ops.edit_meta">
-            <template v-if="!ops.edit_meta">
-                {{ $__('Edit Meta') }}
+        <div class="b-blue fs-8 jc-c br-4 j-click" @click="$root.reset(), ops.page_settings = !ops.page_settings">
+            <template v-if="!ops.page_settings">
+                {{ $__('Page Settings') }}
             </template>
-            <template v-if="ops.edit_meta">
-                {{ $__('Close Meta') }}
+            <template v-if="ops.page_settings">
+                {{ $__('Close') }}
             </template>
 
         </div>
 
-        <jet-form v-if="ops.edit_meta" :obj="ops.current_page_data" cls="bg-white" :fields="fields_meta" />
+        <jet-form v-if="ops.page_settings" :obj="ops.current_page_data" cls="bg-white" :fields="fields_meta" />
 
         <template v-if="ops.current_page_data" v-for="(section, i) in ops.current_page_data.sections">
             
@@ -21,9 +21,17 @@
  sec---{{ops.current_section}} index ---{{ i }} -->
                 <template v-if="ops.current_section == i && ops.current_edit == 'section'">
                     <!-- section forms -->
-                    <jet-form :title="$__('Section Colors')" :obj="section.sec" :fields="f_section" />
-                    <jet-form :title="$__('Container')" :obj="section.cont" :fields="f_container" />
-                    <jet-form :title="$__('Image(optionaly)')" :obj="section.img" :fields="f_img" />
+                    <jet-form :obj="section" :fields="$root.renderFields(section)" />
+                    <jet-form :title="$__('Section Colors')" :obj="section.sec" :fields="$root.renderFields(section.sec)" />
+                    <jet-form :title="$__('Container')" :obj="section.cont" :fields="$root.renderFields(section.cont)" />
+                    <jet-form :title="$__('Image(optionaly)')" :obj="section.img" :fields="$root.renderFields(section.img)" />
+                    <!-- <jet-form :title="$__('Section Colors')" :obj="section.sec" :fields="f_section" /> -->
+                    
+                    <!-- old ----- -->
+                    <!-- <jet-form :obj="section" :fields="[{ title: this.$__('Title'), tip: this.$__('Optionally - requires if you use a Page Menu or Dotted Menu'), key: 'title' }]" /> -->
+                    <!-- <jet-form :title="$__('Section Colors')" :obj="section.sec" :fields="f_section" /> -->
+                    <!-- <jet-form :title="$__('Container OLD')" :obj="section.cont" :fields="f_container" /> -->
+                    <!-- <jet-form :title="$__('Image(OLD)')" :obj="section.img" :fields="f_img" /> -->
                 </template>
 
 
@@ -62,16 +70,18 @@ export default {
             current: 9999,
             current: 0, //dev
             fields_meta: [
-                { title: this.$__('Page Title'), key: 'title', },
+                { title: this.$__('Page Title'), tip: this.$__('This adds a Dotted Menu Between Sections. Menu Item Titles should be added → Section Edit ->Title'), key: 'title', },
                 { title: this.$__('Meta Title'), key: 'meta_title', },
                 { title: this.$__('Meta Description'), key: 'meta_description', type: 'textarea' },
+                { title: this.$__('Add Dotted Menu'), key: 'dot_menu', type: 'checkbox' },
                 // { title: this.$__('Atem Align'), key: 'ai', type: 'input' },
             ],
 
             f_section: [
                 { title: this.$__('Background'), key: 'bg', type: 'picker', ops: 'bg' },
                 { title: this.$__('Color'), key: 'col', type: 'picker', ops: 'col' },
-                { title: this.$__('Color'), key: 'p_sec', type: 'select', ops: 'pv' },
+                // { title: this.$__('Color'), key: 'p_sec', type: 'select', ops: 'pv' },
+                // { title: 'Tip', tip: this.$__('This adds a Dotted Menu Between Sections. Menu Item Titles should be added → Section Edit ->Title'), key: 'tip', type: 'select', ops: 'pv' },
             ],
             f_container: [
 

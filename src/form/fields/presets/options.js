@@ -1,5 +1,21 @@
 // text_effects  yes_no justify align  gap  size  shadow  radius                                
 export const options = {
+    bg_type: [
+        { v: '', t: 'None' },
+        { v: 'bg', t: 'Background Color' },
+        { v: 'gr', t: 'Gradient' },
+        { v: 'img', t: 'Image' },
+    ],
+    grad_dir: [
+        { v: 'to bottom', t: 'bottom' },
+        { v: 'to top', t: 'top' },
+        { v: 'to right', t: 'right' },
+        { v: 'to left', t: 'left' },
+        { v: 'to top left', t: 'top left' },
+        { v: 'to top right', t: 'top right' },
+        { v: 'to bottom right', t: 'bottom right' },
+        { v: 'to bottom left', t: 'bottom left' },
+    ],														
     blank: [
         { v: '', t: 'none' },
         { v: '', t: '' },

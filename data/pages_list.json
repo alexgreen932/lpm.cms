@@ -14,5 +14,21 @@
     {
         "title": "new page 2",
         "slug": "new-page-2"
+    },
+    {
+        "title": "Elements",
+        "slug": "e"
+    },
+    {
+        "title": "Patterns",
+        "slug": "p"
+    },
+    {
+        "title": "Test 3",
+        "slug": "t"
+    },
+    {
+        "title": "Test-5",
+        "slug": "test-5"
     }
 ]

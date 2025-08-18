@@ -1,14 +1,15 @@
 
 // import toolbar from './toolbar.js';
+import {fields_presets} from '../data/fields_presets.js';
 
 export default {
-  dataString(v){
+  dataString(v) {
     return JSON.stringify(v);
     // return JSON.stringify(v ?? {}, null, 2);
   },
-  hoverTip(v){
+  hoverTip(v) {
     setTimeout(() => {
-      
+
     }, 1000);
   },
   // classes(e) {
@@ -57,7 +58,7 @@ export default {
   },
   showSidebar(e) {//todo rm
 
-    
+
     if (this.ops.current_menu == e) {
       this.ops.current_menu = 99;
     } else {
@@ -68,10 +69,10 @@ export default {
 
   },
   isSidebar() {
-    
+
     let page = document.getElementById('app');
     let front = document.getElementById('page');
-    
+
     if (this.ops.current_menu && this.ops.current_menu !== 99) {
       page.classList.remove('isBar');
       page.classList.add('isSidebar');
@@ -82,7 +83,7 @@ export default {
     }
   },
   isBar() {
-    
+
     let page = document.getElementById('app');
     let front = document.getElementById('page');
     if (this.ops.current_menu == 99) {
@@ -94,5 +95,22 @@ export default {
       front.classList.add('j-hidden');
 
     }
-  }
+  },
+  renderFields(obj) {
+    let fields = [];
+
+    //get existing keys
+    let keys = Object.keys(obj);
+    console.log('keys: ', keys);
+
+    keys.forEach((e) => {
+      //key exist in fields_preset
+      if (e in fields_presets) {
+        let field = fields_presets[e];
+        fields.push(field);
+      }
+    })
+
+    return fields;
+  },
 };

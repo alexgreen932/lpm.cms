@@ -9452,6 +9452,193 @@ table.de-striped tbody tr:hover {
   }
 }
 
+/* line 3, ../../www/lpm.cms/scss-jet/components/_dot-menu.scss */
+.dot-menu {
+  position: fixed;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 1rem 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #999;
+  border-radius: 16px;
+  z-index: 9999999;
+}
+
+/* line 15, ../../www/lpm.cms/scss-jet/components/_dot-menu.scss */
+.dot-menu a {
+  width: 16px;
+  height: 16px;
+  background: #666;
+  border-radius: 50%;
+  transition: all ease .5s;
+}
+
+/* line 21, ../../www/lpm.cms/scss-jet/components/_dot-menu.scss */
+.dot-menu a:hover {
+  background: #0000009a;
+}
+
+/* line 27, ../../www/lpm.cms/scss-jet/components/_dot-menu.scss */
+[data-tooltip] {
+  position: relative;
+  pointer: cursor;
+}
+
+/* line 31, ../../www/lpm.cms/scss-jet/components/_dot-menu.scss */
+[data-tooltip]::before,
+[data-tooltip]::after {
+  text-transform: none;
+  font-size: .9em;
+  line-height: 1;
+  position: absolute;
+  display: none;
+  opacity: 0;
+}
+
+/* line 41, ../../www/lpm.cms/scss-jet/components/_dot-menu.scss */
+[data-tooltip]::before {
+  content: '';
+  border: 6px solid transparent;
+  z-index: 101;
+}
+
+/* line 46, ../../www/lpm.cms/scss-jet/components/_dot-menu.scss */
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  text-align: center;
+  min-width: 3em;
+  max-width: 21em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 6px 8px;
+  border-radius: 3px;
+  background: #333333;
+  color: #FFFFFF;
+  z-index: 100;
+}
+
+/* line 60, ../../www/lpm.cms/scss-jet/components/_dot-menu.scss */
+[data-tooltip]:hover::before,
+[data-tooltip]:hover::after {
+  display: block;
+}
+
+/* line 64, ../../www/lpm.cms/scss-jet/components/_dot-menu.scss */
+[data-tooltip='']::before,
+[data-tooltip='']::after {
+  display: none !important;
+}
+
+/* line 68, ../../www/lpm.cms/scss-jet/components/_dot-menu.scss */
+[data-tooltip]:not([data-flow])::before,
+[data-tooltip][data-flow^="top"]::before {
+  bottom: 100%;
+  border-bottom-width: 0;
+  border-top-color: #333333;
+}
+
+/* line 74, ../../www/lpm.cms/scss-jet/components/_dot-menu.scss */
+[data-tooltip]:not([data-flow])::after,
+[data-tooltip][data-flow^="top"]::after {
+  bottom: calc(100% + 5px);
+}
+
+/* line 78, ../../www/lpm.cms/scss-jet/components/_dot-menu.scss */
+[data-tooltip]:not([data-flow])::before,
+[data-tooltip]:not([data-flow])::after,
+[data-tooltip][data-flow^="top"]::before,
+[data-tooltip][data-flow^="top"]::after {
+  left: 50%;
+  transform: translate(-50%, -0.4em);
+}
+
+/* line 85, ../../www/lpm.cms/scss-jet/components/_dot-menu.scss */
+[data-tooltip][data-flow^="bottom"]::before {
+  top: 100%;
+  border-top-width: 0;
+  border-bottom-color: #333333;
+}
+
+/* line 90, ../../www/lpm.cms/scss-jet/components/_dot-menu.scss */
+[data-tooltip][data-flow^="bottom"]::after {
+  top: calc(100% + 5px);
+}
+
+/* line 93, ../../www/lpm.cms/scss-jet/components/_dot-menu.scss */
+[data-tooltip][data-flow^="bottom"]::before,
+[data-tooltip][data-flow^="bottom"]::after {
+  left: 50%;
+  transform: translate(-50%, 0.4em);
+}
+
+/* line 98, ../../www/lpm.cms/scss-jet/components/_dot-menu.scss */
+[data-tooltip][data-flow^="left"]::before {
+  top: 50%;
+  border-right-width: 0;
+  border-left-color: #333333;
+  left: calc(0em - 5px);
+  transform: translate(-0.5em, -50%);
+}
+
+/* line 105, ../../www/lpm.cms/scss-jet/components/_dot-menu.scss */
+[data-tooltip][data-flow^="left"]::after {
+  top: 50%;
+  right: calc(100% + 5px);
+  transform: translate(-0.4em, -50%);
+}
+
+/* line 110, ../../www/lpm.cms/scss-jet/components/_dot-menu.scss */
+[data-tooltip][data-flow^="right"]::before {
+  top: 50%;
+  border-left-width: 0;
+  border-right-color: #333333;
+  right: calc(0em - 7px);
+  transform: translate(0.4em, -50%);
+}
+
+/* line 117, ../../www/lpm.cms/scss-jet/components/_dot-menu.scss */
+[data-tooltip][data-flow^="right"]::after {
+  top: 50%;
+  left: calc(100% + 5px);
+  transform: translate(0.5em, -50%);
+}
+
+@keyframes tooltip-vert {
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes tooltip-horz {
+  to {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
+}
+
+/* line 134, ../../www/lpm.cms/scss-jet/components/_dot-menu.scss */
+[data-tooltip]:not([data-flow]):hover::before,
+[data-tooltip]:not([data-flow]):hover::after,
+[data-tooltip][data-flow^="top"]:hover::before,
+[data-tooltip][data-flow^="top"]:hover::after,
+[data-tooltip][data-flow^="bottom"]:hover::before,
+[data-tooltip][data-flow^="bottom"]:hover::after {
+  animation: tooltip-vert .5s ease-out forwards;
+}
+
+/* line 142, ../../www/lpm.cms/scss-jet/components/_dot-menu.scss */
+[data-tooltip][data-flow^="left"]:hover::before,
+[data-tooltip][data-flow^="left"]:hover::after,
+[data-tooltip][data-flow^="right"]:hover::before,
+[data-tooltip][data-flow^="right"]:hover::after {
+  animation: tooltip-horz .5s ease-out forwards;
+}
+
 /* line 2, ../../www/lpm.cms/scss-jet/animation/_ja-fade-in.scss */
 .jp.ja-fade-in {
   -webkit-animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 0.5) both;

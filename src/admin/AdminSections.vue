@@ -5,6 +5,7 @@
         <!-- current---{{ops.current}} -->
         <section-pages v-if="ops.current_menu == 'pages'" />
         <section-patterns v-if="ops.current_menu == 'patterns'" />
+        <section-theme v-if="ops.current_menu == 'theme'" />
 
         <add-new v-if="ops.current_menu == 'add'" />
 
@@ -33,6 +34,7 @@ import jetTip from '../utils/jetTip.vue';
 // import listPattern from './listPattern.vue';
 import patternRender from "./patternRender.vue";
 import sectionPatterns from "./sectionPatterns.vue";
+import sectionTheme from "./sectionTheme.vue";
 import savePattern from "../page/savePattern.vue";
 //dev only 
 import devFields from "./devFields.vue";
@@ -49,6 +51,7 @@ export default {
         // listPattern,
         patternRender,
         sectionPatterns,
+        sectionTheme,
         savePattern,
         devFields,
 

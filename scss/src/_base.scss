@@ -34,6 +34,11 @@
         color:#fff;
     }
 }
+
+input[type="color"]{
+    width: 100%;
+}
+
 $width-sec: 350px; // your sidebar width
 
 .tips-box {

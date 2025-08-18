@@ -39,7 +39,12 @@
   color: #fff;
 }
 
-/* line 39, ../../www/lpm.cms/scss/src/_base.scss */
+/* line 38, ../../www/lpm.cms/scss/src/_base.scss */
+input[type="color"] {
+  width: 100%;
+}
+
+/* line 44, ../../www/lpm.cms/scss/src/_base.scss */
 .tips-box {
   position: fixed;
   width: 50%;
@@ -53,7 +58,7 @@
   z-index: 2;
 }
 
-/* line 56, ../../www/lpm.cms/scss/src/_base.scss */
+/* line 61, ../../www/lpm.cms/scss/src/_base.scss */
 #admin-enter {
   position: fixed;
   left: 0;
@@ -70,14 +75,14 @@
   transition: all ease 0.3s;
 }
 
-/* line 71, ../../www/lpm.cms/scss/src/_base.scss */
+/* line 76, ../../www/lpm.cms/scss/src/_base.scss */
 #admin-enter i {
   cursor: pointer;
   -webkit-animation: rotate-center 3s infinite linear;
   animation: rotate-center 3s infinite linear;
 }
 
-/* line 77, ../../www/lpm.cms/scss/src/_base.scss */
+/* line 82, ../../www/lpm.cms/scss/src/_base.scss */
 #admin-enter:hover {
   background: #4e6672;
 }
@@ -94,12 +99,12 @@
   }
 }
 
-/* line 94, ../../www/lpm.cms/scss/src/_base.scss */
+/* line 99, ../../www/lpm.cms/scss/src/_base.scss */
 #app.isSidebar {
   margin-left: 350px !important;
 }
 
-/* line 98, ../../www/lpm.cms/scss/src/_base.scss */
+/* line 103, ../../www/lpm.cms/scss/src/_base.scss */
 #app.isBar {
   margin-left: 42px;
 }

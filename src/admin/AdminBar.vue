@@ -1,13 +1,22 @@
 <template>
     <div class="admin-bar fd-c jc-b">
-        <ul class="m-0">
-            <li v-for="(e, i) in menu" :class="[e.cls, $isActive(ops.current_menu, e.slug)]" v-tt:top-left="e.title">
+            <!-- //old -->
+        <!-- <ul class="m-0">
+            <li v-for="(e, i) in menu" class="fd-c" :class="[e.cls, $isActive(ops.current_menu, e.slug)]" v-tt:top-left="e.title">
                 <i :class="e.icon" @click="showSidebar(e.slug), $saveLocal(ops, 'menu_state')"></i>
+                <span class="fs-6">{{e.title}}</span>
+            </li>
+        </ul> -->
+        <ul class="m-0">
+            <li v-for="(e, i) in menu" class="fd-c" :class="[e.cls, $isActive(ops.current_menu, e.slug)]">
+                <i :class="e.icon" @click="showSidebar(e.slug), $saveLocal(ops, 'menu_state')"></i>
+                <span class="fs-6">{{e.title}}</span>
             </li>
         </ul>
         <ul class="m-0">
-            <li v-for="(e, i) in menu2" :class="[e.cls, $isActive(ops.current_menu, e.slug)]" v-tt:top-left="e.title">
+            <li v-for="(e, i) in menu2" class="fd-c" :class="[e.cls, $isActive(ops.current_menu, e.slug)]">
                 <i :class="e.icon" @click="showSidebar(e.slug), $saveLocal(ops, 'menu_state')"></i>
+                <span class="fs-6">{{e.title}}</span>
             </li>
         </ul>
     </div>

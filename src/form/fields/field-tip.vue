@@ -1,6 +1,7 @@
 <template>
-    <div class="tip-heading j-click" @click="show = !show">{{ $__('Tips') }} <i
-            class="fa-solid fa-circle-exclamation"></i>
+    <div class="tip-heading j-click" @click="show = !show">
+        <span v-if="!no_title">{{ $__('Tips') }} </span>
+        <i class="fa-solid fa-circle-exclamation"></i>
     </div>
     <TransitionGroup name="pop">
         <div v-if="show" class="admin-modal-bg" @click="show = !show">
@@ -19,7 +20,7 @@ import { tips } from './presets/tips.js';
 
 export default {
     name: 'field-tip',
-    props: ['modelValue', 'f'],
+    props: ['modelValue', 'f', 'title', 'no_title'],
     data() {
         return {
             show: false,

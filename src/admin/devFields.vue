@@ -7,6 +7,7 @@
     <div class="fd-c" style="height: 400px!important;">
         <textarea v-if="show == 'ops'" rows="40" style="height: 400px!important;">{{ this.ops }}</textarea>
         <textarea v-if="show == 'lang'" rows="40" style="height: 400px!important;">{{ dev_language }}</textarea>
+        <textarea v-if="show == 'style'" rows="40" style="height: 400px!important;">{{ theme }}</textarea>
         <template v-if="show == 'current_page_data'" class="fd-c" style="height: 400px!important;">
             <div class="but-green mv-1" @click="copyIt()">Copy</div>
             <textarea rows="40" style="height: 400px!important;">{{ pageJson() }}</textarea>
@@ -16,7 +17,7 @@
 </template>
 
 <script>
-import { ops } from "../data/data.js";
+import { ops, theme } from "../data/data.js";
 import { dev_language } from "../languages/index.js";
 // import JetForms from "./JetForms.vue";
 // import get
@@ -34,9 +35,11 @@ export default {
             dev_language,
             menu: [
                 { t: 'Ops', v: 'ops' },
-                { t: 'Current', v: 'current_page_data' },
+                { t: 'Cur', v: 'current_page_data' },
                 { t: 'lang', v: 'lang' },
+                { t: 'style', v: 'style' },
             ],
+            theme,
         };
     },
     methods: {

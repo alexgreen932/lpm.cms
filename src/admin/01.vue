@@ -1,18 +1,21 @@
 <template>
-    <div class="w-container p-1">New Component</div>
+    <div class="w-container p-1">Section Theme</div>
+    <field-tip :fields="null" v-model="tip" />
 </template>
 
 <script>
-// import { ops } from "../data/data.js";
+import { ops } from "../data/data.js";
+import fieldTip from '../form/fields/field-tip.vue';
 // import JetForms from "./JetForms.vue";
 
 export default {
-    // components: {
-    //     "jet-forms ": JetForms,
-    // },
+    components: {
+        fieldTip,
+    },
     data() {
         return {
-            // ops: ops,
+            ops,
+            tip: 'themes',
         };
     },
     methods: {
