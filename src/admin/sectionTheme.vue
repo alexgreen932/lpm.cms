@@ -2,6 +2,7 @@
     <div class="fd-c g-05">
         <h3 class="fs-15 g-05">{{$__('Theme')}}<field-tip no_title="1" :fields="null" v-model="tip" /></h3>
         
+        
         <ul class="j-tabs top style-bg tx-black">
             <li v-for="(e, i) in menu" :class="$isActive(ops.theme_part, e)" @click="ops.theme_part = e">{{ e }}</li>
         </ul>

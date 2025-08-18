@@ -1,0 +1,10 @@
+.theme-edit-mode {
+  background: #000;
+  color: #fff;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 5px;
+  padding: 8px;
+  z-index: 100;
+}

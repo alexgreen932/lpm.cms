@@ -12,6 +12,7 @@ export const ops = {
   current_page: 'homepage',//curremtly loaded
   // current_page: 99,//curremtly loaded
   page_index: 999,
+  current_part:null,//adds to parts
   current_section: 99,//curremtly editewd section
   current_el: 99,//curremtly editewd element
   current_edit: null,//what edit - section/element
@@ -32,7 +33,7 @@ export const ops = {
     description: '',
     data: {},
   },
-
+  sample_data:false,
   current_page_data: { sections: [] }, //page which loaded and currently edited
   theme: {page:{},header:{sec:{}},footer:{sec:{}}}
 

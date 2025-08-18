@@ -41,6 +41,9 @@ export default {
                 this.ops.current_menu = 99;
             } else {
                 this.ops.current_menu = e;
+                if (e=='theme') {
+                    this.ops.sample_data = true;
+                }
             }
             this.isBar();
             this.isSidebar();

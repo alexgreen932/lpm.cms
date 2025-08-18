@@ -807,6 +807,18 @@ div.group-toolbar i:hover {
   margin-bottom: 0;
 }
 
+/* line 2, ../../www/lpm.cms/scss/src/_utils.scss */
+.theme-edit-mode {
+  background: #000;
+  color: #fff;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 5px;
+  padding: 8px;
+  z-index: 100;
+}
+
 /* line 4, ../../www/lpm.cms/scss/form/_form.scss */
 .jet-form {
   color: #45495f;

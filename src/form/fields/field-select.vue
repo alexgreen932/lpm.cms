@@ -18,15 +18,15 @@ export default {
     methods: {
         ops() {
             let arr = [];
-                console.log('this.f.ops: ', this.f.ops);
+                
             if (!this.f.ops) {
-                console.error(this.$__('Options in select form is missed'));
+                
                 return arr;
             }
             // return this.f.ops || 'text';
             if (typeof this.f.ops === 'string') {
                 let key = this.f.ops;
-                console.log('options[key]: ', options[key]);
+                
                 return options[key];
             } else {
                 return this.f.ops;

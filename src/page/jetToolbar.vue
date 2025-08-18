@@ -25,6 +25,9 @@
             <div v-if="cls == 'element'" class="d-wrap">
                 <i class="fa-solid fa-plus" v-tt:top-center-small="$__('Add')" @click="addItem(index)"></i>
             </div>
+            <div v-if="cls == 'header'" class="d-wrap">
+                -----<i class="fa-solid fa-plus" v-tt:top-center-small="$__('Add')" @click="addItem(index)"></i>
+            </div>
 
             <div v-if="cls == 'section' && notPart()">
                 <i class="add-section" :class="showClose()" v-tt:top-center-small="$__('Add')" @click="show = !show">
@@ -96,7 +99,7 @@ export default {
     props: ["elements", "index", "page_index", "cls", "sec", "dir", "type"],
     data() {
         return {
-            ops: ops,
+            ops,
             isAdmin: true,
             add: false,
             prev: 'fa-angle-up',
@@ -218,15 +221,34 @@ export default {
 
         addItem(i) {
             //add section //todo add pattern too
-            if (this.cls === "section") {
-                let insertIndex = this.ops.current_section + 1;
-                this.elements.splice(insertIndex, 0, newItem);
-            } else {
-                //add elem
-                this.ops.current_menu = 'add';
-                this.ops.current_section = this.sec;
-                this.ops.current_el = this.index;
+            switch (this.cls) {
+                case 'section':
+                    let insertIndex = this.ops.current_section + 1;
+                    this.elements.splice(insertIndex, 0, newItem);
+                    break;
+                case 'element':
+                    this.ops.current_menu = 'add';
+                    this.ops.current_section = this.sec;
+                    this.ops.current_el = this.index;
+                    this.ops.current_part = null;
+                    break;
+
+                default://for parts
+                    this.ops.current_menu = 'add';
+                    this.ops.current_part = this.cls;
+                    this.ops.current_section = this.sec;
+                    this.ops.current_el = this.index;
+                    break;
             }
+            // if (this.cls === "section") {
+            //     let insertIndex = this.ops.current_section + 1;
+            //     this.elements.splice(insertIndex, 0, newItem);
+            // } else {
+            //     //add elem
+            //     this.ops.current_menu = 'add';
+            //     this.ops.current_section = this.sec;
+            //     this.ops.current_el = this.index;
+            // }
         },
 
         addPattern() {
@@ -242,7 +264,9 @@ export default {
     },
     mounted() {
         // all props "elements", "index", "page_index", "cls", "sec", "dir"           
-        // console.log('%c Cls ---', 'color: #1045f3', this.cls);
+        console.log('%c Cls ---', 'color: #f31010', this.cls);
+        // console.log('%c Elements ---', 'color: #01f501', this.elements);
+        // console.log('%c Sec ---', 'color: #1045f3', this.sec);
         if (this.dir && this.dir == 'fd-c') {
 
         } else {
@@ -255,7 +279,7 @@ export default {
         // if (this.type == 'header') {
         //     this.elements = this.theme.header.sections;
         // } else if(this.type == 'footer') {
-            
+
         // }
     }
 

@@ -1,5 +1,5 @@
 <template>
-  <div v-if="sec" :id="sectionId(i)" class="jet-section" :class="$root && $root.classes ? $root.classes(sec.sec) : ''" :style="">
+  <div v-if="sec" :id="sectionId(i)" class="jet-section" :class="$root && $root.classes ? $root.classes(sec.sec) : ''">
 
 
     <toolbar-parts v-if="type=='header'" type="header" cls="section" dir="fd-c" :elements="theme.header?.sections || []" :index="i" />
@@ -23,7 +23,7 @@
 
 
 <script>
-import { ops, theme } from "../data/data.js";
+import { ops, theme } from "../data/data.js";//todo!!! rm theme
 import jetToolbar from "./jetToolbar.vue";
 import toolbarParts from "./toolbarParts.vue";
 const modules = import.meta.glob("../components/*.vue", { eager: true });
@@ -38,6 +38,8 @@ export default {
     return { 
       ops,
       theme,
+      current_part:null,
+
      };
   },
   methods: {
@@ -61,8 +63,12 @@ export default {
     // }
   },
   mounted(){
-  console.log('%c Section type ---', 'color: #997373', this.type);
-  // console.log('%c Themee -------', 'color: #1045f3', this.theme);
+  
+  // console.log('%c Section type ---', 'color: #997373', this.type);
+  this.current_part = this.ops.theme[this.type];
+  console.log('this.current_part------ ', this.current_part);
+  
+  // 
   //loads default template if part---- currenntly on dev loads from data.... maybe load it directly to prop in edit mode
   }
 };

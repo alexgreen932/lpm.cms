@@ -32,34 +32,33 @@ export default {
   },
   methods: {
     addItem(e) {
-      // const item = JSON.parse(JSON.stringify(e));
-      // 
-      // let target = this.ops.current_page_data.sections[this.ops.current_section];
-      // //curent index where was click add == this.ops.current_el
-      // target.content.push(item);
-
       const item = JSON.parse(JSON.stringify(e));
       let target = this.ops.current_page_data.sections[this.ops.current_section];
+      //if adds to part
+      if (this.ops.current_part) {
+        let part = this.ops.theme[this.ops.current_part];//defines part
+        target = part.sections[this.ops.current_section];
+      }
 
       //if has elements, add in correct place 
       if (target.content.length) {
-         // Insert new element right after the clicked one
-      const insertIndex = this.ops.current_el + 1;
-      target.content.splice(insertIndex, 0, item);
-      }else{
+        // Insert new element right after the clicked one
+        const insertIndex = this.ops.current_el + 1;
+        target.content.splice(insertIndex, 0, item);
+      } else {
         //if content arr is empty push
         target.content.push(item);
       }
-     
 
-      
+
+
 
 
 
     }
   },
   mounted() {
-    
+
   }
 };
 </script>
