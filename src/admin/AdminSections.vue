@@ -16,6 +16,10 @@
           <!-- {{ $id()}} -->
         <!-- <div class="delay-tooltip top-left">test</div> -->
          <!-- <textarea rows="40" cols="50">{{ pageJson() }}</textarea> -->
+         <div v-if="ops.current_menu == 'edit'">
+          edit section
+          <edit-forms />
+         </div>
           <!-- dev only ---  -->
            <dev-fields />
 
@@ -25,7 +29,7 @@
 import { ops } from "../data/data.js";
 import sectionPages from "./sectionPages.vue";
 import MediaManager from "../form/MediaManager.vue";
-import pageForms from './pageForms.vue';//todo!!! check and remove if not used
+import pageForms from './pageForms.vue';//rin
 // import FormSection from "./FormSection.vue";//todo rm if not used
 //dev //todo rm then 
 import formWrapper from "./formWrapper.vue";
@@ -39,6 +43,7 @@ import savePattern from "../page/savePattern.vue";
 //dev only 
 import devFields from "./devFields.vue";
 import { fetchFile } from "../utils/helpers.js";
+import editForms from "./editForms.vue";
 
 export default {
     components: {
@@ -54,6 +59,7 @@ export default {
         sectionTheme,
         savePattern,
         devFields,
+        editForms,
 
     },
     data() {

@@ -132,10 +132,10 @@ export default {
             if (this.type === 'header') {
                 this.$root.reset();
                 this.ops.current_menu = 'theme';
-                this.ops.theme_part = 'header';
-                this.ops.current_section = this.index;
-                this.ops.current_el = null;
-                this.ops.current_edit = 'section';
+                this.ops.theme_part = 'Header';
+                // this.ops.current_section = this.index;
+                // this.ops.current_el = null;
+                // this.ops.current_edit = 'section';
                 return;
             } else if (this.type === 'footer') {
 

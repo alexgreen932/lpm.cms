@@ -8,14 +8,14 @@
             </li>
         </ul> -->
         <ul class="m-0">
-            <li v-for="(e, i) in menu" class="fd-c" :class="[e.cls, $isActive(ops.current_menu, e.slug)]">
-                <i :class="e.icon" @click="showSidebar(e.slug), $saveLocal(ops, 'menu_state')"></i>
+            <li v-for="(e, i) in menu" class="fd-c" :class="[e.cls, $isActive(ops.current_menu, e.slug)]" @click="showSidebar(e.slug), $saveLocal(ops, 'menu_state')">
+                <i :class="e.icon"></i>
                 <span class="fs-6">{{e.title}}</span>
             </li>
         </ul>
         <ul class="m-0">
-            <li v-for="(e, i) in menu2" class="fd-c" :class="[e.cls, $isActive(ops.current_menu, e.slug)]">
-                <i :class="e.icon" @click="showSidebar(e.slug), $saveLocal(ops, 'menu_state')"></i>
+            <li v-for="(e, i) in menu2" class="fd-c" :class="[e.cls, $isActive(ops.current_menu, e.slug)]" @click="showSidebar(e.slug), $saveLocal(ops, 'menu_state')">
+                <i :class="e.icon"></i>
                 <span class="fs-6">{{e.title}}</span>
             </li>
         </ul>

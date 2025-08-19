@@ -1,9 +1,6 @@
 <template>
-    pageForms---{{ current_data.sections }}
     <div class="fd-c g-05">
-        <!-- edit meta/page settings START  -->
-        <div v-if="!ops.sample_data" class="b-blue fs-8 jc-c br-4 j-click"
-            @click="$root.reset(), ops.page_settings = !ops.page_settings">
+        <div class="b-blue fs-8 jc-c br-4 j-click" @click="$root.reset(), ops.page_settings = !ops.page_settings">
             <template v-if="!ops.page_settings">
                 {{ $__('Page Settings') }}
             </template>
@@ -14,29 +11,34 @@
         </div>
 
         <jet-form v-if="ops.page_settings" :obj="ops.current_page_data" cls="bg-white" :fields="fields_meta" />
-        <!-- edit meta/page settings END  -->
-        <template v-if="current_data" v-for="(section, i) in current_data.sections">
 
-    edit section -----
+        <template v-if="ops.current_page_data" v-for="(section, i) in ops.current_page_data.sections">
+            
+
             <!-- render only current section  -->
             <template v-if="ops.current_section == i">
                 <!-- remdered section  ---{{ i }}<br>
  sec---{{ops.current_section}} index ---{{ i }} -->
                 <template v-if="ops.current_section == i && ops.current_edit == 'section'">
-                    edit section -----
                     <!-- section forms -->
                     <jet-form :obj="section" :fields="$root.renderFields(section)" />
-                    <jet-form :title="$__('Section Colors')" :obj="section.sec"
-                        :fields="$root.renderFields(section.sec)" />
-                    <jet-form :title="$__('Container')" :obj="section.cont"
-                        :fields="$root.renderFields(section.cont)" />
-                    <jet-form :title="$__('Image(optionaly)')" :obj="section.img"
-                        :fields="$root.renderFields(section.img)" />
+                    <jet-form :title="$__('Section Colors')" :obj="section.sec" :fields="$root.renderFields(section.sec)" />
+                    <jet-form :title="$__('Container')" :obj="section.cont" :fields="$root.renderFields(section.cont)" />
+                    <jet-form :title="$__('Image(optionaly)')" :obj="section.img" :fields="$root.renderFields(section.img)" />
+                    <!-- <jet-form :title="$__('Section Colors')" :obj="section.sec" :fields="f_section" /> -->
+                    
+                    <!-- old ----- -->
+                    <!-- <jet-form :obj="section" :fields="[{ title: this.$__('Title'), tip: this.$__('Optionally - requires if you use a Page Menu or Dotted Menu'), key: 'title' }]" /> -->
+                    <!-- <jet-form :title="$__('Section Colors')" :obj="section.sec" :fields="f_section" /> -->
+                    <!-- <jet-form :title="$__('Container OLD')" :obj="section.cont" :fields="f_container" /> -->
+                    <!-- <jet-form :title="$__('Image(OLD)')" :obj="section.img" :fields="f_img" /> -->
                 </template>
 
 
                 <template v-for="(element, i2) in section.content">
+                    <!-- ----{{element.type}}---- -->
                     <form-wrapper v-if="ops.current_el == i2 && ops.current_edit == 'element'" :element="element" />
+                    <!-- <jet-form v-if="ops.current_el == i2 && ops.current_edit == 'element'" :title="titleEl(element.type)" :obj="section" :fields="fields_el" /> -->
                 </template>
 
 
@@ -54,7 +56,6 @@ import { ops } from '../data/data.js';
 import formWrapper from "./formWrapper.vue";
 
 export default {
-    props:['current_data'],
     components: {
         jetForm,
         formWrapper,
@@ -76,7 +77,6 @@ export default {
                 // { title: this.$__('Atem Align'), key: 'ai', type: 'input' },
             ],
 
-            //TODO!!! do all with preset_fields and remove all "f_" here
             f_section: [
                 { title: this.$__('Background'), key: 'bg', type: 'picker', ops: 'bg' },
                 { title: this.$__('Color'), key: 'col', type: 'picker', ops: 'col' },
@@ -142,16 +142,6 @@ export default {
         };
     },
     methods: {
-        //todo!!! rin(new abbreviation rin - Remove If Not used )
-        currentData() {
-            if (this.ops.sample_data) {
-                if (this.ops.current_part !== 'page') {
-                    return this.ops.theme[this.ops.current_part];
-                }
-            } else {
-                return this.ops.current_page_data;
-            }
-        },
         titleSec(i) {
             let sec = i + 1;
             return this.$__('Edit Section-') + sec;

@@ -1,36 +1,17 @@
 <template>
-    pageForms---{{ ops.sample_data }}
+    editForms
     <div class="fd-c g-05">
-        <!-- edit meta/page settings START  -->
-        <div v-if="!ops.sample_data" class="b-blue fs-8 jc-c br-4 j-click"
-            @click="$root.reset(), ops.page_settings = !ops.page_settings">
-            <template v-if="!ops.page_settings">
-                {{ $__('Page Settings') }}
-            </template>
-            <template v-if="ops.page_settings">
-                {{ $__('Close') }}
-            </template>
-
-        </div>
-
-        <jet-form v-if="ops.page_settings" :obj="ops.current_page_data" cls="bg-white" :fields="fields_meta" />
-        <!-- edit meta/page settings END  -->
         <template v-if="ops.current_page_data" v-for="(section, i) in ops.current_page_data.sections">
-
+            
 
             <!-- render only current section  -->
             <template v-if="ops.current_section == i">
-                <!-- remdered section  ---{{ i }}<br>
- sec---{{ops.current_section}} index ---{{ i }} -->
                 <template v-if="ops.current_section == i && ops.current_edit == 'section'">
                     <!-- section forms -->
                     <jet-form :obj="section" :fields="$root.renderFields(section)" />
-                    <jet-form :title="$__('Section Colors')" :obj="section.sec"
-                        :fields="$root.renderFields(section.sec)" />
-                    <jet-form :title="$__('Container')" :obj="section.cont"
-                        :fields="$root.renderFields(section.cont)" />
-                    <jet-form :title="$__('Image(optionaly)')" :obj="section.img"
-                        :fields="$root.renderFields(section.img)" />
+                    <jet-form :title="$__('Section Colors')" :obj="section.sec" :fields="$root.renderFields(section.sec)" />
+                    <jet-form :title="$__('Container')" :obj="section.cont" :fields="$root.renderFields(section.cont)" />
+                    <jet-form :title="$__('Image(optionaly)')" :obj="section.img" :fields="$root.renderFields(section.img)" />
                 </template>
 
 
@@ -57,6 +38,7 @@ export default {
         jetForm,
         formWrapper,
     },
+    props:['current_data'],
     data() {
         return {
             // meta: false,
@@ -74,7 +56,6 @@ export default {
                 // { title: this.$__('Atem Align'), key: 'ai', type: 'input' },
             ],
 
-            //TODO!!! do all with preset_fields and remove all "f_" here
             f_section: [
                 { title: this.$__('Background'), key: 'bg', type: 'picker', ops: 'bg' },
                 { title: this.$__('Color'), key: 'col', type: 'picker', ops: 'col' },
@@ -140,15 +121,6 @@ export default {
         };
     },
     methods: {
-        currentData() {
-            if (this.ops.sample_data) {
-                if (this.ops.current_part !== 'page') {
-                    return this.ops.theme[this.ops.current_part];
-                }
-            } else {
-                return this.ops.current_page_data;
-            }
-        },
         titleSec(i) {
             let sec = i + 1;
             return this.$__('Edit Section-') + sec;

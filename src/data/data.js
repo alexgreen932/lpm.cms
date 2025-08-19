@@ -1,10 +1,16 @@
 import __ from '../languages/index.js';
 
 export const ops = {
+  // current: null,//main current icon men
+  // current: 'pages',//todo dev
   current_menu: 99,//by default
+  // current_menu: 101,//todo change current to current_menu for clearness
   current_menu: 'pages',//dev pages
-  current_menu: 'theme',//dev theme
+  current_menu: 'edit',//dev pages
+  // current_menu: 'patterns',//dev pages
+  // current_menu: 'add',//dev add elem
   current_page: 'homepage',//curremtly loaded
+  // current_page: 99,//curremtly loaded
   page_index: 999,
   current_part:null,//adds to parts
   current_section: 99,//curremtly editewd section
@@ -18,7 +24,7 @@ export const ops = {
   preview: false,
   pattern_slug: null,
   editable: true,//??
-  theme_part: 'page',
+  theme_part: 'Page',
   //pattern, save, edit, new
   save_as_pattern: false,
   pattern: {
