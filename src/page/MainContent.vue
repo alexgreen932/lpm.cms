@@ -8,6 +8,7 @@
         </template>
     </div>
     <dot-menu v-if="ops.current_page_data.dot_menu" />
+
 </template>
 
 <script>

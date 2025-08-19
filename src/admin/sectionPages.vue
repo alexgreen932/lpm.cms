@@ -23,7 +23,7 @@
         <!-- Show page form only when this page is open -->
         <div v-if="ops.current_page === e.slug">
           <field-tip :fields="null" v-model="tip" />
-          <page-forms />
+          <page-forms :current_data="ops.current_page_data" />
         </div>
       </div>
     </template>

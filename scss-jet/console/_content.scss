@@ -1,0 +1,149 @@
+$col-1: #f48fb1;
+$col-2: #1af506;
+$col-3: #93caf7;
+$col-4: #f85103;
+$col-5: #aada3b;
+$col-ac: #9ca5cf;
+
+.dl-components {
+    .dl-com-name {
+        color: $col-2;
+
+        label {
+            font-style: italic;
+            color: $col-ac;
+            // font-size: .9rem;
+            // text-transform: uppercase;
+        }
+    }
+
+    .dl-com-data {
+        color: $col-3;
+
+        label {
+            font-style: italic;
+            color: $col-ac;
+        }
+        span {
+            &:before {
+                content: '{';
+            }
+
+            &:after {
+                content: '}';
+            }
+        }
+    }
+
+    .dl-com-methods {
+        color: $col-5;
+
+        label {
+            font-style: italic;
+            color: $col-ac;
+        }
+        span {
+            &:before {
+                content: '{';
+            }
+
+            &:after {
+                content: '}';
+            }
+        }
+    }
+}
+
+.db-inner-data {
+    .j_log_name {
+        color: $col-1;
+        // text-transform: uppercase;
+    }
+
+    .j_log_tag {
+        font-weight: bold;
+        color: $col-2;
+
+        &:before {
+            content: '[';
+        }
+
+        &:after {
+            content: ']';
+        }
+    }
+
+    .j_log_msg {
+        color: $col-3;
+    }
+
+    .j_log_data {
+        color: $col-4;
+    }
+
+    //specific screens
+    .j_errors {
+        .j_log_msg {
+            color: rgb(250, 156, 156);
+        }
+
+    }
+
+    .dl-watchers {
+        label {
+            font-size: .9rem;
+            text-transform: uppercase;
+        }
+    }
+
+
+}
+
+
+.db-inner-data {
+
+    max-height: $height - 30;
+    overflow-y: auto;
+
+    * {
+        scrollbar-width: auto !important;
+        scrollbar-color: #435260 #231f1f !important;
+    }
+
+    *::-webkit-scrollbar {
+        width: 12px !important;
+    }
+
+    *::-webkit-scrollbar-track {
+        background: #231f1f !important;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background-color: #435260 !important;
+        border-radius: 10px !important;
+        border: 3px solid #ffffff !important;
+    }
+
+    h3 {
+        margin-top: 5px;
+    }
+
+    ul {
+        padding-left: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+
+        li {
+            list-style: square;
+        }
+
+        &.dl-watchers {
+            padding-left: 0;
+
+            li {
+                list-style: none;
+            }
+        }
+    }
+}

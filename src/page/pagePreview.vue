@@ -3,14 +3,28 @@
         <!-- <jet-header :el="ops.theme.header" /> -->
         <theme-part part="header" :el="ops.theme.header" />
         <div v-if="sampleData()" class="w-container pv-1">
-            <img :src="dataImg()" alt="Sample data">
+            img here in prod
+            <!-- <img :src="dataImg()" alt="Sample data"> -->
         </div>
         <main-content v-if="!sampleData()" />
         <!-- <jet-footer :el="ops.theme.footer" /> -->
         <!-- <theme-part part="footer" :el="ops.theme.footer" /> -->
-         <div v-if="ops.sample_data" class="theme-edit-mode">
-            <jet-form :obj="ops" :fields="[{ title:'Click to leave blank data mode',key: 'sample_data', type: 'checkbox' }]" />
-         </div>
+        <div v-if="ops.sample_data" class="theme-edit-mode">
+            <jet-form :obj="ops"
+                :fields="[{ title: 'Click to leave blank data mode', key: 'sample_data', type: 'checkbox' }]" />
+        </div>
+        <!-- dev //todo!!! rin -->
+        <div class="w-container wc-1-4 b-blue g-1 p-1 nv-1 wc-1-2">
+            <div class="b-blue fd-c g-1 p-1">
+                sample_data --- {{ ops.sample_data }}<br/>
+                current_part --- {{ ops.theme_part }}<br/>
+                ops.current_section --- {{ ops.current_section }}<br/>
+                this.ops.current_el--- {{ this.ops.current_el }}<br/>
+                ops.current_edit --- {{ ops.current_edit }}<br/>
+                </div>
+            <textarea rows="40"></textarea>
+            <textarea rows="40">theme --- {{ ops.theme }}</textarea>
+        </div>
     </div>
 </template>
 
@@ -36,20 +50,20 @@ export default {
             ops,
         };
     },
-    methods:{
-        gradientStyle(){
-            if (ops.theme.page.bg_type =='gr') {
+    methods: {
+        gradientStyle() {
+            if (ops.theme.page.bg_type == 'gr') {
                 return `background: ${ops.theme.page.bg1};background: linear-gradient(${ops.theme.page.grad_dir}, ${ops.theme.page.bg1} 0%, ${ops.theme.page.bg2} 100%);`;
             }
         },
-        sampleData(){
+        sampleData() {
             if (this.ops.sample_data) {
                 return true;
-            }else{
+            } else {
                 return false;
             }
         },
-        dataImg(){
+        dataImg() {
             return this.$domain + '/media/data.png';
         }
     }

@@ -24,7 +24,7 @@ export const ops = {
   preview: false,
   pattern_slug: null,
   editable: true,//??
-  theme_part: 'Page',
+  theme_part: 'page',
   //pattern, save, edit, new
   save_as_pattern: false,
   pattern: {

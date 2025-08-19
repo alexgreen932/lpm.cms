@@ -1,0 +1,23 @@
+$bg2: #5c6475;
+$border-color: #808899;
+$color_h3: #90caf9;
+$color_label: rgb(228, 225, 67);
+$tabs-height: 35px;
+$tabs-height-pad: 45px;
+$height: 250px;
+$width: 400px;
+
+
+$bg: #323844;
+$bg-inner-icons: #4e5664;
+$bg-accent: #5c6475;
+$col: #f1f2f4;
+// $bg: #f1f2f4;
+// $col: #222;
+
+@import 'console/logs';
+@import 'console/console';
+@import 'console/content';
+
+.j-demo {}
+

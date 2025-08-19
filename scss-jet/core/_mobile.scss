@@ -1,0 +1,27 @@
+.mobileOnly {
+    display: none;
+
+}
+
+@media (max-width: 481px) {
+
+    //hidden
+    //visible
+    .mobileOnly {
+        display: block;
+
+    }
+
+    //stack elements
+    #test {
+        div {
+            flex-wrap: nowrap;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            .de-box {
+                width: 100%
+            }
+        }
+    }
+}

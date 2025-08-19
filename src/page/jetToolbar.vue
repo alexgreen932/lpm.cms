@@ -22,12 +22,12 @@
             <div v-if="cls == 'element'" class="d-wrap">
                 <i class="fa-solid fa-clone" v-tt:top-center-small="$__('Clone Element')" @click="clone()"></i>
             </div>
-            <div v-if="cls == 'element'" class="d-wrap">
+            <div v-if="cls !== 'section'" class="d-wrap">
                 <i class="fa-solid fa-plus" v-tt:top-center-small="$__('Add')" @click="addItem(index)"></i>
             </div>
-            <div v-if="cls == 'header'" class="d-wrap">
-                -----<i class="fa-solid fa-plus" v-tt:top-center-small="$__('Add')" @click="addItem(index)"></i>
-            </div>
+            <!-- <div v-if="cls == 'header'" class="d-wrap">
+                <i class="fa-solid fa-plus" v-tt:top-center-small="$__('Add')" @click="addItem(index)"></i>
+            </div> -->
 
             <div v-if="cls == 'section' && notPart()">
                 <i class="add-section" :class="showClose()" v-tt:top-center-small="$__('Add')" @click="show = !show">
