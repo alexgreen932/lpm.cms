@@ -1,7 +1,7 @@
 <template>
 <!-- List -->
     <ul class="element" :class="$root.classes(e.classes, 'i_fs, i_col')">
-        <jet-toolbar cls="element" :sec="sec" :dir="dir" :elements="elements" :index="index" />
+        <jet-toolbar :part='part' cls="element" :sec="sec" :dir="dir" :elements="elements" :index="index" />
         <li v-for="(el, i) in e.items" :key="i">
             <i v-if="e.el.icon" :class="[e.el.icon, e.classes.i_col, e.classes.i_fs]"></i>
             {{ el.text }}
@@ -31,6 +31,6 @@ export const meta = {
 
 export default {
     components: { jetToolbar },
-    props: ['elements', 'sec', 'dir', 'e', 'index'],
+    props: ['elements', 'part', 'sec', 'dir', 'e', 'index'],
 };
 </script>

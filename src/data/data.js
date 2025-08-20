@@ -1,14 +1,8 @@
 import __ from '../languages/index.js';
 
 export const ops = {
-  // current: null,//main current icon men
-  // current: 'pages',//todo dev
   current_menu: 99,//by default
-  // current_menu: 101,//todo change current to current_menu for clearness
-  current_menu: 'pages',//dev pages
-  current_menu: 'edit',//dev pages
-  // current_menu: 'patterns',//dev pages
-  // current_menu: 'add',//dev add elem
+  current_menu: 'pages',//dev temp
   current_page: 'homepage',//curremtly loaded
   // current_page: 99,//curremtly loaded
   page_index: 999,

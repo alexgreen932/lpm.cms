@@ -1,0 +1,627 @@
+{
+    "title": "Dev",
+    "slug": "dev",
+    "meta_title": "Welcome to LPM - Best Landing Page Maker",
+    "meta_description": "lorem 999",
+    "dot_menu": true,
+    "img": "media/logo.png",
+    "sections": [
+        {
+            "title": "Teas 2",
+            "add": false,
+            "sec": {
+                "bg": "",
+                "col": "tx-gray-d3",
+                "p_sec": "",
+                "title": "test 2 "
+            },
+            "cont": {
+                "w": "w-container",
+                "bg": "bg-white-alpha-4",
+                "br": "br-14",
+                "p": "p-1",
+                "jc": "jc-c",
+                "ai": "ai-s",
+                "g": "g-1",
+                "fd": "fd-c",
+                "bs": "",
+                "a": ""
+            },
+            "img": {
+                "src": "",
+                "blur": null,
+                "opacity": null,
+                "ba": "ba-s",
+                "bp": "bp-cc"
+            },
+            "content": [
+                {
+                    "type": "list",
+                    "classes": {
+                        "col": "",
+                        "fs": "fs-18",
+                        "i_col": "tx-red-l1",
+                        "i_fs": "fs-12",
+                        "jag": "jag ja-tracking-in-contract"
+                    },
+                    "el": {
+                        "icon": "fa-brands fa-tiktok"
+                    },
+                    "items": [
+                        {
+                            "text": "ggg ggg"
+                        },
+                        {
+                            "text": "ggg ggg 666"
+                        },
+                        {
+                            "text": "ohuel sam"
+                        },
+                        {
+                            "text": "ggg ggg"
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "classes": {
+                        "wi": "",
+                        "br": "br-44"
+                    },
+                    "el": {
+                        "src": "",
+                        "text": "Read More",
+                        "show_caption": false
+                    },
+                    "style": {
+                        "pos_a": false,
+                        "use_top": false,
+                        "top": "",
+                        "use_right": false,
+                        "right": "",
+                        "use_bottom": false,
+                        "bottom": "",
+                        "use_left": false,
+                        "left": ""
+                    }
+                },
+                {
+                    "type": "paragraph",
+                    "classes": {
+                        "fs": "",
+                        "col": ""
+                    },
+                    "el": {
+                        "text": "This is Sample Text"
+                    }
+                },
+                {
+                    "type": "title",
+                    "classes": {
+                        "fs": "fs-20",
+                        "fw": "",
+                        "col": "",
+                        "jc": "",
+                        "h_style": "",
+                        "ja": ""
+                    },
+                    "el": {
+                        "tag": "h1",
+                        "icon": "",
+                        "text": "This is Sample Title"
+                    }
+                }
+            ]
+        },
+        {
+            "title": "Test",
+            "add": false,
+            "sec": {
+                "bg": "bg-white",
+                "col": "tx-gray-d3",
+                "p_sec": "",
+                "title": "Test"
+            },
+            "cont": {
+                "w": "w-container",
+                "bg": "bg-white-alpha-4",
+                "br": "br-14",
+                "p": "p-1",
+                "jc": "jc-c",
+                "ai": "ai-s",
+                "g": "g-1",
+                "fd": "fd-c",
+                "bs": "",
+                "a": ""
+            },
+            "img": {
+                "src": "",
+                "blur": null,
+                "opacity": null,
+                "ba": "ba-s",
+                "bp": "bp-cc"
+            },
+            "content": [
+                {
+                    "type": "infoboxes",
+                    "classes": {
+                        "wc": "wc-auto",
+                        "jc": "jc-a",
+                        "g": "g-1",
+                        "bg": "bg-indigo-l5",
+                        "bg_h": "bg-indigo-l3",
+                        "col": "",
+                        "fs": "fs-12",
+                        "i_fs": "fs-28",
+                        "fs_h": "fs-15",
+                        "p": "p-2",
+                        "br": "br-36",
+                        "symbol_mode": "icons",
+                        "icon_place": "icn-aside",
+                        "jag": ""
+                    },
+                    "el": {
+                        "tip": "infoboxes"
+                    },
+                    "items": [
+                        {
+                            "icon": "fa-solid fa-check",
+                            "title": "Lorem ipsum",
+                            "col_t": "",
+                            "text": "Dolor sit amet consectetur adipisicing elit.",
+                            "url": "",
+                            "url_type": "link",
+                            "bg": ""
+                        },
+                        {
+                            "title": "Test 3",
+                            "text": "Dolor sit amet consectetur adipisicing elit."
+                        },
+                        {
+                            "title": "Test 3",
+                            "text": "Dolor sit amet consectetur adipisicing elit."
+                        },
+                        {
+                            "title": "ttt rrr ",
+                            "text": " gggg ggg"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Top",
+            "add": false,
+            "sec": {
+                "bg": "bg-white",
+                "col": "tx-gray-d3",
+                "p_sec": ""
+            },
+            "cont": {
+                "w": "w-container",
+                "bg": "bg-white-alpha-4",
+                "br": "br-14",
+                "p": "p-1",
+                "jc": "jc-c",
+                "ai": "ai-s",
+                "g": "g-1",
+                "fd": "fd-c",
+                "bs": "",
+                "a": ""
+            },
+            "img": {
+                "src": "",
+                "blur": null,
+                "opacity": null,
+                "ba": "ba-s",
+                "bp": "bp-cc"
+            },
+            "content": [
+                {
+                    "type": "mediabox",
+                    "id": "c635ec2e1b22",
+                    "classes": {
+                        "wi": "",
+                        "bs": "",
+                        "bg": "bg-white",
+                        "link_style": "but-blue",
+                        "dir_main": "",
+                        "dir_title": "",
+                        "dir_conent": "",
+                        "media": "",
+                        "p": "p-1",
+                        "pc": "",
+                        "br": "br-5",
+                        "fs": "fs-10",
+                        "separator": "Button Style",
+                        "style_but1": "but-blue",
+                        "style_but2": "but-blue",
+                        "link_rad": "br-5",
+                        "ratio": "ratio-auto",
+                        "hover_effect": "",
+                        "ja": ""
+                    },
+                    "el": {
+                        "title": "Media Box",
+                        "an_h": "",
+                        "text": "",
+                        "an_t": "",
+                        "media_type": "img",
+                        "media": "media/girl.png",
+                        "an_m": "",
+                        "icon": "",
+                        "an_i": "",
+                        "button1": "Demo",
+                        "url": "",
+                        "an_b1": "",
+                        "button2": "Download",
+                        "url2": "",
+                        "an_b2": ""
+                    }
+                }
+            ]
+        },
+        {
+            "title": "",
+            "add": false,
+            "sec": {
+                "bg": "bg-blue-grey-l4",
+                "col": "tx-gray-d3",
+                "p_sec": ""
+            },
+            "cont": {
+                "w": "w-container",
+                "bg": "bg-white-alpha-4",
+                "br": "br-14",
+                "p": "p-1",
+                "jc": "jc-c",
+                "ai": "ai-s",
+                "g": "g-1",
+                "fd": "fd-r",
+                "bs": "",
+                "a": ""
+            },
+            "img": {
+                "src": "",
+                "blur": null,
+                "opacity": null,
+                "ba": "ba-s",
+                "bp": "bp-cc"
+            },
+            "content": [
+                {
+                    "type": "card",
+                    "id": "700383ba482868",
+                    "classes": {
+                        "wi": "",
+                        "bs": "",
+                        "bg": "bg-white",
+                        "link_style": "but-blue",
+                        "p_card": "",
+                        "fd": "",
+                        "p": "p-1",
+                        "pc": "",
+                        "br": "br-5",
+                        "fs": "fs-10",
+                        "separator": "Button Style",
+                        "link_color": "but-blue-d2",
+                        "col": "tx-black",
+                        "link_rad": "br-5",
+                        "ratio": "ratio-auto",
+                        "hover_effect": "",
+                        "anim": ""
+                    },
+                    "el": {
+                        "title": "Card",
+                        "text": "Lorem Ipsum",
+                        "img": "media/card4.jpg",
+                        "icon": "",
+                        "button": true,
+                        "url": "",
+                        "target": "_self",
+                        "link_text": "Read More"
+                    }
+                },
+                {
+                    "type": "card",
+                    "classes": {
+                        "wi": "",
+                        "bs": "",
+                        "bg": "bg-white",
+                        "link_style": "but-blue",
+                        "p_card": "",
+                        "fd": "",
+                        "p": "p-1",
+                        "pc": "",
+                        "br": "br-5",
+                        "fs": "fs-10",
+                        "separator": "Button Style",
+                        "link_color": "but-blue-d2",
+                        "col": "tx-black",
+                        "link_rad": "br-5",
+                        "ratio": "ratio-auto",
+                        "hover_effect": "",
+                        "anim": ""
+                    },
+                    "el": {
+                        "title": "Card",
+                        "text": "Lorem Ipsum",
+                        "img": "media/card1.jpg",
+                        "icon": "",
+                        "button": true,
+                        "url": "",
+                        "target": "_self",
+                        "link_text": "Read More"
+                    },
+                    "id": "1eb180a66085e"
+                },
+                {
+                    "type": "card",
+                    "classes": {
+                        "wi": "",
+                        "bs": "",
+                        "bg": "bg-white",
+                        "link_style": "but-blue",
+                        "p_card": "",
+                        "fd": "",
+                        "p": "p-1",
+                        "pc": "",
+                        "br": "br-5",
+                        "fs": "fs-10",
+                        "separator": "Button Style",
+                        "link_color": "but-blue-d2",
+                        "col": "tx-black",
+                        "link_rad": "br-5",
+                        "ratio": "ratio-auto",
+                        "hover_effect": "",
+                        "anim": ""
+                    },
+                    "el": {
+                        "title": "Card",
+                        "text": "Lorem Ipsum",
+                        "img": "media/card3.jpg",
+                        "icon": "",
+                        "button": true,
+                        "url": "",
+                        "target": "_self",
+                        "link_text": "Read More"
+                    },
+                    "id": "1ef5507b04ed08"
+                }
+            ]
+        },
+        {
+            "title": "",
+            "add": false,
+            "sec": {
+                "bg": "bg-white",
+                "col": "tx-gray-d3",
+                "p_sec": ""
+            },
+            "cont": {
+                "w": "w-container",
+                "bg": "bg-white-alpha-4",
+                "br": "br-14",
+                "p": "p-1",
+                "jc": "jc-c",
+                "ai": "ai-s",
+                "g": "g-1",
+                "fd": "fd-c",
+                "bs": "",
+                "a": ""
+            },
+            "img": {
+                "src": "",
+                "blur": null,
+                "opacity": null,
+                "ba": "ba-s",
+                "bp": "bp-cc"
+            },
+            "content": [
+                {
+                    "type": "mediabox",
+                    "id": "1e4cd8bc041da",
+                    "classes": {
+                        "wi": "",
+                        "bs": "",
+                        "bg": "bg-white",
+                        "link_style": "but-blue",
+                        "p_card": "",
+                        "fd": "",
+                        "p": "p-1",
+                        "pc": "",
+                        "br": "br-5",
+                        "fs": "fs-10",
+                        "separator": "Button Style",
+                        "link_color": "but-blue-d2",
+                        "col": "tx-black",
+                        "link_rad": "br-5",
+                        "ratio": "ratio-auto",
+                        "hover_effect": "",
+                        "ja": ""
+                    },
+                    "el": {
+                        "title": "",
+                        "text": "",
+                        "img": "",
+                        "icon": "",
+                        "button": false,
+                        "url": "",
+                        "target": "_self",
+                        "link_text": "Read More"
+                    }
+                }
+            ]
+        },
+        {
+            "title": "",
+            "add": false,
+            "sec": {
+                "bg": "bg-white",
+                "col": "tx-gray-d3"
+            },
+            "cont": {
+                "w": "w-container",
+                "bg": "bg-white-alpha-4",
+                "br": "br-14",
+                "m": "mv-1",
+                "p": "p-1",
+                "jc": "jc-c",
+                "ai": "ai-s",
+                "g": "g-1",
+                "fd": "fd-c",
+                "bs": "",
+                "a": ""
+            },
+            "img": {
+                "src": "media/bullet.jpg",
+                "blur": null,
+                "opacity": null,
+                "ba": "ba-s",
+                "bp": "bp-cc"
+            },
+            "content": [
+                {
+                    "type": "card",
+                    "classes": {
+                        "wi": "w-1-5",
+                        "bs": "",
+                        "bg": "bg-light-blue-l4",
+                        "p": "",
+                        "pc": "",
+                        "dir": "",
+                        "br": "br-5",
+                        "fs": "fs-22",
+                        "col": "tx-black",
+                        "link_style": "but-blue",
+                        "link_rad": "br-5"
+                    },
+                    "el": {
+                        "title": "Card Title",
+                        "text": "ttt gggg ggg",
+                        "img": "media/card3.jpg",
+                        "icon": "",
+                        "button": false,
+                        "url": "",
+                        "target": "_self",
+                        "link_text": ""
+                    }
+                },
+                {
+                    "type": "card",
+                    "classes": {
+                        "wi": "",
+                        "bs": "",
+                        "bg": "bg-white",
+                        "link_style": "but-blue",
+                        "p_card": "",
+                        "fd": "",
+                        "p": "",
+                        "pc": "",
+                        "br": "br-5",
+                        "fs": "",
+                        "separator": "Button Style",
+                        "link_color": "but-blue-d2",
+                        "col": "tx-black",
+                        "link_rad": "br-5"
+                    },
+                    "el": {
+                        "title": "",
+                        "text": "Lorem Ipsum",
+                        "img": "",
+                        "icon": "",
+                        "button": false,
+                        "url": "",
+                        "target": "_self",
+                        "link_text": ""
+                    }
+                },
+                {
+                    "type": "html",
+                    "classes": {
+                        "fs": "",
+                        "col": ""
+                    },
+                    "el": {
+                        "html": "<h3>Test HTML</h3>\n<strong>Lorem</strong>"
+                    }
+                }
+            ]
+        },
+        {
+            "title": "",
+            "add": false,
+            "sec": {
+                "bg": "bg-deep-purple-l1",
+                "col": "tx-gray-d3",
+                "p_sec": ""
+            },
+            "cont": {
+                "w": "w-container",
+                "bg": "bg-light-blue-l3",
+                "br": "br-14",
+                "m": "mv-2",
+                "p": "p-1",
+                "jc": "jc-b",
+                "ai": "ai-s",
+                "g": "g-1",
+                "fd": "fd-r",
+                "bs": "",
+                "a": ""
+            },
+            "img": {
+                "src": "",
+                "blur": null,
+                "opacity": null,
+                "ba": "ba-s",
+                "bp": "bp-cc"
+            },
+            "content": [
+                {
+                    "type": "paragraph",
+                    "classes": {
+                        "fs": "",
+                        "col": ""
+                    },
+                    "el": {
+                        "text": "Lorem ipsum dolor sit amet. Ut voluptas nemo qui tempore quos 33 galisum commodi sed tempore similique et suscipit officiis et nesciunt quis sed possimus facere"
+                    }
+                },
+                {
+                    "type": "title",
+                    "tag": "h1",
+                    "classes": {
+                        "fs": "fs-20",
+                        "fw": "",
+                        "col": ""
+                    },
+                    "el": {
+                        "text": "This is Sample Title"
+                    }
+                },
+                {
+                    "type": "image",
+                    "classes": {
+                        "wi": "w-1-5"
+                    },
+                    "el": {
+                        "src": "media/girl.png",
+                        "text": "Read More",
+                        "show_caption": true
+                    },
+                    "style": {
+                        "pos_a": true,
+                        "use_top": true,
+                        "top": "-6",
+                        "use_right": true,
+                        "right": "-46",
+                        "use_bottom": false,
+                        "bottom": "",
+                        "use_left": false,
+                        "left": ""
+                    }
+                }
+            ]
+        }
+    ]
+}

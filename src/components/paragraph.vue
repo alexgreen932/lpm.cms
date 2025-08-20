@@ -1,6 +1,6 @@
 <template>
     <div class="element" :class="$root.classes(e.classes)">
-        <jet-toolbar :cls="cls" :sec="sec" :dir="dir" :elements="elements" :index="index" />
+        <jet-toolbar :part='part' :cls="cls" :sec="sec" :dir="dir" :elements="elements" :index="index" />
         <p v-html="e.el.text"></p>
     </div>
     <div v-if="!e.el.text" class="tx-grey">{{ $__('Enter a text') }}</div>
@@ -24,6 +24,6 @@ export const meta = {
 
 export default {
     components: { jetToolbar },
-    props: ['elements', 'sec', 'dir', 'e', 'index', 'cls'],
+    props: ['elements', 'part', 'sec', 'dir', 'e', 'index', 'cls'],
 };
 </script>

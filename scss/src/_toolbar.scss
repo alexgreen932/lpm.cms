@@ -57,7 +57,7 @@ div.form-toolbar {
     }
 
     .form-toolbar {
-    opacity: 0;
+        // opacity: 0;
         top: 2px;
         right: 2px;
     }
@@ -90,7 +90,7 @@ div.form-toolbar {
     }
 
     .form-toolbar {
-    opacity: 0;
+        // opacity: 0;
         top: 2px;
         left: 2px;
     }
@@ -117,7 +117,7 @@ div.group-toolbar {
         position: relative !important;
         justify-content: center;
         gap: 6px;
-        opacity: 1!important;
+        opacity: 1 !important;
 
         background: $el;
         z-index: 50;

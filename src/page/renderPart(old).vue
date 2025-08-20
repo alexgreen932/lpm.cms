@@ -1,12 +1,12 @@
 <template>
   <div v-if="sec" :id="sectionId(i)" class="jet-section" :class="$root && $root.classes ? $root.classes(sec.sec) : ''">
 
-    <jet-toolbar :part="part" cls="section" dir="fd-c" :elements="ops.current_page_data?.sections || []" :index="i" />
+
+    <toolbar-parts v-if="type=='header'" type="header" cls="section" dir="fd-c" :elements="theme.header?.sections || []" :index="i" />
     <div class="cntr" :class="$root && $root.classes ? $root.classes(sec.cont) : ''">
       <template v-if="sec.content && sec.content.length">
         <template v-for="(e, i2) in sec.content" :key="i2">
-          <!-- {{e}}----{{sec.content}} -->
-          <component :is="getComponent(e.type)" :part="part" :cls="dnm_cls()" :sec="i" :elements="sec.content" :dir="sec.fd" :e="e" :index="i2" />
+          <component :is="getComponent(e.type)" :sec="i" :elements="sec.content" :dir="sec.fd" :e="e" :index="i2" />
         </template>
       </template>
 
@@ -32,7 +32,7 @@ export default {
   jetToolbar,
   toolbarParts,
 },
-  props: ['sec', 'i', 'type', "part"],//rin type
+  props: ['sec', 'i', 'type'],
   data() {
     return { 
       ops,
@@ -40,13 +40,6 @@ export default {
      };
   },
   methods: {
-    dnm_cls(){
-      if (!this.type) {
-        return 'element';
-      } else {
-        return this.type;
-      }
-    },
     addElem(i) {
       this.ops.current_menu = 'add';
       this.ops.current_section = i;
@@ -67,8 +60,8 @@ export default {
     // }
   },
   mounted(){
-  
-  // 
+  console.log('%c Section type ---', 'color: #997373', this.type);
+  // console.log('%c Themee -------', 'color: #1045f3', this.theme);
   //loads default template if part---- currenntly on dev loads from data.... maybe load it directly to prop in edit mode
   }
 };

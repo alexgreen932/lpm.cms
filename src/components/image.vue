@@ -1,7 +1,7 @@
 <template>
     <!-- todo in front link ----- -->
     <figure v-if="e.el.text" class="element" :class="$root.classes(e.classes)" :style="position">
-        <jet-toolbar cls="element" :sec="sec" :dir="dir" :elements="elements" :index="index" />
+        <jet-toolbar :part='part' cls="element" :sec="sec" :dir="dir" :elements="elements" :index="index" />
         <img v-if="e.el.src" :src="e.el.src" :alt="e.el.text">
         <img v-if="!e.el.src" :src="$domain + '/media/default.jpg'">
         <figcaption v-if="e.el.show_caption">{{ e.el.text }}</figcaption>
@@ -43,7 +43,7 @@ export const meta = {
 
 export default {
     components: { jetToolbar },
-    props: ['elements', 'sec', 'dir', 'e', 'index'],
+    props: ['elements', 'part', 'sec', 'dir', 'e', 'index'],
 
     computed: {
         position() {

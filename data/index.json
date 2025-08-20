@@ -8,6 +8,10 @@
         "slug": "about"
     },
     {
+        "title": "Dev",
+        "slug": "dev"
+    },
+    {
         "title": "Elements",
         "slug": "elements"
     },

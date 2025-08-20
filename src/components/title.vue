@@ -1,7 +1,7 @@
 <template>
     <component :is="e.el.tag" class="element" :class="$root.classes(e.classes)">
 
-        <jet-toolbar cls="element" :sec="sec" :dir="dir" :elements="elements" :index="index" />
+        <jet-toolbar :part='part' cls="element" :sec="sec" :dir="dir" :elements="elements" :index="index" />
         <i v-if="e.el.icon" :class="e.el.icon"></i>
         <template v-if="e.classes.h_style !== 'h-line'">
             {{ e.el.text }}
@@ -39,6 +39,6 @@ export const meta = {
 
 export default {
     components: { jetToolbar },
-    props: ['elements', 'sec', 'dir', 'e', 'index'],
+    props: ['elements', 'part', 'sec', 'dir', 'e', 'index'],
 };
 </script>

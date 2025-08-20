@@ -59,7 +59,7 @@ export default {
     if (theme) {
       this.ops.theme = theme;
     }
-    console.log("theme  --------------- ", this.ops.theme);
+    // console.log("theme  --------------- ", this.ops.theme);
     this.isSidebar();//should check as it will be localstorage
     this.isBar();//should check as it will be localstorage
   },

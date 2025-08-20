@@ -140,12 +140,37 @@ export default {
     editItem(i) {
       this.$root.reset();
       this.ops.current_menu = 'edit';
-        console.log('this.part: ', this.part);
       if (this.part === 'header' || this.part === 'footer') {
         this.ops.current_part = this.part;
       } else {
         this.ops.current_part = null;
       }
+      // switch (this.part) {
+      //   case 'header':
+
+      //     break;
+
+      //   default:
+      //     this.ops.current_section = this.sec;
+      //     this.ops.current_el = this.index;
+      //     this.ops.current_edit = 'element';
+      //     break;
+      // }
+      // return;
+      // if (this.type === 'header') {
+
+      //   this.ops.current_menu = 'theme';
+      //   this.ops.theme_part = this.part;
+      //   // this.ops.current_section = this.index;
+      //   // this.ops.current_el = null;
+      //   // this.ops.current_edit = 'section';
+      //   return;
+      // } else if (this.type === 'footer') {
+
+      // }
+      //rin old code and return then
+      // return;
+
 
       //rin
       switch (this.cls) {

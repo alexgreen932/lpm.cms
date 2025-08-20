@@ -7,7 +7,7 @@
             <render-section :sec="sec" :i="i" />
         </template>
     </div>
-    <dot-menu v-if="ops.current_page_data.dot_menu" />
+    <!-- <dot-menu v-if="ops.current_page_data.dot_menu" /> -->
 </template>
 
 <script>

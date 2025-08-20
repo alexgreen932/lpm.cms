@@ -1,6 +1,6 @@
 <template>
     <div class="element card" :class="$root.classes(e.classes, 'link_rad, link_style, p, fd, ratio, hover_effect')">  
-        <jet-toolbar cls="element" :sec="sec" :dir="dir" :elements="elements" :index="index" />
+        <jet-toolbar :part='part' cls="element" :sec="sec" :dir="dir" :elements="elements" :index="index" />
         <figure v-if="e.el.img" :class="[e.classes.ratio, e.classes.hover_effect]">
             <img :src="e.el.img" :alt="title()">
         </figure>
@@ -60,7 +60,7 @@ export const meta = {
 
 export default {
     components: { jetToolbar },
-    props: ['elements', 'sec', 'dir', 'e', 'index'],
+    props: ['elements', 'part', 'sec', 'dir', 'e', 'index'],
     methods:{
         title(){
             return this.el?.title || 'Image';

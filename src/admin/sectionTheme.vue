@@ -4,14 +4,14 @@
         
         
         <ul class="j-tabs top style-bg tx-black">
-            <li v-for="(e, i) in menu" :class="$isActive(ops.theme_part, e)" @click="ops.theme_part = e">{{ e }}</li>
+            <li v-for="(e, i) in menu" :class="$isActive(ops.current_part, e.v)" @click="ops.current_part = e.v">{{ e.t }}</li>
         </ul>
         <ul class="j-tabs-content">
-            <li v-if="ops.theme_part == 'Page'">
+            <li v-if="ops.current_part == 'page'">
                 <jet-form :obj="ops.theme.page" :fields="$root.renderFields(ops.theme.page)" />
             </li>
 
-            <li v-if="ops.theme_part == 'Header'">
+            <li v-if="ops.current_part == 'header'">
                 header
                 <jet-form :title="$__('Header Style')" :obj="ops.theme.header.sec" :fields="$root.renderFields(ops.theme.header.sec)" />
                 <!-- <jet-form v-if="element.style" :obj="element.style" :fields="$root.renderFields(element.style)" /> -->
@@ -36,7 +36,11 @@ export default {
         return {
             ops,
             tip: 'theme',
-            menu: ['Page', 'Header', 'Footer'],
+            menu: [
+                {t:'Page',v:'page'},
+                {t:'Header',v:'header'},
+                {t:'Footer',v:'footer'},
+            ],
             //theme: ops.theme//temp for dev.... not anymore - todo load default data on app start
         };
     },

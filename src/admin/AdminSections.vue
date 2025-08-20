@@ -2,7 +2,7 @@
     <div v-if="ops.current_menu !== 99" class="admin-sec">
         <!-- <div v-if="ops.current_menu == 'pages'" class="control-section">
         </div> -->
-        <!-- current---{{ops.current}} -->
+        <!-- ---{{ops.theme}} -->
         <section-pages v-if="ops.current_menu == 'pages'" />
         <section-patterns v-if="ops.current_menu == 'patterns'" />
         <section-theme v-if="ops.current_menu == 'theme'" />
@@ -17,8 +17,9 @@
         <!-- <div class="delay-tooltip top-left">test</div> -->
          <!-- <textarea rows="40" cols="50">{{ pageJson() }}</textarea> -->
          <div v-if="ops.current_menu == 'edit'">
-          edit section
-          <edit-forms />
+          <!-- current part - {{ops.current_part}} -->
+          <edit-forms :current_data="currentData()" />
+          <textarea rows="40">{{currentData()}}</textarea>
          </div>
           <!-- dev only ---  -->
            <dev-fields />
@@ -71,6 +72,18 @@ export default {
         };
     },
     methods: {
+      currentData(){
+        let output = {};
+        if (this.ops.current_part == 'header') {
+          output = this.ops.theme.header;
+        } else if(this.ops.current_part == 'footer') {
+          output = this.ops.theme.footer;
+        }else{
+          output = this.ops.current_page_data;
+        }
+        console.log('%c%s', 'color: #ffa640', output);
+        return output;
+      },
         // pageJson() {//todo!! replace with $root.dataString
         //     return JSON.stringify(this.ops.current_page_data);
         // },

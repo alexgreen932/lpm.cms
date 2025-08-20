@@ -1,7 +1,7 @@
 <template> heading
     <component :is="e.el.tag" class="element" :class="$root.classes(e.classes)">
        
-        <jet-toolbar cls="element" :sec="sec" :dir="dir" :elements="elements" :index="index" />
+        <jet-toolbar :part='part' cls="element" :sec="sec" :dir="dir" :elements="elements" :index="index" />
         {{ e.el.text }}
     </component>
     <div v-if="!e.el.text" class="tx-grey">{{ $__('Enter a title') }}</div>
@@ -26,6 +26,6 @@ export const meta = {
 
 export default {
     components: { jetToolbar },
-    props: ['elements', 'sec', 'dir', 'e', 'index'],
+    props: ['elements', 'part', 'sec', 'dir', 'e', 'index'],
 };
 </script>

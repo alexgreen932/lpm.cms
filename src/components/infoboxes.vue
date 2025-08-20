@@ -1,6 +1,6 @@
 <template>
     <ul class="element info-box-container" :class="[e.classes.g, e.classes.jc, e.classes.wc]">
-        <jet-toolbar cls="element" :sec="sec" :dir="dir" :elements="elements" :index="index" />
+        <jet-toolbar :part='part' cls="element" :sec="sec" :dir="dir" :elements="elements" :index="index" />
         <li v-for="(el, i) in e.items" :key="i" class="info-box"
             :class="$root.classes(e.classes, 'e.classes.bg_h, i_fs, icon_place, fs_h, g, jc, wc')" :data-hover-bg="e.classes.bg_h">
             <template v-if="e.classes.icon_place == 'icn-aside'">
@@ -57,6 +57,6 @@ export const meta = {
 
 export default {
     components: { jetToolbar },
-    props: ['elements', 'sec', 'dir', 'e', 'index'],
+    props: ['elements', 'part', 'sec', 'dir', 'e', 'index'],
 };
 </script>

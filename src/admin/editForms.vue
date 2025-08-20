@@ -1,21 +1,25 @@
 <template>
     editForms
     <div class="fd-c g-05">
-        <template v-if="ops.current_page_data" v-for="(section, i) in ops.current_page_data.sections">
-            
-
+        <template v-if="current_data" v-for="(section, i) in current_data.sections">
+    section --- {{i}}  <br />      
+<!-- current_data ---{{current_data}} -->
             <!-- render only current section  -->
             <template v-if="ops.current_section == i">
                 <template v-if="ops.current_section == i && ops.current_edit == 'section'">
-                    <!-- section forms -->
-                    <jet-form :obj="section" :fields="$root.renderFields(section)" />
+                    <h3>-----forms</h3>
+                     <small v-if="ops.current_part">{{$__('To edit whole areas "Header" and "Footer" go tho "Themes"')}}</small>
+                    <!-- prevent rendering form below to avoid error if it's a part -->
+                    <jet-form v-if="!ops.current_part" :obj="section" :fields="$root.renderFields(section)" />
                     <jet-form :title="$__('Section Colors')" :obj="section.sec" :fields="$root.renderFields(section.sec)" />
                     <jet-form :title="$__('Container')" :obj="section.cont" :fields="$root.renderFields(section.cont)" />
-                    <jet-form :title="$__('Image(optionaly)')" :obj="section.img" :fields="$root.renderFields(section.img)" />
+                    <!-- prevent rendering form below to avoid error if it's a part -->
+                    <jet-form v-if="!ops.current_part" :title="$__('Image(optionaly)')" :obj="section.img" :fields="$root.renderFields(section.img)" />
                 </template>
 
 
                 <template v-for="(element, i2) in section.content">
+                    element --- {{i2}}
                     <form-wrapper v-if="ops.current_el == i2 && ops.current_edit == 'element'" :element="element" />
                 </template>
 
