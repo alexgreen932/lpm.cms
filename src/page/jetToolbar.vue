@@ -108,13 +108,7 @@ export default {
   },
   methods: {
     clone() {
-      // let cloned = this.elements[this.index];//get elem clicked to clone
-      // let cloned = JSON.parse(JSON.stringify(this.elements[this.index]));//get elem clicked to clone
       let cloned = this.$freshId(this.elements[this.index]);//create element with fresh id
-      // delete cloned.id;
-      // cloned.id = this.$id();//set random id, if id exists return
-      // 
-
       let insertIndex = this.ops.current_el + 1;
       this.elements.splice(insertIndex, 0, cloned);
     },
@@ -191,6 +185,13 @@ export default {
     },
 
     addItem(i) {
+        console.log('%c%s', 'color: #08920f', this.part);
+      //activates ops.current_part if part
+      if (this.part == 'header' || this.part == 'footer') {
+        this.ops.current_part = this.part;
+      } else {
+        this.ops.current_part = null;
+      }
       //add section //todo add pattern too
       switch (this.cls) {
         case 'section':
@@ -201,12 +202,11 @@ export default {
           this.ops.current_menu = 'add';
           this.ops.current_section = this.sec;
           this.ops.current_el = this.index;
-          this.ops.current_part = null;
           break;
 
         default://for parts
           this.ops.current_menu = 'add';
-          this.ops.current_part = this.cls;
+          // this.ops.current_part = this.part;
           this.ops.current_section = this.sec;
           this.ops.current_el = this.index;
           break;

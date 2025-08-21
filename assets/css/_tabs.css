@@ -26,6 +26,7 @@
 
 .j-tabs.top.style-bg li {
   background: #eceff1;
+  color: #555;
 }
 
 .j-tabs.top.style-bg li.isActive {

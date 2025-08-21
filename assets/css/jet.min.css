@@ -8906,35 +8906,36 @@ table.de-striped tbody tr:hover {
 /* line 23, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
 .j-tabs.top.style-bg li {
   background: #eceff1;
+  color: #555;
 }
 
-/* line 27, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
+/* line 28, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
 .j-tabs.top.style-bg li.isActive {
   background: #54688d;
   color: #fff;
 }
 
-/* line 35, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
+/* line 36, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
 .com-tabs {
   display: flex;
   margin-bottom: 1rem;
 }
 
-/* line 38, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
+/* line 39, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
 .com-tabs .de-tabs {
   display: flex;
   margin-top: 0;
   margin-bottom: 0;
 }
 
-/* line 45, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
+/* line 46, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
 .com-tabs .de-tabs li {
   display: flex;
   padding: 0.5rem 1.5rem;
   cursor: pointer;
 }
 
-/* line 54, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
+/* line 55, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
 .com-tabs .de-content {
   margin-top: 0;
   margin-bottom: 0;
@@ -8942,67 +8943,67 @@ table.de-striped tbody tr:hover {
   animation: show-tab 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
-/* line 61, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
+/* line 62, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
 .com-tabs.horizontal-top {
   display: flex;
   flex-direction: column;
 }
 
-/* line 65, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
+/* line 66, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
 .com-tabs.horizontal-top .de-tabs {
   display: flex;
 }
 
-/* line 73, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
+/* line 74, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
 .com-tabs.horizontal-top {
   flex-direction: column;
 }
 
-/* line 75, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
+/* line 76, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
 .com-tabs.horizontal-top .de-content {
   padding: 1rem 0;
 }
 
-/* line 81, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
+/* line 82, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
 .com-tabs.vertical-left {
   flex-direction: row;
 }
 
-/* line 83, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
+/* line 84, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
 .com-tabs.vertical-left .de-tabs {
   flex-direction: column;
 }
 
-/* line 86, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
+/* line 87, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
 .com-tabs.vertical-left .de-content {
   margin-top: 0;
   flex-grow: 1;
 }
 
-/* line 97, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
+/* line 98, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
 .com-tabs.horizontal-top.tab-background .de-tabs {
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-/* line 100, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
+/* line 101, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
 .com-tabs.horizontal-top.tab-background .de-tabs li {
   display: flex;
   padding: 0.5rem 1.5rem;
 }
 
-/* line 104, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
+/* line 106, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
 .com-tabs.horizontal-top.tab-background .de-tabs li.isActive {
   background: #54688d;
   border-radius: 6px 6px 0 0;
 }
 
-/* line 114, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
+/* line 116, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
 .com-tabs.horizontal-top.tab-buttom-small .de-tabs {
   gap: 0.5rem;
   padding-right: 1rem;
 }
 
-/* line 117, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
+/* line 119, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
 .com-tabs.horizontal-top.tab-buttom-small .de-tabs li {
   display: flex;
   font-size: 14px;
@@ -9012,13 +9013,13 @@ table.de-striped tbody tr:hover {
   border-radius: 10px;
 }
 
-/* line 125, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
+/* line 127, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
 .com-tabs.horizontal-top.tab-buttom-small .de-tabs li.isActive {
   background: #54688d;
   color: #fff;
 }
 
-/* line 132, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
+/* line 134, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
 .com-tabs.horizontal-top.tab-buttom-small .de-content {
   margin-top: 9px;
   padding: 1rem;
@@ -9026,36 +9027,36 @@ table.de-striped tbody tr:hover {
   border-radius: 6px;
 }
 
-/* line 144, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
+/* line 146, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
 .com-tabs.vertical-left.tab-background .de-tabs {
   margin-right: 1rem;
 }
 
-/* line 146, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
+/* line 148, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
 .com-tabs.vertical-left.tab-background .de-tabs li {
   display: flex;
   padding: 0.5rem 1.5rem;
   border-right: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-/* line 151, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
+/* line 153, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
 .com-tabs.vertical-left.tab-background .de-tabs li.isActive {
   background: #54688d;
   border-radius: 6px 0 0 6px;
 }
 
-/* line 157, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
+/* line 159, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
 .com-tabs.vertical-left.tab-background .de-content {
   flex-grow: 1;
 }
 
-/* line 164, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
+/* line 166, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
 .com-tabs.vertical-left.tab-button .de-tabs {
   gap: 0.5rem;
   margin-right: 1rem;
 }
 
-/* line 169, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
+/* line 171, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
 .com-tabs.vertical-left.tab-button .de-tabs li {
   display: flex;
   padding: 4px 1.5rem;
@@ -9063,12 +9064,12 @@ table.de-striped tbody tr:hover {
   border-radius: 6px;
 }
 
-/* line 175, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
+/* line 177, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
 .com-tabs.vertical-left.tab-button .de-tabs li.isActive {
   background: #54688d;
 }
 
-/* line 181, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
+/* line 183, ../../www/lpm.cms/scss-jet/components/_tabs.scss */
 .com-tabs.vertical-left.tab-button .de-content {
   padding: 1rem;
   border: 1px solid rgba(0, 0, 0, 0.3);
@@ -9637,6 +9638,29 @@ table.de-striped tbody tr:hover {
 [data-tooltip][data-flow^="right"]:hover::before,
 [data-tooltip][data-flow^="right"]:hover::after {
   animation: tooltip-horz .5s ease-out forwards;
+}
+
+/* line 3, ../../www/lpm.cms/scss-jet/components/_logo.scss */
+.jet-logo {
+  position: relative;
+  display: flex;
+  gap: 4px;
+}
+
+/* line 7, ../../www/lpm.cms/scss-jet/components/_logo.scss */
+.jet-logo .logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 11, ../../www/lpm.cms/scss-jet/components/_logo.scss */
+.jet-logo .logo-text p {
+  margin: 0;
+}
+
+/* line 14, ../../www/lpm.cms/scss-jet/components/_logo.scss */
+.jet-logo .logo-text span {
+  font-size: 0.8rem;
 }
 
 /* line 2, ../../www/lpm.cms/scss-jet/animation/_ja-fade-in.scss */

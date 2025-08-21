@@ -43,14 +43,30 @@
                     "bg": "",
                     "br": "br-14",
                     "p": "p-1",
-                    "jc": "jc-c",
-                    "ai": "ai-s",
+                    "jc": "jc-b",
+                    "ai": "ai-c",
                     "g": "g-1",
-                    "fd": "fd-c",
+                    "fd": "",
                     "bs": "",
                     "a": ""
                 },
                 "content": [
+                    {
+                        "type": "logo",
+                        "classes": {
+                            "separator": "For Type text only",
+                            "fs": "fs-15",
+                            "col": "",
+                            "effect": ""
+                        },
+                        "el": {
+                            "logo_type": "text",
+                            "logo_icon": "fa-solid fa-jet-fighter-up",
+                            "logo_img": "media/logo.png",
+                            "logo_text": "MySite.Com",
+                            "slogan": "Smart Small Stylish"
+                        }
+                    },
                     {
                         "type": "paragraph",
                         "classes": {

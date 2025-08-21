@@ -226,30 +226,28 @@ div.form-toolbar {
 /* line 13, ../../www/lpm.cms/scss/src/_toolbar.scss */
 div.form-toolbar .d-bg {
   display: flex;
-  gap: 6px;
+  gap: 2px;
   border-radius: 14px;
-  padding: 4px 10px;
+  padding: 2px 16px;
 }
 
 /* line 20, ../../www/lpm.cms/scss/src/_toolbar.scss */
 div.form-toolbar .d-wrap {
   position: relative;
-  width: 20px;
-  height: 20px;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #fff;
+  background: transparent;
   transition: all ease 0.6s;
 }
 
-/* line 31, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 32, ../../www/lpm.cms/scss/src/_toolbar.scss */
 div.form-toolbar .d-wrap:hover {
-  background: #bbd3ee;
+  background: #fff;
 }
 
-/* line 35, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 36, ../../www/lpm.cms/scss/src/_toolbar.scss */
 div.form-toolbar .d-wrap i {
   font-size: 16px;
   color: #000 !important;
@@ -258,41 +256,37 @@ div.form-toolbar .d-wrap i {
   font-size: 14px;
 }
 
-/* line 50, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 51, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .jet-section {
   position: relative;
   transition: all ease 0.6s;
 }
 
-/* line 54, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 55, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .jet-section .cntr {
   position: relative;
   z-index: 4;
 }
 
-/* line 59, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 60, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .jet-section .form-toolbar {
+  opacity: 0;
   top: 2px;
   right: 2px;
 }
 
-/* line 65, ../../www/lpm.cms/scss/src/_toolbar.scss */
-.jet-section .d-bg {
-  background: #0394f5;
-}
-
-/* line 69, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 68, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .jet-section:hover .form-toolbar {
   opacity: 1;
 }
 
-/* line 74, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 73, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .element {
   position: relative;
   transition: all ease 0.6s;
 }
 
-/* line 78, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 77, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .element div,
 .element img,
 .element p,
@@ -303,18 +297,36 @@ div.form-toolbar .d-wrap i {
   z-index: 4;
 }
 
-/* line 88, ../../www/lpm.cms/scss/src/_toolbar.scss */
-.element .d-bg {
-  background: #05f005;
-}
-
-/* line 92, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 89, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .element .form-toolbar {
+  opacity: 0;
   top: 2px;
   left: 2px;
 }
 
-/* line 104, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 98, ../../www/lpm.cms/scss/src/_toolbar.scss */
+.form-toolbar.section .d-bg {
+  background: #73f773;
+}
+
+/* line 101, ../../www/lpm.cms/scss/src/_toolbar.scss */
+.form-toolbar.section.header .d-bg,
+.form-toolbar.section.footer .d-bg {
+  background: #8f9db3;
+}
+
+/* line 103, ../../www/lpm.cms/scss/src/_toolbar.scss */
+.form-toolbar.element .d-bg {
+  background: #5bb3ee;
+}
+
+/* line 106, ../../www/lpm.cms/scss/src/_toolbar.scss */
+.form-toolbar.element.header .d-bg,
+.form-toolbar.element.footer .d-bg {
+  background: #9b62f7;
+}
+
+/* line 109, ../../www/lpm.cms/scss/src/_toolbar.scss */
 div.group-toolbar {
   position: relative;
   transition: all ease 0.6s;
@@ -323,13 +335,13 @@ div.group-toolbar {
   padding-bottom: 3px;
 }
 
-/* line 111, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 116, ../../www/lpm.cms/scss/src/_toolbar.scss */
 div.group-toolbar .fa-pen-to-square,
 div.group-toolbar .fa-plus {
   display: none !important;
 }
 
-/* line 116, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 121, ../../www/lpm.cms/scss/src/_toolbar.scss */
 div.group-toolbar h4 .form-toolbar {
   position: relative !important;
   justify-content: center;
@@ -339,28 +351,28 @@ div.group-toolbar h4 .form-toolbar {
   z-index: 50;
 }
 
-/* line 126, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 131, ../../www/lpm.cms/scss/src/_toolbar.scss */
 div.group-toolbar .d-bg {
   padding: 2px !important;
 }
 
-/* line 130, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 135, ../../www/lpm.cms/scss/src/_toolbar.scss */
 div.group-toolbar i {
   cursor: pointer;
   transition: all ease 0.3s;
 }
 
-/* line 134, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 139, ../../www/lpm.cms/scss/src/_toolbar.scss */
 div.group-toolbar i:hover {
   color: #e01033;
 }
 
-/* line 148, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 153, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .add-section {
   position: relative;
 }
 
-/* line 151, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 156, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .add-section .d-drop {
   background: #fff;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.1);
@@ -370,7 +382,7 @@ div.group-toolbar i:hover {
   right: 0;
 }
 
-/* line 159, ../../www/lpm.cms/scss/src/_toolbar.scss */
+/* line 164, ../../www/lpm.cms/scss/src/_toolbar.scss */
 .add-section .d-drop div {
   white-space: nowrap;
 }

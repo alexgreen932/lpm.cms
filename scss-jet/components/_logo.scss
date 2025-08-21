@@ -1,0 +1,19 @@
+
+
+.jet-logo{
+    position: relative;
+    display: flex;
+    gap: 4px;
+    .logo-text{
+        display: flex;
+        flex-direction: column;
+        // gap: 3px;
+        p{
+            margin: 0;
+        }
+        span{
+            font-size: 0.8rem;
+        }
+    }
+    
+}

@@ -12,24 +12,25 @@ div.form-toolbar {
 
     .d-bg {
         display: flex;
-        gap: 6px;
+        gap: 2px;
         border-radius: 14px;
-        padding: 4px 10px;
+        padding: 2px 16px;
     }
 
     .d-wrap {
         position: relative;
-        width: 20px;
-        height: 20px;
+        // width: 20px;
+        // height: 20px;
         border-radius: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
-        background: #fff;
+        // background: #fff;
+        background: transparent;
         transition: all ease 0.6s;
 
         &:hover {
-            background: #bbd3ee;
+            background: #fff;
         }
 
         i {
@@ -57,14 +58,12 @@ div.form-toolbar {
     }
 
     .form-toolbar {
-        // opacity: 0;
+        opacity: 0;
         top: 2px;
         right: 2px;
     }
 
-    .d-bg {
-        background: rgb(3, 148, 245);
-    }
+
 
     &:hover .form-toolbar {
         opacity: 1;
@@ -85,21 +84,27 @@ div.form-toolbar {
         z-index: 4;
     }
 
-    .d-bg {
-        background: #05f005;
-    }
+
 
     .form-toolbar {
-        // opacity: 0;
+        opacity: 0;
         top: 2px;
         left: 2px;
     }
 
 }
 
-// .jet-section:hover {
-//     border-color: $sec;
-// }
+// background colors
+.form-toolbar.section .d-bg{background: #73f773;}
+.form-toolbar.section.header,
+.form-toolbar.section.footer{
+     .d-bg{background: #8f9db3;}
+}
+.form-toolbar.element .d-bg{background: rgb(91, 179, 238);}
+.form-toolbar.element.header,
+.form-toolbar.element.footer{
+     .d-bg{background: #9b62f7;}
+}
 
 div.group-toolbar {
     position: relative;

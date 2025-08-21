@@ -23,12 +23,24 @@
         <!-- Show page form only when this page is open -->
         <div v-if="ops.current_page === e.slug">
           <field-tip :fields="null" v-model="tip" />
-          <page-forms />
+          <!-- page settings - meta, dotmenu -->
+          <div class="b-blue fs-8 jc-c br-4 j-click" @click="$root.reset(), ops.page_settings = !ops.page_settings">
+            <template v-if="!ops.page_settings">
+              {{ $__('Page Settings') }}
+            </template>
+            <template v-if="ops.page_settings">
+              {{ $__('Close') }}
+            </template>
+
+          </div>
+
+          <jet-form v-if="ops.page_settings" :obj="ops.current_page_data" cls="bg-white" :fields="fields_meta" />
         </div>
       </div>
     </template>
 
-    <new-page :pages="pages" />
+
+    <!-- <new-page :pages="pages" /> -->
   </div>
 </template>
 
@@ -61,15 +73,15 @@ import { fetchFile } from "../utils/helpers.js";
 import JetForm from "../form/jetForm.vue";
 import SaveForm from './SaveForm.vue';
 import newPage from './newPage.vue';
-import pageForms from './pageForms.vue';
 import fieldTip from '../form/fields/field-tip.vue';
+import jetForm from '../form/jetForm.vue';
 
 export default {
   components: {
     "jet-form": JetForm,
     "save-form": SaveForm,
     newPage,
-    pageForms,
+    jetForm,
     fieldTip,
   },
 
@@ -78,6 +90,13 @@ export default {
       tip: 'edit_page',
       ops,
       pages: [], // list of { title, slug }
+      fields_meta: [
+        { title: this.$__('Page Title'), tip: this.$__('This adds a Dotted Menu Between Sections. Menu Item Titles should be added → Section Edit ->Title'), key: 'title', },
+        { title: this.$__('Meta Title'), key: 'meta_title', },
+        { title: this.$__('Meta Description'), key: 'meta_description', type: 'textarea' },
+        { title: this.$__('Add Dotted Menu'), key: 'dot_menu', type: 'checkbox' },
+        // { title: this.$__('Atem Align'), key: 'ai', type: 'input' },
+      ],
     };
   },
 

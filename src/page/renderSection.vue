@@ -6,7 +6,8 @@
       <template v-if="sec.content && sec.content.length">
         <template v-for="(e, i2) in sec.content" :key="i2">
           <!-- {{e}}----{{sec.content}} -->
-          <component :is="getComponent(e.type)" :part="part" :cls="dnm_cls()" :sec="i" :elements="sec.content" :dir="sec.fd" :e="e" :index="i2" />
+          <component :is="getComponent(e.type)" :part="part" cls="element" :sec="i" :elements="sec.content" :dir="sec.fd" :e="e" :index="i2" />
+          <!-- <component :is="getComponent(e.type)" :part="part" :cls="dnm_cls()" :sec="i" :elements="sec.content" :dir="sec.fd" :e="e" :index="i2" /> -->
         </template>
       </template>
 

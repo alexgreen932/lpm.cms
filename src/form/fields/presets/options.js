@@ -1,5 +1,12 @@
+import __ from "../../../languages";
+//todo! //DFG localization values
+
 // text_effects  yes_no justify align  gap  size  shadow  radius                                
 export const options = {
+    logo_type: [
+        { v: 'text', t: __('Text') },
+        { v: 'img', t: __('Image') },
+    ],
     bg_type: [
         { v: '', t: 'None' },
         { v: 'bg', t: 'Background Color' },
@@ -31,7 +38,7 @@ export const options = {
         { v: 'icn-above', t: 'Above Title' },
         { v: 'icn-aside', t: 'Aside Left' },
     ],
-    effects: [
+    effect: [
         { v: '', t: 'none' },
         { v: 'e-shadow', t: 'shadow' },
         { v: 'e-inset', t: 'inset' },
