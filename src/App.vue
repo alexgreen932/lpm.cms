@@ -37,6 +37,13 @@ export default {
     return {
       ops,
       theme: { page: {}, header: { sec: {} }, footer: { sec: {} } },
+      config: {
+        'login': 'admin',
+        'password': 'wse4321',
+        'email': 'qq@qq.qq',
+        'login_url': 'login',
+      },
+      //rin
       items: [
         { type: 'title', props: { text: 'Hello from Title' } },
         { type: 'paragraph', props: { text: 'Hello from Paragraph' } }

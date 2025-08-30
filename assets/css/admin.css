@@ -455,39 +455,121 @@ div.group-toolbar i:hover {
   opacity: 0;
 }
 
-/* line 31, ../../www/lpm.cms/scss/src/_vue-anim.scss */
+/* line 38, ../../www/lpm.cms/scss/src/_vue-anim.scss */
+.side-sections {
+  position: admin-sec;
+}
+
+/* The magic: define the transition and temporarily stack both views */
+/* line 41, ../../www/lpm.cms/scss/src/_vue-anim.scss */
+.slideL-enter-active,
+.slideL-leave-active {
+  transition: transform .5s ease, opacity .5s ease;
+  position: absolute;
+  /* so old/new can overlap during the swap */
+  inset: 0;
+  /* fill the wrapper */
+}
+
+/* start/end states */
+/* line 55, ../../www/lpm.cms/scss/src/_vue-anim.scss */
+.slideL-enter-from, .slideL-leave-to {
+  -webkit-animation: slide-out-left 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: slide-out-left 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+/* new comes from left */
+/* line 59, ../../www/lpm.cms/scss/src/_vue-anim.scss */
+.slideL-enter-to, .slideL-leave-from {
+  -webkit-animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slide-out-left {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-out-left {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+}
+
+/* line 120, ../../www/lpm.cms/scss/src/_vue-anim.scss */
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s ease;
   transition: all 0.6s ease-in-out;
 }
 
-/* line 38, ../../www/lpm.cms/scss/src/_vue-anim.scss */
+/* line 127, ../../www/lpm.cms/scss/src/_vue-anim.scss */
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
 }
 
-/* line 45, ../../www/lpm.cms/scss/src/_vue-anim.scss */
+/* line 134, ../../www/lpm.cms/scss/src/_vue-anim.scss */
 .pop-enter-active,
 .pop-leave-active {
   transition: transform 0.4s cubic-bezier(0.5, 0, 0.5, 1), opacity 0.4s linear;
 }
 
-/* line 50, ../../www/lpm.cms/scss/src/_vue-anim.scss */
+/* line 139, ../../www/lpm.cms/scss/src/_vue-anim.scss */
 .pop-enter-from,
 .pop-leave-to {
   opacity: 0;
   transform: scale(0.3) translateY(-50%);
 }
 
-/* line 57, ../../www/lpm.cms/scss/src/_vue-anim.scss */
+/* line 146, ../../www/lpm.cms/scss/src/_vue-anim.scss */
 .slideHL-enter-active,
 .slideHL-leave-active {
   transition: transform 0.4s translateX(0), opacity 0.4s linear;
 }
 
-/* line 62, ../../www/lpm.cms/scss/src/_vue-anim.scss */
+/* line 151, ../../www/lpm.cms/scss/src/_vue-anim.scss */
 .slideHL-enter-from,
 .slideHL-leave-to {
   opacity: 0;

@@ -2,7 +2,8 @@ import __ from '../languages/index.js';
 
 export const ops = {
   current_menu: 99,//by default
-  current_menu: 'pages',//dev temp
+  current_menu: 'settings',//by default
+  // current_menu: 'pages',//dev temp
   current_page: 'homepage',//curremtly loaded
   // current_page: 99,//curremtly loaded
   page_index: 999,
